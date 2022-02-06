@@ -1,9 +1,11 @@
-body {
+.body {
     margin: 0;
+    top: 1rem;
+
   }
   .navbar {
     overflow: hidden;
-    background-color: #fff07b;
+    background-color: #1e5198;
     position: fixed;
     top: 0;
     left: 0;
@@ -20,9 +22,14 @@ body {
       display: inline-flex;
   }
 
+  .homepagePic{
+      
+      
+  }
+
   .footer{
     overflow: hidden;
-    background-color: #fff07b;
+    background-color: #1e5198;
     /* position: fixed; */
     bottom: 0;
     width: 100%;
