@@ -1,9 +1,8 @@
-export default function Reminders(){
+export default function Reminders(reminders){
     console.log('reminder page')
     return `
-    
-
-    
-    <p> Reminder info</p>
+    <div class="api-page-container">
+    <p>Reminder info</p>
+    </div>
     `;
 }
