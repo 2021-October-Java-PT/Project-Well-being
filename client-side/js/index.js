@@ -14,7 +14,7 @@ const app = document.querySelector("#app");
 buildPage();
 
 function buildPage(){
-    home();
+    renderHome();
     navHome();
     navReminders();
     navJournal();
@@ -22,9 +22,8 @@ function buildPage(){
     navContact();
 }
 
-function home(){
-    const homeElem = document.querySelector(".nav-list__home");
-    app.innerHTML=Home();
+function renderHome(){
+    app.innerHTML = Home();
 }
 
 function navHome(){
