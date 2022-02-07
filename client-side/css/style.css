@@ -12,6 +12,12 @@
 
 #app {
   padding-top: 35px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.contact-area {
+  padding-left: 5%;
 }
 
 /* navbar */
@@ -25,7 +31,7 @@
   box-shadow: 0px 5px 10px 0px #aaa;
   position: fixed;
   width: 100%;
-  background: skyblue;
+  background: #db845b;
   color: rgb(48, 48, 48);
   opacity: 0.85;
   height: 60px;
@@ -73,7 +79,7 @@
 
 .btn-primary {
   color: whitesmoke;
-  background: skyblue;
+  background:#db845b;
 }
 
 .btn-primary:hover {
@@ -84,8 +90,11 @@
 
 .home-area {
   height: 50vh;
-  background: linear-gradient(rgba(240, 240, 240, 0.144),
-      rgba(255, 255, 255, 0.336));
+  background: linear-gradient(
+    rgba(48, 48, 48, .335),
+    rgba(255, 255, 255, 0.335)
+  ),
+  url("../assets/home-banner2.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -131,6 +140,10 @@
 
 /* media query */
 @media (max-width: 768px) {
+  body {
+    text-align: center;
+  }
+
   .navbar {
     opacity: 0.95;
   }
@@ -201,9 +214,8 @@
     display: flex;
     flex-direction: column;
     margin-left: -40px;
-    padding-left: 50px;
     transition: transform 0.5s ease-in-out;
-    box-shadow: 5px 0px 10px 0px #aaa;
+    box-shadow: 5px 0px 10px 0px grey
   }
 
   .navbar .nav-list li {
@@ -233,36 +245,5 @@
 
   .navbar-container input[type="checkbox"]:checked~.hamburger-menu .line3 {
     transform: rotate(-35deg);
-  }
-}
-
-@media (max-width: 500px) {
-  /* html {
-    font-size: 65%;
-  } */
-
-  .navbar .nav-list li {
-    font-size: 1.6rem;
-  }
-
-  .logo {
-    position: absolute;
-    top: 06px;
-    right: 15px;
-    font-size: 3rem;
-  }
-
-  .navbar .nav-list li {
-    margin-bottom: 2.5rem;
-    font-size: 1.8rem;
-    font-weight: 500;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1200px) {}
-
-@media (orientation: landscape) and (max-height: 500px) {
-  .home-area {
-    height: 50vmax;
   }
 }

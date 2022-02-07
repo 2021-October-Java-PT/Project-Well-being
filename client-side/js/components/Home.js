@@ -1,5 +1,3 @@
-//import homeImg from "../../assets/home-banner.jpg";
-
 export default function Home(){
     return`
     <div class="container" id="app">
@@ -9,7 +7,7 @@ export default function Home(){
       <p>You matter.</p>
       <a href="#checkin" class="btn btn-primary">Checkin</a>
     </div>
-  </section>
+    </section>
     </div>
     `;
 }
