@@ -1,7 +1,8 @@
 export default function Contact(){
     return`
-    <div class="container" id="app">
+    
     <section class="contact-area" id="contact">
+    <div class="contact-div">
     <h1>Contact Information</h1>
     <p>Phone: 555-555-5555</p>
     <p>Fax: 123-456-7890</p>

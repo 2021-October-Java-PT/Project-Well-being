@@ -13,12 +13,8 @@
 
 #app {
   padding-top: 35px;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.contact-area {
-  padding-left: 5%;
+  padding-left: 0%;
+  padding-right: 0%;
 }
 
 /* navbar */
@@ -119,11 +115,11 @@
   display: grid;
   grid-template-columns: auto auto auto;
   background-color: whitesmoke;
-  padding: 10px;
+  padding: 20px 10px 20px 10px;
 }
 
 .services-item {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: white;
   padding: 20px;
   font-size: 30px;
   text-align: center;
@@ -135,6 +131,7 @@ h2 {
 }
 
 .articleImg {
+  padding-top: 5px;
   display: inline;
   margin: 0 auto;
   width: 200px;
@@ -143,27 +140,31 @@ h2 {
 }
 
 p {
+  padding-top: 5px;
   font-size: small;
 }
 
-/* .subheading {
-  text-transform: uppercase;
-  text-align: center;
-  font-size: large;
-  padding: 20px 50px;
-}  */
-
-/* .section-one,
+.section-one,
 .section-two,
 .section-three {
-  padding-bottom: 40px;
-} */
+  padding-bottom: 25px;
+}
 
-/* #service-one,
+#service-one,
 #service-two,
 #service-three {
-  padding: 25px 100px;
-} */
+  padding: 30px 100px;
+}
+
+/*contact*/
+.contact-div {
+  /* display: grid;
+  grid-template-columns: auto; */
+  /* background-color: whitesmoke; */
+  padding: 50px 10px 10px 10px;
+  /* text-indent: 2%; */
+  text-align: center; 
+}
 
 /*footer*/
 #footer {

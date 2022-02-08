@@ -6,6 +6,7 @@ import Contact from "./components/Contact";
 import Home from "./components/Home";
 import Journal from "./components/Journal";
 import Reminders from "./components/Reminders";
+import Resources from "./components/Resources";
 import apiHelpers from "./api-helpers.js/apiHelpers";
 import crud from "./crud/crud";
 
@@ -20,18 +21,28 @@ function buildPage(){
     navJournal();
     navAbout();
     navContact();
+    navResources();
 }
 
 function renderHome(){
     app.innerHTML = Home();
+    checkin();
 }
 
 function navHome(){
     const homeElem = document.querySelector(".nav-list__home");
     homeElem.addEventListener("click", () => {
        app.innerHTML = Home();
+       checkin();
     });   
 }
+
+function checkin() {
+      const checkin = document.querySelector(".checkin");
+      checkin.addEventListener("click", () => {
+        app.innerHTML = Journal();
+     });   
+ }
 
 function navReminders(){
     const remindersElem = document.querySelector(".nav-list__reminders");
@@ -48,6 +59,13 @@ function navJournal(){
     const journalElem = document.querySelector(".nav-list__journal");
     journalElem.addEventListener("click", () => {
        app.innerHTML = Journal();
+    });   
+}
+
+function navResources(){
+    const journalElem = document.querySelector(".nav-list__resources");
+    journalElem.addEventListener("click", () => {
+       app.innerHTML = Resources();
     });   
 }
 

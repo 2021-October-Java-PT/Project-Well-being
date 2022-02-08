@@ -1,3 +1,4 @@
+import alarm from "../../assets/alarm2.jpg";
 import journal from "../../assets/journaling.jpg";
 import resources from "../../assets/resources.jpg";
 
@@ -8,7 +9,7 @@ export default function Home() {
     <div class="home-container">
       <h1 class="main-title" id="home">Unbox Your Thoughts</h1>
       <h2>You Matter</h2>
-      <a href="#checkin" class="btn btn-primary">Checkin</a>
+      <a href="#checkin" class="checkin btn btn-primary">Checkin</a>
     </div>
     <div id="services">
     <div class="services-div">
@@ -23,8 +24,10 @@ export default function Home() {
         <div class="services-item" id="service-two">
         <article class="section-two">
         <h2 class="subheading">Daily Reminders & Affirmations</h2>
-        <img class=articleImg src="" alt="Img Two">
-        <p class="infoPara">Text</p><br>
+        <img class=articleImg src="${alarm}" alt="Img Two">
+        <p class="infoPara">Rewire your brain, build self esteem and<br>
+        change negative thought patterns with daily reminders<br> and affirmations 
+        about what you are capable of.</p><br>
         </article> 
         </div>
         <div class="services-item" id="service-three">
