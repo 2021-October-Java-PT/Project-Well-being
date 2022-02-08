@@ -9,7 +9,7 @@ export default function Home() {
     <div class="home-container">
       <h1 class="main-title" id="home">Unbox Your Thoughts</h1>
       <h2>You Matter</h2>
-      <a href="#checkin" class="checkin btn btn-primary">Checkin</a>
+      <btn class="checkin btn btn-primary">Checkin</btn>
     </div>
     <div id="services">
     <div class="services-div">
