@@ -4,5 +4,5 @@ export default function Reminders(reminders){
     <div class="api-page-container">
     <p>Reminder info</p>
     </div>
-    `;
+     `;
 }
