@@ -25,7 +25,7 @@ export default function Home() {
         <article class="section-two">
         <h2 class="subheading">Daily Reminders & Affirmations</h2>
         <img class=articleImg src="${alarm}" alt="Img Two">
-        <p class="infoPara">Rewire your brain, build self esteem and<br>
+        <p class="infoPara">Rewire your brain, build self-esteem and<br>
         change negative thought patterns with daily reminders<br> and affirmations 
         about what you are capable of.</p><br>
         </article> 
@@ -35,7 +35,7 @@ export default function Home() {
         <h2 class="subheading">Resources</h2>
         <img class=articleImg src="${resources}" alt="Img Three">
         <p class="infoPara">Browse or search for materials,<br>
-        and other resorces necessary<br> for your journey.</p>
+        and other resources necessary<br> for your journey.</p>
         </article> 
         </div>
     </div>
