@@ -36,4 +36,13 @@ public class RemindersController {
         return (Collection<RemindersResource>) remindersRepo.findAll();
     }
 
+    @DeleteMapping("/api/reminders/{id}/delete-reminder")
+    public Collection<RemindersResource> deleteReminder(@PathVariable Long id) throws JSONException{
+        Optional<RemindersResource> reminderToRemoveOpt = remindersRepo.findById(id);
+        if (reminderToRemoveOpt.isPresent()){
+            remindersRepo.delete(reminderToRemoveOpt.get());
+        }
+        return (Collection<RemindersResource>) remindersRepo.findAll();
+    }
+
 }
