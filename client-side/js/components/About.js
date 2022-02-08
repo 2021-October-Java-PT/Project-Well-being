@@ -1,5 +1,7 @@
 export default function About(){
     return `
-    <p> about test</p>
+    <div class="about-container" id="app">
+    <h1>About test</h1>
+    </div>
     `
 }
