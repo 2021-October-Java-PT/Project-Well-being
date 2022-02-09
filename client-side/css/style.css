@@ -67,11 +67,7 @@ table.calendar {
   background-color: lightgrey;
   margin-left: auto;
   margin-right: auto;
-  border-spacing: 21px;
-}
-th,
-td {
-  font-weight: bold;
+  border-spacing: 21em;
 }
 
 h2.calendar {
@@ -82,10 +78,21 @@ h2.calendar {
 th.calendar {
   color: white;
   background-color: #A55344;
+  font-weight: bold;
 }
 
-td {
-  padding: 21px;
+tr.calendar > td {
+  padding: 15em;
+  font-weight: bold;
+  transition: .5s;
+}
+
+tr.calendar > td:hover {
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
+  background-color: #A55344;
+  border-radius: 25%;
 }
 /* calendar end */
 

@@ -34,7 +34,7 @@ export default function Reminders(reminders){
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr class="calendar">
             <td></td>
             <td></td>
             <td>1</td>
@@ -43,8 +43,7 @@ export default function Reminders(reminders){
             <td>4</td>
             <td>5</td>
         </tr>
-        <tr></tr>
-        <tr>
+        <tr class="calendar">
             <td>6</td>
             <td>7</td>
             <td>8</td>
@@ -53,7 +52,7 @@ export default function Reminders(reminders){
             <td>11</td>
             <td>12</td>
         </tr>
-        <tr>
+        <tr class="calendar">
             <td>13</td>
             <td>14</td>
             <td>15</td>
@@ -62,7 +61,7 @@ export default function Reminders(reminders){
             <td>18</td>
             <td>19</td>
         </tr>
-        <tr>
+        <tr class="calendar">
             <td>20</td>
             <td>21</td>
             <td>22</td>
@@ -71,7 +70,7 @@ export default function Reminders(reminders){
             <td>25</td>
             <td>26</td>
         </tr>
-        <tr>
+        <tr class="calendar">
             <td>27</td>
             <td>28</td>
             <td>29</td>
@@ -80,7 +79,7 @@ export default function Reminders(reminders){
             <td>1</td>
             <td>2</td>
         </tr>
-        <tr>
+        <tr class="calendar">
             <td>3</td>
             <td>4</td>
             <td>5</td>
@@ -91,6 +90,5 @@ export default function Reminders(reminders){
         </tr>
     </tbody>
 </table>
-
     `;
 }
