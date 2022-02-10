@@ -2,7 +2,8 @@ body {
   margin: 0;
 }
 .navbar {
-  overflow: hidden;
+  /* overflow: hidden; */
+  padding-bottom: 100px;
   background-color: #fff07b;
   position: fixed;
   top: 0;
@@ -10,14 +11,14 @@ body {
   width: 100%;
   display: inline-block;
 }
-.navList {
-  padding: 0.5rem;
-  margin: 1rem;
-  gap: 8rem;
-  margin-left: auto;
-  display: inline;
-  list-style-type: none;
-  display: inline-flex;
+.nav-list{
+  /* padding: 0.5rem; */
+  /* margin: 1rem; */
+  /* gap: 8rem; */
+  /* margin-left: auto; */
+  /* display: inline; */
+  /* list-style-type: none; */
+  /* display: inline-flex; */
 }
 
 .footer {
@@ -159,8 +160,8 @@ tr.calendar > td:hover {
   margin-bottom: 0.5rem;
 }
 
-/*home*/
-.btn {
+/* home */
+ .btn {
   display: inline-block;
   padding: 0.5em 1em;
   text-decoration: none;
@@ -179,7 +180,7 @@ tr.calendar > td:hover {
 
 .btn-primary:hover {
   background: rgb(48, 48, 48);
-  ;
+  
   transition: background 0.5s ease-in-out;
 }
 
@@ -199,10 +200,10 @@ tr.calendar > td:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
+  justify-content: center;
   height: 100%;
   font-size: 1.6rem;
-}
+} 
 
 .main-title {
   text-transform: uppercase;
@@ -240,7 +241,7 @@ h2 {
 p {
   padding-top: 5px;
   font-size: small;
-}
+} 
 
 .section-one,
 .section-two,
@@ -256,13 +257,13 @@ p {
 
 /*contact*/
 .contact-div {
-  /* display: grid;
-  grid-template-columns: auto; */
-  /* background-color: whitesmoke; */
+  display: grid;
+  grid-template-columns: auto; 
+  background-color: whitesmoke;
   padding: 50px 10px 10px 10px;
-  /* text-indent: 2%; */
+  text-indent: 2%;
   text-align: center; 
-}
+} 
 
 /*footer*/
 #footer {
@@ -396,4 +397,4 @@ p {
   .navbar-container input[type="checkbox"]:checked~.hamburger-menu .line3 {
     transform: rotate(-35deg);
   }
-}
+} 
