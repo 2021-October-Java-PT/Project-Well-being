@@ -3,6 +3,7 @@
 import About from "./components/About";
 import AllReminders from "./components/AllReminders";
 import Contact from "./components/Contact";
+import Form from "./components/Form";
 import Home from "./components/Home";
 import Journal from "./components/Journal";
 import Reminders from "./components/Reminders";
@@ -14,71 +15,72 @@ const app = document.querySelector("#app");
 
 buildPage();
 
-function buildPage(){
-    renderHome();
-    navHome();
-    navReminders();
-    navJournal();
-    navAbout();
-    navContact();
-    navResources();
+function buildPage() {
+  renderHome();
+  navHome();
+  navReminders();
+  navJournal();
+  navAbout();
+  navContact();
+  navResources();
 }
 
-function renderHome(){
+function renderHome() {
+  app.innerHTML = Home();
+  checkin();
+}
+
+function navHome() {
+  const homeElem = document.querySelector(".nav-list__home");
+  homeElem.addEventListener("click", () => {
     app.innerHTML = Home();
     checkin();
-}
-
-function navHome(){
-    const homeElem = document.querySelector(".nav-list__home");
-    homeElem.addEventListener("click", () => {
-       app.innerHTML = Home();
-       checkin();
-    });   
+  });
 }
 
 function checkin() {
-      const checkin = document.querySelector(".checkin");
-      checkin.addEventListener("click", () => {
-        app.innerHTML = Journal();
-     });   
- }
-
-function navReminders(){
-    const remindersElem = document.querySelector(".nav-list__reminders");
-    remindersElem.addEventListener("click", () => {
-        crud.getRequest("http://localhost:8080/api/reminders", reminders => {
-            console.log(reminders);
-            app.innerHTML = AllReminders(reminders);
-        }
-        );
-    });   
+  const checkin = document.querySelector(".checkin");
+  checkin.addEventListener("click", () => {
+    crud.getRequest("http://localhost:8080/api/forms", (forms) => {
+      app.innerHTML = Form();
+    });
+  });
 }
 
-function navJournal(){
-    const journalElem = document.querySelector(".nav-list__journal");
-    journalElem.addEventListener("click", () => {
-       app.innerHTML = Journal();
-    });   
+function navReminders() {
+  const remindersElem = document.querySelector(".nav-list__reminders");
+  remindersElem.addEventListener("click", () => {
+    crud.getRequest("http://localhost:8080/api/reminders", (reminders) => {
+      console.log(reminders);
+      app.innerHTML = AllReminders(reminders);
+    });
+  });
 }
 
-function navResources(){
-    const journalElem = document.querySelector(".nav-list__resources");
-    journalElem.addEventListener("click", () => {
-       app.innerHTML = Resources();
-    });   
+function navJournal() {
+  const journalElem = document.querySelector(".nav-list__journal");
+  journalElem.addEventListener("click", () => {
+    app.innerHTML = Journal();
+  });
 }
 
-function navAbout(){
-    const aboutElem = document.querySelector(".nav-list__about");
-    aboutElem.addEventListener("click", () => {
-       app.innerHTML = About();
-    });   
+function navResources() {
+  const journalElem = document.querySelector(".nav-list__resources");
+  journalElem.addEventListener("click", () => {
+    app.innerHTML = Resources();
+  });
 }
 
-function navContact(){
-    const contactElem = document.querySelector(".nav-list__contact");
-    contactElem.addEventListener("click", () => {
-       app.innerHTML = Contact();
-    });   
+function navAbout() {
+  const aboutElem = document.querySelector(".nav-list__about");
+  aboutElem.addEventListener("click", () => {
+    app.innerHTML = About();
+  });
+}
+
+function navContact() {
+  const contactElem = document.querySelector(".nav-list__contact");
+  contactElem.addEventListener("click", () => {
+    app.innerHTML = Contact();
+  });
 }

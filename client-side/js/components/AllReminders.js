@@ -4,11 +4,12 @@ export default function Reminders(reminders){
     <div class="api-page-container">
     <p>Reminder info</p>
     <ul>
-    ${reminders.map(reminder => {
+    ${reminders.map(reminders => {
         return `
-        <li class="">${reminder.name}
-            <input type='hidden' id="" value="${reminder.id}</li>`;
+        <li class="">${reminders.name}
+            <input type='hidden' id="" value="${reminders.id}</li>`;
     }).join('')}
-    </ul>    
+    </ul>  
+    </div>  
     `;
 }
