@@ -37,12 +37,20 @@ function navHome(){
 function navReminders(){
     const remindersElem = document.querySelector(".nav-list__reminders");
     remindersElem.addEventListener("click", () => {
-        crud.getRequest("http://localhost:8080/api/reminders", reminders => {
-            console.log(reminders);
-            app.innerHTML = AllReminders(reminders);
+        crud.getRequest("http://localhost:8080/api/reminders", reminder => {
+            app.innerHTML = AllReminders(reminder);
         }
         );
-    });   
+    }); 
+    
+    app.addEventListener("click" , (event) => {
+        if (event.target.classList.contains("add-reminder__submit")){
+            const addReminderName = event.target.parentElement.querySelector(".add-reminder__name").value;
+            crud.postRequest('http://localhost:8080/api/reminders/add-reminder/', {
+                addReminderName: addReminderName
+            }, (reminder) => app.innerHTML = AllReminders(reminder));
+        }
+    } )
 }
 
 function navJournal(){
