@@ -240,13 +240,21 @@ p {
 }
 
 /*contact*/
+.contact-area {
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color: whitesmoke; 
+}
 .contact-div {
-  /* display: grid;
-  grid-template-columns: auto; */
-  /* background-color: whitesmoke; */
+  grid-column: 1/2;
   padding: 50px 10px 10px 10px;
   /* text-indent: 2%; */
   text-align: center; 
+}
+
+.feedback-form {
+  grid-column: 2/3;
+  padding: 90px 10px 10px 10px;
 }
 
 /*footer*/
