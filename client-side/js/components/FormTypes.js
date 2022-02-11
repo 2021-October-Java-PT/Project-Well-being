@@ -1,5 +1,5 @@
-export default function FormTypes(){
-    return`
+export default function FormTypes() {
+  return `
     
     <h1>Daily Questionnaires</h1>
     
@@ -9,12 +9,12 @@ export default function FormTypes(){
     
     <div class="typeButtons">
     <button type="button" class="anxiety-short" id="typeButton">Short Anxiety</button>
-    </div>
+    <button type="button" class="anxiety-long" id="typeButton">Long Anxiety</button>
+    <button type="button" class="depression-short" id="typeButton">Short Depression</button>
+    <button type="button" class="depression-long" id="typeButton">Long Depression</button>
+    <button type="button" class="ptsd" id="typeButton">PTSD</button>
+    </div>  
     
     
-    
-    
-    
-    
-    `
+    `;
 }
