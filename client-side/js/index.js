@@ -64,16 +64,16 @@ function navAllReminders() {
         apiHelpers.getRequest("http://localhost:8080/api/reminders", reminders => {
             app.innerHTML = AllReminders(reminders);
         });
-        renderReminders();
+        renderReminder();
     });
 }
 
-function renderReminders() {
+function renderReminder() {
     app.addEventListener("click", (event) => {
 
         if (event.target.classList.contains("reminder")) {
             const id = event.target.querySelector("#reminder-id").value;
-            apiHelpers.getRequest(`http://localhost:8080/api/reminders/${id}`, (reminder) => {
+            apiHelpers.getRequest(`http://localhost:8080/api/reminders/${id}`, reminder => {
                 app.innerHTML = Reminders(reminder);
 
             });
@@ -108,10 +108,11 @@ function addReminder() {
                 },
                 (reminders) =>
                 (app.innerHTML = AllReminders(reminders))
-            );
+                );
+            }
+            });
         }
-    });
-}
+
 
 
 function returnToAllReminders() {

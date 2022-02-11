@@ -6,12 +6,13 @@ export default function AllReminders(reminders) {
     ${reminders.map(reminder => {
     return `
     <li class="reminder">${reminder.name}
-        <input type='hidden' id="reminder-id" value="${reminder.id}"</li>`;
-    }).join('')};
+        <input type='hidden' id="reminder-id" value="${reminder.id}"</li>`
+    }).join('')}
     </ul> 
     </div>
     <div class="">
     <div class="">
+        <div class=""></div>
             <form class="">
                 <label>Enter a Reminder</label>
                 <input type="text" class="add-reminder__name" placeholder="Enter Name">
