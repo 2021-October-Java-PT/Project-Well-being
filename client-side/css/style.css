@@ -45,7 +45,7 @@ input[type="range"]::-webkit-slider-thumb{
 /*end mood*/
 
 /* calendar */
-table.calendar {
+.calendar {
   border-collapse: collapse;
   background: white;
   color: black;
@@ -53,6 +53,7 @@ table.calendar {
   margin-left: auto;
   margin-right: auto;
   border-spacing: 21em;
+  max-height: 75em;
 }
 
 h2.calendar {
@@ -90,7 +91,7 @@ tr.calendar > td:hover {
 
 .container {
   padding: 25px;
-  height: 1000px;
+  height: 75em;
   margin-bottom: 50px;
 }
 
