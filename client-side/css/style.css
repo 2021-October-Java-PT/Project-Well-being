@@ -1,3 +1,88 @@
+/* mood */
+.wrapper {
+  display: grid;
+}
+
+.mood-container{
+  grid-column: 2/3;
+  height: 250px;
+  width: 600px;
+  margin-bottom: 100px;
+	/* height: 1000px;
+	width: 1000px; */
+  background-color: #A55344;
+}
+
+.mood-content {
+  padding-top: 5%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+input[type="range"]{
+	width: 500px;
+	height: 6px;
+	-webkit-appearance:none;
+	background-color: whitesmoke;
+	border-radius: 6px;
+	outline: none;
+	margin-top: 60px;
+}
+input[type="range"]::-webkit-slider-thumb{
+	-webkit-appearance:none;
+	height: 30px;
+	width: 30px;
+	background-color: whitesmoke;
+	border-radius: 50%;
+	box-shadow: 10px 15px 10px rgba(0,0,0,0.2);
+}
+.material-icons{
+	font-size: 130px;
+	color: rgb(48, 48, 48);
+}
+/*end mood*/
+
+/* calendar */
+table.calendar {
+  border-collapse: collapse;
+  background: white;
+  color: black;
+  background-color: lightgrey;
+  margin-left: auto;
+  margin-right: auto;
+  border-spacing: 21em;
+  max-height: 75em;
+}
+
+h2.calendar {
+  text-align: center;
+  color: rgb(48, 48, 48);
+}
+
+th.calendar {
+  color: white;
+  background-color: #A55344;
+  font-weight: bold;
+}
+
+tr.calendar > td {
+  padding: 15em;
+  font-weight: bold;
+  transition: .5s;
+  max-height: 75em;
+}
+
+tr.calendar > td:hover {
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
+  background-color: #A55344;
+  border-radius: 25%;
+}
+/* calendar end */
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -7,7 +92,7 @@
 
 .container {
   padding: 25px;
-  height: 1000px;
+  height: 75em;
   margin-bottom: 50px;
 }
 
@@ -157,13 +242,21 @@ p {
 }
 
 /*contact*/
+.contact-area {
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color: whitesmoke; 
+}
 .contact-div {
-  /* display: grid;
-  grid-template-columns: auto; */
-  /* background-color: whitesmoke; */
+  grid-column: 1/2;
   padding: 50px 10px 10px 10px;
   /* text-indent: 2%; */
   text-align: center; 
+}
+
+.feedback-form {
+  grid-column: 2/3;
+  padding: 90px 10px 10px 10px;
 }
 
 /*footer*/
@@ -242,7 +335,7 @@ p {
     border-radius: 10px;
     background: rgb(48, 48, 48);
   }
-
+  
   .navbar-container .hamburger-menu .line1 {
     transform-origin: 0% 0%;
     transition: transform 0.4s ease-in-out;
