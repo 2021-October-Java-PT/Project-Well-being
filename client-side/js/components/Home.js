@@ -1,47 +1,46 @@
-export default function Home(){
-    return`
-    <title>UnBoxed Thoughts</title>
-</head>
-<body class="homeBody">
+import alarm from "../../assets/alarm2.jpg";
+import journal from "../../assets/journaling.jpg";
+import resources from "../../assets/resources.jpg";
 
-    <div class="container">
-    <div id="app">
-        <h1>Page Title</h1>
-
-        
-
-        
-        <p>Bacon ipsum dolor amet flank rump turducken frankfurter short ribs, landjaeger jerky tenderloin beef ribs drumstick pork chop tongue pastrami. Meatball jerky fatback porchetta biltong filet mignon shoulder spare ribs. Jerky alcatra cupim kielbasa swine, strip steak spare ribs. Swine buffalo flank pastrami. Chislic hamburger pancetta chuck pork loin, t-bone doner short loin meatball ribeye shoulder shankle alcatra.</p>
-
-            <p>Pork loin pastrami tri-tip ground round tenderloin ball tip jowl. Flank bresaola beef salami cupim pork belly boudin alcatra. Alcatra chuck tail pig ball tip bresaola chislic tri-tip venison sirloin. Pancetta ribeye short ribs kevin. Salami alcatra tri-tip chislic ball tip porchetta pancetta.</p>
-            
-            <p>Strip steak ball tip capicola t-bone hamburger shankle bresaola beef. Meatloaf ham hock rump pork loin, sirloin beef kielbasa chicken kevin. Ham hock pork pork loin jowl doner. Ground round tail frankfurter, bacon chuck rump turkey short ribs leberkas. Ribeye tri-tip rump, chislic chicken beef ribs tongue beef corned beef fatback pork belly pork.</p>
-            
-            <p>Pastrami biltong burgdoggen frankfurter. Shankle meatloaf leberkas capicola sausage turducken flank shank burgdoggen strip steak bacon shoulder salami. Andouille pancetta pork belly, capicola prosciutto sausage beef ribs beef alcatra pig tenderloin chislic landjaeger jowl. Boudin beef ribs tenderloin jerky ribeye fatback pork loin pig swine pork ground round tri-tip pastrami. Tail corned beef pork loin salami burgdoggen. Pig chuck strip steak jerky, capicola salami short ribs burgdoggen frankfurter andouille ham hock. Chicken pork loin corned beef, ham kielbasa t-bone cupim.</p>
-            
-            <p>Brisket tail frankfurter picanha cow, chicken meatball kevin salami pancetta landjaeger. Ham swine cow bacon brisket, pork loin t-bone turducken ground round. Turducken chuck rump, pork tenderloin cupim pancetta spare ribs pork loin. Pork loin shank ham ham hock tail boudin ball tip beef sirloin cow shankle kevin prosciutto ground round landjaeger. Kielbasa tongue short loin pig leberkas cupim kevin, meatloaf flank chuck bresaola short ribs alcatra.</p>
-                    <p>Bacon ipsum dolor amet flank rump turducken frankfurter short ribs, landjaeger jerky tenderloin beef ribs drumstick pork chop tongue pastrami. Meatball jerky fatback porchetta biltong filet mignon shoulder spare ribs. Jerky alcatra cupim kielbasa swine, strip steak spare ribs. Swine buffalo flank pastrami. Chislic hamburger pancetta chuck pork loin, t-bone doner short loin meatball ribeye shoulder shankle alcatra.</p>
-
-            <p>Pork loin pastrami tri-tip ground round tenderloin ball tip jowl. Flank bresaola beef salami cupim pork belly boudin alcatra. Alcatra chuck tail pig ball tip bresaola chislic tri-tip venison sirloin. Pancetta ribeye short ribs kevin. Salami alcatra tri-tip chislic ball tip porchetta pancetta.</p>
-            
-            <p>Strip steak ball tip capicola t-bone hamburger shankle bresaola beef. Meatloaf ham hock rump pork loin, sirloin beef kielbasa chicken kevin. Ham hock pork pork loin jowl doner. Ground round tail frankfurter, bacon chuck rump turkey short ribs leberkas. Ribeye tri-tip rump, chislic chicken beef ribs tongue beef corned beef fatback pork belly pork.</p>
-            
-            <p>Pastrami biltong burgdoggen frankfurter. Shankle meatloaf leberkas capicola sausage turducken flank shank burgdoggen strip steak bacon shoulder salami. Andouille pancetta pork belly, capicola prosciutto sausage beef ribs beef alcatra pig tenderloin chislic landjaeger jowl. Boudin beef ribs tenderloin jerky ribeye fatback pork loin pig swine pork ground round tri-tip pastrami. Tail corned beef pork loin salami burgdoggen. Pig chuck strip steak jerky, capicola salami short ribs burgdoggen frankfurter andouille ham hock. Chicken pork loin corned beef, ham kielbasa t-bone cupim.</p>
-            
-            <p>Brisket tail frankfurter picanha cow, chicken meatball kevin salami pancetta landjaeger. Ham swine cow bacon brisket, pork loin t-bone turducken ground round. Turducken chuck rump, pork tenderloin cupim pancetta spare ribs pork loin. Pork loin shank ham ham hock tail boudin ball tip beef sirloin cow shankle kevin prosciutto ground round landjaeger. Kielbasa tongue short loin pig leberkas cupim kevin, meatloaf flank chuck bresaola short ribs alcatra.</p>
-
-            <p>Bacon ipsum dolor amet flank rump turducken frankfurter short ribs, landjaeger jerky tenderloin beef ribs drumstick pork chop tongue pastrami. Meatball jerky fatback porchetta biltong filet mignon shoulder spare ribs. Jerky alcatra cupim kielbasa swine, strip steak spare ribs. Swine buffalo flank pastrami. Chislic hamburger pancetta chuck pork loin, t-bone doner short loin meatball ribeye shoulder shankle alcatra.</p>
-
-            <p>Pork loin pastrami tri-tip ground round tenderloin ball tip jowl. Flank bresaola beef salami cupim pork belly boudin alcatra. Alcatra chuck tail pig ball tip bresaola chislic tri-tip venison sirloin. Pancetta ribeye short ribs kevin. Salami alcatra tri-tip chislic ball tip porchetta pancetta.</p>
-            
-            <p>Strip steak ball tip capicola t-bone hamburger shankle bresaola beef. Meatloaf ham hock rump pork loin, sirloin beef kielbasa chicken kevin. Ham hock pork pork loin jowl doner. Ground round tail frankfurter, bacon chuck rump turkey short ribs leberkas. Ribeye tri-tip rump, chislic chicken beef ribs tongue beef corned beef fatback pork belly pork.</p>
-            
-            <p>Pastrami biltong burgdoggen frankfurter. Shankle meatloaf leberkas capicola sausage turducken flank shank burgdoggen strip steak bacon shoulder salami. Andouille pancetta pork belly, capicola prosciutto sausage beef ribs beef alcatra pig tenderloin chislic landjaeger jowl. Boudin beef ribs tenderloin jerky ribeye fatback pork loin pig swine pork ground round tri-tip pastrami. Tail corned beef pork loin salami burgdoggen. Pig chuck strip steak jerky, capicola salami short ribs burgdoggen frankfurter andouille ham hock. Chicken pork loin corned beef, ham kielbasa t-bone cupim.</p>
-            
-            <p>Brisket tail frankfurter picanha cow, chicken meatball kevin salami pancetta landjaeger. Ham swine cow bacon brisket, pork loin t-bone turducken ground round. Turducken chuck rump, pork tenderloin cupim pancetta spare ribs pork loin. Pork loin shank ham ham hock tail boudin ball tip beef sirloin cow shankle kevin prosciutto ground round landjaeger. Kielbasa tongue short loin pig leberkas cupim kevin, meatloaf flank chuck bresaola short ribs alcatra.</p>
-
-    
+export default function Home() {
+    return `
+    <div class="container" id="app">
+    <section class="home-area" id="home">
+    <div class="home-container">
+      <h1 class="main-title" id="home">Unbox Your Thoughts</h1>
+      <h2>You Matter</h2>
+      <btn class="checkin btn btn-primary">Checkin</btn>
     </div>
+    <div id="services">
+    <div class="services-div">
+        <div class="services-item" id="service-one">
+        <article class="section-one">
+        <h2 class="subheading">Guided Journaling</h2>
+        <img class=articleImg src="${journal}" alt="Img One">
+        <p class="infoPara">Guided journaling can help improve<br> your well-being
+        through structured,<br> reflective prompts and relative questions.</p>
+        </article> 
+        </div>
+        <div class="services-item" id="service-two">
+        <article class="section-two">
+        <h2 class="subheading">Daily Reminders & Affirmations</h2>
+        <img class=articleImg src="${alarm}" alt="Img Two">
+        <p class="infoPara">Rewire your brain, build self-esteem and<br>
+        change negative thought patterns with daily reminders<br> and affirmations 
+        about what you are capable of.</p><br>
+        </article> 
+        </div>
+        <div class="services-item" id="service-three">
+        <article class="section-three">
+        <h2 class="subheading">Resources</h2>
+        <img class=articleImg src="${resources}" alt="Img Three">
+        <p class="infoPara">Browse or search for materials,<br>
+        and other resources necessary<br> for your journey.</p>
+        </article> 
+        </div>
+    </div>
+    </div>
+    </section>
     </div>
     `;
 }
