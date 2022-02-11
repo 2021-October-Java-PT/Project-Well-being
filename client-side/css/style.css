@@ -53,6 +53,7 @@ table.calendar {
   margin-left: auto;
   margin-right: auto;
   border-spacing: 21em;
+  max-height: 75em;
 }
 
 h2.calendar {
@@ -70,6 +71,7 @@ tr.calendar > td {
   padding: 15em;
   font-weight: bold;
   transition: .5s;
+  max-height: 75em;
 }
 
 tr.calendar > td:hover {
@@ -90,7 +92,7 @@ tr.calendar > td:hover {
 
 .container {
   padding: 25px;
-  height: 1000px;
+  height: 75em;
   margin-bottom: 50px;
 }
 
