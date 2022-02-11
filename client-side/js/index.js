@@ -4,6 +4,7 @@ import About from "./components/About";
 import AllReminders from "./components/AllReminders";
 import Contact from "./components/Contact";
 import Form from "./components/Form";
+import FormTypes from "./components/FormTypes"
 import Home from "./components/Home";
 import Journal from "./components/Journal";
 import Reminders from "./components/Reminders";
@@ -41,9 +42,6 @@ function navHome() {
 function checkin() {
   const checkin = document.querySelector(".checkin");
   checkin.addEventListener("click", () => {
-    crud.getRequest("http://localhost:8080/api/forms", (forms) => {
-      app.innerHTML = Form();
-    });
   });
 }
 
@@ -83,4 +81,13 @@ function navContact() {
   contactElem.addEventListener("click", () => {
     app.innerHTML = Contact();
   });
+}
+
+function displayForm(){
+  const formElem = document.querySelector("#app");
+  formElem.addEventListener("click", (event)=>{
+    if(event.target.classList.contains("anxiety-short")) {
+      app.innerHTML = Form();
+    }
+  })
 }
