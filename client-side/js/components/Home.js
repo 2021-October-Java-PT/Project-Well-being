@@ -9,8 +9,25 @@ export default function Home() {
     <div class="home-container">
       <h1 class="main-title" id="home">Unbox Your Thoughts</h1>
       <h2>You Matter</h2>
-      <btn class="checkin btn btn-primary">Checkin</btn>
+      <btn class="checkin btn btn-primary" id="myBtn">Checkin</btn>
     </div>
+    <div id="myModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h3>Modal Header</h3>
+      </div>
+      <div class="modal-body mood-content">
+        <i class="material-icons" id="emoji">sentiment_satisfied</i>
+        <input type="range" min="0" max="4" value="2" id="slider">
+        <br><br>
+        <button class="nextCheckin">Next</button>
+      </div>
+      <div class="modal-footer">
+        <h3>Modal Footer</h3>
+      </div>
+    </div>
+  </div>
     <div id="services">
     <div class="services-div">
         <div class="services-item" id="service-one">
