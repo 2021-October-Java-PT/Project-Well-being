@@ -1,7 +1,7 @@
 export default function ShortAnxiety() {
     return `
     <div class="form-container">
-    <h1>Short Anxiety Questionnaire</h1>
+    <h1>Daily Anxiety Questionnaire</h1>
      <h3>Over the last 24 hours, how often have you been bothered by the following problems?</h3>
         <ul>
             <li>Feeling nervous, anxious or on edge</li>

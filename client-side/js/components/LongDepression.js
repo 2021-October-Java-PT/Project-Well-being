@@ -1,7 +1,7 @@
 export default function LongDepression(){
     return `
     <div class="form-container">
-    <h1>Long Depression Questionnaire</h1>
+    <h1>Weekly Depression Questionnaire</h1>
      <h3>Over the last Week, how often have you been bothered by the following problems?</h3>
         <ul>
             <li>Little interest or pleasure in doing things</li>
