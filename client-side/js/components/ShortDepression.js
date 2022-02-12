@@ -30,7 +30,7 @@ export default function ShortDepression(){
       <input type="radio" id="3" value="3">
       <label for="3">All day</label><br>
   
-  
+      <button class="lastCheckin">Next</button>
   
   `;
   }

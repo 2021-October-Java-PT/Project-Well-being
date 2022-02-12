@@ -121,7 +121,7 @@ export default function LongDepression(){
             <input type="radio" id="3" value="3">
             <label for="3">All week</label><br>
         </ul>       
-    
+        <button class="lastCheckin">Next</button>
     </div>  
     `;
   }

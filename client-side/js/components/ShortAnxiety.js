@@ -32,7 +32,7 @@ export default function ShortAnxiety() {
 
         </ul>
         
-    
+        <button class="lastCheckin">Next</button>
     </div>  
     `;
   }

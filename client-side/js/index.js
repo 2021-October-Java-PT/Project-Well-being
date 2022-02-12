@@ -88,7 +88,15 @@ function displayForm(){
         }else if(event.target.classList.contains("ptsd")){
             app.innerHTML = Ptsd();
         }
+        displayJournal();
     });
+}
+
+function displayJournal(){
+  app.addEventListener("click",(event)=>{
+   if(event.target.classList.contains("lastCheckin")){
+      app.innerHTML = Journal();
+  }});
 }
 
 function navReminders() {

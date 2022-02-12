@@ -1,5 +1,5 @@
-export default function Mood(){
-    return `
+export default function Mood() {
+  return `
     <div class="container" id="app">
     <div class="wrapper">
     <div class="mood-container" id="">
@@ -15,5 +15,3 @@ export default function Mood(){
     </div>
     `;
 }
-
-

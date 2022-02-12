@@ -102,7 +102,7 @@ return `
 
 
     </ul>
-    
+    <button class="lastCheckin">Next</button>
 
 </div>  
 `;
