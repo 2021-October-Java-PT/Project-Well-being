@@ -28,10 +28,17 @@ public class Populator implements CommandLineRunner {
         remindersRepo.save(lunch);
         remindersRepo.save(dinner);
 
-        FormsResource anxiety2_1 = new FormsResource("Anxiety-short", "The Anxiety Short form is a very brief and easy to perform initial screening tool for generalized anxiety disorder", "Feeling nervous, anxious or on edge", 0);
-        FormsResource anxiety2_2 = new FormsResource("Anxiety-short", "The Anxiety Short form is a very brief and easy to perform initial screening tool for generalized anxiety disorder", "Not being able to stop or control worrying", 0);
+        FormsResource anxietyShort = new FormsResource("anxiety-short", 0);
+        FormsResource anxietyLong = new FormsResource("anxiety-long",0);
+        FormsResource depressionShort = new FormsResource("depression-short",0);
+        FormsResource depressionLong = new FormsResource("depression-long",0);
+        FormsResource ptsd = new FormsResource("ptsd",0);
 
-        formsRepo.save(anxiety2_1);
-        formsRepo.save(anxiety2_2);
+        formsRepo.save(anxietyShort);
+        formsRepo.save(anxietyLong);
+        formsRepo.save(depressionShort);
+        formsRepo.save(depressionLong);
+        formsRepo.save(ptsd);
+
     }
 }
