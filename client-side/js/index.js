@@ -42,7 +42,7 @@ function navHome() {
   const homeElem = document.querySelector(".nav-list__home");
   homeElem.addEventListener("click", () => {
     app.innerHTML = Home();
-    app.insertAdjacentHTML("afterend", Mood());
+    app.insertAdjacentHTML("beforeend", Mood());
     app.insertAdjacentHTML("beforeend", FormTypes());
     checkin();
   });
@@ -66,11 +66,11 @@ function checkin() {
         }
 
         // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-        }
+        // window.onclick = function(event) {
+        // if (event.target == modal) {
+        //     modal.style.display = "none";
+        // }
+        // }
 
     /*slider*/
      var slider = document.getElementById("slider");
@@ -101,13 +101,14 @@ function checkin() {
             }
     
             // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-            }
+            // window.onclick = function(event) {
+            // if (event.target == modal) {
+            //     modal.style.display = "none";
+            // }
+            // }
+            displayForm();
     }
-    checkin();
+   // checkin();
   });
 }
 
@@ -177,14 +178,14 @@ function returnToAllReminders() {
   });
 }
 
-// function formTypes() {
-//   app.addEventListener("click", (event) => {
-//     if (event.target.classList.contains("nextCheckin")) {
-//       app.innerHTML = FormTypes();
-//     }
-//     displayForm();
-//   });
-// }
+function formTypes() {
+  app.addEventListener("click", (event) => {
+    if (event.target.classList.contains("nextCheckin")) {
+      app.innerHTML = FormTypes();
+    }
+    displayForm();
+  });
+}
 
 function displayForm(){
     app.addEventListener("click", (event)=>{

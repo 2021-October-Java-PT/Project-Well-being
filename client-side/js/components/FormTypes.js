@@ -15,7 +15,6 @@ export default function FormTypes() {
         <button type="button" class="depression-long" id="typeButton">Weekly Depression</button>
         <button type="button" class="ptsd" id="typeButton">PTSD</button>
         </div>  
-          <button class="nextCheckin">Next</button>
       </div>
       <div class="modal-footer">
         <h3>Modal Footer</h3>
@@ -25,7 +24,7 @@ export default function FormTypes() {
     `;
 }
 
-{/* <h1>Daily Questionnaires</h1>
+/* <h1>Daily Questionnaires</h1>
 <h3>Choose the best survey that meets your needs</h3>
 
 <div class="typeButtons">
@@ -34,4 +33,4 @@ export default function FormTypes() {
 <button type="button" class="depression-short" id="typeButton">Daily Depression</button>
 <button type="button" class="depression-long" id="typeButton">Weekly Depression</button>
 <button type="button" class="ptsd" id="typeButton">PTSD</button>
-</div>  */}
+</div>  */

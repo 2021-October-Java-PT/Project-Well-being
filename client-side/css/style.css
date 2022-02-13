@@ -58,6 +58,7 @@
   padding: 2px 16px;
   background-color: #A55344;
   color: whitesmoke;
+  text-align: center;
 }
 
 .modal-body {
@@ -68,6 +69,7 @@
   padding: 2px 16px;
   background-color: #A55344;
   color: whitesmoke;
+  text-align: center;
 }
 
 
@@ -86,7 +88,8 @@
   /* background-color: #A55344;
 }  */
 
-.mood-content {
+.mood-content,
+.form-content {
 	display: flex;
 	align-items: center;
 	justify-content: center;

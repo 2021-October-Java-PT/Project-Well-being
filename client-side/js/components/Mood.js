@@ -4,7 +4,7 @@ export default function Mood(){
     <div class="modal-content" id="modal-mood-content">
       <div class="modal-header">
         <span class="close">&times;</span>
-        <h3>Modal Header</h3>
+        <h3>Feeling Scale</h3>
       </div>
       <div class="modal-body mood-content">
         <i class="material-icons" id="emoji">sentiment_satisfied</i>
