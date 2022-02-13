@@ -3,8 +3,10 @@ package org.wecancodeit.serverside;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.wecancodeit.serverside.models.FormsResource;
+import org.wecancodeit.serverside.models.JournalResource;
 import org.wecancodeit.serverside.models.RemindersResource;
 import org.wecancodeit.serverside.repos.FormsRepository;
+import org.wecancodeit.serverside.repos.JournalRepository;
 import org.wecancodeit.serverside.repos.RemindersRepository;
 
 import javax.annotation.Resource;
@@ -17,6 +19,9 @@ public class Populator implements CommandLineRunner {
 
     @Resource
     private FormsRepository formsRepo;
+
+    @Resource
+    private JournalRepository journalRepo;
 
     @Override
     public void run(String...args) throws Exception {
@@ -39,6 +44,16 @@ public class Populator implements CommandLineRunner {
         formsRepo.save(depressionShort);
         formsRepo.save(depressionLong);
         formsRepo.save(ptsd);
+
+        JournalResource one = new JournalResource(20220113, "kjdgkjhsdlkgjhdlkjghlkdfgh");
+        JournalResource two = new JournalResource(20220131, "jhsdguuisehrnghjsdnfgynk");
+        JournalResource three = new JournalResource(20211231, "khjdhfgjkhkjhdfhsgdhghj");
+        JournalResource four = new JournalResource(20220201, "khdkfjghkshdfkghkskdjhg");
+
+        journalRepo.save(one);
+        journalRepo.save(two);
+        journalRepo.save(three);
+        journalRepo.save(four);
 
     }
 }

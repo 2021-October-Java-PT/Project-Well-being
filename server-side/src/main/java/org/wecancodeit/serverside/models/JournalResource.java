@@ -10,14 +10,19 @@ public class JournalResource {
     @Id
     @GeneratedValue
     private Long id;
-    private String date;
+    private int date;
     private String content;
 
     public JournalResource(){
 
     }
 
-    public JournalResource(String date, String content){
+    public JournalResource (JournalBody journalBody){
+        this.date = journalBody.getDate();
+        this.content = journalBody.getContent();
+    }
+
+    public JournalResource(int date, String content){
         this.date = date;
         this.content = content;
     }
@@ -26,7 +31,7 @@ public class JournalResource {
         return id;
     }
 
-    public String getDate() {
+    public int getDate() {
         return date;
     }
 

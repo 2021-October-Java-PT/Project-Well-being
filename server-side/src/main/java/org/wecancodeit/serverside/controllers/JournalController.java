@@ -1,11 +1,11 @@
 package org.wecancodeit.serverside.controllers;
 
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.json.JSONException;
+import org.springframework.web.bind.annotation.*;
+import org.wecancodeit.serverside.models.JournalBody;
 import org.wecancodeit.serverside.models.JournalResource;
+import org.wecancodeit.serverside.models.RemindersResource;
 import org.wecancodeit.serverside.repos.JournalRepository;
 
 import javax.annotation.Resource;
@@ -29,5 +29,21 @@ public class JournalController {
         return journalRepo.findById(id);
     }
 
+    @PostMapping("/api/journals/add-journal")
+    public Collection<JournalResource> addJournalEntry(@RequestBody JournalBody journals) {
+        JournalResource journalEntryToAdd = new JournalResource(journals);
+        journalRepo.save(journalEntryToAdd);
+
+        return (Collection<JournalResource>) journalRepo.findAll();
+    }
+
+    @DeleteMapping("/api/journals/{id}/delete-journal")
+    public Collection<JournalResource> deleteJournal(@PathVariable Long id) throws JSONException {
+        Optional<JournalResource> journalToRemove = journalRepo.findById(id);
+        if (journalToRemove.isPresent()){
+            journalRepo.delete(journalToRemove.get());
+        }
+        return (Collection<JournalResource>) journalRepo.findAll();
+    }
 
 }
