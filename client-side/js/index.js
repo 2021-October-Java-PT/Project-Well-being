@@ -29,6 +29,7 @@ function buildPage() {
   navAbout();
   navContact();
   navResources();
+  currentReminder();
 }
 
 function renderHome() {
@@ -101,9 +102,13 @@ function displayJournal(){
 
 function navReminders() {
   const remindersElem = document.querySelector(".nav-list__reminders");
+
+  var myList = document.getElementById("mylist");
+  document.getElementById("reminder").value = myList.options[myList.selectedIndex].text;
   remindersElem.addEventListener("click", () => {
     crud.getRequest("http://localhost:8080/api/reminders", (reminders) => {
       console.log(reminders);
+      currentReminder();
       app.innerHTML = AllReminders(reminders);
     });
   });
@@ -135,4 +140,10 @@ function navContact() {
   contactElem.addEventListener("click", () => {
     app.innerHTML = Contact();
   });
+}
+
+function currentReminder(){
+  console.log('current reminder firing')
+  var myList = document.getElementById("mylist");
+  document.getElementById("reminder").value = myList.options[myList.selectedIndex].text;
 }

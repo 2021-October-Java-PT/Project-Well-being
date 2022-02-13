@@ -2,6 +2,24 @@ export default function AllReminders(reminders) {
     return `
     <div class="api-page-container">
     <p>Reminder info</p>
+
+    <div class="reminderForm">
+    <form>
+    <b> select the reminder you want to create:</b>
+    <select id = "myList" onchange = "currentReminder()">
+        <option> ---Choose Reminder--- </option>
+        <option>Calendar Event</option>
+        <option>Alarm clock Event (example)</option>
+        <option>Doctor Appointment (example)</option>
+        <option>Meal Plan (example)</option>
+        <option>Walking Workout Plan (example)</option>
+    </select>
+    <p> Your Selected reminder is: 
+        <input type = "text" id = "reminder" size = "20" </p>
+        
+    </form>
+    </div>
+    
     <ul>
     ${reminders.map(reminder => {
     return `
