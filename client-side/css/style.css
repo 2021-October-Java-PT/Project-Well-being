@@ -147,6 +147,7 @@ tr.calendar > td {
   padding: 15em;
   font-weight: bold;
   transition: .5s;
+  max-height: 75em;
 }
 
 tr.calendar > td:hover {
@@ -332,6 +333,32 @@ p {
 .feedback-form {
   grid-column: 2/3;
   padding: 90px 10px 10px 10px;
+}
+
+/*about*/
+.container-about {
+  padding-top: 5%;
+  text-align: center;
+}
+
+.bios {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.bios>section {
+  padding: 5%;
+}
+
+#github,
+#linkedin {
+  height: 25px;
+  text-decoration: none;
+}
+
+.headshot {
+  height: 200px;
 }
 
 /*footer*/
