@@ -4,7 +4,14 @@ export default function Journal(){
     return `
     <div class="container" id="app">
         <h1 class="journal">Journal Entry</h1>
-        <p class="journal">Description of journaling</p>
+        <p class="journal">Journaling about your feelings is linked to decreased mental distress. In a study, 
+        researchers found that those with various medical conditions and anxiety who wrote online for 15 minutes 
+        three days a week over a 12-week period had increased feelings of well-being and fewer depressive symptoms 
+        after one month. Their mental well-being continued to improve during the 12 weeks of journaling.
+        <a href="https://www.webmd.com/mental-health/mental-health-benefits-of-journaling#091e9c5e8214c88b-2-4">
+        Article</a>
+        </p>
+        <br>        
         <img  class="journal-entry-img" src="${journal}" alt="journal">
         <form class="journal">
             <label for="date">Date:</label><br>
