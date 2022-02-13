@@ -1,13 +1,13 @@
-export default function Reminders(reminders){
-    console.log('reminder page')
+export default function AllReminders(reminders) {
     return `
     <div class="api-page-container">
     <p>Reminder info</p>
     <ul>
-    ${reminders.map(reminders => {
-        return `
-        <li class="">${reminders.name}
-            <input type='hidden' id="" value="${reminders.id}</li>`;
+    ${reminders.map(reminder => {
+    return `
+    <li class="reminder">${reminder.name}
+        <input type='hidden' id="reminder-id" value="${reminder.id}"</li>
+        `;
     }).join('')}
     </ul> 
     <h2 class="calendar">
