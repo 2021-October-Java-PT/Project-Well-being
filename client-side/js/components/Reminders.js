@@ -4,5 +4,5 @@ export default function Reminders(reminders){
     <div class="container" id="app">
     <h1>Reminder test</h1>
     </div>
-    `;
+     `;
 }
