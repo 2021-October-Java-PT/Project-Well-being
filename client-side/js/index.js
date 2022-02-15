@@ -187,8 +187,8 @@ function addReminder() {
 function deleteReminder(){
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("reminder-delete")){
-            const id = event.target.querySelector("#reminder-id").value;
-            apiHelpers.deleteRequest(`http://localhost:8080/api/reminders/${id}/delete-reminder`, reminders => {
+            const deleteReminderId = event.target.parentElement.querySelector(".reminder-id").value;
+            apiHelpers.deleteRequest(`http://localhost:8080/api/reminders/${deleteReminderId}/delete-reminder`, reminders => {
                 app.innerHTML = AllReminders(reminders);
             });
         }
