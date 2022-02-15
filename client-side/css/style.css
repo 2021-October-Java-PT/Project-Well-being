@@ -383,6 +383,12 @@ p {
   color: whitesmoke;
 }
 
+.resources_list{
+  margin: 5rem;
+  padding: 5rem;
+
+}
+
 /* media query */
 @media (max-width: 768px) {
   body {
