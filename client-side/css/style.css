@@ -1,6 +1,75 @@
-/* mood */
-.wrapper {
-  display: grid;
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: whitesmoke;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: whitesmoke;
+  float: right;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(48, 48, 48);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #A55344;
+  color: whitesmoke;
+  text-align: center;
+}
+
+.modal-body {
+  padding: 5px 16px;
+}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #A55344;
+  color: whitesmoke;
+  text-align: center;
 }
 
 .mood-container {
@@ -10,39 +79,47 @@
   margin-bottom: 100px;
   /* height: 1000px;
 	width: 1000px; */
-  background-color: #a55344;
+   /* background-color: #A55344; */
+} 
+
+.mood-content,
+.form-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+  padding-bottom: 2%;
 }
 
-.mood-content {
-  padding-top: 5%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+input[type="range"]{
+	width: 500px;
+	height: 6px;
+	-webkit-appearance:none;
+	background-color: rgb(48, 48, 48);
+	border-radius: 6px;
+	outline: none;
+	margin-top: 25px;
 }
 
-input[type="range"] {
-  width: 500px;
-  height: 6px;
-  -webkit-appearance: none;
-  background-color: whitesmoke;
-  border-radius: 6px;
-  outline: none;
-  margin-top: 60px;
+input[type="range"]::-webkit-slider-thumb{
+	-webkit-appearance:none;
+	height: 30px;
+	width: 30px;
+	background-color: rgb(48, 48, 48);
+	border-radius: 50%;
+	box-shadow: 10px 15px 10px rgba(0,0,0,0.2);
 }
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  height: 30px;
-  width: 30px;
-  background-color: whitesmoke;
-  border-radius: 50%;
-  box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.2);
-}
-.material-icons {
-  font-size: 130px;
-  color: rgb(48, 48, 48);
+
+.material-icons{
+  padding-top: 2%;
+	font-size: 130px;
+	color: rgb(48, 48, 48);
 }
 /*end mood*/
+
+.form-container ul {
+  list-style: none;
+}
 
 /* calendar */
 table.calendar {
