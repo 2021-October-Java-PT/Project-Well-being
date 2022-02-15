@@ -137,7 +137,7 @@ function navAllReminders() {
         });
         renderReminder();
         addReminder();
-        deleteReminder();
+        
     });
 }
 
@@ -149,6 +149,7 @@ function renderReminder() {
                 app.innerHTML = Reminders(reminder);
             });
             returnToAllReminders();
+            deleteReminder();
         }
     });
 }
@@ -186,6 +187,7 @@ function addReminder() {
 function deleteReminder(){
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("reminder-delete")){
+            const id = event.target.querySelector("#reminder-id").value;
             apiHelpers.deleteRequest(`http://localhost:8080/api/reminders/${id}/delete-reminder`, reminders => {
                 app.innerHTML = AllReminders(reminders);
             });
