@@ -32,84 +32,101 @@ function buildPage() {
 }
 
 function renderHome() {
-  app.innerHTML = Home();
-  app.insertAdjacentHTML("beforeend", Mood());
-  app.insertAdjacentHTML("beforeend", FormTypes());
-  checkin();
+    app.innerHTML = Home();
+    //   app.insertAdjacentHTML("beforeend", Mood());
+    //   app.insertAdjacentHTML("beforeend", FormTypes());
+    checkin();
 }
 
 function navHome() {
-  const homeElem = document.querySelector(".nav-list__home");
-  homeElem.addEventListener("click", () => {
-    app.innerHTML = Home();
-    app.insertAdjacentHTML("beforeend", Mood());
-    app.insertAdjacentHTML("beforeend", FormTypes());
-    checkin();
-  });
+    const homeElem = document.querySelector(".nav-list__home");
+    homeElem.addEventListener("click", () => {
+        app.innerHTML = Home();
+        // app.insertAdjacentHTML("beforeend", Mood());
+        // app.insertAdjacentHTML("beforeend", FormTypes());
+        checkin();
+        location.reload();
+    });
+}
+
+//Checkin
+// Get the modal
+const modal = document.querySelector("#myModal");
+const modalBody = document.querySelector(".modal-body");
+
+// Get the <span> element that closes the modal
+const btn = document.getElementById("modal-close");
+
+// When the user clicks on <span> (x), close the modal
+btn.onclick = function () {
+    modal.style.display = "none";
 }
 
 function checkin() {
-  app.addEventListener("click", (event) => {
-    //const checkin = document.querySelector(".checkin");
-     // checkin.addEventListener("click", () => {
-    if (event.target.classList.contains("checkin")) {
-      var modal = document.getElementById("myModal");
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-        function open() {
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("checkin")) {
+            //const checkin = document.querySelector(".checkin");
+            // When the user clicks on the button, open the modal
+            //checkin.onclick = function() {
             modal.style.display = "block";
-        }
-        open();
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
+            modalBody.innerHTML = Mood();
 
-        // When the user clicks anywhere outside of the modal, close it
-        // window.onclick = function(event) {
-        // if (event.target == modal) {
-        //     modal.style.display = "none";
-        // }
-        // }
 
-    /*slider*/
-     var slider = document.getElementById("slider");
-     var emoji = document.getElementById("emoji");
-     var emoticons = ["mood_bad",
-         "sentiment_very_dissatisfied",
-         "sentiment_satisfied",
-         "sentiment_satisfied_alt",
-         "sentiment_very_satisfied"
-     ];
+            /*slider*/
+            const slider = document.getElementById("slider");
+            const emoji = document.getElementById("emoji");
+            const emoticons = ["mood_bad",
+                "sentiment_very_dissatisfied",
+                "sentiment_satisfied",
+                "sentiment_satisfied_alt",
+                "sentiment_very_satisfied"
+            ];
 
-     slider.oninput = function () {
-         emoji.innerHTML = emoticons[slider.value];
-         console.log(slider.value);
-      }
-    } else if (event.target.classList.contains("nextCheckin")) {
-            // Get the modal
-            var modal = document.getElementById("myModal1");
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[1];
-            function open() {
-                modal.style.display = "block";
+            slider.oninput = function () {
+                emoji.innerHTML = emoticons[slider.value];
+                console.log(slider.value);
             }
-            open();
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function() {
-                modal.style.display = "none";
-            }
-    
-            // When the user clicks anywhere outside of the modal, close it
-            // window.onclick = function(event) {
-            // if (event.target == modal) {
-            //     modal.style.display = "none";
-            // }
-            // }
-            displayForm();
-    }
-   // checkin();
-  });
+        }
+        formTypes();
+    });
+}
+
+
+function formTypes() {
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("nextCheckin")) {
+            //const nextCheckin = document.querySelector(".");
+            // nextCheckin.onclick = function() {
+            modal.style.display = "block";
+            modalBody.innerHTML = FormTypes();
+        }
+        displayForm();
+    });
+}
+
+function displayForm() {
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("anxiety-short")) {
+            modalBody.innerHTML = ShortAnxiety();
+        } else if (event.target.classList.contains("anxiety-long")) {
+            modalBody.innerHTML = LongAnxiety();
+        } else if (event.target.classList.contains("depression-short")) {
+            modalBody.innerHTML = ShortDepression();
+        } else if (event.target.classList.contains("depression-long")) {
+            modalBody.innerHTML = LongDepression();
+        } else if (event.target.classList.contains("ptsd")) {
+            modalBody.innerHTML = Ptsd();
+        }
+        displayJournal();
+    });
+}
+
+function displayJournal() {
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("lastCheckin")) {
+            modalBody.innerHTML = Journal();
+        }
+    });
 }
 
 function navAllReminders() {
@@ -158,12 +175,12 @@ function addReminder() {
                     priority: addResourcePriority,
                     description: addResourceDescription,
                 },
-                reminders => {  
-                  app.innerHTML = AllReminders(reminders);
+                reminders => {
+                    app.innerHTML = AllReminders(reminders);
                 });
-            }
-            });
         }
+    });
+}
 
 function returnToAllReminders() {
     app.addEventListener("click", (event) => {
@@ -175,66 +192,33 @@ function returnToAllReminders() {
                 }
             );
         }
-  });
-}
-
-function formTypes() {
-  app.addEventListener("click", (event) => {
-    if (event.target.classList.contains("nextCheckin")) {
-      app.innerHTML = FormTypes();
-    }
-    displayForm();
-  });
-}
-
-function displayForm(){
-    app.addEventListener("click", (event)=>{
-        if (event.target.classList.contains("anxiety-short")){
-            app.innerHTML = ShortAnxiety();
-        }else if(event.target.classList.contains("anxiety-long")){
-            app.innerHTML = LongAnxiety();
-        }else if(event.target.classList.contains("depression-short")){
-            app.innerHTML = ShortDepression();
-        }else if(event.target.classList.contains("depression-long")){
-            app.innerHTML = LongDepression();
-        }else if(event.target.classList.contains("ptsd")){
-            app.innerHTML = Ptsd();
-        }
-        displayJournal();
     });
 }
 
-function displayJournal(){
-  app.addEventListener("click",(event)=>{
-   if(event.target.classList.contains("lastCheckin")){
-      app.innerHTML = Journal();
-  }});
-}
-
 function navJournal() {
-  const journalElem = document.querySelector(".nav-list__journal");
-  journalElem.addEventListener("click", () => {
-    app.innerHTML = Journal();
-  });
+    const journalElem = document.querySelector(".nav-list__journal");
+    journalElem.addEventListener("click", () => {
+        app.innerHTML = Journal();
+    });
 }
 
 function navResources() {
-  const journalElem = document.querySelector(".nav-list__resources");
-  journalElem.addEventListener("click", () => {
-    app.innerHTML = Resources();
-  });
+    const journalElem = document.querySelector(".nav-list__resources");
+    journalElem.addEventListener("click", () => {
+        app.innerHTML = Resources();
+    });
 }
 
 function navAbout() {
-  const aboutElem = document.querySelector(".nav-list__about");
-  aboutElem.addEventListener("click", () => {
-    app.innerHTML = About();
-  });
+    const aboutElem = document.querySelector(".nav-list__about");
+    aboutElem.addEventListener("click", () => {
+        app.innerHTML = About();
+    });
 }
 
 function navContact() {
-  const contactElem = document.querySelector(".nav-list__contact");
-  contactElem.addEventListener("click", () => {
-    app.innerHTML = Contact();
-  });
+    const contactElem = document.querySelector(".nav-list__contact");
+    contactElem.addEventListener("click", () => {
+        app.innerHTML = Contact();
+    });
 }

@@ -11,6 +11,20 @@ export default function Home() {
       <h2>You Matter</h2>
       <btn class="checkin btn btn-primary" id="myBtn">Checkin</btn>
     </div>
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <btn class="close" id="modal-close">&times;</btn>
+                <h4 class="modal-title">Daily Checkin</h4>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+            <h4>&copy; Project Well-being</h4>
+            </div>
+        </div>
+    </div>
     <div id="services">
     <div class="services-div">
         <div class="services-item" id="service-one">
