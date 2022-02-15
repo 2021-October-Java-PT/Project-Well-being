@@ -89,7 +89,7 @@ export default function AllReminders(reminders) {
             <td>9</td>
         </tr>
     </tbody>
-</table>     
+</table>
     </div>
     <div class="">
     <div class="">
