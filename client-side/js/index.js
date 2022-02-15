@@ -137,6 +137,7 @@ function navAllReminders() {
         });
         renderReminder();
         addReminder();
+        deleteReminder();
     });
 }
 
@@ -178,6 +179,16 @@ function addReminder() {
                 reminders => {
                     app.innerHTML = AllReminders(reminders);
                 });
+        }
+    });
+}
+
+function deleteReminder(){
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("reminder-delete")){
+            apiHelpers.deleteRequest(`http://localhost:8080/api/reminders/${id}/delete-reminder`, reminders => {
+                app.innerHTML = AllReminders(reminders);
+            });
         }
     });
 }
