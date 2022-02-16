@@ -22,117 +22,216 @@ const app = document.querySelector("#app");
 buildPage();
 
 function buildPage() {
-  renderHome();
-  navHome();
-  navReminders();
-  navJournal();
-  navAbout();
-  navContact();
-  navResources();
+    renderHome();
+    navHome();
+    navAllReminders();
+    navJournal();
+    navAbout();
+    navContact();
+    navResources();
 }
 
 function renderHome() {
-  app.innerHTML = Home();
-  checkin();
+    app.innerHTML = Home();
+    //   app.insertAdjacentHTML("beforeend", Mood());
+    //   app.insertAdjacentHTML("beforeend", FormTypes());
+    checkin();
 }
 
 function navHome() {
-  const homeElem = document.querySelector(".nav-list__home");
-  homeElem.addEventListener("click", () => {
-    app.innerHTML = Home();
-    checkin();
-  });
+    const homeElem = document.querySelector(".nav-list__home");
+    homeElem.addEventListener("click", () => {
+        app.innerHTML = Home();
+        // app.insertAdjacentHTML("beforeend", Mood());
+        // app.insertAdjacentHTML("beforeend", FormTypes());
+        checkin();
+        location.reload();
+    });
+}
+
+//Checkin
+// Get the modal
+const modal = document.querySelector("#myModal");
+const modalBody = document.querySelector(".modal-body");
+
+// Get the <span> element that closes the modal
+const btn = document.getElementById("modal-close");
+
+// When the user clicks on <span> (x), close the modal
+btn.onclick = function () {
+    modal.style.display = "none";
 }
 
 function checkin() {
-  const checkin = document.querySelector(".checkin");
-  checkin.addEventListener("click", () => {
-    app.innerHTML = Mood();
-    var slider = document.getElementById("slider");
-    var emoji = document.getElementById("emoji");
-    var emoticons = [
-      "mood_bad",
-      "sentiment_very_dissatisfied",
-      "sentiment_satisfied",
-      "sentiment_satisfied_alt",
-      "sentiment_very_satisfied",
-    ];
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("checkin")) {
+            //const checkin = document.querySelector(".checkin");
+            // When the user clicks on the button, open the modal
+            //checkin.onclick = function() {
+            modal.style.display = "block";
+            modalBody.innerHTML = Mood();
 
-    slider.oninput = function () {
-      emoji.innerHTML = emoticons[slider.value];
-      console.log(slider.value);
-    };
-    formTypes();
-  });
+
+            /*slider*/
+            const slider = document.getElementById("slider");
+            const emoji = document.getElementById("emoji");
+            const emoticons = ["mood_bad",
+                "sentiment_very_dissatisfied",
+                "sentiment_satisfied",
+                "sentiment_satisfied_alt",
+                "sentiment_very_satisfied"
+            ];
+
+            slider.oninput = function () {
+                emoji.innerHTML = emoticons[slider.value];
+                console.log(slider.value);
+            }
+        }
+        formTypes();
+    });
 }
+
 
 function formTypes() {
-  app.addEventListener("click", (event) => {
-    if (event.target.classList.contains("nextCheckin")) {
-      app.innerHTML = FormTypes();
-    }
-    displayForm();
-  });
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("nextCheckin")) {
+            //const nextCheckin = document.querySelector(".");
+            // nextCheckin.onclick = function() {
+            modal.style.display = "block";
+            modalBody.innerHTML = FormTypes();
+        }
+        displayForm();
+    });
 }
 
-function displayForm(){
-    app.addEventListener("click", (event)=>{
-        if (event.target.classList.contains("anxiety-short")){
-            app.innerHTML = ShortAnxiety();
-        }else if(event.target.classList.contains("anxiety-long")){
-            app.innerHTML = LongAnxiety();
-        }else if(event.target.classList.contains("depression-short")){
-            app.innerHTML = ShortDepression();
-        }else if(event.target.classList.contains("depression-long")){
-            app.innerHTML = LongDepression();
-        }else if(event.target.classList.contains("ptsd")){
-            app.innerHTML = Ptsd();
+function displayForm() {
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("anxiety-short")) {
+            modalBody.innerHTML = ShortAnxiety();
+        } else if (event.target.classList.contains("anxiety-long")) {
+            modalBody.innerHTML = LongAnxiety();
+        } else if (event.target.classList.contains("depression-short")) {
+            modalBody.innerHTML = ShortDepression();
+        } else if (event.target.classList.contains("depression-long")) {
+            modalBody.innerHTML = LongDepression();
+        } else if (event.target.classList.contains("ptsd")) {
+            modalBody.innerHTML = Ptsd();
         }
         displayJournal();
     });
 }
 
-function displayJournal(){
-  app.addEventListener("click",(event)=>{
-   if(event.target.classList.contains("lastCheckin")){
-      app.innerHTML = Journal();
-  }});
+function displayJournal() {
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("lastCheckin")) {
+            modalBody.innerHTML = Journal();
+        }
+    });
 }
 
-function navReminders() {
-  const remindersElem = document.querySelector(".nav-list__reminders");
-  remindersElem.addEventListener("click", () => {
-    crud.getRequest("http://localhost:8080/api/reminders", (reminders) => {
-      console.log(reminders);
-      app.innerHTML = AllReminders(reminders);
+function navAllReminders() {
+    const remindersElem = document.querySelector(".nav-list__reminders");
+    remindersElem.addEventListener("click", () => {
+        apiHelpers.getRequest("http://localhost:8080/api/reminders", reminders => {
+            app.innerHTML = AllReminders(reminders);
+        });
+        renderReminder();
+        addReminder();
+        
     });
-  });
+}
+
+function renderReminder() {
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("reminder")) {
+            const id = event.target.querySelector("#reminder-id").value;
+            apiHelpers.getRequest(`http://localhost:8080/api/reminders/${id}`, reminder => {
+                app.innerHTML = Reminders(reminder);
+            });
+            returnToAllReminders();
+            deleteReminder();
+        }
+    });
+}
+
+function addReminder() {
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("add-reminder__submit")) {
+            const addResourceName = event.target.parentElement.querySelector(
+                ".add-reminder__name"
+            ).value;
+            const addResourceCategory = event.target.parentElement.querySelector(
+                ".add-reminder__category"
+            ).value;
+            const addResourcePriority = event.target.parentElement.querySelector(
+                ".add-reminder__priority"
+            ).value;
+            const addResourceDescription = event.target.parentElement.querySelector(
+                ".add-reminder__description"
+            ).value;
+
+            apiHelpers.postRequest(
+                "http://localhost:8080/api/reminders/add-reminder", {
+                    name: addResourceName,
+                    category: addResourceCategory,
+                    priority: addResourcePriority,
+                    description: addResourceDescription,
+                },
+                reminders => {
+                    app.innerHTML = AllReminders(reminders);
+                });
+        }
+    });
+}
+
+function deleteReminder(){
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("reminder-delete")){
+            const deleteReminderId = event.target.parentElement.querySelector(".reminder-id").value;
+            apiHelpers.deleteRequest(`http://localhost:8080/api/reminders/${deleteReminderId}delete-reminder`, reminders => {
+                app.innerHTML = AllReminders(reminders);
+            });
+        }
+    });
+}
+
+function returnToAllReminders() {
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("returnReminders")) {
+            apiHelpers.getRequest(
+                "http://localhost:8080/api/reminders",
+                (reminders) => {
+                    app.innerHTML = AllReminders(reminders);
+                }
+            );
+        }
+    });
 }
 
 function navJournal() {
-  const journalElem = document.querySelector(".nav-list__journal");
-  journalElem.addEventListener("click", () => {
-    app.innerHTML = Journal();
-  });
+    const journalElem = document.querySelector(".nav-list__journal");
+    journalElem.addEventListener("click", () => {
+        app.innerHTML = Journal();
+    });
 }
 
 function navResources() {
-  const journalElem = document.querySelector(".nav-list__resources");
-  journalElem.addEventListener("click", () => {
-    app.innerHTML = Resources();
-  });
+    const journalElem = document.querySelector(".nav-list__resources");
+    journalElem.addEventListener("click", () => {
+        app.innerHTML = Resources();
+    });
 }
 
 function navAbout() {
-  const aboutElem = document.querySelector(".nav-list__about");
-  aboutElem.addEventListener("click", () => {
-    app.innerHTML = About();
-  });
+    const aboutElem = document.querySelector(".nav-list__about");
+    aboutElem.addEventListener("click", () => {
+        app.innerHTML = About();
+    });
 }
 
 function navContact() {
-  const contactElem = document.querySelector(".nav-list__contact");
-  contactElem.addEventListener("click", () => {
-    app.innerHTML = Contact();
-  });
+    const contactElem = document.querySelector(".nav-list__contact");
+    contactElem.addEventListener("click", () => {
+        app.innerHTML = Contact();
+    });
 }
