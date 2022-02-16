@@ -3,6 +3,7 @@ package org.wecancodeit.serverside.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 @Entity
 public class RemindersResource {
@@ -13,15 +14,8 @@ public class RemindersResource {
     private String name;
     private String category;
     private String priority;
+    @Lob
     private String description;
-
-
-    public RemindersResource(RemindersBody remindersBody){
-        this.name = remindersBody.getName();
-        this.category = remindersBody.getCategory();
-        this.priority = remindersBody.getPriority();
-        this.description = remindersBody.getDescription();
-    }
 
     public RemindersResource() {
 
