@@ -6,7 +6,8 @@ export default function AllReminders(reminders) {
     ${reminders.map(reminder => {
     return `
     <li class="reminder">${reminder.name}
-        <input type='hidden' id="reminder-id" value="${reminder.id}"</li>
+        <input type='hidden' id="reminder-id" value="${reminder.id}"/>
+        </li>
         `;
     }).join('')}
     </ul>

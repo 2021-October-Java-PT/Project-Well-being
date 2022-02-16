@@ -137,6 +137,7 @@ function navAllReminders() {
         });
         renderReminder();
         addReminder();
+        
     });
 }
 
@@ -148,6 +149,7 @@ function renderReminder() {
                 app.innerHTML = Reminders(reminder);
             });
             returnToAllReminders();
+            deleteReminder();
         }
     });
 }
@@ -178,6 +180,17 @@ function addReminder() {
                 reminders => {
                     app.innerHTML = AllReminders(reminders);
                 });
+        }
+    });
+}
+
+function deleteReminder(){
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("reminder-delete")){
+            const deleteReminderId = event.target.parentElement.querySelector(".reminder-id").value;
+            apiHelpers.deleteRequest(`http://localhost:8080/api/reminders/${deleteReminderId}delete-reminder`, reminders => {
+                app.innerHTML = AllReminders(reminders);
+            });
         }
     });
 }
