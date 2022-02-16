@@ -1,3 +1,5 @@
+
+
 export default function Resources(){
     return `
     <div class="container" id="app">
@@ -19,8 +21,7 @@ export default function Resources(){
             <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3181767/">Treatments in Depression by the National Institutes of Health</a>
             </ul>
         <h2><a href="https://www.sparx.org.nz/home">SPARX - AntiDepression Game</a></h2>
-        
-        
+
     <div>
     </div>
     `
