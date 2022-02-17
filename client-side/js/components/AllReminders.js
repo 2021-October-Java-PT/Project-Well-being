@@ -4,6 +4,7 @@ export default function AllReminders(reminders) {
     <div class="reminder-header">
     <h1>Reminders</h1>
     </div>
+    <div class-"all-reminders__div>
     <ul class="all-reminders__list>
     
     ${reminders.map(reminder => {
@@ -14,6 +15,7 @@ export default function AllReminders(reminders) {
         `;
     }).join('')}
     </ul>
+    </div>
     <h2 class="calendar">
     March 2022
     </h2>
@@ -101,13 +103,24 @@ export default function AllReminders(reminders) {
             <form id="frmReminder"">
                 <label class="entrReminder">Enter a Reminder:</label>
                 <input type="text" class="add-reminder__name" placeholder="Enter Name">
-                <input type="text" class="add-reminder__category" placeholder="Enter Category">
                 <input type="text" class="add-reminder__description" placeholder="Enter Description">
+                <select name="Category" id="category" class= "add-reminder__category">
+                <option value="None">Select a category</option>
+                <option value="Meals">Meals</option>
+                <option value="Family">Family</option>
+                <option value="Financial">Financial</option>
+                <option value="Transportation">Transportation</option>
+                <option value="Personal">Personal</option>
+                <option value="Health">Health</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Other">Other</option>
+                </select>
                 <select name="Priority" id="priority" class= "add-reminder__priority">
                 <option value="None">Select a priority</option>
                 <option value="High">High</option>
                 <option value="Medium">Medium</option>
                 <option value="Low">Low</option>
+                <option value="None">None</option>
                 </select>
                 <button type="submit" class="add-reminder__submit">Submit</button>
             </form>

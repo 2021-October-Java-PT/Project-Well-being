@@ -633,10 +633,12 @@ p.journal {
 }
 
 .reminder{
-  margin: 10px 10px 15px 10px;
+  margin-bottom: .5rem;
+  margin-left: auto;
+  margin-right: auto;
   cursor: pointer;
-  text-align: center;
-  list-style-type: none;
+  display: block;
+  width: fit-content;
 }
 
 #frmReminder{
@@ -645,23 +647,23 @@ p.journal {
   
 }
 
-.all-reminders__list{
-  padding: 0px;
-  margin: 0px;
-  
-} 
-
 .entrReminder{
   font-weight: bold;
 }
 
-.add-reminder__name, .add-reminder__category, .add-reminder__priority, .add-reminder__description{
+.add-reminder__name, .add-reminder__category, .add-reminder__priority, .add-reminder__description, .add-reminder__submit{
   box-shadow: .5px .5px;
 }
 
 .add-reminder__submit, .add-reminder__priority{
   cursor: pointer;
 }
+
+.all-reminders__div{
+  margin-bottom: 15px;
+  text-align: center;
+  align-items: center;
+} 
 
 
 
