@@ -190,13 +190,11 @@ tr.calendar > td:hover {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.container {
-  padding: 25px;
-  height: 75em;
-  margin-bottom: 50px;
-}
-
+.container, 
 #app {
+  padding: 25px;
+  height: 65em;
+  margin-bottom: 50px;
   padding-top: 35px;
   padding-left: 0%;
   padding-right: 0%;
@@ -271,7 +269,7 @@ tr.calendar > td:hover {
 }
 
 .home-area {
-  height: 70vh;
+  height: 68vh;
   background: linear-gradient(
       rgba(48, 48, 48, 0.225),
       rgba(255, 255, 255, 0.125)
@@ -290,6 +288,7 @@ tr.calendar > td:hover {
   /* justify-content: center; */
   height: 100%;
   font-size: 1.6rem;
+
 }
 
 .main-title {
@@ -336,13 +335,13 @@ p {
 .section-two,
 .section-three {
   padding-bottom: 25px;
-} */
+}
 
 #service-one,
 #service-two,
 #service-three {
   padding: 30px 100px;
-}
+} */
 
 /*contact*/
 .contact-area {
@@ -412,10 +411,26 @@ p {
   color: whitesmoke;
 }
 
-.resources_list{
+.resources_list {
   margin: 5rem;
   padding: 5rem;
+}
 
+
+.search-list, 
+.search-container {
+  margin-left: 1em;
+  font-size: small;
+  text-decoration: none;
+}
+
+.search-list h2, span {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: small;
+}
+
+.resourceImg{
+  height: 15em;
 }
 
 /* media query */

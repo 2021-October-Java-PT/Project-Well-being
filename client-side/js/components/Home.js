@@ -4,7 +4,7 @@ import resources from "../../assets/resources.jpg";
 
 export default function Home() {
     return `
-    <section class="home-area" id="home">
+    <div class="home-area" id="home">
     <div class="home-container">
       <h1 class="main-title" id="home">Unbox Your Thoughts</h1>
       <h2>You Matter</h2>
@@ -53,6 +53,6 @@ export default function Home() {
             </div>
         </div>
     </div>
-    </section>
+    </div>
     `;
 }
