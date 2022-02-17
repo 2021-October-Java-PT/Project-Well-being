@@ -619,3 +619,30 @@ p.journal {
 #journal-entry {
   max-width: 80%;
 }
+
+/* reminder content */
+
+.reminder-header{
+  text-align: center;
+  padding: 5%;
+}
+
+.reminder{
+  margin: 10px;
+  cursor: pointer;
+  display: inline-block;
+
+}
+
+#frmReminder{
+  text-align: center;
+  margin: 4rem;
+}
+
+.all-reminders__list{
+  text-align: center;
+}
+
+
+
+

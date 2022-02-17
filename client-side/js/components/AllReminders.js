@@ -1,8 +1,10 @@
 export default function AllReminders(reminders) {
     return `
     <div class="api-page-container">
-    <p>Reminder info</p>
-    <ul>
+    <div class="reminder-header">
+    <h1>Reminders</h1>
+    </div>
+    <ul class="all-reminders__list>
     ${reminders.map(reminder => {
     return `
     <li class="reminder">${reminder.name}
@@ -13,7 +15,7 @@ export default function AllReminders(reminders) {
     </ul>
     <h2 class="calendar">
     March 2022
-</h2>
+    </h2>
 <br />
 <table class="calendar">
     <thead>
