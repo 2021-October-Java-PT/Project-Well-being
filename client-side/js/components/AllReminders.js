@@ -98,7 +98,7 @@ export default function AllReminders(reminders) {
     <div class="">
         <div class=""></div>
             <form id="frmReminder"">
-                <label>Enter a Reminder</label>
+                <label class="entrReminder">Enter a Reminder:</label>
                 <input type="text" class="add-reminder__name" placeholder="Enter Name">
                 <input type="text" class="add-reminder__category" placeholder="Enter Category">
                 <input type="text" class="add-reminder__priority" placeholder="Enter Priority">

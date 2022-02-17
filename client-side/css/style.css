@@ -628,19 +628,34 @@ p.journal {
 }
 
 .reminder{
-  margin: 10px;
+  margin: 10px 10px 15px 10px;
   cursor: pointer;
   display: inline-block;
+
 
 }
 
 #frmReminder{
   text-align: center;
   margin: 4rem;
+  
 }
 
 .all-reminders__list{
   text-align: center;
+  
+}
+
+.entrReminder{
+  font-weight: bold;
+}
+
+.add-reminder__name, .add-reminder__category, .add-reminder__priority, .add-reminder__description{
+  box-shadow: .5px .5px;
+}
+
+.add-reminder__submit{
+  cursor: pointer;
 }
 
 
