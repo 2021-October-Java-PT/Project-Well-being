@@ -4,8 +4,14 @@ export default function Resources(){
     return `
     <div class="container" id="app">
     <h1>Resources</h1>
+    <div class="search-container">
+    <div>
+      <input type="text" id="search-bar" placeholder="Search..">
+      <button type="button" id="search-submit"><i class="fa fa-search"></i></button>
+    </div>
+    <div class="search-list id="search-list"></div>
+    </div>
     <div class="resources_list">
-        
         <h2>Resources on Anxiety</h2>
             <ul>
             <li><a href="https://www.mayoclinic.org/diseases-conditions/anxiety/diagnosis-treatment/drc-20350967">Anxiety Disorders by the Mayo clinic</a>
@@ -21,8 +27,7 @@ export default function Resources(){
             <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3181767/">Treatments in Depression by the National Institutes of Health</a>
             </ul>
         <h2><a href="https://www.sparx.org.nz/home">SPARX - AntiDepression Game</a></h2>
-
-    <div>
+    </div>
     </div>
     `
 }

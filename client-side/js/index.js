@@ -11,6 +11,7 @@ import LongDepression from "./components/LongDepression"
 import Mood from "./components/Mood";
 import Ptsd from "./components/Ptsd"
 import Reminders from "./components/Reminders";
+import ResourceSearch from "./components/ResourceSearch";
 import Resources from "./components/Resources";
 import ShortAnxiety from "./components/ShortAnxiety";
 import ShortDepression from "./components/ShortDepression"
@@ -219,6 +220,7 @@ function navResources() {
     const journalElem = document.querySelector(".nav-list__resources");
     journalElem.addEventListener("click", () => {
         app.innerHTML = Resources();
+        search();
     });
 }
 
@@ -233,5 +235,18 @@ function navContact() {
     const contactElem = document.querySelector(".nav-list__contact");
     contactElem.addEventListener("click", () => {
         app.innerHTML = Contact();
+    });
+}
+
+function search() {
+    const searchSubmit = document.querySelector("#search-submit");
+    searchSubmit.addEventListener("click", () => {
+        let value = document.getElementById("search-bar").value;
+        console.log(value);
+        apiHelpers.getRequest(`https://health.gov/myhealthfinder/api/v3/topicsearch.json?keyword=${value}`, (resources) => {
+            const list = document.querySelector(".search-list");    
+            list.insertAdjacentHTML("beforeend", ResourceSearch(resources));
+            //app.innerHTML = ResourceSearch(resources);
+        });
     });
 }
