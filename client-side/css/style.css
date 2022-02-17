@@ -416,10 +416,13 @@ p {
   padding: 5rem;
 }
 
-/* .search-list {
+
+.search-list, 
+.search-container {
+  margin-left: 1em;
   font-size: small;
   text-decoration: none;
-} */
+}
 
 .search-list h2, span {
   font-family: Georgia, "Times New Roman", Times, serif;
