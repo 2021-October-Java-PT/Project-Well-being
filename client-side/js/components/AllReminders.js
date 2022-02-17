@@ -5,6 +5,7 @@ export default function AllReminders(reminders) {
     <h1>Reminders</h1>
     </div>
     <ul class="all-reminders__list>
+    
     ${reminders.map(reminder => {
     return `
     <li class="reminder">${reminder.name}
@@ -101,9 +102,14 @@ export default function AllReminders(reminders) {
                 <label class="entrReminder">Enter a Reminder:</label>
                 <input type="text" class="add-reminder__name" placeholder="Enter Name">
                 <input type="text" class="add-reminder__category" placeholder="Enter Category">
-                <input type="text" class="add-reminder__priority" placeholder="Enter Priority">
                 <input type="text" class="add-reminder__description" placeholder="Enter Description">
-                <button type="submit" class="add-reminder__submit">SUBMIT</button>
+                <select name="Priority" id="priority" class= "add-reminder__priority">
+                <option value="None">Select a priority</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+                </select>
+                <button type="submit" class="add-reminder__submit">Submit</button>
             </form>
     </div>
     </div>  

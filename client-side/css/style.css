@@ -147,6 +147,11 @@ input[type="range"]::-webkit-slider-thumb{
 }
 
 /* calendar */
+
+.calendar{
+  text-align: center;
+}
+
 table.calendar {
   border-collapse: collapse;
   background: white;
@@ -185,7 +190,7 @@ tr.calendar > td:hover {
 
 * {
   box-sizing: border-box;
-  /* padding: 0; */
+  padding: 0;
   margin: 0;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
@@ -630,9 +635,8 @@ p.journal {
 .reminder{
   margin: 10px 10px 15px 10px;
   cursor: pointer;
-  display: inline-block;
-
-
+  text-align: center;
+  list-style-type: none;
 }
 
 #frmReminder{
@@ -642,9 +646,10 @@ p.journal {
 }
 
 .all-reminders__list{
-  text-align: center;
+  padding: 0px;
+  margin: 0px;
   
-}
+} 
 
 .entrReminder{
   font-weight: bold;
@@ -654,9 +659,11 @@ p.journal {
   box-shadow: .5px .5px;
 }
 
-.add-reminder__submit{
+.add-reminder__submit, .add-reminder__priority{
   cursor: pointer;
 }
+
+
 
 
 
