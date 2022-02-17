@@ -22,38 +22,38 @@ export default function Ptsd(){
       
         <ul>
           <li>Had nightmares about the event(s) or thought about the event(s) when you did not want to?</li>
-          <input type="radio" id="no" value="no">
+          <input type="radio" name="rating1" id="no" value="no">
             <label for="no">No</label><br>
 
-            <input type="radio" id="yes" value="yes">
+            <input type="radio" name="rating1" id="yes" value="yes">
             <label for="yes">Yes</label><br>
 
             <li>Tried hard not to think about the event(s) or went out of your way to avoid situations that reminded you of the event(s)?</li>
-          <input type="radio" id="no" value="no">
+          <input type="radio" name="rating2" id="no" value="no">
             <label for="no">No</label><br>
 
-            <input type="radio" id="yes" value="yes">
+            <input type="radio" name="rating2" id="yes" value="yes">
             <label for="yes">Yes</label><br>
 
             <li>Been constantly on guard, watchful, or easily startled?</li>
-          <input type="radio" id="no" value="no">
+          <input type="radio" name="rating3" id="no" value="no">
             <label for="no">No</label><br>
 
-            <input type="radio" id="yes" value="yes">
+            <input type="radio" name="rating3" id="yes" value="yes">
             <label for="yes">Yes</label><br>
 
             <li>Felt numb or detached from people, activities, or your surroundings?</li>
-          <input type="radio" id="no" value="no">
+          <input type="radio"name="rating4" id="no" value="no">
             <label for="no">No</label><br>
 
-            <input type="radio" id="yes" value="yes">
+            <input type="radio" name="rating4" id="yes" value="yes">
             <label for="yes">Yes</label><br>
 
             <li>Felt guilty or unable to stop blaming yourself or others for the events(s) or any problems the event(s) may have caused?</li>
-          <input type="radio" id="no" value="no">
+          <input type="radio" name="rating5" id="no" value="no">
             <label for="no">No</label><br>
 
-            <input type="radio" id="yes" value="yes">
+            <input type="radio" name="rating5" id="yes" value="yes">
             <label for="yes">Yes</label><br>
         
         
