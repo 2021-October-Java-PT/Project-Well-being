@@ -1,7 +1,7 @@
 export default function ResourceSearch(resources) {
     console.log(resources);
     return `
-    <div class="api-page-container">   
+    <div class="api-page-container" id="nested">   
     ${resources.Result.Resources.Resource.map(resource => {
     return `
     <div class="search-list-item">
@@ -15,6 +15,7 @@ export default function ResourceSearch(resources) {
     </div>
         `;
     }).join('')}
+    </div>
     `;
 }
 

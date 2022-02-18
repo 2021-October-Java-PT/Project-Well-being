@@ -6,7 +6,7 @@ export default function Resources(){
     <h1>Resources</h1>
     <div class="search-container">
     <div>
-      <input type="text" id="search-bar" placeholder="Search..">
+      <input type="text" id="search-bar" placeholder="Search.." onfocus="this.value=''">
       <button type="button" id="search-submit"><i class="fa fa-search"></i></button>
     </div>
     <div class="search-list id="search-list"></div>

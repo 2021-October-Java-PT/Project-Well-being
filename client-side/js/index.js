@@ -247,6 +247,14 @@ function navContact() {
 }
 
 function search() {
+    const searchBar = document.querySelector("#search-bar");
+    searchBar.addEventListener("click", () => {
+        let top = document.getElementById("nested");
+        if (top.parentNode) {
+            top.parentNode.removeChild(top);
+        }
+    });    
+    
     const searchSubmit = document.querySelector("#search-submit");
     searchSubmit.addEventListener("click", () => {
         let value = document.getElementById("search-bar").value;
