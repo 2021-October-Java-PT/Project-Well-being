@@ -30,6 +30,7 @@ function buildPage() {
     navAbout();
     navContact();
     navResources();
+    navForms();
 }
 
 function renderHome() {
@@ -213,6 +214,14 @@ function navJournal() {
     const journalElem = document.querySelector(".nav-list__journal");
     journalElem.addEventListener("click", () => {
         app.innerHTML = Journal();
+        document.querySelector(".dropdown-content")
+    });
+}
+
+function navForms() {
+    const formsElem = document.querySelector(".nav-list__forms");
+    formsElem.addEventListener("click", () => {
+        app.innerHTML = FormTypes();
     });
 }
 
@@ -243,7 +252,7 @@ function search() {
     searchSubmit.addEventListener("click", () => {
         let value = document.getElementById("search-bar").value;
         console.log(value);
-        apiHelpers.getRequest(`https://health.gov/myhealthfinder/api/v3/topicsearch.json?keyword=${value}`, (resources) => {
+        apiHelpers.getRequest(`https://health.gov/myhealthfinder/api/v3/topicsearch.json?keyword=${value}`, resources => {
             const list = document.querySelector(".search-list");    
             list.insertAdjacentHTML("beforeend", ResourceSearch(resources));
             //app.innerHTML = ResourceSearch(resources);

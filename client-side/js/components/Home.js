@@ -24,6 +24,7 @@ export default function Home() {
             </div>
         </div>
     </div>
+    </div>
     <div id="services">
         <div class="services-div">
             <div class="services-item" id="service-one">
@@ -52,7 +53,6 @@ export default function Home() {
                 </article> 
             </div>
         </div>
-    </div>
     </div>
     `;
 }

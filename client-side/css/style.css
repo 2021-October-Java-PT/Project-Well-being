@@ -29,29 +29,34 @@
 }
 
 .dropdown{
-  position:relative;
-  display: inline-block;
+  position: relative;
+  display: block;
 }
 
 .dropdown-content{
-  display:none;
-  position:absolute;
+  display: none;
+  position: absolute;
   background-color: #f1f1f1;
-  min-width:160px;
+  min-width: 15em;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
-.dropdown-content a{
+.dropdown-content li{
   color:black;
-  padding: 12px 16px;
-  text-decoration:none;
-  display:block;
+  text-decoration: none;
+  display: block;
 }
 
-.dropdown-content a:hover {background-color:#ddd;}
-.dropdown:hover .dropdown-content {display:block;}
-.dropdown:hover .nav-list__resources{background-color:#3e8e41;}
+.dropdown-content li:hover {
+  background-color:#ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  padding: 8px 12px;
+  display: block;
+}
+
 
 /* Add Animation */
 @-webkit-keyframes animatetop {
@@ -190,11 +195,10 @@ tr.calendar > td:hover {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.container, 
-#app {
-  padding: 25px;
-  height: 65em;
-  margin-bottom: 50px;
+.container {
+  /* padding: 25px; */
+  /* height: 65em; */
+  /* margin-bottom: 50px; */
   padding-top: 35px;
   padding-left: 0%;
   padding-right: 0%;
@@ -389,6 +393,8 @@ p {
 
 /*footer*/
 #footer {
+  position: sticky;
+  bottom: 0;
   text-align: center;
   font-size: 1.8rem;
   padding: 1.5rem;
