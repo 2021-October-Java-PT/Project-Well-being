@@ -6,9 +6,10 @@ export default function AllReminders(reminders) {
     </div>
     <div class-"all-reminders__div>
     <ul class="all-reminders__list>
-    
+    <li class="reminder">
     ${reminders.map(reminder => {
     return `
+    </li>
     <li class="reminder">${reminder.name}
         <input type='hidden' id="reminder-id" value="${reminder.id}"/>
         </li>

@@ -165,6 +165,7 @@ table.calendar {
 h2.calendar {
   text-align: center;
   color: rgb(48, 48, 48);
+  margin-top: 4rem;
 }
 
 th.calendar {
@@ -641,6 +642,7 @@ p.journal {
   width: fit-content;
 }
 
+
 #frmReminder{
   text-align: center;
   margin: 4rem;
@@ -653,6 +655,8 @@ p.journal {
 
 .add-reminder__name, .add-reminder__category, .add-reminder__priority, .add-reminder__description, .add-reminder__submit{
   box-shadow: .5px .5px;
+  margin-left: .3rem;
+  margin-right: .3rem;
 }
 
 .add-reminder__submit, .add-reminder__priority{
