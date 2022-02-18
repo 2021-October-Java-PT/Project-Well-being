@@ -435,11 +435,16 @@ p {
   list-style: none;
 }
 
-.search-list, 
 .search-container {
   font-size: small;
   text-decoration: none;
   text-align: center;
+}
+
+.search-list {
+  font-size: small;
+  text-decoration: none;
+  margin-left: 5em;
 }
 
 .search-list h2, span {
@@ -462,7 +467,7 @@ p {
     flex-direction: column;
     justify-content: space-evenly;
     /* grid-template-columns: auto auto auto; */
-    background-color: whitesmoke;
+    /* background-color: whitesmoke; */
     padding: 20px 20px 20px 20px;
   }
 }

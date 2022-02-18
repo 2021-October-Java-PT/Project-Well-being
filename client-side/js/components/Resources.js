@@ -9,8 +9,8 @@ export default function Resources(){
         <input type="text" id="search-bar" placeholder="Search.." onfocus="this.value=''">
         <button type="button" id="search-submit"><i class="fa fa-search"></i></button>
         </div>
-        <div class="search-list id="search-list"></div>
     </div>
+    <div class="search-list id="search-list"></div>
     <div class="resources_list">
     <h2>Or select from these quick links</h2>
         <h3>Resources on Anxiety</h3>
