@@ -393,7 +393,7 @@ p {
 
 /*footer*/
 #footer {
-  position: sticky;
+  /* position: sticky; */
   bottom: 0;
   text-align: center;
   font-size: 1.8rem;
