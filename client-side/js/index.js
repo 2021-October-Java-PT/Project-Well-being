@@ -214,7 +214,6 @@ function navJournal() {
     const journalElem = document.querySelector(".nav-list__journal");
     journalElem.addEventListener("click", () => {
         app.innerHTML = Journal();
-        document.querySelector(".dropdown-content")
     });
 }
 
