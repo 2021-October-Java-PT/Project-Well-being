@@ -195,6 +195,13 @@ tr.calendar > td:hover {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 .container {
   /* padding: 25px; */
   /* height: 65em; */
@@ -393,6 +400,7 @@ p {
 
 /*footer*/
 #footer {
+  margin-top: auto;
   /* position: sticky; */
   bottom: 0;
   text-align: center;
