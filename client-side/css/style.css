@@ -358,7 +358,7 @@ p {
 .contact-area {
   display: grid;
   grid-template-columns: auto auto;
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */
 }
 .contact-div {
   grid-column: 1/2;
@@ -427,15 +427,19 @@ p {
 
 .resources_list {
   margin: 5rem;
-  padding: 5rem;
+  /* padding: 5rem; */
+  text-align: center;
 }
 
+.resources_list ul {
+  list-style: none;
+}
 
 .search-list, 
 .search-container {
-  margin-left: 1em;
   font-size: small;
   text-decoration: none;
+  text-align: center;
 }
 
 .search-list h2, span {
