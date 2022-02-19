@@ -20,6 +20,12 @@ import apiHelpers from "./api-helpers.js/apiHelpers";
 import crud from "./crud/crud";
 
 const app = document.querySelector("#app");
+const emoticons = ["mood_bad",
+"sentiment_very_dissatisfied",
+"sentiment_satisfied",
+"sentiment_satisfied_alt",
+"sentiment_very_satisfied"
+];
 let loggedIn = "false"
 console.log(loggedIn);
 
@@ -87,12 +93,12 @@ function checkin() {
             /*slider*/
             const slider = document.getElementById("slider");
             const emoji = document.getElementById("emoji");
-            const emoticons = ["mood_bad",
-                "sentiment_very_dissatisfied",
-                "sentiment_satisfied",
-                "sentiment_satisfied_alt",
-                "sentiment_very_satisfied"
-            ];
+            // const emoticons = ["mood_bad",
+            //     "sentiment_very_dissatisfied",
+            //     "sentiment_satisfied",
+            //     "sentiment_satisfied_alt",
+            //     "sentiment_very_satisfied"
+            // ];
 
             slider.oninput = function () {
                 emoji.innerHTML = emoticons[slider.value];
@@ -115,6 +121,17 @@ function formTypes() {
                     modal.style.display = "none";
                 }
         if (event.target.classList.contains("nextCheckin")) {
+            const slider = document.getElementById("slider");
+            let moodValue = emoticons[slider.value];           
+            apiHelpers.postRequest(
+                "http://localhost:8080/api/add-mood", {
+                    value: moodValue,
+
+                },
+                moods => {
+                    console.log(value);
+                    // app.innerHTML = AllReminders(reminders);
+                });            
             //const nextCheckin = document.querySelector(".");
             // nextCheckin.onclick = function() {
             modal.style.display = "block";
