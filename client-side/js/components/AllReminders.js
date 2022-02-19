@@ -123,7 +123,7 @@ export default function AllReminders(reminders) {
                 <option value="Low">Low</option>
                 <option value="None">None</option>
                 </select>
-                <button type="submit" class="add-reminder__submit">Submit</button>
+                <button type="submit" class="add-reminder__submit">SUBMIT</button>
             </form>
     </div>
     </div>  

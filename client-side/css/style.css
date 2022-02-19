@@ -634,14 +634,22 @@ p.journal {
 }
 
 .reminder{
-  margin-bottom: .5rem;
+  margin-bottom: 1rem;
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
   display: block;
   width: fit-content;
+  color: whitesmoke;
+  background: #a55344;
+  border-radius: 25px;
+  padding: 0.5em 1em;
 }
 
+.reminder:hover{
+  background: rgb(48, 48, 48);
+  transition: background 0.5s ease-in-out;
+}
 
 #frmReminder{
   text-align: center;
@@ -653,7 +661,7 @@ p.journal {
   font-weight: bold;
 }
 
-.add-reminder__name, .add-reminder__category, .add-reminder__priority, .add-reminder__description, .add-reminder__submit{
+.add-reminder__name, .add-reminder__category, .add-reminder__priority, .add-reminder__description{
   box-shadow: .5px .5px;
   margin-left: .3rem;
   margin-right: .3rem;
@@ -668,6 +676,70 @@ p.journal {
   text-align: center;
   align-items: center;
 } 
+
+.add-reminder__submit{
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 25px;
+  cursor: pointer;
+  outline: none;
+  margin-top: 1em;
+  font-weight: small;
+  color: whitesmoke;
+  background: #a55344;
+}
+
+.add-reminder__submit:hover{
+  background: rgb(48, 48, 48);
+  transition: background 0.5s ease-in-out;
+}
+
+/* Individual Reminder section */
+
+.individual-reminder{
+  margin: 5rem auto 5rem auto;
+  display: block;
+  width: fit-content;
+}
+
+.reminder-name, .reminder-category, .reminder-description, .reminder-priority{
+  margin: 1rem auto 1rem auto;
+  text-align: center;
+}
+
+.reminder-category, .reminder-description, .reminder-priority{
+  text-align: left;
+  margin-top: 2rem;
+}
+
+.reminder-name{
+  text-decoration: underline;
+}
+
+.return-reminders, .reminder-delete{
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 25px;
+  cursor: pointer;
+  outline: none;
+  margin: 1em;
+  font-weight: small;
+  color: whitesmoke;
+  background: #a55344;
+}
+
+.reminder-buttons{
+  display: block;
+  width: fit-content;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.return-reminders:hover, .reminder-delete:hover{
+  background: rgb(48, 48, 48);
+  transition: background 0.5s ease-in-out;
+}
 
 
 
