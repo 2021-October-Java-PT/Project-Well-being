@@ -6,6 +6,7 @@ import Contact from "./components/Contact";
 import FormTypes from "./components/FormTypes";
 import Home from "./components/Home";
 import Journal from "./components/Journal";
+import Login from "./components/Login";
 import LongAnxiety from "./components/LongAnxiety"
 import LongDepression from "./components/LongDepression"
 import Mood from "./components/Mood";
@@ -19,6 +20,8 @@ import apiHelpers from "./api-helpers.js/apiHelpers";
 import crud from "./crud/crud";
 
 const app = document.querySelector("#app");
+let loggedIn = "false"
+console.log(loggedIn);
 
 buildPage();
 
@@ -31,6 +34,7 @@ function buildPage() {
     navContact();
     navResources();
     navForms();
+    navLogin();
 }
 
 function renderHome() {
@@ -51,28 +55,34 @@ function navHome() {
     });
 }
 
-//Checkin
-// Get the modal
-const modal = document.querySelector("#myModal");
-const modalBody = document.querySelector(".modal-body");
-
-// Get the <span> element that closes the modal
-const btn = document.getElementById("modal-close");
-
-// When the user clicks on <span> (x), close the modal
-btn.onclick = function () {
-    modal.style.display = "none";
-}
 
 function checkin() {
+    // const click = document.querySelector(".checkin")
     app.addEventListener("click", (event) => {
-        if (event.target.classList.contains("checkin")) {
+        //modal
+        const modal = document.querySelector("#myModal");
+        const modalBody = document.querySelector(".modal-body");
+             //modal close
+             const btn = document.getElementById("modal-close");
+             btn.onclick = function () {
+                 modal.style.display = "none";
+             }
+                       
+         if (event.target.classList.contains("checkin")) {
+            if (loggedIn == "false") {
+                modal.style.display = "block";
+                modalBody.innerHTML = `  
+                <div class="modal-body mood-content">
+                    <h3>Please login to continue.</h3>
+                </div>
+              `;
+              return;
+            }
             //const checkin = document.querySelector(".checkin");
             // When the user clicks on the button, open the modal
             //checkin.onclick = function() {
             modal.style.display = "block";
             modalBody.innerHTML = Mood();
-
 
             /*slider*/
             const slider = document.getElementById("slider");
@@ -93,9 +103,17 @@ function checkin() {
     });
 }
 
-
 function formTypes() {
     app.addEventListener("click", (event) => {
+        //modal
+        const modal = document.querySelector("#myModal");
+                const modalBody = document.querySelector(".modal-body");
+                
+                //modal close
+                const btn = document.getElementById("modal-close");
+                btn.onclick = function () {
+                    modal.style.display = "none";
+                }
         if (event.target.classList.contains("nextCheckin")) {
             //const nextCheckin = document.querySelector(".");
             // nextCheckin.onclick = function() {
@@ -108,6 +126,15 @@ function formTypes() {
 
 function displayForm() {
     app.addEventListener("click", (event) => {
+                //modal
+                const modal = document.querySelector("#myModal");
+                const modalBody = document.querySelector(".modal-body");
+                
+                //modal close
+                const btn = document.getElementById("modal-close");
+                btn.onclick = function () {
+                    modal.style.display = "none";
+                }
         if (event.target.classList.contains("anxiety-short")) {
             modalBody.innerHTML = ShortAnxiety();
         } else if (event.target.classList.contains("anxiety-long")) {
@@ -125,6 +152,15 @@ function displayForm() {
 
 function displayJournal() {
     app.addEventListener("click", (event) => {
+                //modal
+                const modal = document.querySelector("#myModal");
+                const modalBody = document.querySelector(".modal-body");
+                
+                //modal close
+                const btn = document.getElementById("modal-close");
+                btn.onclick = function () {
+                    modal.style.display = "none";
+                }
         if (event.target.classList.contains("lastCheckin")) {
             modalBody.innerHTML = Journal();
         }
@@ -266,3 +302,24 @@ function search() {
         });
     });
 }
+
+function navLogin() {
+    const loginElem = document.querySelector(".nav-list__login");
+    loginElem.addEventListener("click", () => {
+        app.innerHTML = Login();
+        userLogin();
+    });
+}
+
+function userLogin() {
+    const loginClick = document.querySelector("#login-btn");
+    loginClick.addEventListener("click", () => {
+        renderHome();
+        loggedIn = "true";
+        const x = document.getElementById("login");
+        x.innerHTML = `<i class="material-icons" id="account-circle">account_circle</i>`;
+        //console.log(loggedIn);
+    });
+    return loggedIn;
+}
+
