@@ -29,29 +29,34 @@
 }
 
 .dropdown{
-  position:relative;
-  display: inline-block;
+  position: relative;
+  display: block;
 }
 
 .dropdown-content{
-  display:none;
-  position:absolute;
+  display: none;
+  position: absolute;
   background-color: #f1f1f1;
-  min-width:160px;
+  min-width: 15em;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
-.dropdown-content a{
+.dropdown-content li{
   color:black;
-  padding: 12px 16px;
-  text-decoration:none;
-  display:block;
+  text-decoration: none;
+  display: block;
 }
 
-.dropdown-content a:hover {background-color:#ddd;}
-.dropdown:hover .dropdown-content {display:block;}
-.dropdown:hover .nav-list__resources{background-color:#3e8e41;}
+.dropdown-content li:hover {
+  background-color:#ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  padding: 8px 12px;
+  display: block;
+}
+
 
 /* Add Animation */
 @-webkit-keyframes animatetop {
@@ -147,6 +152,11 @@ input[type="range"]::-webkit-slider-thumb{
 }
 
 /* calendar */
+
+.calendar{
+  text-align: center;
+}
+
 table.calendar {
   border-collapse: collapse;
   background: white;
@@ -160,6 +170,7 @@ table.calendar {
 h2.calendar {
   text-align: center;
   color: rgb(48, 48, 48);
+  margin-top: 4rem;
 }
 
 th.calendar {
@@ -190,13 +201,17 @@ tr.calendar > td:hover {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.container {
-  padding: 25px;
-  height: 75em;
-  margin-bottom: 50px;
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-#app {
+.container {
+  /* padding: 25px; */
+  /* height: 65em; */
+  /* margin-bottom: 50px; */
   padding-top: 35px;
   padding-left: 0%;
   padding-right: 0%;
@@ -215,7 +230,7 @@ tr.calendar > td:hover {
   width: 100%;
   background: #a55344;
   color: rgb(48, 48, 48);
-  opacity: 0.95;
+  /* opacity: 0.95; */
   height: 60px;
   z-index: 12;
 }
@@ -225,6 +240,7 @@ tr.calendar > td:hover {
   justify-content: space-between;
   height: 64px;
   align-items: center;
+  padding: 25px;  
 }
 
 .nav-list {
@@ -254,7 +270,7 @@ tr.calendar > td:hover {
   border-radius: 25px;
   cursor: pointer;
   outline: none;
-  margin-top: 10px;
+  margin-top: 1em;
   text-transform: uppercase;
   font-weight: small;
 }
@@ -270,7 +286,7 @@ tr.calendar > td:hover {
 }
 
 .home-area {
-  height: 70vh;
+  height: 68vh;
   background: linear-gradient(
       rgba(48, 48, 48, 0.225),
       rgba(255, 255, 255, 0.125)
@@ -282,29 +298,33 @@ tr.calendar > td:hover {
 }
 
 .home-container {
+  /* padding-top: 5%; */
   display: flex;
   flex-direction: column;
   align-items: center;
   /* justify-content: center; */
   height: 100%;
   font-size: 1.6rem;
+
 }
 
 .main-title {
   text-transform: uppercase;
-  margin-top: 35px;
+  margin-top: 2em;
 }
 
 .services-div {
-  display: grid;
-  grid-template-columns: auto auto auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  /* grid-template-columns: auto auto auto; */
   background-color: whitesmoke;
-  padding: 20px 10px 20px 10px;
+  padding: 20px 20px 20px 20px;
 }
 
 .services-item {
   background-color: white;
-  padding: 20px;
+  padding: 25px 80px;
   font-size: 30px;
   text-align: center;
 }
@@ -328,7 +348,7 @@ p {
   font-size: small;
 }
 
-.section-one,
+/* .section-one,
 .section-two,
 .section-three {
   padding-bottom: 25px;
@@ -338,13 +358,13 @@ p {
 #service-two,
 #service-three {
   padding: 30px 100px;
-}
+} */
 
 /*contact*/
 .contact-area {
   display: grid;
   grid-template-columns: auto auto;
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */
 }
 .contact-div {
   grid-column: 1/2;
@@ -386,6 +406,9 @@ p {
 
 /*footer*/
 #footer {
+  margin-top: auto;
+  /* position: sticky; */
+  bottom: 0;
   text-align: center;
   font-size: 1.8rem;
   padding: 1.5rem;
@@ -408,20 +431,69 @@ p {
   color: whitesmoke;
 }
 
-.resources_list{
+.resources_list {
   margin: 5rem;
-  padding: 5rem;
+  /* padding: 5rem; */
+  text-align: center;
+}
 
+.resources_list ul {
+  list-style: none;
+}
+
+.search-container {
+  font-size: small;
+  text-decoration: none;
+  text-align: center;
+}
+
+.search-list {
+  font-size: small;
+  text-decoration: none;
+  margin-left: 5em;
+}
+
+.search-list h2, span {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: small;
+}
+
+.resourceImg{
+  height: 15em;
 }
 
 /* media query */
+@media (max-width: 1022px) {
+  body {
+    text-align: center;
+  }
+
+  .contact-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* grid-template-columns: auto auto auto; */
+    /* background-color: whitesmoke; */
+    padding: 20px 20px 20px 20px;
+  }
+}
+
 @media (max-width: 768px) {
   body {
     text-align: center;
   }
 
-  .navbar {
-    opacity: 0.95;
+  .container {
+    min-height: 117em;
+  }
+
+  .services-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* grid-template-columns: auto auto auto; */
+    background-color: whitesmoke;
+    padding: 20px 20px 20px 20px;
   }
 
   .navbar-container input[type="checkbox"],
@@ -524,6 +596,50 @@ p {
   }
 }
 
+@media (max-width: 500px) {
+  .container {
+    min-height: 121em;
+  }
+
+  .articleImg {
+    padding-left: -5%;
+  }
+
+  input[type="range"]{
+    width: 190px;
+    height: 6px;
+    -webkit-appearance:none;
+    background-color: rgb(48, 48, 48);
+    border-radius: 6px;
+    outline: none;
+    margin-top: 25px;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    height: 30px;
+    width: 30px;
+    background-color: rgb(48, 48, 48);
+    border-radius: 50%;
+    box-shadow: 10px 15px 10px rgba(0,0,0,0.2);
+  }
+
+   .navbar .nav-list li{
+      font-size: 1.6rem;
+  }
+
+  .logo {
+    position: absolute;
+    top: 06px;
+    right: 15px;
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1345px) {
+
+}
+
 /* journal content */
 .journal {
   text-align: center;
@@ -547,3 +663,124 @@ p.journal {
 #journal-entry {
   max-width: 80%;
 }
+
+/* reminder content */
+
+.reminder-header{
+  text-align: center;
+  padding: 5%;
+}
+
+.reminder{
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  display: block;
+  width: fit-content;
+  color: whitesmoke;
+  background: #a55344;
+  border-radius: 25px;
+  padding: 0.5em 1em;
+}
+
+.reminder:hover{
+  background: rgb(48, 48, 48);
+  transition: background 0.5s ease-in-out;
+}
+
+#frmReminder{
+  text-align: center;
+  margin: 4rem;
+  
+}
+
+.entrReminder{
+  font-weight: bold;
+}
+
+.add-reminder__name, .add-reminder__category, .add-reminder__priority, .add-reminder__description{
+  box-shadow: .5px .5px;
+  margin-left: .3rem;
+  margin-right: .3rem;
+}
+
+.add-reminder__submit, .add-reminder__priority{
+  cursor: pointer;
+}
+
+.all-reminders__div{
+  margin-bottom: 15px;
+  text-align: center;
+  align-items: center;
+} 
+
+.add-reminder__submit{
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 25px;
+  cursor: pointer;
+  outline: none;
+  margin-top: 1em;
+  font-weight: small;
+  color: whitesmoke;
+  background: #a55344;
+}
+
+.add-reminder__submit:hover{
+  background: rgb(48, 48, 48);
+  transition: background 0.5s ease-in-out;
+}
+
+/* Individual Reminder section */
+
+.individual-reminder{
+  margin: 5rem auto 5rem auto;
+  display: block;
+  width: fit-content;
+}
+
+.reminder-name, .reminder-category, .reminder-description, .reminder-priority{
+  margin: 1rem auto 1rem auto;
+  text-align: center;
+}
+
+.reminder-category, .reminder-description, .reminder-priority{
+  text-align: left;
+  margin-top: 2rem;
+}
+
+.reminder-name{
+  text-decoration: underline;
+}
+
+.return-reminders, .reminder-delete{
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 25px;
+  cursor: pointer;
+  outline: none;
+  margin: 1em;
+  font-weight: small;
+  color: whitesmoke;
+  background: #a55344;
+}
+
+.reminder-buttons{
+  display: block;
+  width: fit-content;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.return-reminders:hover, .reminder-delete:hover{
+  background: rgb(48, 48, 48);
+  transition: background 0.5s ease-in-out;
+}
+
+
+
+
+
+

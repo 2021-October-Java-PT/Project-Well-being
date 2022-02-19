@@ -11,6 +11,7 @@ import LongDepression from "./components/LongDepression"
 import Mood from "./components/Mood";
 import Ptsd from "./components/Ptsd"
 import Reminders from "./components/Reminders";
+import ResourceSearch from "./components/ResourceSearch";
 import Resources from "./components/Resources";
 import ShortAnxiety from "./components/ShortAnxiety";
 import ShortDepression from "./components/ShortDepression"
@@ -29,6 +30,7 @@ function buildPage() {
     navAbout();
     navContact();
     navResources();
+    navForms();
 }
 
 function renderHome() {
@@ -197,7 +199,7 @@ function deleteReminder(){
 
 function returnToAllReminders() {
     app.addEventListener("click", (event) => {
-        if (event.target.classList.contains("returnReminders")) {
+        if (event.target.classList.contains("return-reminders")) {
             apiHelpers.getRequest(
                 "http://localhost:8080/api/reminders",
                 (reminders) => {
@@ -215,10 +217,18 @@ function navJournal() {
     });
 }
 
+function navForms() {
+    const formsElem = document.querySelector(".nav-list__forms");
+    formsElem.addEventListener("click", () => {
+        app.innerHTML = FormTypes();
+    });
+}
+
 function navResources() {
     const journalElem = document.querySelector(".nav-list__resources");
     journalElem.addEventListener("click", () => {
         app.innerHTML = Resources();
+        search();
     });
 }
 
@@ -233,5 +243,26 @@ function navContact() {
     const contactElem = document.querySelector(".nav-list__contact");
     contactElem.addEventListener("click", () => {
         app.innerHTML = Contact();
+    });
+}
+
+function search() {
+    const searchBar = document.querySelector("#search-bar");
+    searchBar.addEventListener("click", () => {
+        let top = document.getElementById("nested");
+        if (top.parentNode) {
+            top.parentNode.removeChild(top);
+        }
+    });    
+    
+    const searchSubmit = document.querySelector("#search-submit");
+    searchSubmit.addEventListener("click", () => {
+        let value = document.getElementById("search-bar").value;
+        console.log(value);
+        apiHelpers.getRequest(`https://health.gov/myhealthfinder/api/v3/topicsearch.json?keyword=${value}`, resources => {
+            const list = document.querySelector(".search-list");    
+            list.insertAdjacentHTML("beforeend", ResourceSearch(resources));
+            //app.innerHTML = ResourceSearch(resources);
+        });
     });
 }
