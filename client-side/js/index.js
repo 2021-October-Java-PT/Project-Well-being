@@ -199,7 +199,7 @@ function deleteReminder(){
 
 function returnToAllReminders() {
     app.addEventListener("click", (event) => {
-        if (event.target.classList.contains("returnReminders")) {
+        if (event.target.classList.contains("return-reminders")) {
             apiHelpers.getRequest(
                 "http://localhost:8080/api/reminders",
                 (reminders) => {

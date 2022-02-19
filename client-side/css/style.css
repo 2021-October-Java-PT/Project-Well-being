@@ -152,6 +152,11 @@ input[type="range"]::-webkit-slider-thumb{
 }
 
 /* calendar */
+
+.calendar{
+  text-align: center;
+}
+
 table.calendar {
   border-collapse: collapse;
   background: white;
@@ -165,6 +170,7 @@ table.calendar {
 h2.calendar {
   text-align: center;
   color: rgb(48, 48, 48);
+  margin-top: 4rem;
 }
 
 th.calendar {
@@ -190,7 +196,7 @@ tr.calendar > td:hover {
 
 * {
   box-sizing: border-box;
-  /* padding: 0; */
+  padding: 0;
   margin: 0;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
@@ -657,3 +663,124 @@ p.journal {
 #journal-entry {
   max-width: 80%;
 }
+
+/* reminder content */
+
+.reminder-header{
+  text-align: center;
+  padding: 5%;
+}
+
+.reminder{
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  display: block;
+  width: fit-content;
+  color: whitesmoke;
+  background: #a55344;
+  border-radius: 25px;
+  padding: 0.5em 1em;
+}
+
+.reminder:hover{
+  background: rgb(48, 48, 48);
+  transition: background 0.5s ease-in-out;
+}
+
+#frmReminder{
+  text-align: center;
+  margin: 4rem;
+  
+}
+
+.entrReminder{
+  font-weight: bold;
+}
+
+.add-reminder__name, .add-reminder__category, .add-reminder__priority, .add-reminder__description{
+  box-shadow: .5px .5px;
+  margin-left: .3rem;
+  margin-right: .3rem;
+}
+
+.add-reminder__submit, .add-reminder__priority{
+  cursor: pointer;
+}
+
+.all-reminders__div{
+  margin-bottom: 15px;
+  text-align: center;
+  align-items: center;
+} 
+
+.add-reminder__submit{
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 25px;
+  cursor: pointer;
+  outline: none;
+  margin-top: 1em;
+  font-weight: small;
+  color: whitesmoke;
+  background: #a55344;
+}
+
+.add-reminder__submit:hover{
+  background: rgb(48, 48, 48);
+  transition: background 0.5s ease-in-out;
+}
+
+/* Individual Reminder section */
+
+.individual-reminder{
+  margin: 5rem auto 5rem auto;
+  display: block;
+  width: fit-content;
+}
+
+.reminder-name, .reminder-category, .reminder-description, .reminder-priority{
+  margin: 1rem auto 1rem auto;
+  text-align: center;
+}
+
+.reminder-category, .reminder-description, .reminder-priority{
+  text-align: left;
+  margin-top: 2rem;
+}
+
+.reminder-name{
+  text-decoration: underline;
+}
+
+.return-reminders, .reminder-delete{
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 25px;
+  cursor: pointer;
+  outline: none;
+  margin: 1em;
+  font-weight: small;
+  color: whitesmoke;
+  background: #a55344;
+}
+
+.reminder-buttons{
+  display: block;
+  width: fit-content;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.return-reminders:hover, .reminder-delete:hover{
+  background: rgb(48, 48, 48);
+  transition: background 0.5s ease-in-out;
+}
+
+
+
+
+
+
