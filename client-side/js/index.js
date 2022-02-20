@@ -11,6 +11,7 @@ import LongDepression from "./components/LongDepression"
 import Mood from "./components/Mood";
 import Ptsd from "./components/Ptsd"
 import Reminders from "./components/Reminders";
+import ResourceSearch from "./components/ResourceSearch";
 import Resources from "./components/Resources";
 import ShortAnxiety from "./components/ShortAnxiety";
 import ShortDepression from "./components/ShortDepression"
@@ -22,13 +23,14 @@ const app = document.querySelector("#app");
 buildPage();
 
 function buildPage() {
-  renderHome();
-  navHome();
-  navReminders();
-  navJournal();
-  navAbout();
-  navContact();
-  navResources();
+    renderHome();
+    navHome();
+    navAllReminders();
+    navJournal();
+    navAbout();
+    navContact();
+    navResources();
+    navForms();
 }
 
 function renderHome() {
@@ -99,12 +101,82 @@ function displayJournal(){
   }});
 }
 
-function navReminders() {
-  const remindersElem = document.querySelector(".nav-list__reminders");
-  remindersElem.addEventListener("click", () => {
-    crud.getRequest("http://localhost:8080/api/reminders", (reminders) => {
-      console.log(reminders);
-      app.innerHTML = AllReminders(reminders);
+function navAllReminders() {
+    const remindersElem = document.querySelector(".nav-list__reminders");
+    remindersElem.addEventListener("click", () => {
+        apiHelpers.getRequest("http://localhost:8080/api/reminders", reminders => {
+            app.innerHTML = AllReminders(reminders);
+        });
+        renderReminder();
+        addReminder();
+        
+    });
+}
+
+function renderReminder() {
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("reminder")) {
+            const id = event.target.querySelector("#reminder-id").value;
+            apiHelpers.getRequest(`http://localhost:8080/api/reminders/${id}`, reminder => {
+                app.innerHTML = Reminders(reminder);
+            });
+            returnToAllReminders();
+            deleteReminder();
+        }
+    });
+}
+
+function addReminder() {
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("add-reminder__submit")) {
+            const addResourceName = event.target.parentElement.querySelector(
+                ".add-reminder__name"
+            ).value;
+            const addResourceCategory = event.target.parentElement.querySelector(
+                ".add-reminder__category"
+            ).value;
+            const addResourcePriority = event.target.parentElement.querySelector(
+                ".add-reminder__priority"
+            ).value;
+            const addResourceDescription = event.target.parentElement.querySelector(
+                ".add-reminder__description"
+            ).value;
+
+            apiHelpers.postRequest(
+                "http://localhost:8080/api/reminders/add-reminder", {
+                    name: addResourceName,
+                    category: addResourceCategory,
+                    priority: addResourcePriority,
+                    description: addResourceDescription,
+                },
+                reminders => {
+                    app.innerHTML = AllReminders(reminders);
+                });
+        }
+    });
+}
+
+function deleteReminder(){
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("reminder-delete")){
+            const deleteReminderId = event.target.parentElement.querySelector(".reminder-id").value;
+            apiHelpers.deleteRequest(`http://localhost:8080/api/reminders/${deleteReminderId}delete-reminder`, reminders => {
+                app.innerHTML = AllReminders(reminders);
+            });
+        }
+    });
+}
+
+function returnToAllReminders() {
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("return-reminders")) {
+            apiHelpers.getRequest(
+                "http://localhost:8080/api/reminders",
+                (reminders) => {
+                    app.innerHTML = AllReminders(reminders);
+                }
+            );
+        }
     });
   });
 }
@@ -116,11 +188,36 @@ function navJournal() {
   });
 }
 
+function navForms() {
+    const formsElem = document.querySelector(".nav-list__forms");
+    formsElem.addEventListener("click", () => {
+        app.innerHTML = FormTypes();
+
+    });
+    // displayForms();
+}
+// function displayForms() {
+//     app.addEventListener("click", (event) => {
+//         if (event.target.classList.contains("anxiety-short")) {
+//             app.innerHTML = ShortAnxiety();
+//         } else if (event.target.classList.contains("anxiety-long")) {
+//             app.innerHTML = LongAnxiety();
+//         } else if (event.target.classList.contains("depression-short")) {
+//             app.innerHTML = ShortDepression();
+//         } else if (event.target.classList.contains("depression-long")) {
+//             app.innerHTML = LongDepression();
+//         } else if (event.target.classList.contains("ptsd")) {
+//             app.innerHTML = Ptsd();
+//         }
+//     });
+// }
+
 function navResources() {
-  const journalElem = document.querySelector(".nav-list__resources");
-  journalElem.addEventListener("click", () => {
-    app.innerHTML = Resources();
-  });
+    const journalElem = document.querySelector(".nav-list__resources");
+    journalElem.addEventListener("click", () => {
+        app.innerHTML = Resources();
+        search();
+    });
 }
 
 function navAbout() {
@@ -131,8 +228,29 @@ function navAbout() {
 }
 
 function navContact() {
-  const contactElem = document.querySelector(".nav-list__contact");
-  contactElem.addEventListener("click", () => {
-    app.innerHTML = Contact();
-  });
+    const contactElem = document.querySelector(".nav-list__contact");
+    contactElem.addEventListener("click", () => {
+        app.innerHTML = Contact();
+    });
+}
+
+function search() {
+    const searchBar = document.querySelector("#search-bar");
+    searchBar.addEventListener("click", () => {
+        let top = document.getElementById("nested");
+        if (top.parentNode) {
+            top.parentNode.removeChild(top);
+        }
+    });    
+    
+    const searchSubmit = document.querySelector("#search-submit");
+    searchSubmit.addEventListener("click", () => {
+        let value = document.getElementById("search-bar").value;
+        console.log(value);
+        apiHelpers.getRequest(`https://health.gov/myhealthfinder/api/v3/topicsearch.json?keyword=${value}`, resources => {
+            const list = document.querySelector(".search-list");    
+            list.insertAdjacentHTML("beforeend", ResourceSearch(resources));
+            //app.innerHTML = ResourceSearch(resources);
+        });
+    });
 }

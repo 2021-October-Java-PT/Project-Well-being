@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com/">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Staatliches&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css" />
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Kavivanar&family=Lato:wght@300&display=swap");
@@ -17,8 +18,9 @@
 </head>
 
 <body>
+  <div class="wrapper">
   <nav class="navbar" href="#top">
-    <div class="navbar-container container">
+    <div class="navbar-container">
       <input type="checkbox" name="" id=""></input>
       <div class="hamburger-menu">
         <span class="line line1"></span>
@@ -28,21 +30,26 @@
       <ul class="nav-list">
         <li class="nav-list__home">Home</li>
         <li class="nav-list__reminders">Reminders</li>
-        <li class="nav-list__journal">Journal</li>
-        <li class="nav-list__resources">Resources</li>
+        <div class="dropdown">
+          <li class="">Resources</li>  
+          <div class="dropdown-content">
+            <li class="nav-list__journal">Journal</li>
+            <li class="nav-list__forms">Forms</li>
+            <li class="nav-list__resources">Additional Resources</li>
+          </div>
+        </div>
         <li class="nav-list__about">About</li>
         <li class="nav-list__contact">Contact</li>
       </ul>
       <h1 class="logo">Logo</h1>
     </div>
   </nav>
-  <div class="container" id="app">
-
-  </div>
+  <div class="container" id="app"></div>
   <footer id="footer">
     <h2>&copy; Project Well-being</h2>
     <a href="#top">Back to Top</a>
   </footer>
+</div>
   <script type="module" src="./js/index.js"></script>
 </body>
 </html>

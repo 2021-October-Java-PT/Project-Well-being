@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin
-public class JournalController {
+public class  JournalController {
 
     @Resource
     private JournalRepository journalRepo;
