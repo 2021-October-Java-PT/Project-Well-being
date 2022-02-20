@@ -25,6 +25,15 @@ export default function Resources(){
                             <li><a href="https://www.mayoclinic.org/diseases-conditions/depression/diagnosis-treatment/drc-20356013">Depression (Major Depressive Disorder) by the Mayo Clinic</a>
                             <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3181767/">Treatments in Depression by the National Institutes of Health</a>
                         </ul>
+
+                    <h3 class="links-subheader">Resources on Post Tramatic Stress Disorder</h3>
+                        <ul>
+                            <li><a href="https://www.ptsd.va.gov/">United States Veterans Affairs National Center for Post Tramatic Stress Disorder Mental Health Information</a>
+                            <li><a href="http://www.ptsdalliance.org/about-ptsd/">Post Tramatic Stress Disorder Alliance: You are not alone - About PTSD mental health information</a>
+                            <li><a href="https://www.nimh.nih.gov/health/topics/post-traumatic-stress-disorder-ptsd">Post Tramatic Stress Disorder Mental Health Information by the National Institute of Mental Health</a>
+                            <li><a href="https://adaa.org/understanding-anxiety/posttraumatic-stress-disorder-ptsd">Understanding Post Tramatic Stress Disorder by the Anxiety and Depression Association of America</a>
+                            <li><a href="https://nami.org/About-Mental-Illness/Mental-Health-Conditions/Posttraumatic-Stress-Disorder/Treatment">Post Traumatic Stress Disorder Treatment by the National Alliance on Mental Illness</a>
+                        </ul>    
                     <h3 class="links-subheader">Game to help with Depression</h3>
                     <h4><a href="https://www.sparx.org.nz/home">SPARX - AntiDepression Game</a></h4>
             </div>

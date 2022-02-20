@@ -194,7 +194,15 @@ input[type="range"]::-webkit-slider-thumb {
 /* calendar */
 
 .calendar {
-  text-align: center;
+    text-align: center;
+}
+
+.calendar_container{
+  -webkit-box-shadow: 4px 17px 31px -14px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 4px 17px 31px -14px rgba(0, 0, 0, 0.75);
+   box-shadow: 4px 17px 31px -14px rgba(0, 0, 0, 0.75);
+  height: 800px, auto;
+  padding-bottom: 6rem; 
 }
 
 table.calendar {
@@ -520,7 +528,7 @@ p {
 }
 
 .links-subheader{
-  padding-top: 2rem;
+  padding-top: 4rem;
   padding-bottom: 2rem;
 }
 
