@@ -15,16 +15,7 @@ public class RemindersResource {
     private String priority;
     private String description;
 
-
-    public RemindersResource(RemindersBody remindersBody){
-        this.name = remindersBody.getName();
-        this.category = remindersBody.getCategory();
-        this.priority = remindersBody.getPriority();
-        this.description = remindersBody.getDescription();
-    }
-
     public RemindersResource() {
-
     }
 
     public RemindersResource(String name, String category, String priority, String description) {
