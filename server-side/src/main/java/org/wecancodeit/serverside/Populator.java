@@ -5,12 +5,15 @@ import org.springframework.stereotype.Component;
 import org.wecancodeit.serverside.models.FormsResource;
 import org.wecancodeit.serverside.models.RemindersResource;
 import org.wecancodeit.serverside.repos.FormsRepository;
+import org.wecancodeit.serverside.repos.MoodRepository;
 import org.wecancodeit.serverside.repos.RemindersRepository;
 
 import javax.annotation.Resource;
 
 @Component
 public class Populator implements CommandLineRunner {
+    @Resource
+    private MoodRepository moodRepo;
 
     @Resource
     private RemindersRepository remindersRepo;
