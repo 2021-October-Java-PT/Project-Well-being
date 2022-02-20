@@ -1,19 +1,27 @@
 export default function AllReminders(reminders) {
     return `
     <div class="api-page-container">
-    <p>Reminder info</p>
-    <ul>
+    <div class="styling_container">
+    <div class="reminder-header">
+    <h1>Reminders</h1>
+    </div>
+    <div class-"all-reminders__div>
+    
+    <ul class="all-reminders__list>
+    <li class="reminder">
     ${reminders.map(reminder => {
     return `
+    </li>
     <li class="reminder">${reminder.name}
         <input type='hidden' id="reminder-id" value="${reminder.id}"/>
         </li>
         `;
     }).join('')}
     </ul>
+    </div>
     <h2 class="calendar">
     March 2022
-</h2>
+    </h2>
 <br />
 <table class="calendar">
     <thead>
@@ -96,13 +104,30 @@ export default function AllReminders(reminders) {
     <div class="">
         <div class=""></div>
             <form id="frmReminder"">
-                <label>Enter a Reminder</label>
+                <label class="entrReminder">Enter a Reminder:</label>
                 <input type="text" class="add-reminder__name" placeholder="Enter Name">
-                <input type="text" class="add-reminder__category" placeholder="Enter Category">
-                <input type="text" class="add-reminder__priority" placeholder="Enter Priority">
                 <input type="text" class="add-reminder__description" placeholder="Enter Description">
+                <select name="Category" id="category" class= "add-reminder__category">
+                <option value="None">Select a category</option>
+                <option value="Meals">Meals</option>
+                <option value="Family">Family</option>
+                <option value="Financial">Financial</option>
+                <option value="Transportation">Transportation</option>
+                <option value="Personal">Personal</option>
+                <option value="Health">Health</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Other">Other</option>
+                </select>
+                <select name="Priority" id="priority" class= "add-reminder__priority">
+                <option value="None">Select a priority</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+                <option value="None">None</option>
+                </select>
                 <button type="submit" class="add-reminder__submit">SUBMIT</button>
             </form>
+    </div>
     </div>
     </div>  
     `;

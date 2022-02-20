@@ -28,22 +28,11 @@ public class RemindersController {
     }
 
     @PostMapping("/api/reminders/add-reminder")
-    public String addReminder(@RequestBody String body) throws JSONException {
-        JSONObject newResource = new JSONObject(body);
-        String name = newResource.getString("name");
-        String category = newResource.getString("category");
-        String priority = newResource.getString("priority");
-        String description = newResource.getString("description");
+        public Collection<RemindersResource> addReminder(@RequestBody RemindersBody reminders) {
+        RemindersResource reminderToAddToList = new RemindersResource(reminders);
+        remindersRepo.save(reminderToAddToList);
 
-        Optional<RemindersResource> reminderToAddOpt = remindersRepo.findByName(name);
-
-        if (reminderToAddOpt.isEmpty()) {
-            RemindersResource resourceToAdd = new RemindersResource(name, category, priority, description);
-            remindersRepo.save(resourceToAdd);
-            return "redirect:/api/reminders";
-        }
-
-        return "redirect:/api/reminders";
+        return (Collection<RemindersResource>) remindersRepo.findAll();
     }
 
     @DeleteMapping("/api/reminders/{id}/delete-reminder")

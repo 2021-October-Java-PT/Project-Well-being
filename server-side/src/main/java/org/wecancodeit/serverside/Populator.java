@@ -23,9 +23,9 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String...args) throws Exception {
-        RemindersResource breakfast = new RemindersResource("breakfast", "meals", "high","eat your cheerios!");
-        RemindersResource lunch = new RemindersResource("lunch","meals","high","eat your sammich!");
-        RemindersResource dinner = new RemindersResource("dinner","meals","high","eat your potatoes");
+        RemindersResource breakfast = new RemindersResource("Breakfast", "Meals", "High","Eat your Cheerios!");
+        RemindersResource lunch = new RemindersResource("Lunch","Meals","High","Eat your sammich!");
+        RemindersResource dinner = new RemindersResource("Dinner","Meals","High","Eat your potatoes");
 
         remindersRepo.save(breakfast);
         remindersRepo.save(lunch);

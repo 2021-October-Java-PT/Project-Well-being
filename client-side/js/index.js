@@ -231,7 +231,7 @@ function deleteReminder(){
 
 function returnToAllReminders() {
     app.addEventListener("click", (event) => {
-        if (event.target.classList.contains("returnReminders")) {
+        if (event.target.classList.contains("return-reminders")) {
             apiHelpers.getRequest(
                 "http://localhost:8080/api/reminders",
                 (reminders) => {
@@ -243,18 +243,35 @@ function returnToAllReminders() {
 }
 
 function navJournal() {
-    const journalElem = document.querySelector(".nav-list__journal");
-    journalElem.addEventListener("click", () => {
-        app.innerHTML = Journal();
-    });
+  const journalElem = document.querySelector(".nav-list__journal");
+  journalElem.addEventListener("click", () => {
+    app.innerHTML = Journal();
+  });
 }
 
 function navForms() {
     const formsElem = document.querySelector(".nav-list__forms");
     formsElem.addEventListener("click", () => {
         app.innerHTML = FormTypes();
+
     });
+    // displayForms();
 }
+// function displayForms() {
+//     app.addEventListener("click", (event) => {
+//         if (event.target.classList.contains("anxiety-short")) {
+//             app.innerHTML = ShortAnxiety();
+//         } else if (event.target.classList.contains("anxiety-long")) {
+//             app.innerHTML = LongAnxiety();
+//         } else if (event.target.classList.contains("depression-short")) {
+//             app.innerHTML = ShortDepression();
+//         } else if (event.target.classList.contains("depression-long")) {
+//             app.innerHTML = LongDepression();
+//         } else if (event.target.classList.contains("ptsd")) {
+//             app.innerHTML = Ptsd();
+//         }
+//     });
+// }
 
 function navResources() {
     const journalElem = document.querySelector(".nav-list__resources");
@@ -265,10 +282,10 @@ function navResources() {
 }
 
 function navAbout() {
-    const aboutElem = document.querySelector(".nav-list__about");
-    aboutElem.addEventListener("click", () => {
-        app.innerHTML = About();
-    });
+  const aboutElem = document.querySelector(".nav-list__about");
+  aboutElem.addEventListener("click", () => {
+    app.innerHTML = About();
+  });
 }
 
 function navContact() {
