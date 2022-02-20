@@ -3,7 +3,6 @@ package org.wecancodeit.serverside.controllers;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
-import org.wecancodeit.serverside.models.RemindersBody;
 import org.wecancodeit.serverside.models.RemindersResource;
 import org.wecancodeit.serverside.repos.RemindersRepository;
 

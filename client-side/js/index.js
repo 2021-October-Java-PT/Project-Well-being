@@ -20,12 +20,6 @@ import apiHelpers from "./api-helpers.js/apiHelpers";
 import crud from "./crud/crud";
 
 const app = document.querySelector("#app");
-const emoticons = ["mood_bad",
-"sentiment_very_dissatisfied",
-"sentiment_satisfied",
-"sentiment_satisfied_alt",
-"sentiment_very_satisfied"
-];
 let loggedIn = "false"
 console.log(loggedIn);
 
@@ -61,10 +55,9 @@ function navHome() {
     });
 }
 
-
 function checkin() {
-    // const click = document.querySelector(".checkin")
-    app.addEventListener("click", (event) => {
+    const checkinSubmit = document.querySelector(".checkin")
+    checkinSubmit.addEventListener("click", () => {
         //modal
         const modal = document.querySelector("#myModal");
         const modalBody = document.querySelector(".modal-body");
@@ -74,7 +67,7 @@ function checkin() {
                  modal.style.display = "none";
              }
                        
-         if (event.target.classList.contains("checkin")) {
+        //  if (event.target.classList.contains("checkin")) {
             if (loggedIn == "false") {
                 modal.style.display = "block";
                 modalBody.innerHTML = `  
@@ -93,51 +86,53 @@ function checkin() {
             /*slider*/
             const slider = document.getElementById("slider");
             const emoji = document.getElementById("emoji");
-            // const emoticons = ["mood_bad",
-            //     "sentiment_very_dissatisfied",
-            //     "sentiment_satisfied",
-            //     "sentiment_satisfied_alt",
-            //     "sentiment_very_satisfied"
-            // ];
+            const emoticons = ["mood_bad",
+                "sentiment_very_dissatisfied",
+                "sentiment_satisfied",
+                "sentiment_satisfied_alt",
+                "sentiment_very_satisfied"
+            ];
 
             slider.oninput = function () {
                 emoji.innerHTML = emoticons[slider.value];
                 console.log(slider.value);
-            }
-        }
-        formTypes();
+            }            
+        // }
+        
     });
+    formTypes();
 }
 
 function formTypes() {
+    // const nextCheckin = document.querySelector(".nextCheckin");
     app.addEventListener("click", (event) => {
         //modal
         const modal = document.querySelector("#myModal");
                 const modalBody = document.querySelector(".modal-body");
-                
                 //modal close
                 const btn = document.getElementById("modal-close");
                 btn.onclick = function () {
                     modal.style.display = "none";
                 }
         if (event.target.classList.contains("nextCheckin")) {
-            const slider = document.getElementById("slider");
-            let moodValue = emoticons[slider.value];           
+            app.insertAdjacentHTML("beforeend", Mood());
+            const moodValue = document.getElementById("slider").value;
+            
             apiHelpers.postRequest(
                 "http://localhost:8080/api/add-mood", {
                     value: moodValue,
 
                 },
                 moods => {
-                    console.log(value);
+                    console.log(moodValue);
                     // app.innerHTML = AllReminders(reminders);
                 });            
             //const nextCheckin = document.querySelector(".");
             // nextCheckin.onclick = function() {
             modal.style.display = "block";
             modalBody.innerHTML = FormTypes();
-        }
-        displayForm();
+       }
+       displayForm();
     });
 }
 
