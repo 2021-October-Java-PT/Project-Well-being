@@ -15,6 +15,5 @@ export default function FormTypes() {
             <button type="button" class="ptsd" id="typeButton">PTSD</button>
             </div>
           </div>  
-        
     `;
 }

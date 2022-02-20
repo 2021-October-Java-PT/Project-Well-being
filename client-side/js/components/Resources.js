@@ -1,8 +1,5 @@
-
-
 export default function Resources(){
     return `
-    
         <div class="container-about" id="app">
             <div class="search-container">
                 <h1 class="search-header">Search for additional resources</h1>

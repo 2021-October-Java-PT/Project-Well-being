@@ -8,21 +8,7 @@ export default function Home() {
     <div class="home-container">
       <h1 class="main-title" id="home">Unbox Your Thoughts</h1>
       <h2>You Matter</h2>
-      <btn class="checkin btn btn-primary" id="myBtn">Checkin</btn>
-    </div>
-    <div class="modal" id="myModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <btn class="close" id="modal-close">&times;</btn>
-                <h4 class="modal-title">Daily Checkin</h4>
-            </div>
-            <div class="modal-body">
-
-            </div>
-            <div class="modal-footer">
-            <h4>&copy; Project Well-being</h4>
-            </div>
-        </div>
+      <btn class="checkin btn btn-primary">Checkin</btn>
     </div>
     </div>
     <div id="services">

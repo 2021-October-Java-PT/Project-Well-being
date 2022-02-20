@@ -1,4 +1,5 @@
-export default function Reminders(reminder) {
+export default function Reminders(reminders){
+    console.log('reminder page')
     return `
     <div class="resources_container">    
         <div class="individual-reminder">

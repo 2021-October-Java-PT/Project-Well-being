@@ -1,6 +1,4 @@
 
-
-
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -159,7 +157,6 @@ input[type="range"]::-webkit-slider-thumb {
   font-size: 130px;
   color: rgb(48, 48, 48);
 }
-/*end mood*/
 
 .forms-headers{
  text-align: center;
@@ -170,6 +167,29 @@ input[type="range"]::-webkit-slider-thumb {
 .survey-header{
   padding-bottom: 2rem;
 }
+
+input[type="range"] {
+  width: 500px;
+  height: 6px;
+  -webkit-appearance: none;
+  background-color: whitesmoke;
+  border-radius: 6px;
+  outline: none;
+  margin-top: 60px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 30px;
+  width: 30px;
+  background-color: whitesmoke;
+  border-radius: 50%;
+  box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.2);
+}
+.material-icons {
+  font-size: 130px;
+  color: rgb(48, 48, 48);
+}
+/*end mood*/
 
 /* calendar */
 
