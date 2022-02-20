@@ -20,7 +20,7 @@ import apiHelpers from "./api-helpers.js/apiHelpers";
 import crud from "./crud/crud";
 
 const app = document.querySelector("#app");
-let loggedIn = "false"
+let loggedIn = "false";
 console.log(loggedIn);
 
 buildPage();
@@ -55,17 +55,18 @@ function navHome() {
     });
 }
 
+
 function checkin() {
     const checkinSubmit = document.querySelector(".checkin")
     checkinSubmit.addEventListener("click", () => {
         //modal
         const modal = document.querySelector("#myModal");
         const modalBody = document.querySelector(".modal-body");
-             //modal close
-             const btn = document.getElementById("modal-close");
-             btn.onclick = function () {
-                 modal.style.display = "none";
-             }
+            //modal close
+        const btn = document.getElementById("modal-close");
+            btn.onclick = function () {
+                modal.style.display = "none";
+            }
                        
         //  if (event.target.classList.contains("checkin")) {
             if (loggedIn == "false") {
@@ -77,7 +78,6 @@ function checkin() {
               `;
               return;
             }
-            //const checkin = document.querySelector(".checkin");
             // When the user clicks on the button, open the modal
             //checkin.onclick = function() {
             modal.style.display = "block";
@@ -98,14 +98,13 @@ function checkin() {
                 console.log(slider.value);
             }            
         // }
-        
+        formTypes();
     });
-    formTypes();
 }
 
 function formTypes() {
-    // const nextCheckin = document.querySelector(".nextCheckin");
-    app.addEventListener("click", (event) => {
+    const nextCheckin = document.querySelector(".nextCheckin");
+    nextCheckin.addEventListener("click", () => {
         //modal
         const modal = document.querySelector("#myModal");
                 const modalBody = document.querySelector(".modal-body");
@@ -114,27 +113,32 @@ function formTypes() {
                 btn.onclick = function () {
                     modal.style.display = "none";
                 }
-        if (event.target.classList.contains("nextCheckin")) {
-            app.insertAdjacentHTML("beforeend", Mood());
+        // if (event.target.classList.contains("nextCheckin")) {
+            // app.insertAdjacentHTML("beforeend", Mood());
             const moodValue = document.getElementById("slider").value;
+            console.log(moodValue);
             
             apiHelpers.postRequest(
-                "http://localhost:8080/api/add-mood", {
+                "http://localhost:8080/api/mood/add-mood", {
                     value: moodValue,
 
-                },
-                moods => {
-                    console.log(moodValue);
+                });
+                // ,
+                // () =>
+                //     console.log(moodValue));
+            
+  
                     // app.innerHTML = AllReminders(reminders);
-                });            
+                // );            
             //const nextCheckin = document.querySelector(".");
             // nextCheckin.onclick = function() {
             modal.style.display = "block";
             modalBody.innerHTML = FormTypes();
-       }
-       displayForm();
-    });
-}
+            
+        });
+        displayForm();
+    }
+
 
 function displayForm() {
     app.addEventListener("click", (event) => {
