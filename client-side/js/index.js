@@ -178,8 +178,8 @@ function returnToAllReminders() {
             );
         }
     });
-  });
-}
+  };
+
 
 function navJournal() {
   const journalElem = document.querySelector(".nav-list__journal");
