@@ -6,6 +6,7 @@ import Contact from "./components/Contact";
 import FormTypes from "./components/FormTypes";
 import Home from "./components/Home";
 import Journal from "./components/Journal";
+import Login from "./components/Login";
 import LongAnxiety from "./components/LongAnxiety"
 import LongDepression from "./components/LongDepression"
 import Mood from "./components/Mood";
@@ -16,9 +17,10 @@ import Resources from "./components/Resources";
 import ShortAnxiety from "./components/ShortAnxiety";
 import ShortDepression from "./components/ShortDepression"
 import apiHelpers from "./api-helpers.js/apiHelpers";
-import crud from "./crud/crud";
 
 const app = document.querySelector("#app");
+let loggedIn = "false";
+console.log(loggedIn);
 
 buildPage();
 
@@ -31,74 +33,134 @@ function buildPage() {
     navContact();
     navResources();
     navForms();
+    navLogin();
 }
 
 function renderHome() {
-  app.innerHTML = Home();
-  checkin();
+    app.innerHTML = Home();
+    checkin();
 }
 
 function navHome() {
-  const homeElem = document.querySelector(".nav-list__home");
-  homeElem.addEventListener("click", () => {
-    app.innerHTML = Home();
-    checkin();
-  });
+    const homeElem = document.querySelector(".nav-list__home");
+    homeElem.addEventListener("click", () => {
+        app.innerHTML = Home();
+        checkin();
+        location.reload();
+    });
 }
 
-function checkin() {
-  const checkin = document.querySelector(".checkin");
-  checkin.addEventListener("click", () => {
-    app.innerHTML = Mood();
-    var slider = document.getElementById("slider");
-    var emoji = document.getElementById("emoji");
-    var emoticons = [
-      "mood_bad",
-      "sentiment_very_dissatisfied",
-      "sentiment_satisfied",
-      "sentiment_satisfied_alt",
-      "sentiment_very_satisfied",
-    ];
 
-    slider.oninput = function () {
-      emoji.innerHTML = emoticons[slider.value];
-      console.log(slider.value);
-    };
-    formTypes();
-  });
+function checkin() {
+    const checkinSubmit = document.querySelector(".checkin")
+    checkinSubmit.addEventListener("click", () => {
+        //modal
+        const modal = document.querySelector("#myModal");
+        const modalBody = document.querySelector(".modal-body");
+        const btn = document.getElementById("modal-close");
+            btn.onclick = function () {
+                modal.style.display = "none";
+            }
+                       
+        //  if (event.target.classList.contains("checkin")) {
+        if (loggedIn == "false") {
+            modal.style.display = "block";
+            modalBody.innerHTML = `  
+                <div class="modal-body mood-content">
+                    <h3>Please login to continue.</h3>
+                </div>
+              `;
+            return;
+        }
+            
+        // When the user clicks on the button, open the modal
+        modal.style.display = "block";
+        modalBody.innerHTML = Mood();
+            
+        // mood slider
+        const slider = document.getElementById("slider");
+        const emoji = document.getElementById("emoji");
+        const emoticons = ["mood_bad",
+                "sentiment_very_dissatisfied",
+                "sentiment_satisfied",
+                "sentiment_satisfied_alt",
+                "sentiment_very_satisfied"
+            ];
+
+        slider.oninput = function () {
+            emoji.innerHTML = emoticons[slider.value];
+            console.log(slider.value);
+        }
+        formTypes();
+    });
 }
 
 function formTypes() {
-  app.addEventListener("click", (event) => {
-    if (event.target.classList.contains("nextCheckin")) {
-      app.innerHTML = FormTypes();
+    const nextCheckin = document.querySelector(".nextCheckin");
+    nextCheckin.addEventListener("click", () => {
+        //modal
+        const modal = document.querySelector("#myModal");
+        const modalBody = document.querySelector(".modal-body");
+        const btn = document.getElementById("modal-close");
+            btn.onclick = function () {
+                modal.style.display = "none";
+            }
+            
+        // if (event.target.classList.contains("nextCheckin")) {
+        const moodValue = document.getElementById("slider").value;
+        console.log(moodValue);
+            
+        apiHelpers.postRequest(
+            "http://localhost:8080/api/mood/add-mood", {
+                    value: moodValue,
+            });
+                //,
+                //() =>
+                //  console.log(moodValue));
+        modal.style.display = "block";
+        modalBody.innerHTML = FormTypes();  
+        displayForm();
+        });
     }
-    displayForm();
-  });
-}
 
-function displayForm(){
-    app.addEventListener("click", (event)=>{
-        if (event.target.classList.contains("anxiety-short")){
-            app.innerHTML = ShortAnxiety();
-        }else if(event.target.classList.contains("anxiety-long")){
-            app.innerHTML = LongAnxiety();
-        }else if(event.target.classList.contains("depression-short")){
-            app.innerHTML = ShortDepression();
-        }else if(event.target.classList.contains("depression-long")){
-            app.innerHTML = LongDepression();
-        }else if(event.target.classList.contains("ptsd")){
-            app.innerHTML = Ptsd();
+
+function displayForm() {
+    app.addEventListener("click", (event) => {
+        //modal
+        const modal = document.querySelector("#myModal");
+        const modalBody = document.querySelector(".modal-body");
+        const btn = document.getElementById("modal-close");
+            btn.onclick = function () {
+                modal.style.display = "none";
+            }
+        if (event.target.classList.contains("anxiety-short")) {
+            modalBody.innerHTML = ShortAnxiety();
+        } else if (event.target.classList.contains("anxiety-long")) {
+            modalBody.innerHTML = LongAnxiety();
+        } else if (event.target.classList.contains("depression-short")) {
+            modalBody.innerHTML = ShortDepression();
+        } else if (event.target.classList.contains("depression-long")) {
+            modalBody.innerHTML = LongDepression();
+        } else if (event.target.classList.contains("ptsd")) {
+            modalBody.innerHTML = Ptsd();
         }
         displayJournal();
     });
 }
 
-function displayJournal(){
-  app.addEventListener("click",(event)=>{
-   if(event.target.classList.contains("lastCheckin")){
-      app.innerHTML = Journal();
-  }});
+function displayJournal() {
+    app.addEventListener("click", (event) => {
+        //modal
+        const modal = document.querySelector("#myModal");
+        const modalBody = document.querySelector(".modal-body");
+        const btn = document.getElementById("modal-close");
+            btn.onclick = function () {
+                modal.style.display = "none";
+            }
+        if (event.target.classList.contains("lastCheckin")) {
+            modalBody.innerHTML = Journal();
+        }
+    });
 }
 
 function navAllReminders() {
@@ -178,7 +240,7 @@ function returnToAllReminders() {
             );
         }
     });
-  };
+}
 
 
 function navJournal() {
@@ -254,3 +316,24 @@ function search() {
         });
     });
 }
+
+function navLogin() {
+    const loginElem = document.querySelector(".nav-list__login");
+    loginElem.addEventListener("click", () => {
+        app.innerHTML = Login();
+        userLogin();
+    });
+}
+
+function userLogin() {
+    const loginClick = document.querySelector("#login-btn");
+    loginClick.addEventListener("click", () => {
+        renderHome();
+        loggedIn = "true";
+        const x = document.getElementById("login");
+        x.innerHTML = `<i class="material-icons" id="account-circle">account_circle</i>`;
+        //console.log(loggedIn);
+    });
+    return loggedIn;
+}
+
