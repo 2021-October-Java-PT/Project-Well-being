@@ -1,10 +1,12 @@
 export default function AllReminders(reminders) {
     return `
     <div class="api-page-container">
+    <div class="styling_container">
     <div class="reminder-header">
     <h1>Reminders</h1>
     </div>
     <div class-"all-reminders__div>
+    
     <ul class="all-reminders__list>
     <li class="reminder">
     ${reminders.map(reminder => {
@@ -125,6 +127,7 @@ export default function AllReminders(reminders) {
                 </select>
                 <button type="submit" class="add-reminder__submit">SUBMIT</button>
             </form>
+    </div>
     </div>
     </div>  
     `;
