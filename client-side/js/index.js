@@ -221,8 +221,25 @@ function navForms() {
     const formsElem = document.querySelector(".nav-list__forms");
     formsElem.addEventListener("click", () => {
         app.innerHTML = FormTypes();
+
     });
+    // displayForms();
 }
+// function displayForms() {
+//     app.addEventListener("click", (event) => {
+//         if (event.target.classList.contains("anxiety-short")) {
+//             app.innerHTML = ShortAnxiety();
+//         } else if (event.target.classList.contains("anxiety-long")) {
+//             app.innerHTML = LongAnxiety();
+//         } else if (event.target.classList.contains("depression-short")) {
+//             app.innerHTML = ShortDepression();
+//         } else if (event.target.classList.contains("depression-long")) {
+//             app.innerHTML = LongDepression();
+//         } else if (event.target.classList.contains("ptsd")) {
+//             app.innerHTML = Ptsd();
+//         }
+//     });
+// }
 
 function navResources() {
     const journalElem = document.querySelector(".nav-list__resources");
