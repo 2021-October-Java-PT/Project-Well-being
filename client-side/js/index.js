@@ -17,7 +17,6 @@ import Resources from "./components/Resources";
 import ShortAnxiety from "./components/ShortAnxiety";
 import ShortDepression from "./components/ShortDepression"
 import apiHelpers from "./api-helpers.js/apiHelpers";
-import crud from "./crud/crud";
 
 const app = document.querySelector("#app");
 let loggedIn = "false";
@@ -39,8 +38,6 @@ function buildPage() {
 
 function renderHome() {
     app.innerHTML = Home();
-    //   app.insertAdjacentHTML("beforeend", Mood());
-    //   app.insertAdjacentHTML("beforeend", FormTypes());
     checkin();
 }
 
@@ -48,8 +45,6 @@ function navHome() {
     const homeElem = document.querySelector(".nav-list__home");
     homeElem.addEventListener("click", () => {
         app.innerHTML = Home();
-        // app.insertAdjacentHTML("beforeend", Mood());
-        // app.insertAdjacentHTML("beforeend", FormTypes());
         checkin();
         location.reload();
     });
@@ -62,42 +57,40 @@ function checkin() {
         //modal
         const modal = document.querySelector("#myModal");
         const modalBody = document.querySelector(".modal-body");
-            //modal close
         const btn = document.getElementById("modal-close");
             btn.onclick = function () {
                 modal.style.display = "none";
             }
                        
         //  if (event.target.classList.contains("checkin")) {
-            if (loggedIn == "false") {
-                modal.style.display = "block";
-                modalBody.innerHTML = `  
+        if (loggedIn == "false") {
+            modal.style.display = "block";
+            modalBody.innerHTML = `  
                 <div class="modal-body mood-content">
                     <h3>Please login to continue.</h3>
                 </div>
               `;
-              return;
-            }
-            // When the user clicks on the button, open the modal
-            //checkin.onclick = function() {
-            modal.style.display = "block";
-            modalBody.innerHTML = Mood();
-
-            /*slider*/
-            const slider = document.getElementById("slider");
-            const emoji = document.getElementById("emoji");
-            const emoticons = ["mood_bad",
+            return;
+        }
+            
+        // When the user clicks on the button, open the modal
+        modal.style.display = "block";
+        modalBody.innerHTML = Mood();
+            
+        // mood slider
+        const slider = document.getElementById("slider");
+        const emoji = document.getElementById("emoji");
+        const emoticons = ["mood_bad",
                 "sentiment_very_dissatisfied",
                 "sentiment_satisfied",
                 "sentiment_satisfied_alt",
                 "sentiment_very_satisfied"
             ];
 
-            slider.oninput = function () {
-                emoji.innerHTML = emoticons[slider.value];
-                console.log(slider.value);
-            }            
-        // }
+        slider.oninput = function () {
+            emoji.innerHTML = emoticons[slider.value];
+            console.log(slider.value);
+        }
         formTypes();
     });
 }
@@ -107,50 +100,39 @@ function formTypes() {
     nextCheckin.addEventListener("click", () => {
         //modal
         const modal = document.querySelector("#myModal");
-                const modalBody = document.querySelector(".modal-body");
-                //modal close
-                const btn = document.getElementById("modal-close");
-                btn.onclick = function () {
-                    modal.style.display = "none";
-                }
+        const modalBody = document.querySelector(".modal-body");
+        const btn = document.getElementById("modal-close");
+            btn.onclick = function () {
+                modal.style.display = "none";
+            }
+            
         // if (event.target.classList.contains("nextCheckin")) {
-            // app.insertAdjacentHTML("beforeend", Mood());
-            const moodValue = document.getElementById("slider").value;
-            console.log(moodValue);
+        const moodValue = document.getElementById("slider").value;
+        console.log(moodValue);
             
-            apiHelpers.postRequest(
-                "http://localhost:8080/api/mood/add-mood", {
+        apiHelpers.postRequest(
+            "http://localhost:8080/api/mood/add-mood", {
                     value: moodValue,
-
-                });
-                // ,
-                // () =>
-                //     console.log(moodValue));
-            
-  
-                    // app.innerHTML = AllReminders(reminders);
-                // );            
-            //const nextCheckin = document.querySelector(".");
-            // nextCheckin.onclick = function() {
-            modal.style.display = "block";
-            modalBody.innerHTML = FormTypes();
-            
-        });
+            });
+                //,
+                //() =>
+                //  console.log(moodValue));
+        modal.style.display = "block";
+        modalBody.innerHTML = FormTypes();  
         displayForm();
+        });
     }
 
 
 function displayForm() {
     app.addEventListener("click", (event) => {
-                //modal
-                const modal = document.querySelector("#myModal");
-                const modalBody = document.querySelector(".modal-body");
-                
-                //modal close
-                const btn = document.getElementById("modal-close");
-                btn.onclick = function () {
-                    modal.style.display = "none";
-                }
+        //modal
+        const modal = document.querySelector("#myModal");
+        const modalBody = document.querySelector(".modal-body");
+        const btn = document.getElementById("modal-close");
+            btn.onclick = function () {
+                modal.style.display = "none";
+            }
         if (event.target.classList.contains("anxiety-short")) {
             modalBody.innerHTML = ShortAnxiety();
         } else if (event.target.classList.contains("anxiety-long")) {
@@ -168,15 +150,13 @@ function displayForm() {
 
 function displayJournal() {
     app.addEventListener("click", (event) => {
-                //modal
-                const modal = document.querySelector("#myModal");
-                const modalBody = document.querySelector(".modal-body");
-                
-                //modal close
-                const btn = document.getElementById("modal-close");
-                btn.onclick = function () {
-                    modal.style.display = "none";
-                }
+        //modal
+        const modal = document.querySelector("#myModal");
+        const modalBody = document.querySelector(".modal-body");
+        const btn = document.getElementById("modal-close");
+            btn.onclick = function () {
+                modal.style.display = "none";
+            }
         if (event.target.classList.contains("lastCheckin")) {
             modalBody.innerHTML = Journal();
         }

@@ -13,7 +13,6 @@ public class MoodResource {
     private String value;
 
     public MoodResource(){
-
     }
 
     public MoodResource(String value){
