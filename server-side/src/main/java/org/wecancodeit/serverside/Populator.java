@@ -4,20 +4,22 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.wecancodeit.serverside.models.FormsResource;
 import org.wecancodeit.serverside.models.RemindersResource;
+import org.wecancodeit.serverside.models.User;
 import org.wecancodeit.serverside.repos.FormsRepository;
 import org.wecancodeit.serverside.repos.MoodRepository;
 import org.wecancodeit.serverside.repos.RemindersRepository;
+import org.wecancodeit.serverside.repos.UserRepository;
 
 import javax.annotation.Resource;
 
 @Component
 public class Populator implements CommandLineRunner {
     @Resource
+    private UserRepository userRepo;
+    @Resource
     private MoodRepository moodRepo;
-
     @Resource
     private RemindersRepository remindersRepo;
-
     @Resource
     private FormsRepository formsRepo;
 
@@ -43,5 +45,11 @@ public class Populator implements CommandLineRunner {
         formsRepo.save(depressionLong);
         formsRepo.save(ptsd);
 
+        User user1 = new User("user1", breakfast);
+        User user2 = new User("user2", lunch, dinner);
+        userRepo.save(user1);
+        userRepo.save(user2);
+
+        userRepo.save(new User("admin"));
     }
 }

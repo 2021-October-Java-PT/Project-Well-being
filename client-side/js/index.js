@@ -1,6 +1,7 @@
 //console.log('Client Side is wired up!');
 
 import About from "./components/About";
+import Admin from "./components/Admin";
 import AllReminders from "./components/AllReminders";
 import Contact from "./components/Contact";
 import FormTypes from "./components/FormTypes";
@@ -11,6 +12,7 @@ import LongAnxiety from "./components/LongAnxiety"
 import LongDepression from "./components/LongDepression"
 import Mood from "./components/Mood";
 import Ptsd from "./components/Ptsd"
+import Reminder from "./components/Reminder";
 import Reminders from "./components/Reminders";
 import ResourceSearch from "./components/ResourceSearch";
 import Resources from "./components/Resources";
@@ -19,21 +21,23 @@ import ShortDepression from "./components/ShortDepression"
 import apiHelpers from "./api-helpers.js/apiHelpers";
 
 const app = document.querySelector("#app");
+let userLoggedIn = "";
 let loggedIn = "false";
-console.log(loggedIn);
+console.log(userLoggedIn);
 
 buildPage();
 
 function buildPage() {
     renderHome();
     navHome();
-    navAllReminders();
+    // navAllReminders();
     navJournal();
     navAbout();
     navContact();
     navResources();
     navForms();
     navLogin();
+    navAdmin();
 }
 
 function renderHome() {
@@ -46,7 +50,7 @@ function navHome() {
     homeElem.addEventListener("click", () => {
         app.innerHTML = Home();
         checkin();
-        location.reload();
+        // location.reload();
     });
 }
 
@@ -89,7 +93,7 @@ function checkin() {
 
         slider.oninput = function () {
             emoji.innerHTML = emoticons[slider.value];
-            console.log(slider.value);
+            // console.log(slider.value);
         }
         formTypes();
     });
@@ -108,24 +112,24 @@ function formTypes() {
             
         // if (event.target.classList.contains("nextCheckin")) {
         const moodValue = document.getElementById("slider").value;
-        console.log(moodValue);
+        // console.log(moodValue);
             
         apiHelpers.postRequest(
-            "http://localhost:8080/api/mood/add-mood", {
+            `http://localhost:8080/api/mood/add-mood`, {
                     value: moodValue,
-            });
-                //,
-                //() =>
-                //  console.log(moodValue));
+            },
+                () =>
+                 console.log(moodValue));
         modal.style.display = "block";
-        modalBody.innerHTML = FormTypes();  
+        modalBody.innerHTML = FormTypes();
         displayForm();
         });
     }
 
 
 function displayForm() {
-    app.addEventListener("click", (event) => {
+    const typeButtons = document.querySelector(".typeButtons");
+    typeButtons.addEventListener("click", (event) => {
         //modal
         const modal = document.querySelector("#myModal");
         const modalBody = document.querySelector(".modal-body");
@@ -146,10 +150,12 @@ function displayForm() {
         }
         displayJournal();
     });
+    
 }
 
 function displayJournal() {
-    app.addEventListener("click", (event) => {
+    const lastCheckin = document.querySelector(".lastCheckin");
+    lastCheckin.addEventListener("click", () => {
         //modal
         const modal = document.querySelector("#myModal");
         const modalBody = document.querySelector(".modal-body");
@@ -157,30 +163,31 @@ function displayJournal() {
             btn.onclick = function () {
                 modal.style.display = "none";
             }
-        if (event.target.classList.contains("lastCheckin")) {
+        // if (event.target.classList.contains("lastCheckin")) {
             modalBody.innerHTML = Journal();
-        }
+        // }
     });
 }
 
 function navAllReminders() {
     const remindersElem = document.querySelector(".nav-list__reminders");
     remindersElem.addEventListener("click", () => {
-        apiHelpers.getRequest("http://localhost:8080/api/reminders", reminders => {
-            app.innerHTML = AllReminders(reminders);
-        });
+        apiHelpers.getRequest(`http://localhost:8080/api/${userLoggedIn}/reminders`, (reminders) => {
+                app.innerHTML = AllReminders(reminders);
+              });
+        //   }
         renderReminder();
-        addReminder();
-        
-    });
+        addReminder(); 
+    });     
 }
 
 function renderReminder() {
     app.addEventListener("click", (event) => {
-        if (event.target.classList.contains("reminder")) {
+         if (event.target.classList.contains("item-name")) {
             const id = event.target.querySelector("#reminder-id").value;
+            console.log(id);
             apiHelpers.getRequest(`http://localhost:8080/api/reminders/${id}`, reminder => {
-                app.innerHTML = Reminders(reminder);
+                app.innerHTML = Reminder(reminder);
             });
             returnToAllReminders();
             deleteReminder();
@@ -205,25 +212,32 @@ function addReminder() {
             ).value;
 
             apiHelpers.postRequest(
-                "http://localhost:8080/api/reminders/add-reminder", {
+                `http://localhost:8080/api/${userLoggedIn}/reminders/add-reminder`, {
                     name: addResourceName,
                     category: addResourceCategory,
                     priority: addResourcePriority,
                     description: addResourceDescription,
-                },
-                reminders => {
+            },
+            () => {
+                console.log(userLoggedIn);
+            //   if (userLoggedIn) {
+                apiHelpers.getRequest(`http://localhost:8080/api/${userLoggedIn}/reminders`, (reminders) => {
                     app.innerHTML = AllReminders(reminders);
-                });
-        }
-    });
+            });
+            // }
+        });
+    }
+});
 }
+
 
 function deleteReminder(){
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("reminder-delete")){
             const deleteReminderId = event.target.parentElement.querySelector(".reminder-id").value;
-            apiHelpers.deleteRequest(`http://localhost:8080/api/reminders/${deleteReminderId}delete-reminder`, reminders => {
-                app.innerHTML = AllReminders(reminders);
+            apiHelpers.deleteRequest(`http://localhost:8080/api/${userLoggedIn}/reminders/${deleteReminderId}/delete-reminder`, reminders => {
+                console.log(reminders);
+                // app.innerHTML = AllReminders(reminders);
             });
         }
     });
@@ -232,12 +246,9 @@ function deleteReminder(){
 function returnToAllReminders() {
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("return-reminders")) {
-            apiHelpers.getRequest(
-                "http://localhost:8080/api/reminders",
-                (reminders) => {
-                    app.innerHTML = AllReminders(reminders);
-                }
-            );
+            apiHelpers.getRequest(`http://localhost:8080/api/${userLoggedIn}/reminders`, (reminders) => {
+                app.innerHTML = AllReminders(reminders);
+              });
         }
     });
 }
@@ -282,6 +293,13 @@ function navResources() {
     });
 }
 
+function navAdmin() {
+    const adminElem = document.querySelector(".admin");
+    adminElem.addEventListener("click", () => {
+        app.innerHTML = Admin();
+    });
+}
+
 function navAbout() {
   const aboutElem = document.querySelector(".nav-list__about");
   aboutElem.addEventListener("click", () => {
@@ -320,6 +338,11 @@ function search() {
 function navLogin() {
     const loginElem = document.querySelector(".nav-list__login");
     loginElem.addEventListener("click", () => {
+     
+        if (loggedIn == "true") {
+            alert("Hello! You are already logged in.");
+            return;
+        }
         app.innerHTML = Login();
         userLogin();
     });
@@ -327,13 +350,33 @@ function navLogin() {
 
 function userLogin() {
     const loginClick = document.querySelector("#login-btn");
-    loginClick.addEventListener("click", () => {
-        renderHome();
-        loggedIn = "true";
-        const x = document.getElementById("login");
-        x.innerHTML = `<i class="material-icons" id="account-circle">account_circle</i>`;
-        //console.log(loggedIn);
+    loginClick.addEventListener("click", (event) => {
+        if (event.target.parentElement.classList.contains('login-form')) {
+            const name = event.target.parentElement.querySelector('.loginName').value;
+            userLoggedIn = name
+            console.log(userLoggedIn);
+            //from here instead of logging, you can send the user to the Account page and get the user's information, 
+            //note this will only be possible for a user that is stored in your populator otherwise you will get null
+            apiHelpers.getRequest(`http://localhost:8080/api/users/${name}`, (user) => {
+              console.log(user);
+              app.innerHTML = Home();
+            //   if (user) {
+            //     apiHelpers.getRequest(`http://localhost:8080/api/${name}/reminders`, (reminders) => {
+            //       app.innerHTML = AllReminders(reminders);
+            //     });
+            // }
+            navAllReminders();
+            checkin();
+        });
+        loggedIn = "true"
+        const icon = document.getElementById("login");
+        icon.innerHTML = `<i class="material-icons" id="account-circle">account_circle</i>`;
+        if (userLoggedIn.includes("user")) {
+            document.getElementById("clients").style.display = "initial";
+            // document.getElementById("clients").classList.remove("clients");
+        } else {
+            document.getElementById("admin").style.display = "initial";
+        }
+    }
     });
-    return loggedIn;
 }
-

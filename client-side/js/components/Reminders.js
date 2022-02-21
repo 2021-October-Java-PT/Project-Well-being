@@ -1,18 +1,20 @@
-export default function Reminders(reminder){
-    console.log('reminder page')
+export default function Reminders(reminders){
     return `
-    <div class="resources_container">    
-        <div class="individual-reminder">
-            <h1 class="reminder-name">${reminder.name}</h1>
-            <h2 class="reminder-category">Category: ${reminder.category}</h2>
-            <h2 class="reminder-description">Details: ${reminder.description}</h2>
-            <h2 class="reminder-priority">Priority: ${reminder.priority}</h2>
-        </div>
-        <div class="reminder-buttons">
-            <button class="return-reminders">Return to Reminders</button>
-            <button class="reminder-delete">Delete Reminder</button>
-            <input class = "reminder-id" type="hidden" value=${reminder.id}/>
-        </div>
-    </div>
+    ${reminders
+        .map((reminder) => {
+          const classNames = reminder.selected ? 'item-name-selected' : 'item-name';
+          return `
+              <section>
+                <p class=${classNames}>${reminder.name}
+                 <input type='hidden' id="reminder-id" class="reminder-id" value="${reminder.id}">
+                 <input class='item-nameInput' type='hidden' value=${reminder.name}>
+                </p>
+              </section>
+          `;
+          // }
+        })
+        .join('')}
      `;
 }
+
+
