@@ -1,7 +1,7 @@
 import journaling from "../../assets/journaling.jpg";
 
 export default function Journal(journals){
-    console.log("hit")
+    console.log("journal")
     return `
     
         <div class="styling_container">
@@ -23,12 +23,11 @@ export default function Journal(journals){
                 <textarea id="journal-entry" name="content" rows="5" cols="66" placeholder="Type your journal entry here..."></textarea><br>
                 <input class="journal-submit-button" type="submit">
             </form>
-        </div>
+        </div>  
 
-            <div class-"all-journals__div>
-    
-                <ul class="all-journals__list>
-                    <li class="journal-entry">
+        <div class-"all-journals__div>
+            <ul class="all-journals__list>
+                <li class="journal-entry">
                     ${journals.map(journal => {
                         return `
                 </li>
@@ -38,10 +37,10 @@ export default function Journal(journals){
                      `;
               }).join('')}
                       
-                </ul>
-            </div>
+            </ul>
+        </div>
 
-                
+             
      
     
     `;

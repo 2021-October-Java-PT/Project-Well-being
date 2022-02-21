@@ -159,7 +159,9 @@ function displayJournal() {
                 modal.style.display = "none";
             }
         if (event.target.classList.contains("lastCheckin")) {
-            modalBody.innerHTML = Journal();
+            apiHelpers.getRequest("http://localhost:8080/api/journal-entries", (journals) => {
+            modalBody.innerHTML = Journal(journals);
+        });
         }
     });
 }
