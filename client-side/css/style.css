@@ -805,6 +805,42 @@ p.journal {
   max-width: 80%;
 }
 
+.journal-submit-button{
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 25px;
+  cursor: pointer;
+  outline: none;
+  margin: 1em;
+  font-weight: small;
+  color: whitesmoke;
+  background: #a55344;
+}
+
+.journal-submit-button:hover{
+  background: rgb(48, 48, 48);
+  transition: background 0.5s ease-in-out;
+}
+
+.journal-entry {
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  display: block;
+  width: fit-content;
+  color: whitesmoke;
+  background: #a55344;
+  border-radius: 25px;
+  padding: 0.5em 1em;
+}
+ 
+.journal-entry:hover {
+  background: rgb(48, 48, 48);
+  transition: background 0.5s ease-in-out;
+}
+
+
 /*nicole*/
 .login-page {
   width: 360px;
@@ -864,22 +900,6 @@ p.journal {
 
 #account-circle {
   font-size: 1.5rem;
-}
-.journal-submit-button{
-  padding: 0.5em 1em;
-  text-decoration: none;
-  border-radius: 25px;
-  cursor: pointer;
-  outline: none;
-  margin: 1em;
-  font-weight: small;
-  color: whitesmoke;
-  background: #a55344;
-}
-
-.journal-submit-button:hover{
-  background: rgb(48, 48, 48);
-  transition: background 0.5s ease-in-out;
 }
 
 /* reminder content */
