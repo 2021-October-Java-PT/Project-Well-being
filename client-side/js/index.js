@@ -261,7 +261,8 @@ function renderJournalEntry() {
         apiHelpers.getRequest(`http://localhost:8080/api/journal-entry/${id}`, journal => {
             app.innerHTML = JournalEntry(journal);
         });
-        
+        deleteJournal();
+        returnToJournal();
     }
     });
 }
@@ -279,6 +280,27 @@ function addJournal() {
             )
         }
     })
+}
+
+function deleteJournal(){
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("journal-delete")) {
+            const deleteJournalId = event.target.parentElement.querySelector(".journal-id").value;
+            apiHelpers.deleteRequest("http://localhost:8080/api/journals/${deleteJournalId}/delete-journal-entry", journals => {
+                app.innerHTML = Journal(journals);
+            });
+        }
+    });
+}
+
+function returnToJournal() {
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("return-all-journals")) {
+            apiHelpers.getRequest("http://localhost:8080/api/journal-entries", (journals) => {
+                app.innerHTML = Journal(journals);
+            });
+        }
+    });
 }
 
 
