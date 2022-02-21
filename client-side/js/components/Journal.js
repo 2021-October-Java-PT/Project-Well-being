@@ -5,6 +5,7 @@ export default function Journal(){
     
         <div class="styling_container">
             <h1 class="journal">Journal Entry</h1>
+            <br>
             <p class="journal">Journaling about your feelings is linked to decreased mental distress. In a study, 
             researchers found that those with various medical conditions and anxiety who wrote online for 15 minutes 
             three days a week over a 12-week period had increased feelings of well-being and fewer depressive symptoms 
@@ -21,6 +22,7 @@ export default function Journal(){
                 <textarea id="journal-entry" name="content" rows="5" cols="66" placeholder="Type your journal entry here..."></textarea><br>
                 <input class="journal-submit-button" type="submit">
             </form>
+            
         </div>
     
     `;

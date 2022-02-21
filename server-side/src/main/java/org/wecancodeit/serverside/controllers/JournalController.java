@@ -46,7 +46,7 @@ public class JournalController {
 
         return "redirect:/api/journal-entries";
     }
-    
+
     @DeleteMapping("/api/journals/{id}/delete-journal-entry")
     public Collection<JournalResource> deleteJournal(@PathVariable Long id) throws JSONException {
         Optional<JournalResource> journalToRemoveOpt = journalRepo.findById(id);

@@ -242,13 +242,30 @@ function returnToAllReminders() {
     });
 }
 
-
 function navJournal() {
-  const journalElem = document.querySelector(".nav-list__journal");
-  journalElem.addEventListener("click", () => {
-    app.innerHTML = Journal();
-  });
+    const journalElem = document.querySelector(".nav-list__journal");
+    journalElem.addEventListener("click", () => {
+      app.innerHTML = Journal();
+    });
+    addJournal();
+  }
+
+function addJournal() {
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("journal-submit-button")) {
+            const journalEntryDate = event.target.parentElement.querySelector("#date").value;
+            const journalEntryContent = event.target.parentElement.querySelector("#journal-entry").value;
+            apiHelpers.postRequest(
+                "http://localhost:8080/api/journals/add-journal-entry", {
+                    date: journalEntryDate,
+                    content: journalEntryContent,
+                },
+            )
+        }
+    })
 }
+
+
 
 function navForms() {
     const formsElem = document.querySelector(".nav-list__forms");

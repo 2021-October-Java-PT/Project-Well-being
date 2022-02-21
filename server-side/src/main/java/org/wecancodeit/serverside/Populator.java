@@ -48,9 +48,9 @@ public class Populator implements CommandLineRunner {
         formsRepo.save(depressionLong);
         formsRepo.save(ptsd);
 
-        JournalResource one = new JournalResource("20220113", "kjdgkjhsdlkgjhdlkjghlkdfgh");
-        JournalResource two = new JournalResource("20220131", "jhsdguuisehrnghjsdnfgynk");
-        JournalResource three = new JournalResource("20211231", "khjdhfgjkhkjhdfhsgdhghj");
+        JournalResource one = new JournalResource("20220113", "Today was a rough day!  I got into it with my partner who was being unreasonable about how late I stayed out last night.");
+        JournalResource two = new JournalResource("20220131", "Today was awesome!  My boss was so encouraging when I asked her how she liked my work project. uch an amazing boss:)");
+        JournalResource three = new JournalResource("20211231", "Today was a little hard with my kids.  They argue so much!  I just want them to get along with each other and understand that they are both lucky to have each other.");
         JournalResource four = new JournalResource("20220201", "khdkfjghkshdfkghkskdjhg");
 
         journalRepo.save(one);
