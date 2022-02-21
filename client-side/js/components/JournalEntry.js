@@ -7,7 +7,7 @@ export default function JournalEntry(journal){
             <h2 class="journal-content">Category: ${journal.content}</h2>
             
         </div>
-        <div class="reminder-buttons">
+        <div class="journal-buttons">
             <button class="return-all-journals">Return to Journal</button>
             <button class="journal-delete">Delete Entry</button>
             <input class = "journal-id" type="hidden" value=${journal.id}/>

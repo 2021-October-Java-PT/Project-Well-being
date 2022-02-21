@@ -23,6 +23,7 @@ export default function Journal(journals){
                 <textarea id="journal-entry" name="content" rows="5" cols="66" placeholder="Type your journal entry here..."></textarea><br>
                 <input class="journal-submit-button" type="submit">
             </form>
+        </div>
 
             <div class-"all-journals__div>
     
@@ -41,7 +42,7 @@ export default function Journal(journals){
             </div>
 
                 
-        </div>
+     
     
     `;
 }
