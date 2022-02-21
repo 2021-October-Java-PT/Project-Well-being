@@ -242,11 +242,12 @@ function returnToAllReminders() {
     });
 }
 
+
 function navJournal() {
-    const journalElem = document.querySelector(".nav-list__journal");
-    journalElem.addEventListener("click", () => {
-        app.innerHTML = Journal();
-    });
+  const journalElem = document.querySelector(".nav-list__journal");
+  journalElem.addEventListener("click", () => {
+    app.innerHTML = Journal();
+  });
 }
 
 function navForms() {
@@ -282,10 +283,10 @@ function navResources() {
 }
 
 function navAbout() {
-    const aboutElem = document.querySelector(".nav-list__about");
-    aboutElem.addEventListener("click", () => {
-        app.innerHTML = About();
-    });
+  const aboutElem = document.querySelector(".nav-list__about");
+  aboutElem.addEventListener("click", () => {
+    app.innerHTML = About();
+  });
 }
 
 function navContact() {

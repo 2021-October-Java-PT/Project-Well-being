@@ -1,7 +1,8 @@
 export default function Contact(){
     return`
-    
+    <div class="container-contact">
     <section class="contact-area" id="contact">
+        
         <div class="contact-div">
             <h1>Contact Information</h1>
             <p>Phone: 555-555-5555</p>
@@ -29,8 +30,9 @@ export default function Contact(){
                     Your comments: <br>
                         <textarea name="comments" rows="15" cols="50"></textarea><br><br>
                         
-                    <input type="submit" value="Submit">
+                    <input class="journal-submit-button" type="submit" value="Submit">
             </form>
+            </div>
         </div>
     </section>
     

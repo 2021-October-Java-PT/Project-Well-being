@@ -17,7 +17,6 @@ export default function Home() {
                 <h4 class="modal-title">Daily Checkin</h4>
             </div>
             <div class="modal-body">
-
             </div>
             <div class="modal-footer">
             <h4>&copy; Project Well-being</h4>
