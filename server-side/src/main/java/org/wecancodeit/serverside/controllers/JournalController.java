@@ -5,7 +5,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 import org.wecancodeit.serverside.models.JournalResource;
-import org.wecancodeit.serverside.models.RemindersResource;
 import org.wecancodeit.serverside.repos.JournalRepository;
 
 import javax.annotation.Resource;

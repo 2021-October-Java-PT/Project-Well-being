@@ -17,6 +17,7 @@ import Resources from "./components/Resources";
 import ShortAnxiety from "./components/ShortAnxiety";
 import ShortDepression from "./components/ShortDepression"
 import apiHelpers from "./api-helpers.js/apiHelpers";
+import JournalEntry from "./components/JournalEntry";
 
 const app = document.querySelector("#app");
 let loggedIn = "false";
@@ -245,10 +246,25 @@ function returnToAllReminders() {
 function navJournal() {
     const journalElem = document.querySelector(".nav-list__journal");
     journalElem.addEventListener("click", () => {
-      app.innerHTML = Journal();
+        apiHelpers.getRequest("http://localhost:8080/api/journal-entries", journals => {
+      app.innerHTML = Journal(journals);
     });
+    renderJournalEntry();
     addJournal();
-  }
+  });
+}
+
+function renderJournalEntry() {
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("journal-entry")){
+        const id = event.target.querySelector("#journal-id").value;
+        apiHelpers.getRequest(`http://localhost:8080/api/journal-entry/${id}`, journal => {
+            app.innerHTML = JournalEntry(journal);
+        });
+        
+    }
+    });
+}
 
 function addJournal() {
     app.addEventListener("click", (event) => {
