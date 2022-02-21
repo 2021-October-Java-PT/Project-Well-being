@@ -2,8 +2,8 @@ package org.wecancodeit.serverside.controllers;
 
 
 import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
-import org.wecancodeit.serverside.models.JournalBody;
 import org.wecancodeit.serverside.models.JournalResource;
 import org.wecancodeit.serverside.models.RemindersResource;
 import org.wecancodeit.serverside.repos.JournalRepository;
@@ -14,12 +14,12 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin
-public class  JournalController {
+public class JournalController {
 
     @Resource
     private JournalRepository journalRepo;
 
-    @GetMapping("/api/journal-entry")
+    @GetMapping("/api/journal-entries")
     public Collection<JournalResource> getJournal() {
         return (Collection<JournalResource>) journalRepo.findAll();
     }
@@ -29,19 +29,29 @@ public class  JournalController {
         return journalRepo.findById(id);
     }
 
-    @PostMapping("/api/journals/add-journal")
-    public Collection<JournalResource> addJournalEntry(@RequestBody JournalBody journals) {
-        JournalResource journalEntryToAdd = new JournalResource(journals);
-        journalRepo.save(journalEntryToAdd);
+    @PostMapping("/api/journals/add-journal-entry")
+    public String addJournalEntry(@RequestBody String body) throws JSONException {
+        JSONObject newResource = new JSONObject(body);
+        String date = newResource.getString("date");
+        String content = newResource.getString("content");
 
-        return (Collection<JournalResource>) journalRepo.findAll();
+
+        Optional<JournalResource> journalEntryToAddOpt = journalRepo.findByDate(date);
+
+        if (journalEntryToAddOpt.isEmpty()) {
+            JournalResource journalEntryToAdd = new JournalResource(date, content);
+            journalRepo.save(journalEntryToAdd);
+            return "redirect:/api/journal-entries";
+        }
+
+        return "redirect:/api/journal-entries";
     }
-
-    @DeleteMapping("/api/journals/{id}/delete-journal")
+    
+    @DeleteMapping("/api/journals/{id}/delete-journal-entry")
     public Collection<JournalResource> deleteJournal(@PathVariable Long id) throws JSONException {
-        Optional<JournalResource> journalToRemove = journalRepo.findById(id);
-        if (journalToRemove.isPresent()){
-            journalRepo.delete(journalToRemove.get());
+        Optional<JournalResource> journalToRemoveOpt = journalRepo.findById(id);
+        if (journalToRemoveOpt.isPresent()) {
+            journalRepo.delete(journalToRemoveOpt.get());
         }
         return (Collection<JournalResource>) journalRepo.findAll();
     }

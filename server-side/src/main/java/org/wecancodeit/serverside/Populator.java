@@ -48,10 +48,10 @@ public class Populator implements CommandLineRunner {
         formsRepo.save(depressionLong);
         formsRepo.save(ptsd);
 
-        JournalResource one = new JournalResource(20220113, "kjdgkjhsdlkgjhdlkjghlkdfgh");
-        JournalResource two = new JournalResource(20220131, "jhsdguuisehrnghjsdnfgynk");
-        JournalResource three = new JournalResource(20211231, "khjdhfgjkhkjhdfhsgdhghj");
-        JournalResource four = new JournalResource(20220201, "khdkfjghkshdfkghkskdjhg");
+        JournalResource one = new JournalResource("20220113", "kjdgkjhsdlkgjhdlkjghlkdfgh");
+        JournalResource two = new JournalResource("20220131", "jhsdguuisehrnghjsdnfgynk");
+        JournalResource three = new JournalResource("20211231", "khjdhfgjkhkjhdfhsgdhghj");
+        JournalResource four = new JournalResource("20220201", "khdkfjghkshdfkghkskdjhg");
 
         journalRepo.save(one);
         journalRepo.save(two);
