@@ -371,11 +371,12 @@ function userLogin() {
         loggedIn = "true"
         const icon = document.getElementById("login");
         icon.innerHTML = `<i class="material-icons" id="account-circle">account_circle</i>`;
-        if (userLoggedIn.includes("user")) {
-            document.getElementById("clients").style.display = "initial";
+        if (userLoggedIn.includes("admin")) {
+            document.getElementById("user").style.display = "initial";
+            document.getElementById("admin").style.display = "initial";
             // document.getElementById("clients").classList.remove("clients");
         } else {
-            document.getElementById("admin").style.display = "initial";
+            document.getElementById("user").style.display = "initial";
         }
     }
     });
