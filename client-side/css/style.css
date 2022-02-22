@@ -817,12 +817,17 @@ p.journal {
   background: #a55344;
 }
 
-.journal-submit-button:hover{
+.journal-submit-button:hover, 
+.journal-entry:hover, 
+.return-all-journals:hover, 
+.journal-delete:hover {
   background: rgb(48, 48, 48);
   transition: background 0.5s ease-in-out;
 }
 
-.journal-entry {
+.journal-entry, 
+.return-all-journals, 
+.journal-delete {
   margin-bottom: 1rem;
   margin-left: auto;
   margin-right: auto;
@@ -838,6 +843,26 @@ p.journal {
 .journal-entry:hover {
   background: rgb(48, 48, 48);
   transition: background 0.5s ease-in-out;
+}
+
+.return-all-journals, 
+.journal-delete {
+align-self: center;
+ 
+}
+
+
+.journal-date {
+  padding-bottom: 2rem;
+  
+}
+
+.journal-content {
+  padding-bottom: 3rem;
+}
+
+.individual-journal {
+  text-align: center;
 }
 
 
