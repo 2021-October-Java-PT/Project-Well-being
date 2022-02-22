@@ -7,7 +7,7 @@ export default function AllReminders(reminders) {
     <div class="reminder-header">
         <h1>Reminders</h1>
     </div>
-    <div class-"all-reminders__div>
+    <div class-"all-reminders__div">
         ${Reminders(reminders)}
     </div>
     <h2 class="calendar">March 2022</h2>
