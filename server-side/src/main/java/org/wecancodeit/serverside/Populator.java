@@ -3,9 +3,11 @@ package org.wecancodeit.serverside;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.wecancodeit.serverside.models.FormsResource;
+import org.wecancodeit.serverside.models.JournalResource;
 import org.wecancodeit.serverside.models.RemindersResource;
 import org.wecancodeit.serverside.models.User;
 import org.wecancodeit.serverside.repos.FormsRepository;
+import org.wecancodeit.serverside.repos.JournalRepository;
 import org.wecancodeit.serverside.repos.MoodRepository;
 import org.wecancodeit.serverside.repos.RemindersRepository;
 import org.wecancodeit.serverside.repos.UserRepository;
@@ -22,6 +24,9 @@ public class Populator implements CommandLineRunner {
     private RemindersRepository remindersRepo;
     @Resource
     private FormsRepository formsRepo;
+
+    @Resource
+    private JournalRepository journalRepo;
 
     @Override
     public void run(String...args) throws Exception {
@@ -51,5 +56,15 @@ public class Populator implements CommandLineRunner {
         userRepo.save(user2);
 
         userRepo.save(new User("admin"));
+
+        JournalResource one = new JournalResource("2021-12-31", "Today was a rough day!  I got into it with my partner who was being unreasonable about how late I stayed out last night.");
+        JournalResource two = new JournalResource("2022-01-13", "Today was awesome!  My boss was so encouraging when I asked her how she liked my work project. uch an amazing boss:)");
+        JournalResource three = new JournalResource("2022-01-31", "Today was a little hard with my kids.  They argue so much!  I just want them to get along with each other and understand that they are both lucky to have each other.");
+        JournalResource four = new JournalResource("2022-02-01", "khdkfjghkshdfkghkskdjhg");
+
+        journalRepo.save(one);
+        journalRepo.save(two);
+        journalRepo.save(three);
+        journalRepo.save(four);
     }
 }

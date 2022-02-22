@@ -1,7 +1,7 @@
 import user1 from "../../images/user1.jpg";
 import user2 from "../../images/user2.jpg"
 
-export default function Admin(){
+export default function AdminHome(){
     console.log('Admin Page');
     return `
     <div class="container-contact">
@@ -11,7 +11,9 @@ export default function Admin(){
             <div class="services-item" id="service-one">
                 <article class="section-one">
                 <h2 class="subheading">User 1</h2>
-                <img class=articleImg id="user1" src="${user1}" alt="Img One">
+                <p class=""><img class=articleImg id="" src="${user1}" alt="Img One"">
+                    <input type='hidden' id="user1" class="" value="user1">
+                </p>               
                 <p class="infoPara"></p>
                 </article> 
             </div>

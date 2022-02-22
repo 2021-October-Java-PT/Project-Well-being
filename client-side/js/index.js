@@ -1,12 +1,14 @@
 //console.log('Client Side is wired up!');
 
 import About from "./components/About";
-import Admin from "./components/Admin";
+import AdminHome from "./components/AdminHome";
+import AdminUser from "./components/AdminUser";
 import AllReminders from "./components/AllReminders";
 import Contact from "./components/Contact";
 import FormTypes from "./components/FormTypes";
 import Home from "./components/Home";
 import Journal from "./components/Journal";
+import JournalEntry from "./components/JournalEntry";
 import Login from "./components/Login";
 import LongAnxiety from "./components/LongAnxiety"
 import LongDepression from "./components/LongDepression"
@@ -29,7 +31,7 @@ buildPage();
 
 function buildPage() {
     renderHome();
-    navHome();
+    navHome();   
     // navAllReminders();
     navJournal();
     navAbout();
@@ -163,9 +165,11 @@ function displayJournal() {
             btn.onclick = function () {
                 modal.style.display = "none";
             }
-        // if (event.target.classList.contains("lastCheckin")) {
-            modalBody.innerHTML = Journal();
-        // }
+        if (event.target.classList.contains("lastCheckin")) {
+            apiHelpers.getRequest("http://localhost:8080/api/journal-entries", (journals) => {
+            modalBody.innerHTML = Journal(journals);
+        });
+        }
     });
 }
 
@@ -253,13 +257,68 @@ function returnToAllReminders() {
     });
 }
 
-
 function navJournal() {
-  const journalElem = document.querySelector(".nav-list__journal");
-  journalElem.addEventListener("click", () => {
-    app.innerHTML = Journal();
+    const journalElem = document.querySelector(".nav-list__journal");
+    journalElem.addEventListener("click", () => {
+        apiHelpers.getRequest("http://localhost:8080/api/journal-entries", journals => {
+      app.innerHTML = Journal(journals);
+    });
+    renderJournalEntry();
+    addJournal();
   });
 }
+
+function renderJournalEntry() {
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("journal-entry")){
+        const id = event.target.querySelector("#journal-id").value;
+        apiHelpers.getRequest(`http://localhost:8080/api/journal-entry/${id}`, journal => {
+            app.innerHTML = JournalEntry(journal);
+        });
+        deleteJournal();
+        returnToJournal();
+    }
+    });
+}
+
+function addJournal() {
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("journal-submit-button")) {
+            const journalEntryDate = event.target.parentElement.querySelector("#date").value;
+            const journalEntryContent = event.target.parentElement.querySelector("#journal-entry").value;
+            apiHelpers.postRequest(
+                "http://localhost:8080/api/journals/add-journal-entry", {
+                    date: journalEntryDate,
+                    content: journalEntryContent,
+                },
+            )
+        }
+    })
+}
+
+function deleteJournal(){
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("journal-delete")) {
+            const deleteJournalId = event.target.parentElement.querySelector(".journal-id").value;
+            apiHelpers.deleteRequest(`http://localhost:8080/api/journals/${deleteJournalId}delete-journal-entry`, journals => {
+                app.innerHTML = Journal(journals);
+            });
+            returnToJournal();
+        }
+    });
+}
+
+function returnToJournal() {
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("return-all-journals")) {
+            apiHelpers.getRequest("http://localhost:8080/api/journal-entries", (journals) => {
+                app.innerHTML = Journal(journals);
+            });
+        }
+    });
+}
+
+
 
 function navForms() {
     const formsElem = document.querySelector(".nav-list__forms");
@@ -296,9 +355,30 @@ function navResources() {
 function navAdmin() {
     const adminElem = document.querySelector(".admin");
     adminElem.addEventListener("click", () => {
-        app.innerHTML = Admin();
+        app.innerHTML = AdminHome();
+    });
+    adminUser();
+}
+
+function adminUser() {
+    // const adminUserElem = document.querySelector(".articleImg");
+    // adminUserElem.addEventListener("click", () => {
+    app.addEventListener("click", (event) => {  
+        if (event.target.classList.contains("articleImg")) {
+            app.innerHTML = AdminUser();
+        }
+        returnAdminHome();
     });
 }
+
+function returnAdminHome() {
+    app.addEventListener("click", (event) => {
+      if (event.target.classList.contains("returnAdminHome")) {
+          app.innerHTML = AdminHome();
+          }
+    });
+}
+  
 
 function navAbout() {
   const aboutElem = document.querySelector(".nav-list__about");
