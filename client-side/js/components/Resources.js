@@ -1,10 +1,12 @@
 export default function Resources(){
     return `
-        <div class="container-about" id="app">
+        <div class="container-about">
             <div class="search-container">
-                <h1 class="search-header">Search for additional resources</h1>
+                <h1 class="search-header">Additional Resources<h1>
+                <h2>Search Topic</h2>
+                <br>
                     <div>
-                        <input type="text" id="search-bar" placeholder="Search.." onfocus="this.value=''">
+                        <input type="text" id="search-bar" placeholder="Enter keyword" onfocus="this.value=''">
                         <button type="button" id="search-submit"><i class="fa fa-search"></i></button>
                     </div>
             </div>

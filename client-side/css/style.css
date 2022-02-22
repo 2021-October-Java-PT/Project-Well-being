@@ -384,8 +384,7 @@ h2 {
   font-size: x-large;
 }
 
-.articleImg {
-  
+.articleImg {  
   display: inline;
   margin: 0 auto;
   width: 200px;
@@ -433,7 +432,7 @@ p {
 
 /*about*/
 .container-about {
-  padding-top: 5%;
+  padding-top: 3%;
   text-align: center;
   box-sizing: border-box;
   background-color: #f5f5f5;
@@ -541,6 +540,7 @@ p {
 }
 
 .search-list {
+  text-align: left;
   font-size: small;
   text-decoration: none;
   margin-left: 5em;
@@ -550,6 +550,10 @@ p {
 span {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: small;
+}
+
+.search-list li {
+  margin-left: 5em;
 }
 
 .resourceImg {

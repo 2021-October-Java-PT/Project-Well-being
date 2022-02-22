@@ -168,6 +168,7 @@ function displayJournal() {
         if (event.target.classList.contains("lastCheckin")) {
             apiHelpers.getRequest("http://localhost:8080/api/journal-entries", (journals) => {
             modalBody.innerHTML = Journal(journals);
+            document.getElementById("all-journals__div").style.display = "none";
         });
         }
     });
