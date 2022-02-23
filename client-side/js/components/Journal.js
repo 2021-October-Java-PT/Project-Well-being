@@ -27,7 +27,7 @@ export default function Journal(journals){
                 <input class="journal-submit-button" type="submit">
             </form>
             </div>
-        </div>  
+         
 
         <div class-"all-journals__div>
             <ul class="all-journals__list>
@@ -43,7 +43,7 @@ export default function Journal(journals){
                       
             </ul>
         </div>
-
+        </div> 
              
      
     
