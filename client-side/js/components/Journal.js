@@ -23,7 +23,7 @@ export default function Journal(journals){
                 <label class="label-date" for="date">Date:</label><br>
                 <input id="date" type="date"><br><br>
                 <label class="label-journal-entry" for="journal-entry">Journal Entry:</label><br>
-                <textarea id="journal-entry" name="content" rows="5" cols="66" placeholder="Type your journal entry here..."></textarea><br>
+                <textarea id="journal-entry" name="content" rows="6" cols="66" placeholder="Type your journal entry here..."></textarea><br>
                 <input class="journal-submit-button" type="submit">
             </form>
             </div>
