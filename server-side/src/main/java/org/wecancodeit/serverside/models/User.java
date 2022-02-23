@@ -16,11 +16,11 @@ public class User {
     private Long id;
     private String username;
 
-    @OneToMany
-    private Collection<RemindersResource> reminders;
+     protected User(){}
 
-    @OneToMany
-    private Collection<MoodResource> moods;
+    public User(String username) {
+        this.username = username;
+    }
 
     public String getUsername() {
         return username;
@@ -28,32 +28,5 @@ public class User {
 
     public Long getId() {
         return id;
-    }
-
-    public Collection<RemindersResource> getReminders(){
-        return reminders;
-    }
-
-    public Collection<MoodResource> getMood(){
-        return moods;
-    }
-
-    protected User(){}
-
-    public User(String username, RemindersResource...reminders) {
-        this.username = username;
-        this.reminders = new HashSet<>(Arrays.asList(reminders));
-    }
-
-    public void addReminder(RemindersResource reminderToAdd) {
-        reminders.add(reminderToAdd);
-    }
-
-    public void addMood(MoodResource moodToAdd) {
-        moods.add(moodToAdd);
-    }
-
-    public void deleteReminder(RemindersResource reminderToRemove) {
-        reminders.remove(reminderToRemove);
     }
 }

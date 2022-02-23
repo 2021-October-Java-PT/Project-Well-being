@@ -1,5 +1,3 @@
-import Reminders from "./Reminders";
-
 export default function AllReminders(reminders) {
     return `
     <div class="api-page-container">
@@ -8,7 +6,15 @@ export default function AllReminders(reminders) {
         <h1>Reminders</h1>
     </div>
     <div class-"all-reminders__div">
-        ${Reminders(reminders)}
+    <ul class="all-reminders__list">
+        ${reminders.map(reminder => {
+        return `
+        <li class="reminder">${reminder.name}
+            <input type='hidden' id="reminder-id" value="${reminder.id}">
+            </li>
+            `;
+        }).join('')}
+    </ul>
     </div>
     <h2 class="calendar">March 2022</h2>
     <br>

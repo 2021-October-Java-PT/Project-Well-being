@@ -50,13 +50,6 @@ public class Populator implements CommandLineRunner {
         formsRepo.save(depressionLong);
         formsRepo.save(ptsd);
 
-        User user1 = new User("user1", breakfast);
-        User user2 = new User("user2", lunch, dinner);
-        userRepo.save(user1);
-        userRepo.save(user2);
-
-        userRepo.save(new User("admin"));
-
         JournalResource one = new JournalResource("2021-12-31", "Today was a rough day!  I got into it with my partner who was being unreasonable about how late I stayed out last night.");
         JournalResource two = new JournalResource("2022-01-13", "Today was awesome!  My boss was so encouraging when I asked her how she liked my work project. uch an amazing boss:)");
         JournalResource three = new JournalResource("2022-01-31", "Today was a little hard with my kids.  They argue so much!  I just want them to get along with each other and understand that they are both lucky to have each other.");
@@ -66,5 +59,12 @@ public class Populator implements CommandLineRunner {
         journalRepo.save(two);
         journalRepo.save(three);
         journalRepo.save(four);
+
+        User user1 = new User("user1");
+        User user2 = new User("user2");
+        userRepo.save(user1);
+        userRepo.save(user2);
+
+        userRepo.save(new User("admin"));
     }
 }

@@ -15,4 +15,4 @@ export default function Reminder(reminder){
         </div>
     </div>
      `;
-}
+  }

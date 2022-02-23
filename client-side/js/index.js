@@ -15,7 +15,6 @@ import LongDepression from "./components/LongDepression"
 import Mood from "./components/Mood";
 import Ptsd from "./components/Ptsd"
 import Reminder from "./components/Reminder";
-import Reminders from "./components/Reminders";
 import ResourceSearch from "./components/ResourceSearch";
 import Resources from "./components/Resources";
 import ShortAnxiety from "./components/ShortAnxiety";
@@ -177,7 +176,7 @@ function displayJournal() {
 function navAllReminders() {
     const remindersElem = document.querySelector(".nav-list__reminders");
     remindersElem.addEventListener("click", () => {
-        apiHelpers.getRequest(`http://localhost:8080/api/${userLoggedIn}/reminders`, (reminders) => {
+        apiHelpers.getRequest(`http://localhost:8080/api/reminders`, (reminders) => {
                 app.innerHTML = AllReminders(reminders);
               });
         //   }
@@ -188,9 +187,8 @@ function navAllReminders() {
 
 function renderReminder() {
     app.addEventListener("click", (event) => {
-         if (event.target.classList.contains("item-name")) {
+        if (event.target.classList.contains("reminder")) {
             const id = event.target.querySelector("#reminder-id").value;
-            console.log(id);
             apiHelpers.getRequest(`http://localhost:8080/api/reminders/${id}`, reminder => {
                 app.innerHTML = Reminder(reminder);
             });
@@ -201,6 +199,7 @@ function renderReminder() {
 }
 
 function addReminder() {
+    // const addReminderElem = document.querySelector(".add-reminder__submit");
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("add-reminder__submit")) {
             const addResourceName = event.target.parentElement.querySelector(
@@ -217,7 +216,7 @@ function addReminder() {
             ).value;
 
             apiHelpers.postRequest(
-                `http://localhost:8080/api/${userLoggedIn}/reminders/add-reminder`, {
+                `http://localhost:8080/api/reminders/add-reminder`, {
                     name: addResourceName,
                     category: addResourceCategory,
                     priority: addResourcePriority,
@@ -226,24 +225,25 @@ function addReminder() {
             () => {
                 console.log(userLoggedIn);
             //   if (userLoggedIn) {
-                apiHelpers.getRequest(`http://localhost:8080/api/${userLoggedIn}/reminders`, (reminders) => {
+                apiHelpers.getRequest(`http://localhost:8080/api/reminders`, (reminders) => {
                     app.innerHTML = AllReminders(reminders);
             });
             // }
         });
     }
-});
+ });
 }
-
 
 function deleteReminder(){
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("reminder-delete")){
             const deleteReminderId = event.target.parentElement.querySelector(".reminder-id").value;
-            apiHelpers.deleteRequest(`http://localhost:8080/api/${userLoggedIn}/reminders/${deleteReminderId}/delete-reminder`, reminders => {
-                console.log(reminders);
-                // app.innerHTML = AllReminders(reminders);
+            apiHelpers.deleteRequest(`http://localhost:8080/api/reminders/${deleteReminderId}/delete-reminder`, () => {
+                //console.log(reminders);
+                apiHelpers.getRequest(`http://localhost:8080/api/reminders`, (reminders) => {
+                    app.innerHTML = AllReminders(reminders);
             });
+          });
         }
     });
 }
@@ -251,7 +251,7 @@ function deleteReminder(){
 function returnToAllReminders() {
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("return-reminders")) {
-            apiHelpers.getRequest(`http://localhost:8080/api/${userLoggedIn}/reminders`, (reminders) => {
+            apiHelpers.getRequest(`http://localhost:8080/api/reminders`, (reminders) => {
                 app.innerHTML = AllReminders(reminders);
               });
         }
@@ -453,9 +453,7 @@ function userLogin() {
         const icon = document.getElementById("login");
         icon.innerHTML = `<i class="material-icons" id="account-circle">account_circle</i>`;
         if (userLoggedIn.includes("admin")) {
-            document.getElementById("user").style.display = "initial";
             document.getElementById("admin").style.display = "initial";
-            // document.getElementById("clients").classList.remove("clients");
         } else {
             document.getElementById("user").style.display = "initial";
         }
