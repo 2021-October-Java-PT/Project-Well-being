@@ -1,4 +1,5 @@
 import journaling from "../../assets/journaling.jpg";
+import legalPad from "../../assets/legal-pad.png"
 
 export default function Journal(journals){
     console.log("journal")
@@ -16,14 +17,18 @@ export default function Journal(journals){
             </p>
             <br>        
             <img  class="journal-entry-img" src="${journaling}" alt="journal">
+
+            <div class="journal-form">
             <form class="journal">
-                <label for="date">Date:</label><br>
+                <label class="label-date" for="date">Date:</label><br>
                 <input id="date" type="date"><br><br>
-                <label for="journal-entry">Journal Entry:</label><br>
-                <textarea id="journal-entry" name="content" rows="5" cols="66" placeholder="Type your journal entry here..."></textarea><br>
-                <input class="journal-submit-button" type="submit"></input>
+                <label class="label-journal-entry" for="journal-entry">Journal Entry:</label><br>
+                <textarea id="journal-entry" name="content" rows="6" cols="66" placeholder="Type your journal entry here..."></textarea><br>
+                <input class="journal-submit-button" type="submit">
+
             </form>
-        </div>  
+            </div>
+         
 
         <div class-"all-journals__div" id="all-journals__div">
             <ul class="all-journals__list">
@@ -37,5 +42,7 @@ export default function Journal(journals){
                       
             </ul>
         </div>
+        </div> 
+
     `;
 }

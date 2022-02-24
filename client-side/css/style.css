@@ -809,10 +809,6 @@ p.journal {
   box-shadow: 5px 0px 10px 0px grey;
 }
 
-#journal-entry {
-  max-width: 80%;
-}
-
 .journal-submit-button{
   padding: 0.5em 1em;
   text-decoration: none;
@@ -825,12 +821,33 @@ p.journal {
   background: #a55344;
 }
 
-.journal-submit-button:hover{
+.journal-buttons {
+  display: flex;
+  width: fit-content; 
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+} 
+
+li.journal-entry {
+  float: right;
+  position: relative;
+  left: -28%;
+  text-align: left;
+  margin: 1rem;
+} 
+
+.journal-submit-button:hover, 
+.journal-entry:hover, 
+.return-all-journals:hover, 
+.journal-delete:hover {
   background: rgb(48, 48, 48);
   transition: background 0.5s ease-in-out;
 }
 
-.journal-entry {
+.journal-entry, 
+.return-all-journals, 
+.journal-delete {
   margin-bottom: 1rem;
   margin-left: auto;
   margin-right: auto;
@@ -842,12 +859,52 @@ p.journal {
   border-radius: 25px;
   padding: 0.5em 1em;
 }
- 
-.journal-entry:hover {
-  background: rgb(48, 48, 48);
-  transition: background 0.5s ease-in-out;
+
+.return-all-journals, 
+.journal-delete {
+margin-left: 2rem;
+margin-right: 2rem;
 }
 
+.journal-date {
+  padding-bottom: 2rem;
+}
+
+.journal-content {
+  padding-bottom: 3rem;
+}
+
+.label-date{
+  margin-top: 10rem;
+}
+
+#date {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  background-color: transparent;
+}
+
+#journal-entry {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  background-color: transparent;
+  max-width: 80%;
+}
+
+.individual-journal {
+  text-align: center;
+}
+
+.journal-form {
+  background-image: url("../assets/legal-pad.png");
+  min-height: 50rem;
+  background-position:top center;
+}
+
+form.journal {
+  padding-top: 7rem;
+  margin-top: 2rem;
+}
 
 /*nicole*/
 .login-page {

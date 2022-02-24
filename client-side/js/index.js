@@ -285,14 +285,14 @@ function renderJournalEntry() {
 function addJournal() {
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("journal-submit-button")) {
-            const journalEntryDate = event.target.parentElement.querySelector("#date").value;
+            var journalEntryDate = event.target.parentElement.querySelector("#date").value;
             const journalEntryContent = event.target.parentElement.querySelector("#journal-entry").value;
             apiHelpers.postRequest(
                 "http://localhost:8080/api/journals/add-journal-entry", {
                     date: journalEntryDate,
                     content: journalEntryContent,
                 },
-            )
+            ) 
         }
     })
 }
