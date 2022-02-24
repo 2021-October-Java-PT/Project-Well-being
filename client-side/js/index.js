@@ -468,13 +468,10 @@ function playSounds(){
     const stopClick = document.querySelector("#stop-button");
     
     playClick.addEventListener("click", () => {
-        console.log("click");
-        
         mySounds.volume = 0.5;
         mySounds.play();
     });
 
-    
     stopClick.addEventListener("click", () => {
         mySounds.pause();
         mySounds.currentTime = 0;
