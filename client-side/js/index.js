@@ -39,6 +39,7 @@ function buildPage() {
     navForms();
     navLogin();
     navAdmin();
+    playSounds();
 }
 
 function renderHome() {
@@ -460,3 +461,25 @@ function userLogin() {
     }
     });
 }
+
+function playSounds(){
+    const mySounds = document.querySelector("#nature-sounds");
+    const playClick = document.querySelector("#play-button");
+    const stopClick = document.querySelector("#stop-button");
+    
+    playClick.addEventListener("click", () => {
+        console.log("click");
+        
+        mySounds.volume = 0.5;
+        mySounds.play();
+    });
+
+    
+    stopClick.addEventListener("click", () => {
+        mySounds.pause();
+        mySounds.currentTime = 0;
+    })
+    
+}
+
+
