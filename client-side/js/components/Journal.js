@@ -35,7 +35,7 @@ export default function Journal(journals){
                 ${journals.map(journal => {
                     return `
                 <li class="journal-entry">${journal.date}
-                     <input type='hidden' id="journal-id" value="${journal.id}"/>
+                     <input type='hidden' id="journal-id" value="${journal.id}">
                 </li>
                      `;
               }).join('')}

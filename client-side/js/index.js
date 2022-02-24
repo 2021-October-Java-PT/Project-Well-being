@@ -301,7 +301,7 @@ function deleteJournal(){
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("journal-delete")) {
             const deleteJournalId = event.target.parentElement.querySelector(".journal-id").value;
-            apiHelpers.deleteRequest(`http://localhost:8080/api/journals/${deleteJournalId}delete-journal-entry`, journals => {
+            apiHelpers.deleteRequest(`http://localhost:8080/api/journals/${deleteJournalId}/delete-journal-entry`, journals => {
                 app.innerHTML = Journal(journals);
             });
             returnToJournal();
