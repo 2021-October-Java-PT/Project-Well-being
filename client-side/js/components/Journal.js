@@ -25,16 +25,15 @@ export default function Journal(journals){
                 <label class="label-journal-entry" for="journal-entry">Journal Entry:</label><br>
                 <textarea id="journal-entry" name="content" rows="6" cols="66" placeholder="Type your journal entry here..."></textarea><br>
                 <input class="journal-submit-button" type="submit">
+
             </form>
             </div>
          
 
-        <div class-"all-journals__div>
-            <ul class="all-journals__list>
-                <li class="journal-entry">
-                    ${journals.map(journal => {
-                        return `
-                </li>
+        <div class-"all-journals__div" id="all-journals__div">
+            <ul class="all-journals__list">
+                ${journals.map(journal => {
+                    return `
                 <li class="journal-entry">${journal.date}
                      <input type='hidden' id="journal-id" value="${journal.id}"/>
                 </li>
@@ -44,8 +43,6 @@ export default function Journal(journals){
             </ul>
         </div>
         </div> 
-             
-     
-    
+
     `;
 }
