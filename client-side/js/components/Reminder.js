@@ -1,4 +1,4 @@
-export default function Reminders(reminder){
+export default function Reminder(reminder){
     console.log('reminder page')
     return `
     <div class="resources_container">    
@@ -11,8 +11,8 @@ export default function Reminders(reminder){
         <div class="reminder-buttons">
             <button class="return-reminders">Return to Reminders</button>
             <button class="reminder-delete">Delete Reminder</button>
-            <input class = "reminder-id" type="hidden" value=${reminder.id}/>
+            <input class="reminder-id" type="hidden" value=${reminder.id}>
         </div>
     </div>
      `;
-}
+  }
