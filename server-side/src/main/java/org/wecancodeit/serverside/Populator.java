@@ -31,17 +31,7 @@ public class Populator implements CommandLineRunner {
         remindersRepo.save(lunch);
         remindersRepo.save(dinner);
 
-        FormsResource anxietyShort = new FormsResource("anxiety-short", 0);
-        FormsResource anxietyLong = new FormsResource("anxiety-long",0);
-        FormsResource depressionShort = new FormsResource("depression-short",0);
-        FormsResource depressionLong = new FormsResource("depression-long",0);
-        FormsResource ptsd = new FormsResource("ptsd",0);
 
-        formsRepo.save(anxietyShort);
-        formsRepo.save(anxietyLong);
-        formsRepo.save(depressionShort);
-        formsRepo.save(depressionLong);
-        formsRepo.save(ptsd);
 
     }
 }

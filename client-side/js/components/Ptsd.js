@@ -1,7 +1,7 @@
 export default function Ptsd(){
     return `
       <div class="form-container">
-      <h1>PTSD Questionnaire</h1>
+      <h1 class="formType">PTSD Questionnaire</h1>
       
       <p>Sometimes things happen to people that are unusually or especially frightening, horrible, or traumatic.
       
@@ -59,7 +59,7 @@ export default function Ptsd(){
         
         
         </ul>
-        <button class="lastCheckin">Next</button>
+        <button class="lastCheckin" id="saveForm">Next</button>
       </div>
     
     

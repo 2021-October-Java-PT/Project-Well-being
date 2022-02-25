@@ -10,6 +10,7 @@ import Login from "./components/Login";
 import LongAnxiety from "./components/LongAnxiety"
 import LongDepression from "./components/LongDepression"
 import Mood from "./components/Mood";
+import NavFormTypes from "./components/NavFormTypes"
 import Ptsd from "./components/Ptsd"
 import Reminders from "./components/Reminders";
 import ResourceSearch from "./components/ResourceSearch";
@@ -135,16 +136,23 @@ function displayForm() {
             }
         if (event.target.classList.contains("anxiety-short")) {
             modalBody.innerHTML = ShortAnxiety();
+            saveForm();
         } else if (event.target.classList.contains("anxiety-long")) {
             modalBody.innerHTML = LongAnxiety();
+            saveForm();
         } else if (event.target.classList.contains("depression-short")) {
             modalBody.innerHTML = ShortDepression();
+            saveForm();
         } else if (event.target.classList.contains("depression-long")) {
             modalBody.innerHTML = LongDepression();
+            saveForm();
         } else if (event.target.classList.contains("ptsd")) {
             modalBody.innerHTML = Ptsd();
+            saveForm();
         }
         displayJournal();
+        
+       
     });
 }
 
@@ -253,26 +261,26 @@ function navJournal() {
 function navForms() {
     const formsElem = document.querySelector(".nav-list__forms");
     formsElem.addEventListener("click", () => {
-        app.innerHTML = FormTypes();
+        app.innerHTML = NavFormTypes();
 
     });
-    // displayForms();
+    displayNavForms();
 }
-// function displayForms() {
-//     app.addEventListener("click", (event) => {
-//         if (event.target.classList.contains("anxiety-short")) {
-//             app.innerHTML = ShortAnxiety();
-//         } else if (event.target.classList.contains("anxiety-long")) {
-//             app.innerHTML = LongAnxiety();
-//         } else if (event.target.classList.contains("depression-short")) {
-//             app.innerHTML = ShortDepression();
-//         } else if (event.target.classList.contains("depression-long")) {
-//             app.innerHTML = LongDepression();
-//         } else if (event.target.classList.contains("ptsd")) {
-//             app.innerHTML = Ptsd();
-//         }
-//     });
-// }
+function displayNavForms() {
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("anxietyShort")) {
+            app.innerHTML = ShortAnxiety();
+        } else if (event.target.classList.contains("anxietyLong")) {
+            app.innerHTML = LongAnxiety();
+        } else if (event.target.classList.contains("depressionShort")) {
+            app.innerHTML = ShortDepression();
+        } else if (event.target.classList.contains("depressionLong")) {
+            app.innerHTML = LongDepression();
+        } else if (event.target.classList.contains("ptsdNav")) {
+            app.innerHTML = Ptsd();
+        }
+    });
+}
 
 function navResources() {
     const journalElem = document.querySelector(".nav-list__resources");
@@ -336,4 +344,18 @@ function userLogin() {
     });
     return loggedIn;
 }
+
+function saveForm() {
+ 
+ const formClick= document.querySelector(".lastCheckin");
+ formClick.addEventListener("click", ()=> 
+ {const rating1 = document.querySelector('input[name="rating1"]:checked').value;
+ const rating2 = document.querySelector('input[name="rating2"]:checked').value;
+ const total = rating1 + rating2
+ console.log(total);
+ });
+     
+ } 
+ 
+
 

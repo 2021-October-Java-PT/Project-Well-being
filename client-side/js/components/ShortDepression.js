@@ -1,7 +1,7 @@
 export default function ShortDepression(){
     return `
   <div class="form-container">
-  <h1>Daily Depression Questionnaire</h1>
+  <h1 class="formType">Daily Depression Questionnaire</h1>
    <h3>Over the last 24 hours, how often have you been bothered by the following problems?</h3>
       <ul>
       <li>Little interest or pleasure in doing things</li>
@@ -30,7 +30,7 @@ export default function ShortDepression(){
             <input type="radio" name="rating2" id="3" value="3">
             <label for="3">All day</label><br>
   
-      <button class="lastCheckin">Next</button>
+      <button class="lastCheckin" id="saveForm">Next</button>
   
   `;
   }
