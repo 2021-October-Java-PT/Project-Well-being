@@ -1,4 +1,3 @@
-
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -27,6 +26,11 @@
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
   animation-duration: 0.4s;
+}
+
+.admin,
+.user {
+  display: none;
 }
 
 .dropdown {
@@ -314,7 +318,7 @@ tr.calendar > td:hover {
   margin-top: 1em;
   text-transform: uppercase;
   font-weight: small;
-  border: solid #BDBDBD 1px; 
+  /* border: solid #BDBDBD 1px;  */
 	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5); 
 	-webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5); 
 	-moz-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);  
@@ -404,7 +408,6 @@ p {
 .section-three {
   padding-bottom: 25px;
 }
-
 #service-one,
 #service-two,
 #service-three {
@@ -431,7 +434,7 @@ p {
 
 /*about*/
 .container-about {
-  padding-top: 5%;
+  padding-top: 3%;
   text-align: center;
   box-sizing: border-box;
   background-color: #f5f5f5;
@@ -539,6 +542,7 @@ p {
 }
 
 .search-list {
+  text-align: left;
   font-size: small;
   text-decoration: none;
   margin-left: 5em;
@@ -548,6 +552,10 @@ p {
 span {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: small;
+}
+
+.search-list li {
+  margin-left: 5em;
 }
 
 .resourceImg {
@@ -801,8 +809,101 @@ p.journal {
   box-shadow: 5px 0px 10px 0px grey;
 }
 
+.journal-submit-button{
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 25px;
+  cursor: pointer;
+  outline: none;
+  margin: 1em;
+  font-weight: small;
+  color: whitesmoke;
+  background: #a55344;
+}
+
+.journal-buttons {
+  display: flex;
+  width: fit-content; 
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+} 
+
+li.journal-entry {
+  float: right;
+  position: relative;
+  left: -28%;
+  text-align: left;
+  margin: 1rem;
+} 
+
+.journal-submit-button:hover, 
+.journal-entry:hover, 
+.return-all-journals:hover, 
+.journal-delete:hover {
+  background: rgb(48, 48, 48);
+  transition: background 0.5s ease-in-out;
+}
+
+.journal-entry, 
+.return-all-journals, 
+.journal-delete {
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  display: block;
+  width: fit-content;
+  color: whitesmoke;
+  background: #a55344;
+  border-radius: 25px;
+  padding: 0.5em 1em;
+}
+
+.return-all-journals, 
+.journal-delete {
+margin-left: 2rem;
+margin-right: 2rem;
+}
+
+.journal-date {
+  padding-bottom: 2rem;
+}
+
+.journal-content {
+  padding-bottom: 3rem;
+}
+
+.label-date{
+  margin-top: 10rem;
+}
+
+#date {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  background-color: transparent;
+}
+
 #journal-entry {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  background-color: transparent;
   max-width: 80%;
+}
+
+.individual-journal {
+  text-align: center;
+}
+
+.journal-form {
+  background-image: url("../assets/legal-pad.png");
+  min-height: 50rem;
+  background-position:top center;
+}
+
+form.journal {
+  padding-top: 7rem;
+  margin-top: 2rem;
 }
 
 /*nicole*/
@@ -864,22 +965,6 @@ p.journal {
 
 #account-circle {
   font-size: 1.5rem;
-}
-.journal-submit-button{
-  padding: 0.5em 1em;
-  text-decoration: none;
-  border-radius: 25px;
-  cursor: pointer;
-  outline: none;
-  margin: 1em;
-  font-weight: small;
-  color: whitesmoke;
-  background: #a55344;
-}
-
-.journal-submit-button:hover{
-  background: rgb(48, 48, 48);
-  transition: background 0.5s ease-in-out;
 }
 
 /* reminder content */
@@ -1022,6 +1107,7 @@ p.journal {
 .form-content{
   margin-top: 2rem;
 }
+
 .lastCheckin{
   margin-bottom: 1rem;
   margin-left: auto;
@@ -1035,3 +1121,14 @@ p.journal {
   padding: 0.5em 1em;
 }
 
+#play-button, #stop-button{
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 25px;
+  cursor: pointer;
+  outline: none;
+  margin: 1em;
+  font-weight: small;
+  color: whitesmoke;
+  background: #a55344;
+}

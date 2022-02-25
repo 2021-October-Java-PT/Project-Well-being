@@ -28,7 +28,7 @@ public class RemindersController {
     }
 
     @PostMapping("/api/reminders/add-reminder")
-    public String addReminder(@RequestBody String body) throws JSONException {
+    public Collection<RemindersResource> addReminder(@RequestBody String body) throws JSONException {
         JSONObject newResource = new JSONObject(body);
         String name = newResource.getString("name");
         String category = newResource.getString("category");
@@ -40,10 +40,9 @@ public class RemindersController {
         if (reminderToAddOpt.isEmpty()) {
             RemindersResource resourceToAdd = new RemindersResource(name, category, priority, description);
             remindersRepo.save(resourceToAdd);
-            return "redirect:/api/reminders";
+            return (Collection<RemindersResource>) remindersRepo.findAll();
         }
-
-        return "redirect:/api/reminders";
+        return (Collection<RemindersResource>) remindersRepo.findAll();
     }
 
     @DeleteMapping("/api/reminders/{id}/delete-reminder")
@@ -54,5 +53,4 @@ public class RemindersController {
         }
         return (Collection<RemindersResource>) remindersRepo.findAll();
     }
-
 }
