@@ -3,26 +3,21 @@ export default function AllReminders(reminders) {
     <div class="api-page-container">
     <div class="styling_container">
     <div class="reminder-header">
-    <h1>Reminders</h1>
+        <h1>Reminders</h1>
     </div>
-    <div class-"all-reminders__div>
-    
-    <ul class="all-reminders__list>
-    <li class="reminder">
-    ${reminders.map(reminder => {
-    return `
-    </li>
-    <li class="reminder">${reminder.name}
-        <input type='hidden' id="reminder-id" value="${reminder.id}"/>
-        </li>
-        `;
-    }).join('')}
+    <div class-"all-reminders__div">
+    <ul class="all-reminders__list">
+        ${reminders.map(reminder => {
+        return `
+        <li class="reminder">${reminder.name}
+            <input type='hidden' id="reminder-id" value="${reminder.id}">
+            </li>
+            `;
+        }).join('')}
     </ul>
     </div>
-    <h2 class="calendar">
-    March 2022
-    </h2>
-<br />
+    <h2 class="calendar">March 2022</h2>
+    <br>
 <table class="calendar">
     <thead>
         <tr>
@@ -125,10 +120,11 @@ export default function AllReminders(reminders) {
                 <option value="Low">Low</option>
                 <option value="None">None</option>
                 </select>
-                <button type="submit" class="add-reminder__submit">SUBMIT</button>
+                <div class="btn add-reminder__submit">SUBMIT</div>
             </form>
     </div>
     </div>
-    </div>  
+    </div>
+    </div>
     `;
 }
