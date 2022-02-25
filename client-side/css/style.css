@@ -1120,3 +1120,15 @@ form.journal {
   border-radius: 25px;
   padding: 0.5em 1em;
 }
+
+#play-button, #stop-button{
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 25px;
+  cursor: pointer;
+  outline: none;
+  margin: 1em;
+  font-weight: small;
+  color: whitesmoke;
+  background: #a55344;
+}
