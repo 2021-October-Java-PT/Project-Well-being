@@ -156,9 +156,7 @@ function displayForm() {
             modalBody.innerHTML = Ptsd();
             saveForm();
         }
-        displayJournal();
-        
-       
+        displayJournal();      
     });
     
 }
@@ -179,7 +177,26 @@ function displayJournal() {
             document.getElementById("all-journals__div").style.display = "none";
         });
         }
+        modalSubmit();
     });
+    
+}
+
+function modalSubmit() {
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("journal-submit-button")) {
+            var journalEntryDate = event.target.parentElement.querySelector("#date").value;
+            const journalEntryContent = event.target.parentElement.querySelector("#journal-entry").value;
+            apiHelpers.postRequest(
+                "http://localhost:8080/api/journals/add-journal-entry", {
+                    date: journalEntryDate,
+                    content: journalEntryContent,
+                }, 
+                () => {
+                  app.innerHTML = Home();
+            });
+        }
+     });
 }
 
 function navAllReminders() {
@@ -294,17 +311,22 @@ function renderJournalEntry() {
 function addJournal() {
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("journal-submit-button")) {
+           
             var journalEntryDate = event.target.parentElement.querySelector("#date").value;
             const journalEntryContent = event.target.parentElement.querySelector("#journal-entry").value;
             apiHelpers.postRequest(
                 "http://localhost:8080/api/journals/add-journal-entry", {
                     date: journalEntryDate,
                     content: journalEntryContent,
-                },
-            ) 
+                }, 
+                () => {
+                    apiHelpers.getRequest("http://localhost:8080/api/journal-entries", journals => {
+                    app.innerHTML = Journal(journals);
+                });
+            });
         }
-    })
-}
+     });
+    }
 
 function deleteJournal(){
     app.addEventListener("click", (event) => {
@@ -374,9 +396,29 @@ function adminUser() {
     // const adminUserElem = document.querySelector(".articleImg");
     // adminUserElem.addEventListener("click", () => {
     app.addEventListener("click", (event) => {  
-        if (event.target.classList.contains("articleImg")) {
-            app.innerHTML = AdminUser();
+        if (event.target.classList.contains("articleImg1")) {
+            let user = "User 1"
+            app.innerHTML = AdminUser(user);
+            const list = document.querySelector(".user-info");
+            // const enter = document.querySelector("#frmReminder");
+            apiHelpers.getRequest(`http://localhost:8080/api/reminders`, (reminders) => {
+                // app.innerHTML = AdminUser(reminders);
+                list.insertAdjacentHTML("beforeend", AllReminders(reminders));
+                const cal = document.getElementsByClassName("calendar");
+                for (var i = 0; i < cal.length; i ++) {
+                    cal[i].style.display = "none";
+                }
+                document.getElementById("frmReminder").style.display = "none";
+            });
+            apiHelpers.getRequest("http://localhost:8080/api/journal-entries", journals => {
+                list.insertAdjacentHTML("beforeend", Journal(journals));
+            });
+        } else if (event.target.classList.contains("articleImg2")) {
+            let user = "User 2"
+            app.innerHTML = AdminUser(user);
         }
+        // addReminder();
+        renderReminder();
         returnAdminHome();
     });
 }
