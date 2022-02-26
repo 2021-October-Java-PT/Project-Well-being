@@ -4,7 +4,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 import org.wecancodeit.serverside.models.MoodResource;
+import org.wecancodeit.serverside.models.User;
 import org.wecancodeit.serverside.repos.MoodRepository;
+import org.wecancodeit.serverside.repos.UserRepository;
 
 import javax.annotation.Resource;
 import java.util.Collection;
@@ -13,6 +15,8 @@ import java.util.Optional;
 @RestController
 @CrossOrigin
 public class MoodController {
+    @Resource
+    private UserRepository userRepo;
 
     @Resource
     private MoodRepository moodRepo;
@@ -21,6 +25,11 @@ public class MoodController {
     public Collection<MoodResource> getMood() {
         return (Collection<MoodResource>) moodRepo.findAll();
     }
+//    @GetMapping("/api/{username}/mood")
+//    public Collection<MoodResource> getMood(@PathVariable String username) {
+//        Optional<User> user = userRepo.findByUsername(username);
+//        return user.get().getMood();
+//    }
 
     @GetMapping("/api/mood/{id}")
     public Optional<MoodResource> getMoodById(@PathVariable Long id) {

@@ -2,7 +2,6 @@ export default function Contact(){
     return`
     <div class="container-contact">
     <section class="contact-area" id="contact">
-        
         <div class="contact-div">
             <h1>Contact Information</h1>
             <p>Phone: 555-555-5555</p>

@@ -3,6 +3,7 @@ package org.wecancodeit.serverside.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 @Entity
 public class JournalResource {
@@ -11,6 +12,7 @@ public class JournalResource {
     @GeneratedValue
     private Long id;
     private String date;
+    @Lob
     private String content;
 
     public JournalResource(){
