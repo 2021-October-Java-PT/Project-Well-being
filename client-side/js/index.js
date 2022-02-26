@@ -13,6 +13,7 @@ import Login from "./components/Login";
 import LongAnxiety from "./components/LongAnxiety"
 import LongDepression from "./components/LongDepression"
 import Mood from "./components/Mood";
+import NavFormTypes from "./components/NavFormTypes"
 import Ptsd from "./components/Ptsd"
 import Reminder from "./components/Reminder";
 import ResourceSearch from "./components/ResourceSearch";
@@ -39,6 +40,7 @@ function buildPage() {
     navForms();
     navLogin();
     navAdmin();
+    playSounds();
 }
 
 function renderHome() {
@@ -140,16 +142,23 @@ function displayForm() {
             }
         if (event.target.classList.contains("anxiety-short")) {
             modalBody.innerHTML = ShortAnxiety();
+            saveForm();
         } else if (event.target.classList.contains("anxiety-long")) {
             modalBody.innerHTML = LongAnxiety();
+            saveForm();
         } else if (event.target.classList.contains("depression-short")) {
             modalBody.innerHTML = ShortDepression();
+            saveForm();
         } else if (event.target.classList.contains("depression-long")) {
             modalBody.innerHTML = LongDepression();
+            saveForm();
         } else if (event.target.classList.contains("ptsd")) {
             modalBody.innerHTML = Ptsd();
+            saveForm();
         }
         displayJournal();
+        
+       
     });
     
 }
@@ -324,26 +333,31 @@ function returnToJournal() {
 function navForms() {
     const formsElem = document.querySelector(".nav-list__forms");
     formsElem.addEventListener("click", () => {
-        app.innerHTML = FormTypes();
+        app.innerHTML = NavFormTypes();
 
     });
-    // displayForms();
+    displayNavForms();
 }
-// function displayForms() {
-//     app.addEventListener("click", (event) => {
-//         if (event.target.classList.contains("anxiety-short")) {
-//             app.innerHTML = ShortAnxiety();
-//         } else if (event.target.classList.contains("anxiety-long")) {
-//             app.innerHTML = LongAnxiety();
-//         } else if (event.target.classList.contains("depression-short")) {
-//             app.innerHTML = ShortDepression();
-//         } else if (event.target.classList.contains("depression-long")) {
-//             app.innerHTML = LongDepression();
-//         } else if (event.target.classList.contains("ptsd")) {
-//             app.innerHTML = Ptsd();
-//         }
-//     });
-// }
+function displayNavForms() {
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("anxietyShort")) {
+            app.innerHTML = ShortAnxiety();
+            saveForm();
+        } else if (event.target.classList.contains("anxietyLong")) {
+            app.innerHTML = LongAnxiety();
+            saveForm();
+        } else if (event.target.classList.contains("depressionShort")) {
+            app.innerHTML = ShortDepression();
+            saveForm();
+        } else if (event.target.classList.contains("depressionLong")) {
+            app.innerHTML = LongDepression();
+            saveForm();
+        } else if (event.target.classList.contains("ptsdNav")) {
+            app.innerHTML = Ptsd();
+            saveForm();
+        }
+    });
+}
 
 function navResources() {
     const journalElem = document.querySelector(".nav-list__resources");
@@ -460,3 +474,37 @@ function userLogin() {
     }
     });
 }
+
+function playSounds(){
+    const mySounds = document.querySelector("#nature-sounds");
+    const playClick = document.querySelector("#play-button");
+    const stopClick = document.querySelector("#stop-button");
+    
+    playClick.addEventListener("click", () => {
+        mySounds.volume = 0.5;
+        mySounds.play();
+    });
+
+    stopClick.addEventListener("click", () => {
+        mySounds.pause();
+        mySounds.currentTime = 0;
+    })
+    
+}
+
+
+function saveForm() {
+ 
+ const formClick= document.querySelector(".lastCheckin");
+ formClick.addEventListener("click", ()=> 
+ {const rating1 = document.querySelector('input[name="rating1"]:checked').value;
+ const rating2 = document.querySelector('input[name="rating2"]:checked').value;
+ const total = rating1 + rating2
+ console.log(total);
+ renderHome();
+ });     
+ } 
+ 
+
+
+

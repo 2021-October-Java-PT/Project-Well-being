@@ -1092,7 +1092,7 @@ form.journal {
   transition: background 0.5s ease-in-out;
 }
 
-#typeButton {
+button {
   margin-bottom: 1rem;
   margin-left: auto;
   margin-right: auto;
@@ -1119,4 +1119,16 @@ form.journal {
   background: #a55344;
   border-radius: 25px;
   padding: 0.5em 1em;
+}
+
+#play-button, #stop-button{
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 25px;
+  cursor: pointer;
+  outline: none;
+  margin: 1em;
+  font-weight: small;
+  color: whitesmoke;
+  background: #a55344;
 }

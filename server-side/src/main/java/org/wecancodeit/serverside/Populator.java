@@ -38,17 +38,7 @@ public class Populator implements CommandLineRunner {
         remindersRepo.save(lunch);
         remindersRepo.save(dinner);
 
-        FormsResource anxietyShort = new FormsResource("anxiety-short", 0);
-        FormsResource anxietyLong = new FormsResource("anxiety-long",0);
-        FormsResource depressionShort = new FormsResource("depression-short",0);
-        FormsResource depressionLong = new FormsResource("depression-long",0);
-        FormsResource ptsd = new FormsResource("ptsd",0);
 
-        formsRepo.save(anxietyShort);
-        formsRepo.save(anxietyLong);
-        formsRepo.save(depressionShort);
-        formsRepo.save(depressionLong);
-        formsRepo.save(ptsd);
 
         JournalResource one = new JournalResource("2021-12-31", "Today was a rough day!  I got into it with my partner who was being unreasonable about how late I stayed out last night.  I want to talk with my therapist about this at our next visit and see if she has any good ideas about how to address him in these situations when we disagree.  My whole day felt ruined because of how I felt after that confrontation.");
         JournalResource two = new JournalResource("2022-01-13", "Today was awesome!  My boss was so encouraging when I asked her how she liked my work project.  She asked me to take over another project because she wanted it “done right.”  I am so lucky to have such an amazing boss:)  I hope that I can always impress her with my work.");
