@@ -1092,7 +1092,7 @@ form.journal {
   transition: background 0.5s ease-in-out;
 }
 
-#typeButton {
+button {
   margin-bottom: 1rem;
   margin-left: auto;
   margin-right: auto;
