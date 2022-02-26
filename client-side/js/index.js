@@ -270,14 +270,19 @@ function displayNavForms() {
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("anxietyShort")) {
             app.innerHTML = ShortAnxiety();
+            saveForm();
         } else if (event.target.classList.contains("anxietyLong")) {
             app.innerHTML = LongAnxiety();
+            saveForm();
         } else if (event.target.classList.contains("depressionShort")) {
             app.innerHTML = ShortDepression();
+            saveForm();
         } else if (event.target.classList.contains("depressionLong")) {
             app.innerHTML = LongDepression();
+            saveForm();
         } else if (event.target.classList.contains("ptsdNav")) {
             app.innerHTML = Ptsd();
+            saveForm();
         }
     });
 }
@@ -353,8 +358,8 @@ function saveForm() {
  const rating2 = document.querySelector('input[name="rating2"]:checked').value;
  const total = rating1 + rating2
  console.log(total);
- });
-     
+ renderHome();
+ });     
  } 
  
 
