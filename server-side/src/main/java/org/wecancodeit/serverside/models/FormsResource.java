@@ -13,14 +13,16 @@ public class FormsResource {
     private Long id;
     private String type;
     private int score;
+    private String date;
 
     public FormsResource(){
 
     }
 
-    public FormsResource(String type, int score){
+    public FormsResource(String type, int score, String date){
         this.type=type;
         this.score=score;
+        this.date=date;
     }
 
     public Long getId(){
@@ -34,4 +36,6 @@ public class FormsResource {
     public int getScore(){
         return score;
     }
+
+    public String getDate() { return date; }
 }
