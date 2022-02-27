@@ -350,8 +350,6 @@ function returnToJournal() {
     });
 }
 
-
-
 function navForms() {
     const formsElem = document.querySelector(".nav-list__forms");
     formsElem.addEventListener("click", () => {
@@ -418,7 +416,8 @@ function adminUser() {
             app.innerHTML = AdminUser(user);
         }
         // addReminder();
-        renderReminder();
+        //renderReminder();
+        //renderJournalEntry();
         returnAdminHome();
     });
 }
@@ -431,7 +430,6 @@ function returnAdminHome() {
     });
 }
   
-
 function navAbout() {
   const aboutElem = document.querySelector(".nav-list__about");
   aboutElem.addEventListener("click", () => {
