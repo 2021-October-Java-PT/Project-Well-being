@@ -593,6 +593,47 @@ span {
   padding-bottom: 6rem;
 }
 
+.mindfulness_container{
+  list-style: none;
+  
+}
+
+.mindfulness_list{
+  list-style: none;
+  padding-left: 7rem;
+  padding-right: 7rem;
+  padding-top: ;
+  padding-bottom: ;
+}
+
+.mindfulness_line{
+  padding-left: 7rem;
+  padding-right: 7rem;
+  padding-top: 1rem ;
+  padding-bottom: 2rem ;
+
+}
+
+.mindfulness-header{
+  padding-bottom: 2rem;
+  padding-top: 4rem;
+}
+
+.mindfulness_listItem{
+  padding-bottom: 0.3rem;
+  padding-top: 0.3rem;
+}
+
+.mindfulness-entry-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem;
+  max-width: 75%;
+  border-radius: 5%;
+  box-shadow: 5px 0px 10px 0px grey;
+}
+
 #fixTop{
   position: fixed;
   z-index: 888;

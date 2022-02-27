@@ -16,6 +16,7 @@ import Resources from "./components/Resources";
 import ShortAnxiety from "./components/ShortAnxiety";
 import ShortDepression from "./components/ShortDepression"
 import apiHelpers from "./api-helpers.js/apiHelpers";
+import Mindfulness from "./components/Mindfulness"
 import crud from "./crud/crud";
 
 const app = document.querySelector("#app");
@@ -31,6 +32,7 @@ function buildPage() {
     navContact();
     navResources();
     navForms();
+    navMindfulness();
 }
 
 function renderHome() {
@@ -178,7 +180,6 @@ function returnToAllReminders() {
             );
         }
     });
-  });
 }
 
 function navJournal() {
@@ -252,5 +253,13 @@ function search() {
             list.insertAdjacentHTML("beforeend", ResourceSearch(resources));
             //app.innerHTML = ResourceSearch(resources);
         });
+    });
+}
+
+function navMindfulness() {
+    const mindfulnessElem = document.querySelector(".nav-list__mindfulness");
+    mindfulnessElem.addEventListener("click", () => {
+        app.innerHTML = Mindfulness();
+        // search();
     });
 }
