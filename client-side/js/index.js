@@ -142,19 +142,14 @@ function displayForm() {
             }
         if (event.target.classList.contains("anxiety-short")) {
             modalBody.innerHTML = ShortAnxiety();
-            saveForm();
         } else if (event.target.classList.contains("anxiety-long")) {
             modalBody.innerHTML = LongAnxiety();
-            saveForm();
         } else if (event.target.classList.contains("depression-short")) {
             modalBody.innerHTML = ShortDepression();
-            saveForm();
         } else if (event.target.classList.contains("depression-long")) {
             modalBody.innerHTML = LongDepression();
-            saveForm();
         } else if (event.target.classList.contains("ptsd")) {
             modalBody.innerHTML = Ptsd();
-            saveForm();
         }
         displayJournal();      
     });
@@ -534,13 +529,13 @@ function playSounds(){
 
 
 function saveForm() {
- 
  const formClick= document.querySelector(".lastCheckin");
- formClick.addEventListener("click", ()=> 
- {const rating1 = document.querySelector('input[name="rating1"]:checked').value;
- const rating2 = document.querySelector('input[name="rating2"]:checked').value;
- const total = rating1 + rating2
- console.log(total);
+ formClick.addEventListener("click", ()=> {
+    const rating1 = document.querySelector('input[name="rating1"]:checked').value;
+    const rating2 = document.querySelector('input[name="rating2"]:checked').value;
+    const total = rating1 + rating2
+    console.log(total);
+    renderHome();
  });     
  } 
  
