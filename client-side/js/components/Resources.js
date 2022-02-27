@@ -10,7 +10,7 @@ export default function Resources(){
                         <button type="button" id="search-submit"><i class="fa fa-search"></i></button>
                     </div>
             </div>
-            <div class="search-list id="search-list"></div>
+            <div class="search-list" id="search-list"></div>
             <div class="resources_list">
                 <h2 class="links-header">Or select from these quick links</h2>
                     <h3 class="links-subheader">Resources on Anxiety</h3>

@@ -5,6 +5,7 @@ import Razak from "../../images/Rsaka img.png";
 import Ryan from "../../images/RyanW.jpg";
 import gitHubImg from "../../images/GitHub.png";
 import linkedInImg from "../../images/LinkedIn.png";
+import Nicole from "../../images/NHofer_Headshot.jpg";
 
 export default function About(){
     return `
@@ -28,7 +29,7 @@ export default function About(){
             </section>
         <section id="nicolehofer">
           <h2>Nicole Hofer </h2>
-          <img class="headshot" src="" alt="Profile Image" />
+          <img class="headshot" src="${Nicole}" alt="Profile Image" />
           <p class> I am a rising software developer permanently curious about technology. I currently specialize in front-end applications and robotics. Front-end development allows me to be creative and analytical. I love robotics for the speed, consistency and, well, the coffee break.
            During my free time, I enjoy working on and building a homestead.
            

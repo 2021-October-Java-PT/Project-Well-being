@@ -1,6 +1,5 @@
 export default function AllReminders(reminders) {
     return `
-    <div class="api-page-container">
     <div class="styling_container">
     <div class="reminder-header">
         <h1>Reminders</h1>
@@ -122,7 +121,6 @@ export default function AllReminders(reminders) {
                 </select>
                 <div class="btn add-reminder__submit">SUBMIT</div>
             </form>
-    </div>
     </div>
     </div>
     </div>

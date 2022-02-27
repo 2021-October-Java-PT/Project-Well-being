@@ -10,7 +10,7 @@ export default function JournalEntry(journal){
         <div class="journal-buttons">
             <button class="return-all-journals">Return to Journal</button>
             <button class="journal-delete">Delete Entry</button>
-            <input class ="journal-id" type="hidden" value=${journal.id}>
+            <input class="journal-id" type="hidden" value=${journal.id}>
         </div>
     </div>
      `;

@@ -196,7 +196,6 @@ input[type="range"]::-webkit-slider-thumb {
 /*end mood*/
 
 /* calendar */
-
 .calendar {
   text-align: center;
 }
@@ -317,7 +316,7 @@ tr.calendar > td:hover {
   outline: none;
   margin-top: 1em;
   text-transform: uppercase;
-  font-weight: small;
+  font-weight: small; 
   /* border: solid #BDBDBD 1px;  */
 	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5); 
 	-webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5); 
@@ -361,7 +360,8 @@ tr.calendar > td:hover {
   margin-top: 2em;
 }
 
-.services-div {
+.services-div,
+.user-info {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -450,7 +450,7 @@ p {
 
 
 .container-contact{
-  padding-top: 5%;
+  padding-top: 2%;
   text-align: center;
   box-sizing: border-box;
   background-color: #f5f5f5;
@@ -790,8 +790,9 @@ span {
 /* journal content */
 .journal {
   text-align: center;
-  
+  padding-top: 1rem;
 }
+
 p.journal {
   text-align: center;
   max-width: 80%;
@@ -809,7 +810,7 @@ p.journal {
   box-shadow: 5px 0px 10px 0px grey;
 }
 
-.journal-submit-button{
+.journal-submit-button {
   padding: 0.5em 1em;
   text-decoration: none;
   border-radius: 25px;
@@ -845,7 +846,7 @@ li.journal-entry {
   transition: background 0.5s ease-in-out;
 }
 
-.journal-entry, 
+ .journal-entry, 
 .return-all-journals, 
 .journal-delete {
   margin-bottom: 1rem;
@@ -897,7 +898,7 @@ margin-right: 2rem;
 
 .journal-form {
   background-image: url("../assets/legal-pad.png");
-  min-height: 50rem;
+  min-height: 40rem;
   background-position:top center;
 }
 
@@ -971,7 +972,7 @@ form.journal {
 
 .reminder-header {
   text-align: center;
-  padding: 5%;
+  padding: 1rem;
 }
 
 .reminder {
@@ -1092,7 +1093,7 @@ form.journal {
   transition: background 0.5s ease-in-out;
 }
 
-button {
+.typeButtons>button {
   margin-bottom: 1rem;
   margin-left: auto;
   margin-right: auto;
@@ -1104,6 +1105,7 @@ button {
   border-radius: 25px;
   padding: 0.5em 1em;
 }
+
 .form-content{
   margin-top: 2rem;
 }
