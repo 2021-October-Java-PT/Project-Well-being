@@ -29,7 +29,7 @@ public class JournalController {
     }
 
     @PostMapping("/api/journals/add-journal-entry")
-    public String addJournalEntry(@RequestBody String body) throws JSONException {
+    public Collection<JournalResource> addJournalEntry(@RequestBody String body) throws JSONException {
         JSONObject newResource = new JSONObject(body);
         String date = newResource.getString("date");
         String content = newResource.getString("content");
@@ -40,10 +40,9 @@ public class JournalController {
         if (journalEntryToAddOpt.isEmpty()) {
             JournalResource journalEntryToAdd = new JournalResource(date, content);
             journalRepo.save(journalEntryToAdd);
-            return "redirect:/api/journal-entries";
+            return (Collection<JournalResource>) journalRepo.findAll();
         }
-
-        return "redirect:/api/journal-entries";
+        return (Collection<JournalResource>) journalRepo.findAll();
     }
 
     @DeleteMapping("/api/journals/{id}/delete-journal-entry")
