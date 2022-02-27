@@ -416,6 +416,12 @@ function adminUser() {
             apiHelpers.getRequest("http://localhost:8080/api/journal-entries", journals => {
                 list.insertAdjacentHTML("beforeend", Journal(journals));
             });
+            apiHelpers.getRequest("http://localhost:8080/api/forms", forms => {
+                console.log(forms);
+            });
+            apiHelpers.getRequest("http://localhost:8080/api/mood", moods => {
+                console.log(moods);
+            });
         } else if (event.target.classList.contains("articleImg2")) {
             let user = "User 2"
             app.innerHTML = AdminUser(user);
@@ -534,12 +540,11 @@ function playSounds(){
 
 
 function saveForm() {
- 
  const formClick= document.querySelector(".lastCheckin");
  formClick.addEventListener("click", ()=> 
  {const rating1 = document.querySelector('input[name="rating1"]:checked').value;
  const rating2 = document.querySelector('input[name="rating2"]:checked').value;
- const total = rating1 + rating2
+ const total = rating1 += rating2
  console.log(total);
  renderHome();
  });     
