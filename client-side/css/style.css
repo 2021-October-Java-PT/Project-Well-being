@@ -162,21 +162,21 @@ input[type="range"]::-webkit-slider-thumb {
   color: rgb(48, 48, 48);
 }
 
-.forms-headers{
- text-align: center;
- padding-bottom: 3rem;
- padding-top: 1rem;
+.forms-headers {
+  text-align: center;
+  padding-bottom: 3rem;
+  padding-top: 1rem;
 }
 
-.survey-header{
+.survey-header {
   padding-bottom: 2rem;
 }
 
 input[type="range"] {
   width: 500px;
-  height: 6px;
+  height: 8px;
   -webkit-appearance: none;
-  background-color: whitesmoke;
+  background-color: #a55344;
   border-radius: 6px;
   outline: none;
   margin-top: 60px;
@@ -185,7 +185,7 @@ input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 30px;
   width: 30px;
-  background-color: whitesmoke;
+  background-color: rgb(48, 48, 48);
   border-radius: 50%;
   box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.2);
 }
@@ -258,7 +258,6 @@ tr.calendar > td:hover {
   padding-top: 35px;
   padding-left: 0%;
   padding-right: 0%;
-  
 }
 
 /* navbar */
@@ -301,9 +300,23 @@ tr.calendar > td:hover {
   color: rgb(48, 48, 48);
 }
 
-.logo {
+.logo{
   color: rgb(48, 48, 48);
-  margin-bottom: 0.5rem;
+  margin: auto;
+  height: 55px;
+  width: auto;
+  top: 2px;
+  left: 20px;
+}
+
+.logo-words{
+  position: absolute;
+  top: 13px;
+  left: 80px;
+  color: rgb(48, 48, 48);
+  margin: auto;
+  height: 40px;
+  width: auto;
 }
 
 /*home*/
@@ -313,14 +326,16 @@ tr.calendar > td:hover {
   text-decoration: none;
   border-radius: 25px;
   cursor: pointer;
-  outline: none;
+  /* outline: none; */
   margin-top: 1em;
   text-transform: uppercase;
-  font-weight: small; 
+  font-weight: small;
   /* border: solid #BDBDBD 1px;  */
-	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5); 
-	-webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5); 
-	-moz-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);  
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  background-color: #a55344;
+  color: white;
 }
 
 .btn-primary {
@@ -412,10 +427,10 @@ tr.calendar > td:hover {
   padding: 25px 80px;
   font-size: 30px;
   text-align: center;
-  border: solid #BDBDBD 1px; 
-	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5); 
-	-webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5); 
-	-moz-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5); 
+  border: solid #bdbdbd 1px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
 }
 
 h2 {
@@ -424,15 +439,14 @@ h2 {
 }
 
 .articleImg {
-  
   display: inline;
   margin: 0 auto;
   width: 200px;
   height: 200px;
   border-radius: 50%;
-	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5); 
-	-webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5); 
-	-moz-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5); 
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
 }
 
 p {
@@ -485,8 +499,7 @@ p {
   padding-bottom: 6rem;
 }
 
-
-.container-contact{
+.container-contact {
   padding-top: 2%;
   text-align: center;
   box-sizing: border-box;
@@ -548,7 +561,7 @@ p {
   color: whitesmoke;
 }
 
-.links-header{
+.links-header {
   padding-bottom: 2rem;
 }
 .resources_list {
@@ -556,11 +569,11 @@ p {
   /* padding: 5rem; */
   text-align: center;
   box-sizing: border-box;
-
 }
 
-.links-subheader{
+.links-subheader {
   padding-top: 2rem;
+
   padding-bottom: 2rem;
 }
 
@@ -568,7 +581,7 @@ p {
   list-style: none;
 }
 
-.search-header{
+.search-header {
   padding-bottom: 2rem;
 }
 
@@ -599,7 +612,7 @@ span {
   height: 15em;
 }
 
-.styling_container{
+.styling_container {
   box-sizing: border-box;
   background-color: #f5f5f5;
   margin: 2rem auto;
@@ -612,7 +625,7 @@ span {
   padding-bottom: 6rem;
 }
 
-.reminders_container{
+.reminders_container {
   box-sizing: border-box;
   background-color: #f5f5f5;
   margin: 2rem auto;
@@ -625,7 +638,7 @@ span {
   padding-bottom: 6rem;
 }
 
-.resources_container{
+.resources_container {
   box-sizing: border-box;
   background-color: #f5f5f5;
   margin: 2rem auto;
@@ -638,7 +651,7 @@ span {
   padding-bottom: 6rem;
 }
 
-#fixTop{
+#fixTop {
   position: fixed;
   z-index: 888;
   top: 44%;
@@ -757,13 +770,6 @@ span {
     font-weight: 500;
   }
 
-  .logo {
-    position: absolute;
-    top: 5px;
-    right: 15px;
-    font-size: 2rem;
-  }
-
   .navbar-container input[type="checkbox"]:checked ~ .nav-list {
     transform: translateX(0);
   }
@@ -813,12 +819,6 @@ span {
     font-size: 1.6rem;
   }
 
-  .logo {
-    position: absolute;
-    top: 06px;
-    right: 15px;
-    font-size: 3rem;
-  }
 }
 
 @media (min-width: 1345px) {
@@ -828,22 +828,24 @@ span {
 .journal,
 .moods-header {
   text-align: center;
-  padding-top: 1rem;
+  padding-top: 2rem;
+  
 }
 
 p.journal {
   text-align: center;
-  max-width: 80%;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  font-size: large;
+  font-size: medium;
 }
 
 .journal-entry-img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  max-width: 25%;
+  max-height: auto;
+  max-width: 10rem;
   border-radius: 75%;
   box-shadow: 5px 0px 10px 0px grey;
 }
@@ -862,11 +864,11 @@ p.journal {
 
 .journal-buttons {
   display: flex;
-  width: fit-content; 
+  width: fit-content;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-} 
+}
 
 li.journal-entry {
   float: right;
@@ -874,18 +876,18 @@ li.journal-entry {
   left: -28%;
   text-align: left;
   margin: 1rem;
-} 
+}
 
-.journal-submit-button:hover, 
-.journal-entry:hover, 
-.return-all-journals:hover, 
+.journal-submit-button:hover,
+.journal-entry:hover,
+.return-all-journals:hover,
 .journal-delete:hover {
   background: rgb(48, 48, 48);
   transition: background 0.5s ease-in-out;
 }
 
- .journal-entry, 
-.return-all-journals, 
+.journal-entry,
+.return-all-journals,
 .journal-delete {
   margin-bottom: 1rem;
   margin-left: auto;
@@ -899,10 +901,10 @@ li.journal-entry {
   padding: 0.5em 1em;
 }
 
-.return-all-journals, 
+.return-all-journals,
 .journal-delete {
-margin-left: 2rem;
-margin-right: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .journal-date {
@@ -913,19 +915,19 @@ margin-right: 2rem;
   padding-bottom: 3rem;
 }
 
-.label-date{
+.label-date {
   margin-top: 10rem;
 }
 
 #date {
-  margin-top: 2rem;
-  margin-bottom: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   background-color: transparent;
 }
 
 #journal-entry {
-  margin-top: 2rem;
-  margin-bottom: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   background-color: transparent;
   max-width: 80%;
 }
@@ -936,13 +938,19 @@ margin-right: 2rem;
 
 .journal-form {
   background-image: url("../assets/legal-pad.png");
-  min-height: 40rem;
-  background-position:top center;
+  max-height: 35rem;
+  max-width: 35rem;
+  background-position: top center;
+  background-size: 60rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 form.journal {
   padding-top: 7rem;
   margin-top: 2rem;
+  justify-content: center;
+  
 }
 
 /*nicole*/
@@ -954,7 +962,7 @@ form.journal {
 .form {
   position: relative;
   z-index: 1;
-  background: #FFFFFF;
+  background: #ffffff;
   max-width: 360px;
   margin: 0 auto 100px;
   padding: 45px;
@@ -978,7 +986,7 @@ form.journal {
   width: 100%;
   border: 0;
   padding: 15px;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 14px;
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
@@ -1131,7 +1139,7 @@ form.journal {
   transition: background 0.5s ease-in-out;
 }
 
-.typeButtons>button {
+.typeButtons > button {
   margin-bottom: 1rem;
   margin-left: auto;
   margin-right: auto;
@@ -1142,13 +1150,16 @@ form.journal {
   background: #a55344;
   border-radius: 25px;
   padding: 0.5em 1em;
+  border: none;
+  box-shadow: 5px 5px 20px rgb(0 0 0 / 50%);
+  -webkit-box-shadow: 5px 5px 20px rgb(0 0 0 / 50%);
 }
 
-.form-content{
+.form-content {
   margin-top: 2rem;
 }
 
-.lastCheckin{
+.lastCheckin {
   margin-bottom: 1rem;
   margin-left: auto;
   margin-right: auto;
@@ -1159,9 +1170,13 @@ form.journal {
   background: #a55344;
   border-radius: 25px;
   padding: 0.5em 1em;
+  border: none;
+  box-shadow: 5px 5px 20px rgb(0 0 0 / 50%);
+  -webkit-box-shadow: 5px 5px 20px rgb(0 0 0 / 50%);
 }
 
-#play-button, #stop-button{
+#play-button,
+#stop-button {
   padding: 0.5em 1em;
   text-decoration: none;
   border-radius: 25px;
@@ -1172,3 +1187,56 @@ form.journal {
   color: whitesmoke;
   background: #a55344;
 }
+
+
+.form-list {
+  list-style: none;
+}
+.formType {
+  text-align: center;
+}
+.form-container {
+  padding: 2rem;
+}
+
+.mindfulness_container{
+  list-style: none;
+  
+}
+
+.mindfulness_list{
+  list-style: none;
+  padding-left: 7rem;
+  padding-right: 7rem;
+  padding-top: ;
+  padding-bottom: ;
+}
+
+.mindfulness_line{
+  padding-left: 7rem;
+  padding-right: 7rem;
+  padding-top: 1rem ;
+  padding-bottom: 2rem ;
+
+}
+
+.mindfulness-header{
+  padding-bottom: 2rem;
+  padding-top: 4rem;
+}
+
+.mindfulness_listItem{
+  padding-bottom: 0.3rem;
+  padding-top: 0.3rem;
+}
+
+.mindfulness-entry-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem;
+  max-width: 75%;
+  border-radius: 5%;
+  box-shadow: 5px 0px 10px 0px grey;
+}
+

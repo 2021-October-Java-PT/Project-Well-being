@@ -12,6 +12,7 @@ import JournalEntry from "./components/JournalEntry";
 import Login from "./components/Login";
 import LongAnxiety from "./components/LongAnxiety"
 import LongDepression from "./components/LongDepression"
+import Mindfulness from "./components/Mindfulness"
 import Mood from "./components/Mood";
 import NavFormTypes from "./components/NavFormTypes"
 import Ptsd from "./components/Ptsd"
@@ -40,6 +41,7 @@ function buildPage() {
     navForms();
     navLogin();
     navAdmin();
+    navMindfulness();
     playSounds();
 }
 
@@ -409,6 +411,14 @@ function navResources() {
     });
 }
 
+function navMindfulness() {
+    const mindfulnessElem = document.querySelector(".nav-list__mindfulness");
+    mindfulnessElem.addEventListener("click", () => {
+        app.innerHTML = Mindfulness();
+    });
+    
+}
+
 function navAdmin() {
     const adminElem = document.querySelector(".admin");
     adminElem.addEventListener("click", () => {
@@ -548,12 +558,18 @@ function playSounds(){
 }
 
 function saveForm() {
-    const formClick= document.querySelector(".lastCheckin");
-    formClick.addEventListener("click", ()=> {
-        const rating1 = document.querySelector('input[name="rating1"]:checked').value;
-        const rating2 = document.querySelector('input[name="rating2"]:checked').value;
-        const total = parseInt(rating1) + parseInt(rating2);
-        console.log(total);
-        renderHome();
-    });     
- }
+
+ const formClick= document.querySelector(".lastCheckin");
+ formClick.addEventListener("click", ()=> {
+    const rating1 = document.querySelector('input[name="rating1"]:checked').value;
+    const rating2 = document.querySelector('input[name="rating2"]:checked').value;
+    const total = parseInt(rating1) + parseInt(rating2);
+    console.log(total);
+    renderHome();
+ });     
+ } 
+ 
+
+
+
+

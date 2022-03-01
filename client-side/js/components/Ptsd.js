@@ -7,20 +7,20 @@ export default function Ptsd(){
       
       For Example:
       </p>
-      <ul>
-        <li>a serious accident of fire</li>
-        <li>a physical or sexual assault or abuse</li>
-        <li>an earthquake or flood</li>
-        <li>a war</li>
-        <li>seeing someone be killed or seriously injured</li>
-        <li>having a loved one die through homicide or suicide</li>
+      <ul class=form-list>
+        <li>A serious accident of fire</li>
+        <li>A physical or sexual assault or abuse</li>
+        <li>An earthquake or flood</li>
+        <li>A war</li>
+        <li>Seeing someone be killed or seriously injured</li>
+        <li>Having a loved one die through homicide or suicide</li>
       </ul>
       
       <h3>If you have ever experienced this type of event, please answer the following: </h3>
       
       <h3>In the past month, have you: </h3>
       
-        <ul>
+        <ul class=form-list>
           <li>Had nightmares about the event(s) or thought about the event(s) when you did not want to?</li>
           <input type="radio" name="rating1" id="no" value="no">
             <label for="no">No</label><br>
