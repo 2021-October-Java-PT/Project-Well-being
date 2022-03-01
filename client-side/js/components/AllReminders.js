@@ -1,6 +1,6 @@
 export default function AllReminders(reminders) {
     return `
-    <div class="styling_container">
+    
     <div class="reminder-header">
         <h1>Reminders</h1>
     </div>
@@ -123,6 +123,6 @@ export default function AllReminders(reminders) {
             </form>
     </div>
     </div>
-    </div>
+    
     `;
 }

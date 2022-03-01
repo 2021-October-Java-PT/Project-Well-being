@@ -5,7 +5,7 @@ export default function Journal(journals){
     console.log("journal")
     return `
     
-        <div class="styling_container">
+        
             <h1 class="journal">Journal Entry</h1>
             <br>
             <p class="journal">Journaling about your feelings is linked to decreased mental distress. In a study, 
@@ -41,7 +41,7 @@ export default function Journal(journals){
                       
             </ul>
         </div>
-        </div> 
+       
 
     `;
 }

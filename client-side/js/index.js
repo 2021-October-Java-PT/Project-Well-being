@@ -533,7 +533,7 @@ function saveForm() {
  formClick.addEventListener("click", ()=> {
     const rating1 = document.querySelector('input[name="rating1"]:checked').value;
     const rating2 = document.querySelector('input[name="rating2"]:checked').value;
-    const total = rating1 + rating2
+    const total = parseInt(rating1) + parseInt(rating2);
     console.log(total);
     renderHome();
  });     
