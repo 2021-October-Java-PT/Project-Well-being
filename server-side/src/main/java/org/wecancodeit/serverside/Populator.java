@@ -76,7 +76,5 @@ public class Populator implements CommandLineRunner {
         moodRepo.save(first);
         moodRepo.save(second);
         moodRepo.save(third);
-
-
     }
 }
