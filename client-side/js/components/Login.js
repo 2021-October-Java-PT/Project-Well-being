@@ -5,7 +5,7 @@ export default function Login(){
     <div class="login-form">
       <input class="loginName" type="text" placeholder="username"/>
       <input type="password" placeholder="password"/>
-      <button id="login-btn" class="btn-primary">login</button>
+      <button class="btn-primary" id="login-btn">login</button>
       <p class="message">Not registered? <a href="">Create an account</a></p>
   </div>
 </div>
