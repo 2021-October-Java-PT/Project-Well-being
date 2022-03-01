@@ -51,6 +51,7 @@ function renderHome() {
 function navHome() {
     const homeElem = document.querySelector(".nav-list__home");
     homeElem.addEventListener("click", () => {
+        userProfile = "";
         app.innerHTML = Home();
         checkin();
     });
@@ -266,7 +267,23 @@ function deleteReminder(){
 
 function returnToAllReminders() {
     app.addEventListener("click", (event) => {
-       if (event.target.classList.contains("return-reminders")) {
+        if (userLoggedIn.includes("admin")) {
+            if (userProfile === "User 1") {
+                app.innerHTML = AdminUser(userProfile);
+                const cal = document.getElementsByClassName("calendar");
+                for (var i = 0; i < cal.length; i ++) {
+                    cal[i].style.display = "none";
+                }
+            document.getElementById("frmReminder").style.display = "none";
+            document.getElementById("journal-form").style.display = "none";
+            } else if (userProfile === "User 2") {
+                app.innerHTML = AdminUser(userProfile);
+                const info = document.getElementsByClassName("user-info");
+                for (var j = 0; j < info.length; j ++) {
+                    info[j].style.display = "none";
+                }      
+            }
+        } else if (event.target.classList.contains("return-reminders")) {
             apiHelpers.getRequest(`http://localhost:8080/api/reminders`, (reminders) => {
                 app.innerHTML = AllReminders(reminders);
               });
@@ -287,11 +304,11 @@ function navJournal() {
 
 function renderJournalEntry() {
     app.addEventListener("click", (event) => {
-        if (event.target.classList.contains("journal-entry")){
-        const id = event.target.querySelector("#journal-id").value;
-        apiHelpers.getRequest(`http://localhost:8080/api/journal-entry/${id}`, journal => {
-            app.innerHTML = JournalEntry(journal);
-        });
+        if (event.target.classList.contains("journal-entry")) {
+            const id = event.target.querySelector("#journal-id").value;
+            apiHelpers.getRequest(`http://localhost:8080/api/journal-entry/${id}`, journal => {
+                app.innerHTML = JournalEntry(journal);
+            });
         deleteJournal();
         returnToJournal();
     }
@@ -331,7 +348,23 @@ function deleteJournal(){
 
 function returnToJournal() {
     app.addEventListener("click", (event) => {
-        if (event.target.classList.contains("return-all-journals")) {
+        if (userLoggedIn.includes("admin")) {
+            if (userProfile === "User 1") {
+                app.innerHTML = AdminUser(userProfile);
+                const cal = document.getElementsByClassName("calendar");
+                for (var i = 0; i < cal.length; i ++) {
+                    cal[i].style.display = "none";
+                }
+            document.getElementById("frmReminder").style.display = "none";
+            document.getElementById("journal-form").style.display = "none";
+            } else if (userProfile === "User 2") {
+                app.innerHTML = AdminUser(userProfile);
+                const info = document.getElementsByClassName("user-info");
+                for (var j = 0; j < info.length; j ++) {
+                    info[j].style.display = "none";
+                }      
+            }
+        } else if (event.target.classList.contains("return-all-journals")) {
             apiHelpers.getRequest("http://localhost:8080/api/journal-entries", (journals) => {
                 app.innerHTML = Journal(journals);
             });
@@ -408,8 +441,8 @@ function adminUser() {
             userProfile = user;      
         }
         // addReminder();
-        //renderReminder();
-        //renderJournalEntry();
+        renderReminder();
+        renderJournalEntry();
         returnAdminHome();
     });
 }
