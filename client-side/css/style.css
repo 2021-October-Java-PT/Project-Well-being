@@ -306,10 +306,6 @@ tr.calendar > td:hover {
   margin: auto;
   height: 55px;
   width: auto;
-}
-
-.logo {
-  position: absolute;
   top: 2px;
   left: 20px;
 }
