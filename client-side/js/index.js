@@ -25,7 +25,7 @@ import apiHelpers from "./api-helpers.js/apiHelpers";
 const app = document.querySelector("#app");
 let userLoggedIn = "";
 let loggedIn = "false";
-console.log(userLoggedIn);
+let userProfile = "";
 
 buildPage();
 
@@ -51,9 +51,9 @@ function renderHome() {
 function navHome() {
     const homeElem = document.querySelector(".nav-list__home");
     homeElem.addEventListener("click", () => {
+        userProfile = "";
         app.innerHTML = Home();
         checkin();
-        // location.reload();
     });
 }
 
@@ -96,7 +96,6 @@ function checkin() {
 
         slider.oninput = function () {
             emoji.innerHTML = emoticons[slider.value];
-            // console.log(slider.value);
         }
         formTypes();
     });
@@ -244,12 +243,9 @@ function addReminder() {
                     description: addResourceDescription,
             },
             () => {
-                console.log(userLoggedIn);
-            //   if (userLoggedIn) {
                 apiHelpers.getRequest(`http://localhost:8080/api/reminders`, (reminders) => {
                     app.innerHTML = AllReminders(reminders);
             });
-            // }
         });
     }
  });
@@ -271,7 +267,23 @@ function deleteReminder(){
 
 function returnToAllReminders() {
     app.addEventListener("click", (event) => {
-        if (event.target.classList.contains("return-reminders")) {
+        if (userLoggedIn.includes("admin")) {
+            if (userProfile === "User 1") {
+                app.innerHTML = AdminUser(userProfile);
+                const cal = document.getElementsByClassName("calendar");
+                for (var i = 0; i < cal.length; i ++) {
+                    cal[i].style.display = "none";
+                }
+            document.getElementById("frmReminder").style.display = "none";
+            document.getElementById("journal-form").style.display = "none";
+            } else if (userProfile === "User 2") {
+                app.innerHTML = AdminUser(userProfile);
+                const info = document.getElementsByClassName("user-info");
+                for (var j = 0; j < info.length; j ++) {
+                    info[j].style.display = "none";
+                }      
+            }
+        } else if (event.target.classList.contains("return-reminders")) {
             apiHelpers.getRequest(`http://localhost:8080/api/reminders`, (reminders) => {
                 app.innerHTML = AllReminders(reminders);
               });
@@ -292,11 +304,11 @@ function navJournal() {
 
 function renderJournalEntry() {
     app.addEventListener("click", (event) => {
-        if (event.target.classList.contains("journal-entry")){
-        const id = event.target.querySelector("#journal-id").value;
-        apiHelpers.getRequest(`http://localhost:8080/api/journal-entry/${id}`, journal => {
-            app.innerHTML = JournalEntry(journal);
-        });
+        if (event.target.classList.contains("journal-entry")) {
+            const id = event.target.querySelector("#journal-id").value;
+            apiHelpers.getRequest(`http://localhost:8080/api/journal-entry/${id}`, journal => {
+                app.innerHTML = JournalEntry(journal);
+            });
         deleteJournal();
         returnToJournal();
     }
@@ -306,7 +318,6 @@ function renderJournalEntry() {
 function addJournal() {
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("journal-submit-button")) {
-           
             var journalEntryDate = event.target.parentElement.querySelector("#date").value;
             const journalEntryContent = event.target.parentElement.querySelector("#journal-entry").value;
             apiHelpers.postRequest(
@@ -337,7 +348,23 @@ function deleteJournal(){
 
 function returnToJournal() {
     app.addEventListener("click", (event) => {
-        if (event.target.classList.contains("return-all-journals")) {
+        if (userLoggedIn.includes("admin")) {
+            if (userProfile === "User 1") {
+                app.innerHTML = AdminUser(userProfile);
+                const cal = document.getElementsByClassName("calendar");
+                for (var i = 0; i < cal.length; i ++) {
+                    cal[i].style.display = "none";
+                }
+            document.getElementById("frmReminder").style.display = "none";
+            document.getElementById("journal-form").style.display = "none";
+            } else if (userProfile === "User 2") {
+                app.innerHTML = AdminUser(userProfile);
+                const info = document.getElementsByClassName("user-info");
+                for (var j = 0; j < info.length; j ++) {
+                    info[j].style.display = "none";
+                }      
+            }
+        } else if (event.target.classList.contains("return-all-journals")) {
             apiHelpers.getRequest("http://localhost:8080/api/journal-entries", (journals) => {
                 app.innerHTML = Journal(journals);
             });
@@ -349,10 +376,10 @@ function navForms() {
     const formsElem = document.querySelector(".nav-list__forms");
     formsElem.addEventListener("click", () => {
         app.innerHTML = NavFormTypes();
-
     });
     displayNavForms();
 }
+
 function displayNavForms() {
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("anxietyShort")) {
@@ -386,8 +413,8 @@ function navAdmin() {
     const adminElem = document.querySelector(".admin");
     adminElem.addEventListener("click", () => {
         app.innerHTML = AdminHome();
+        adminUser();
     });
-    adminUser();
 }
 
 function adminUser() {
@@ -397,27 +424,25 @@ function adminUser() {
         if (event.target.classList.contains("articleImg1")) {
             let user = "User 1"
             app.innerHTML = AdminUser(user);
-            const list = document.querySelector(".user-info");
-            // const enter = document.querySelector("#frmReminder");
-            apiHelpers.getRequest(`http://localhost:8080/api/reminders`, (reminders) => {
-                // app.innerHTML = AdminUser(reminders);
-                list.insertAdjacentHTML("beforeend", AllReminders(reminders));
-                const cal = document.getElementsByClassName("calendar");
-                for (var i = 0; i < cal.length; i ++) {
-                    cal[i].style.display = "none";
-                }
-                document.getElementById("frmReminder").style.display = "none";
-            });
-            apiHelpers.getRequest("http://localhost:8080/api/journal-entries", journals => {
-                list.insertAdjacentHTML("beforeend", Journal(journals));
-            });
+            const cal = document.getElementsByClassName("calendar");
+            for (var i = 0; i < cal.length; i ++) {
+                cal[i].style.display = "none";
+            }
+            document.getElementById("frmReminder").style.display = "none";
+            document.getElementById("journal-form").style.display = "none";
+            userProfile = user;
         } else if (event.target.classList.contains("articleImg2")) {
             let user = "User 2"
             app.innerHTML = AdminUser(user);
+            const info = document.getElementsByClassName("user-info");
+            for (var j = 0; j < info.length; j ++) {
+                info[j].style.display = "none";
+            }
+            userProfile = user;      
         }
         // addReminder();
-        //renderReminder();
-        //renderJournalEntry();
+        renderReminder();
+        renderJournalEntry();
         returnAdminHome();
     });
 }
@@ -468,7 +493,6 @@ function search() {
 function navLogin() {
     const loginElem = document.querySelector(".nav-list__login");
     loginElem.addEventListener("click", () => {
-     
         if (loggedIn == "true") {
             alert("Hello! You are already logged in.");
             return;
@@ -484,12 +508,8 @@ function userLogin() {
         if (event.target.parentElement.classList.contains('login-form')) {
             const name = event.target.parentElement.querySelector('.loginName').value;
             userLoggedIn = name
-            console.log(userLoggedIn);
-            //from here instead of logging, you can send the user to the Account page and get the user's information, 
-            //note this will only be possible for a user that is stored in your populator otherwise you will get null
             apiHelpers.getRequest(`http://localhost:8080/api/users/${name}`, (user) => {
-              console.log(user);
-              app.innerHTML = Home();
+                app.innerHTML = Home();
             //   if (user) {
             //     apiHelpers.getRequest(`http://localhost:8080/api/${name}/reminders`, (reminders) => {
             //       app.innerHTML = AllReminders(reminders);
@@ -527,8 +547,8 @@ function playSounds(){
     
 }
 
-
 function saveForm() {
+
  const formClick= document.querySelector(".lastCheckin");
  formClick.addEventListener("click", ()=> {
     const rating1 = document.querySelector('input[name="rating1"]:checked').value;
@@ -539,6 +559,7 @@ function saveForm() {
  });     
  } 
  
+
 
 
 

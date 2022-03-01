@@ -1,5 +1,4 @@
 export default function JournalEntry(journal){
-    console.log('journal entry page')
     return `
     <div class="resources_container">    
         <div class="individual-journal">

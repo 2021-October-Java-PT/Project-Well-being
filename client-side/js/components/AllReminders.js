@@ -1,5 +1,6 @@
 export default function AllReminders(reminders) {
     return `
+
     
     <div class="reminder-header">
         <h1>Reminders</h1>
@@ -15,9 +16,10 @@ export default function AllReminders(reminders) {
         }).join('')}
     </ul>
     </div>
+
     <h2 class="calendar">March 2022</h2>
     <br>
-<table class="calendar">
+    <table class="calendar">
     <thead>
         <tr>
             <th class="calendar">
@@ -94,9 +96,9 @@ export default function AllReminders(reminders) {
     </tbody>
 </table>
     </div>
+    </div>
     <div class="">
-    <div class="">
-        <div class=""></div>
+        <div class="">
             <form id="frmReminder"">
                 <label class="entrReminder">Enter a Reminder:</label>
                 <input type="text" class="add-reminder__name" placeholder="Enter Name">
@@ -121,8 +123,10 @@ export default function AllReminders(reminders) {
                 </select>
                 <div class="btn add-reminder__submit">SUBMIT</div>
             </form>
+
     </div>
     </div>
     
+
     `;
 }

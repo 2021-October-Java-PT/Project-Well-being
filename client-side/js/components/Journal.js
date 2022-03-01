@@ -2,10 +2,8 @@ import journaling from "../../assets/journaling.jpg";
 import legalPad from "../../assets/legal-pad.png"
 
 export default function Journal(journals){
-    console.log("journal")
     return `
-    
-        
+
             <h1 class="journal">Journal Entry</h1>
             <br>
             <p class="journal">Journaling about your feelings is linked to decreased mental distress. In a study, 
@@ -18,14 +16,14 @@ export default function Journal(journals){
             <br>        
             <img  class="journal-entry-img" src="${journaling}" alt="journal">
 
-            <div class="journal-form">
-            <form class="journal">
-                <label class="label-date" for="date">Date:</label><br>
-                <input id="date" type="date"><br><br>
-                <label class="label-journal-entry" for="journal-entry">Journal Entry:</label><br>
-                <textarea id="journal-entry" name="content" rows="6" cols="66" placeholder="Type your journal entry here..."></textarea><br>
-                <div class="btn journal-submit-button">SUBMIT</div>
-            </form>
+            <div class="journal-form" id="journal-form">
+                <form class="journal">
+                    <label class="label-date" for="date">Date:</label><br>
+                    <input id="date" type="date"><br><br>
+                    <label class="label-journal-entry" for="journal-entry">Journal Entry:</label><br>
+                    <textarea id="journal-entry" name="content" rows="6" cols="66" placeholder="Type your journal entry here..."></textarea><br>
+                    <div class="btn journal-submit-button">SUBMIT</div>
+                </form>
             </div>
          
 
@@ -41,7 +39,5 @@ export default function Journal(journals){
                       
             </ul>
         </div>
-       
-
     `;
 }
