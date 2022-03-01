@@ -37,6 +37,11 @@ export default function Resources(){
                         </ul>    
                     <h3 class="links-subheader">Game to help with Depression</h3>
                     <h4><a href="https://www.sparx.org.nz/home">SPARX - AntiDepression Game</a></h4>
+
+                    <h3 class="links-subheader">Video Resources </h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/04yBH7q1Zc8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/4OEdacorqgw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     

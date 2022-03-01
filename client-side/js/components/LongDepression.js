@@ -3,7 +3,7 @@ export default function LongDepression(){
     <div class="form-container">
     <h1 class="formType">Weekly Depression Questionnaire</h1>
      <h3>Over the last Week, how often have you been bothered by the following problems?</h3>
-        <ul>
+        <ul class=form-list>
             <li>Little interest or pleasure in doing things</li>
             <input type="radio" name="rating1" id="0" value="0">
         <label for="0">Not at all</label><br>

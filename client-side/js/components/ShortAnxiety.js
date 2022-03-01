@@ -5,7 +5,7 @@ export default function ShortAnxiety() {
     <div class="form-container">
     <h1 class="formType">Daily Anxiety Questionnaire</h1>
      <h3>Over the last 24 hours, how often have you been bothered by the following problems?</h3>
-        <ul>
+        <ul class=form-list>
             <li>Feeling nervous, anxious or on edge</li>
             <input type="radio" name="rating1" id="zero" value="0">
             <label for="zero">Not at all</label><br>

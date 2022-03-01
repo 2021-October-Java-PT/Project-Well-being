@@ -558,12 +558,18 @@ function playSounds(){
 }
 
 function saveForm() {
-    const formClick= document.querySelector(".lastCheckin");
-    formClick.addEventListener("click", ()=> {
-        const rating1 = document.querySelector('input[name="rating1"]:checked').value;
-        const rating2 = document.querySelector('input[name="rating2"]:checked').value;
-        const total = parseInt(rating1) + parseInt(rating2);
-        console.log(total);
-        renderHome();
-    });     
- }
+
+ const formClick= document.querySelector(".lastCheckin");
+ formClick.addEventListener("click", ()=> {
+    const rating1 = document.querySelector('input[name="rating1"]:checked').value;
+    const rating2 = document.querySelector('input[name="rating2"]:checked').value;
+    const total = parseInt(rating1) + parseInt(rating2);
+    console.log(total);
+    renderHome();
+ });     
+ } 
+ 
+
+
+
+
