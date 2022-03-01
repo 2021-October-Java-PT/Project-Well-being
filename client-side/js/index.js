@@ -12,6 +12,7 @@ import JournalEntry from "./components/JournalEntry";
 import Login from "./components/Login";
 import LongAnxiety from "./components/LongAnxiety"
 import LongDepression from "./components/LongDepression"
+import Mindfulness from "./components/Mindfulness"
 import Mood from "./components/Mood";
 import NavFormTypes from "./components/NavFormTypes"
 import Ptsd from "./components/Ptsd"
@@ -40,6 +41,7 @@ function buildPage() {
     navForms();
     navLogin();
     navAdmin();
+    navMindfulness();
     playSounds();
 }
 
@@ -407,6 +409,14 @@ function navResources() {
         app.innerHTML = Resources();
         search();
     });
+}
+
+function navMindfulness() {
+    const mindfulnessElem = document.querySelector(".nav-list__mindfulness");
+    mindfulnessElem.addEventListener("click", () => {
+        app.innerHTML = Mindfulness();
+    });
+    
 }
 
 function navAdmin() {
