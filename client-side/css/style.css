@@ -561,9 +561,16 @@ p {
   color: whitesmoke;
 }
 
-.links-header {
+.links-header, a:link {
   padding-bottom: 2rem;
+  text-decoration: none;
 }
+
+.links-header, a:hover {
+  text-decoration: underline;
+}
+
+
 .resources_list {
   margin: 5rem;
   /* padding: 5rem; */
