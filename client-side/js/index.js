@@ -12,6 +12,7 @@ import JournalEntry from "./components/JournalEntry";
 import Login from "./components/Login";
 import LongAnxiety from "./components/LongAnxiety"
 import LongDepression from "./components/LongDepression"
+import Mindfulness from "./components/Mindfulness"
 import Mood from "./components/Mood";
 import NavFormTypes from "./components/NavFormTypes"
 import Ptsd from "./components/Ptsd"
