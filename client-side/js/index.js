@@ -40,6 +40,7 @@ function buildPage() {
     navForms();
     navLogin();
     navAdmin();
+    navMindfulness();
     playSounds();
 }
 
@@ -407,6 +408,14 @@ function navResources() {
         app.innerHTML = Resources();
         search();
     });
+}
+
+function navMindfulness() {
+    const mindfulnessElem = document.querySelector(".nav-list__mindfulness");
+    mindfulnessElem.addEventListener("click", () => {
+        app.innerHTML = Mindfulness();
+    });
+    
 }
 
 function navAdmin() {
