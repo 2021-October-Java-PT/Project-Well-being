@@ -301,9 +301,27 @@ tr.calendar > td:hover {
   color: rgb(48, 48, 48);
 }
 
-.logo {
+.logo{
   color: rgb(48, 48, 48);
-  margin-bottom: 0.5rem;
+  margin: auto;
+  height: 55px;
+  width: auto;
+}
+
+.logo {
+  position: absolute;
+  top: 2px;
+  left: 20px;
+}
+
+.logo-words{
+  position: absolute;
+  top: 13px;
+  left: 80px;
+  color: rgb(48, 48, 48);
+  margin: auto;
+  height: 40px;
+  width: auto;
 }
 
 /*home*/
@@ -757,13 +775,6 @@ span {
     font-weight: 500;
   }
 
-  .logo {
-    position: absolute;
-    top: 5px;
-    right: 15px;
-    font-size: 2rem;
-  }
-
   .navbar-container input[type="checkbox"]:checked ~ .nav-list {
     transform: translateX(0);
   }
@@ -813,12 +824,6 @@ span {
     font-size: 1.6rem;
   }
 
-  .logo {
-    position: absolute;
-    top: 06px;
-    right: 15px;
-    font-size: 3rem;
-  }
 }
 
 @media (min-width: 1345px) {
