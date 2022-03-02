@@ -33,7 +33,7 @@ buildPage();
 function buildPage() {
     renderHome();
     navHome();   
-    navAllReminders();
+    // navAllReminders();
     navJournal();
     navAbout();
     navContact();
@@ -41,7 +41,7 @@ function buildPage() {
     navForms();
     navLogin();
     navAdmin();
-    // navMindfulness();
+    navMindfulness();
     playSounds();
 }
 
@@ -411,13 +411,13 @@ function navResources() {
     });
 }
 
-// function navMindfulness() {
-//     const mindfulnessElem = document.querySelector(".nav-list__mindfulness");
-//     mindfulnessElem.addEventListener("click", () => {
-//         app.innerHTML = Mindfulness();
-//     });
+function navMindfulness() {
+    const mindfulnessElem = document.querySelector(".nav-list__mindfulness");
+    mindfulnessElem.addEventListener("click", () => {
+        app.innerHTML = Mindfulness();
+    });
     
-// }
+}
 
 function navAdmin() {
     const adminElem = document.querySelector(".admin");
