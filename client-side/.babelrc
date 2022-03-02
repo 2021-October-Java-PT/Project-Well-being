@@ -1,4 +1,3 @@
 {
-    //Commented this out and this got rid of all the build warnings!
-    // "presets": ["@babel/preset-env"]
+    "presets": ["@babel/preset-env"]
 }

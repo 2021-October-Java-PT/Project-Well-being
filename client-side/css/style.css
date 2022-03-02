@@ -300,12 +300,24 @@ tr.calendar > td:hover {
   color: rgb(48, 48, 48);
 }
 
-
-.logo {
+.logo{
   color: rgb(48, 48, 48);
-  margin-bottom: 0.5rem;
+  margin: auto;
+  height: 55px;
+  width: auto;
+  top: 2px;
+  left: 20px;
 }
 
+.logo-words{
+  position: absolute;
+  top: 13px;
+  left: 80px;
+  color: rgb(48, 48, 48);
+  margin: auto;
+  height: 40px;
+  width: auto;
+}
 
 /*home*/
 .btn {
