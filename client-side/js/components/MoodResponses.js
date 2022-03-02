@@ -7,7 +7,6 @@ const emoticons = ["mood_bad",
 
 export default function MoodResponses(moods) {
     return `
-    <div class="styling_container"> 
     <div class="moods-header">
         <h1>Mood Trends</h1>
     </div>
@@ -18,7 +17,6 @@ export default function MoodResponses(moods) {
             <input type="hidden" value="${mood.value}" id="face">
             `;
         }).join('')}
-    </div>
     </div>
     `;
 }
