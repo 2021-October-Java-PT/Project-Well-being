@@ -27,10 +27,17 @@
         <span class="line line2"></span>
         <span class="line line3"></span>
       </div>
+      <h1 class="logo">Logo</h1>
       <ul class="nav-list">
         <li class="nav-list__home">Home</li>
-        <li class="nav-list__mindfulness">Mindfulness</li>
+        <div class="dropdown">
         <li class="nav-list__resources">Resources</li>
+          <div class="dropdown-content">
+            <li class="nav-list__reminders">Reminders</li>
+            <li class="nav-list__journal">Journal Entry</li>
+            <li class="nav-list__forms">Forms</li>
+          </div>
+        </div>
         <li class="nav-list__about">About</li>
         <li class="nav-list__contact">Contact</li>
         <div class="dropdown">
@@ -41,13 +48,11 @@
             <li class="nav-list__forms">Forms</li>
           </div>
         </div>
+
         <li id="admin" class="admin">Admin</li>
         <li class="nav-list__login" id="login">Login</li>
       </ul>
-    <div class="logo-img">
-      <img class="logo" src="images\Project well-beingheadtransparent.png" alt="Unboxed Thoughts Logo">
-      <img class="logo-words" src="images\project_well-beingtransparentwordsmodified.png" alt="Unboxed Thoughts Logo">
-    </div>
+      
     </div>
   </nav>
   <div class="container" id="app"></div>
