@@ -4,7 +4,7 @@ return `
 <div class="form-container">
 <h1 class="formType">Weekly Anxiety Questionnaire</h1>
  <h3>Over the last Week, how often have you been bothered by the following problems?</h3>
-    <ul>
+    <ul class=form-list>
         <li>Feeling nervous, anxious or on edge</li>
         <input type="radio" name="rating1" id="0" value="0">
         <label for="0">Not at all</label><br>

@@ -33,11 +33,12 @@ public class FormsController {
         JSONObject newResource = new JSONObject(body);
         String type = newResource.getString("type");
         int score = newResource.getInt("score");
+        String date = newResource.getString("date");
 
         Optional<FormsResource> formToSaveOpt = formsRepo.findByType(type);
 
         if (formToSaveOpt.isEmpty()) {
-            FormsResource formToSave = new FormsResource(type, score);
+            FormsResource formToSave = new FormsResource(type, score, date);
             formsRepo.save(formToSave);
             return "redirect:/api/forms";
         }

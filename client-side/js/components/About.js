@@ -1,7 +1,7 @@
 import Hesan from "../../images/HesanH.png";
 import Jacob from "../../images/JacobS.jpg";
 import Matt from "../../images/WCCI12622-029.jpg";
-import Razak from "../../images/Rsaka img.png";
+import Razak from "../../images/Rsaka.jpg";
 import Ryan from "../../images/RyanW.jpg";
 import gitHubImg from "../../images/GitHub.png";
 import linkedInImg from "../../images/LinkedIn.png";
@@ -44,8 +44,8 @@ export default function About(){
         <section id="razaksaka">
           <h2>Razak Saka</h2>
           <img class="Razak headshot" src="${Razak}" alt="Profile Image" />
-          <p class>  I have more than 10 years work experience across Accounting and
-          Finance environment in the Financial Service industry. I earned a
+          <p class>  I have more than 10 years work experience across Accounting,Finance and
+          Project Management environment in the Financial Service industry. I earned a
           Bachelors degree in Accounting and MBA from Baldwin-Wallace
           University. I had always been interested in Information Technology. I intend to leverage my data analysis and project management experience in the IT arena.I enjoy travelling and out-door activities with our twin
           boys.

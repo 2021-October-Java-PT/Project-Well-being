@@ -2,10 +2,7 @@ package org.wecancodeit.serverside;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import org.wecancodeit.serverside.models.FormsResource;
-import org.wecancodeit.serverside.models.JournalResource;
-import org.wecancodeit.serverside.models.RemindersResource;
-import org.wecancodeit.serverside.models.User;
+import org.wecancodeit.serverside.models.*;
 import org.wecancodeit.serverside.repos.FormsRepository;
 import org.wecancodeit.serverside.repos.JournalRepository;
 import org.wecancodeit.serverside.repos.MoodRepository;
@@ -55,5 +52,29 @@ public class Populator implements CommandLineRunner {
         userRepo.save(user2);
 
         userRepo.save(new User("admin"));
+
+        FormsResource firstForm = new FormsResource("Daily Anxiety", 6, "02-20-2022");
+        FormsResource secondForm = new FormsResource("Daily Anxiety", 5, "02-21-2022");
+        FormsResource thirdForm = new FormsResource("Daily Anxiety", 4, "02-22-2022");
+        FormsResource fourthForm = new FormsResource("Daily Anxiety", 3, "02-23-2022");
+        FormsResource fifthForm = new FormsResource("Daily Anxiety", 3, "02-24-2022");
+        FormsResource sixthForm = new FormsResource("Daily Anxiety", 2, "02-25-2022");
+        FormsResource weekly = new FormsResource("Weekly Anxiety", 10, "02-26-2022");
+
+        formsRepo.save(firstForm);
+        formsRepo.save(secondForm);
+        formsRepo.save(thirdForm);
+        formsRepo.save(fourthForm);
+        formsRepo.save(fifthForm);
+        formsRepo.save(sixthForm);
+        formsRepo.save(weekly);
+
+        MoodResource first = new MoodResource("3");
+        MoodResource second = new MoodResource("1");
+        MoodResource third = new MoodResource("2");
+
+        moodRepo.save(first);
+        moodRepo.save(second);
+        moodRepo.save(third);
     }
 }
