@@ -3,7 +3,6 @@ import legalPad from "../../assets/legal-pad.png"
 
 export default function Journal(journals){
     return `
-
             <h1 class="journal">Journal Entry</h1>
             <br>
             <p class="journal">Journaling about your feelings is linked to decreased mental distress. In a study, 

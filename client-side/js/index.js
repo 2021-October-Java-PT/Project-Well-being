@@ -214,8 +214,8 @@ function renderReminder() {
             apiHelpers.getRequest(`http://localhost:8080/api/reminders/${id}`, reminder => {
                 app.innerHTML = Reminder(reminder);
             });
-            returnToAllReminders();
-            deleteReminder();
+        returnToAllReminders();
+        deleteReminder(); 
         }
     });
 }
@@ -313,7 +313,7 @@ function renderJournalEntry() {
             });
         deleteJournal();
         returnToJournal();
-    }
+        }
     });
 }
 
@@ -336,7 +336,7 @@ function addJournal() {
      });
     }
 
-function deleteJournal(){
+function deleteJournal() {
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("journal-delete")) {
             const deleteJournalId = event.target.parentElement.querySelector(".journal-id").value;
@@ -416,7 +416,6 @@ function navMindfulness() {
     mindfulnessElem.addEventListener("click", () => {
         app.innerHTML = Mindfulness();
     });
-    
 }
 
 function navAdmin() {
@@ -491,11 +490,9 @@ function search() {
     const searchSubmit = document.querySelector("#search-submit");
     searchSubmit.addEventListener("click", () => {
         let value = document.getElementById("search-bar").value;
-        console.log(value);
         apiHelpers.getRequest(`https://health.gov/myhealthfinder/api/v3/topicsearch.json?keyword=${value}`, resources => {
             const list = document.querySelector(".search-list");    
             list.insertAdjacentHTML("beforeend", ResourceSearch(resources));
-            //app.innerHTML = ResourceSearch(resources);
         });
     });
 }
@@ -554,19 +551,17 @@ function playSounds(){
         mySounds.pause();
         mySounds.currentTime = 0;
     })
-    
 }
 
 function saveForm() {
-
- const formClick= document.querySelector(".lastCheckin");
- formClick.addEventListener("click", ()=> {
-    const rating1 = document.querySelector('input[name="rating1"]:checked').value;
-    const rating2 = document.querySelector('input[name="rating2"]:checked').value;
-    const total = parseInt(rating1) + parseInt(rating2);
-    console.log(total);
-    renderHome();
- });     
+    const formClick= document.querySelector(".lastCheckin");
+    formClick.addEventListener("click", ()=> {
+        const rating1 = document.querySelector('input[name="rating1"]:checked').value;
+        const rating2 = document.querySelector('input[name="rating2"]:checked').value;
+        const total = parseInt(rating1) + parseInt(rating2);
+        console.log(total);
+        renderHome();
+    });     
  } 
  
 
