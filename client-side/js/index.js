@@ -495,6 +495,17 @@ function search() {
             list.insertAdjacentHTML("beforeend", ResourceSearch(resources));
         });
     });
+    
+    searchBar.addEventListener("keyup", (event) => {
+        if (event.keyCode === 13){
+        let value = document.getElementById("search-bar").value;
+        console.log(value);
+        apiHelpers.getRequest(`https://health.gov/myhealthfinder/api/v3/topicsearch.json?keyword=${value}`, resources => {
+            const list = document.querySelector(".search-list");    
+            list.insertAdjacentHTML("beforeend", ResourceSearch(resources));
+            //app.innerHTML = ResourceSearch(resources);
+        });
+    }});
 }
 
 function navLogin() {
