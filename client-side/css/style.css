@@ -42,9 +42,10 @@
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 15em;
+  min-width: 11em;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  left: -75%;
 }
 
 .dropdown-content li {
@@ -135,6 +136,11 @@
   justify-content: center;
   flex-direction: column;
   padding-bottom: 2%;
+}
+
+.moods__list {
+  display: flex;
+  flex-direction: column;
 }
 
 input[type="range"] {
@@ -387,14 +393,11 @@ tr.calendar > td:hover {
 
 .user-info {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: .5fr .5fr 1fr .5fr;
   /* height: 35rem; */
   grid-template-areas: 
-  'reminders journals forms'
-  'moods moods moods';
+  'reminders journals forms moods';
   padding: 2%;
-  /* flex-direction: row; 
-  justify-content: space-evenly; */
 }
 
 .user-info-item p,
@@ -404,6 +407,10 @@ tr.calendar > td:hover {
 
 .user-info-item li {
   list-style: none;
+}
+
+.user-info-item>.reminders {
+  padding-bottom: 4rem;
 }
 
 #reminders {
@@ -473,7 +480,7 @@ p {
 }
 .contact-div {
   grid-column: 1/2;
-  padding: 50px 10px 10px 10px;
+  padding: 40px 10px 10px 10px;
   /* text-indent: 2%; */
   text-align: center;
 }
@@ -561,9 +568,16 @@ p {
   color: whitesmoke;
 }
 
-.links-header {
+.links-header, a:link {
   padding-bottom: 2rem;
+  text-decoration: none;
 }
+
+.links-header, a:hover {
+  text-decoration: underline;
+}
+
+
 .resources_list {
   margin: 5rem;
   /* padding: 5rem; */
@@ -826,10 +840,11 @@ span {
 
 /* journal content */
 .journal,
-.moods-header {
+.reminders,
+.moods-header,
+.forms-header {
   text-align: center;
-  padding-top: 2rem;
-  
+  padding-top: 3rem;
 }
 
 p.journal {
