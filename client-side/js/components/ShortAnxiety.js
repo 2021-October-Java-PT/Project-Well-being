@@ -2,11 +2,12 @@
 
 export default function ShortAnxiety() {
     return `
-    <div class="form-container">
     <h1 class="formType">Daily Anxiety Questionnaire</h1>
+    <div class="form-container">
      <h3>Over the last 24 hours, how often have you been bothered by the following problems?</h3>
         <ul class=form-list>
-            <li>Feeling nervous, anxious or on edge</li>
+            <li>Feeling nervous, anxious or on edge:</li>
+            <br>
             <input type="radio" name="rating1" id="zero" value="0">
             <label for="zero">Not at all</label><br>
 
@@ -18,8 +19,9 @@ export default function ShortAnxiety() {
 
             <input type="radio" name="rating1" id="three" value="3">
             <label for="three">All day</label><br>
-
-            <li>Not being able to stop or control worrying</li>
+            <br>
+            <li>Not being able to stop or control worrying:</li>
+            <br>
             <input type="radio" name="rating2" id="zero2" value="0">
             <label for="zero2">Not at all</label><br>
 

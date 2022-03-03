@@ -1,7 +1,10 @@
 export default function AllReminders(reminders) {
     return `
     <h1 class="reminders">Reminders</h1>
-    <div class-"all-reminders__div">
+    
+    
+    <section class="reminders-calendar-columns">
+    <div class="all-reminders__div">
         <ul class="all-reminders__list">
             ${reminders.map(reminder => {
             return `
@@ -12,6 +15,7 @@ export default function AllReminders(reminders) {
             }).join('')}
         </ul>
     </div>
+    <div class="calendar-div">
     <h2 class="calendar">March 2022</h2>
     <br>
     <table class="calendar">
@@ -90,6 +94,8 @@ export default function AllReminders(reminders) {
         </tr>
     </tbody>
 </table>
+</div>
+</section>
     <div class="">
         <div class="">
             <form id="frmReminder"">

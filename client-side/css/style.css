@@ -176,6 +176,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 .survey-header {
   padding-bottom: 2rem;
+  padding-top: 3rem;
 }
 
 input[type="range"] {
@@ -219,7 +220,7 @@ table.calendar {
 h2.calendar {
   text-align: center;
   color: rgb(48, 48, 48);
-  margin-top: 4rem;
+  margin-top: 1rem;
 }
 
 th.calendar {
@@ -439,7 +440,11 @@ tr.calendar > td:hover {
   -moz-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
 }
 
-h2 {
+ h2 {
+  font-size: x-large;
+} 
+
+.home-container h2, .subheading{
   font-family: "Dancing Script", cursive;
   font-size: x-large;
 }
@@ -535,6 +540,7 @@ p {
 #linkedin {
   height: 25px;
   text-decoration: none;
+  margin: 2px;
 }
 
 .headshot {
@@ -847,9 +853,13 @@ span {
   padding-top: 3rem;
 }
 
+.reminders{
+  padding-bottom: 3rem;
+}
+
 p.journal {
   text-align: center;
-  max-width: 100%;
+  max-width: 75%;
   margin-left: auto;
   margin-right: auto;
   font-size: medium;
@@ -1076,11 +1086,11 @@ form.journal {
   cursor: pointer;
 }
 
-.all-reminders__div {
+/* .all-reminders__div {
   margin-bottom: 15px;
   text-align: center;
   align-items: center;
-}
+} */
 
 .add-reminder__submit {
   padding: 0.5em 1em;
@@ -1169,10 +1179,6 @@ form.journal {
   -webkit-box-shadow: 5px 5px 20px rgb(0 0 0 / 50%);
 }
 
-.form-content {
-  margin-top: 2rem;
-}
-
 .lastCheckin {
   margin-bottom: 1rem;
   margin-left: auto;
@@ -1202,14 +1208,32 @@ form.journal {
   background: #a55344;
 }
 
+.modal-body > .form-container{
+  padding: 2rem;
+}
+
+.modal-body > .formType {
+  padding-top: 2rem;
+}
+
+/* -----------------fix--------------- */
+
+.modal-body > .forms-header > .survey-header{
+  padding-top: 0rem;
+}
+
+/* ----------------fix------------- */
+
 .form-list {
   list-style: none;
+  padding-top: 2rem;
 }
 .formType {
   text-align: center;
+  padding-top: 3rem;
 }
 .form-container {
-  padding: 2rem;
+  padding: 2rem 2rem 2rem 10rem;
 }
 
 .mindfulness_container {
@@ -1247,4 +1271,30 @@ form.journal {
   max-width: 75%;
   border-radius: 5%;
   box-shadow: 5px 0px 10px 0px grey;
+}
+
+.reminders-calendar-columns{
+  display: flex;
+  flex-direction: row;
+}
+
+.all-reminders__div{
+  width: 50%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.calendar-div{
+  width: 50%;
+}
+
+.all-reminders__list{
+  padding-top: 2rem;
+  vertical-align: middle;
+}
+
+.ptsd-para{
+  font-size: medium;
+  font-weight: bold;
 }
