@@ -34,7 +34,6 @@ buildPage();
 function buildPage() {
     renderHome();
     navHome();   
-    // navAllReminders();
     navJournal();
     navAbout();
     navContact();
@@ -42,7 +41,6 @@ function buildPage() {
     navForms();
     navLogin();
     navAdmin();
-    // navMindfulness();
     playSounds();
 }
 
@@ -72,7 +70,6 @@ function checkin() {
                 modal.style.display = "none";
             }
                        
-        //  if (event.target.classList.contains("checkin")) {
         if (loggedIn == "false") {
             modal.style.display = "block";
             modalBody.innerHTML = `  
@@ -115,9 +112,7 @@ function formTypes() {
                 modal.style.display = "none";
             }
             
-        // if (event.target.classList.contains("nextCheckin")) {
         const moodValue = document.getElementById("slider").value;
-        // console.log(moodValue);
             
         apiHelpers.postRequest(
             `http://localhost:8080/api/mood/add-mood`, {
@@ -202,7 +197,6 @@ function navAllReminders() {
         apiHelpers.getRequest(`http://localhost:8080/api/reminders`, (reminders) => {
                 app.innerHTML = AllReminders(reminders);
               });
-        //   }
         renderReminder();
         addReminder(); 
     });     
@@ -214,6 +208,9 @@ function renderReminder() {
             const id = event.target.querySelector("#reminder-id").value;
             apiHelpers.getRequest(`http://localhost:8080/api/reminders/${id}`, reminder => {
                 app.innerHTML = Reminder(reminder);
+                if (userLoggedIn.includes("admin")) {
+                    document.getElementById("reminder-delete").style.display = "none";
+                }
             });
         returnToAllReminders();
         deleteReminder(); 
@@ -222,7 +219,6 @@ function renderReminder() {
 }
 
 function addReminder() {
-    // const addReminderElem = document.querySelector(".add-reminder__submit");
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("add-reminder__submit")) {
             const addResourceName = event.target.parentElement.querySelector(
@@ -259,7 +255,6 @@ function deleteReminder(){
         if (event.target.classList.contains("reminder-delete")){
             const deleteReminderId = event.target.parentElement.querySelector(".reminder-id").value;
             apiHelpers.deleteRequest(`http://localhost:8080/api/reminders/${deleteReminderId}/delete-reminder`, () => {
-                //console.log(reminders);
                 apiHelpers.getRequest(`http://localhost:8080/api/reminders`, (reminders) => {
                     app.innerHTML = AllReminders(reminders);
             });
@@ -311,6 +306,9 @@ function renderJournalEntry() {
             const id = event.target.querySelector("#journal-id").value;
             apiHelpers.getRequest(`http://localhost:8080/api/journal-entry/${id}`, journal => {
                 app.innerHTML = JournalEntry(journal);
+                if (userLoggedIn.includes("admin")) {
+                    document.getElementById("journal-delete").style.display = "none";
+                }
             });
         deleteJournal();
         returnToJournal();
@@ -430,8 +428,6 @@ function navAdmin() {
 }
 
 function adminUser() {
-    // const adminUserElem = document.querySelector(".articleImg");
-    // adminUserElem.addEventListener("click", () => {
     app.addEventListener("click", (event) => {  
         if (event.target.classList.contains("articleImg1")) {
             let user = "User 1"
@@ -531,7 +527,6 @@ function search() {
         apiHelpers.getRequest(`https://health.gov/myhealthfinder/api/v3/topicsearch.json?keyword=${value}`, resources => {
             const list = document.querySelector(".search-list");    
             list.insertAdjacentHTML("beforeend", ResourceSearch(resources));
-            //app.innerHTML = ResourceSearch(resources);
         });
     }});
 }
@@ -556,11 +551,6 @@ function userLogin() {
             userLoggedIn = name
             apiHelpers.getRequest(`http://localhost:8080/api/users/${name}`, (user) => {
                 app.innerHTML = Home();
-            //   if (user) {
-            //     apiHelpers.getRequest(`http://localhost:8080/api/${name}/reminders`, (reminders) => {
-            //       app.innerHTML = AllReminders(reminders);
-            //     });
-            // }
             navAllReminders();
             checkin();
             signOut();

@@ -15,7 +15,6 @@ export default function Ptsd(){
       <h3>If you have ever experienced this type of event, please answer the following: </h3>
       <br>
       <h3>In the past month, have you: </h3>
-      
         <ul class=form-list>
           <li>Had nightmares about the event(s) or thought about the event(s) when you did not want to?</li>
           <br>
@@ -55,15 +54,9 @@ export default function Ptsd(){
             <label for="no">No</label><br>
 
             <input type="radio" name="rating5" id="yes" value="yes">
-            <label for="yes">Yes</label><br>
-            <br>
-        
-        
+            <label for="yes">Yes</label><br>    
         </ul>
         <button class="lastCheckin" id="saveForm">Next</button>
       </div>
-    
-    
-    
     `;
   }
