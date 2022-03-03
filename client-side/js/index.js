@@ -33,7 +33,7 @@ buildPage();
 function buildPage() {
     renderHome();
     navHome();   
-    navAllReminders();
+    // navAllReminders();
     navJournal();
     navAbout();
     navContact();
@@ -41,7 +41,7 @@ function buildPage() {
     navForms();
     navLogin();
     navAdmin();
-    // navMindfulness();
+    navMindfulness();
     playSounds();
 }
 
@@ -214,8 +214,8 @@ function renderReminder() {
             apiHelpers.getRequest(`http://localhost:8080/api/reminders/${id}`, reminder => {
                 app.innerHTML = Reminder(reminder);
             });
-            returnToAllReminders();
-            deleteReminder();
+        returnToAllReminders();
+        deleteReminder(); 
         }
     });
 }
@@ -313,7 +313,7 @@ function renderJournalEntry() {
             });
         deleteJournal();
         returnToJournal();
-    }
+        }
     });
 }
 
@@ -336,7 +336,7 @@ function addJournal() {
      });
     }
 
-function deleteJournal(){
+function deleteJournal() {
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("journal-delete")) {
             const deleteJournalId = event.target.parentElement.querySelector(".journal-id").value;
@@ -411,13 +411,12 @@ function navResources() {
     });
 }
 
-// function navMindfulness() {
-//     const mindfulnessElem = document.querySelector(".nav-list__mindfulness");
-//     mindfulnessElem.addEventListener("click", () => {
-//         app.innerHTML = Mindfulness();
-//     });
-    
-// }
+function navMindfulness() {
+    const mindfulnessElem = document.querySelector(".nav-list__mindfulness");
+    mindfulnessElem.addEventListener("click", () => {
+        app.innerHTML = Mindfulness();
+    });
+}
 
 function navAdmin() {
     const adminElem = document.querySelector(".admin");
@@ -491,13 +490,22 @@ function search() {
     const searchSubmit = document.querySelector("#search-submit");
     searchSubmit.addEventListener("click", () => {
         let value = document.getElementById("search-bar").value;
+        apiHelpers.getRequest(`https://health.gov/myhealthfinder/api/v3/topicsearch.json?keyword=${value}`, resources => {
+            const list = document.querySelector(".search-list");    
+            list.insertAdjacentHTML("beforeend", ResourceSearch(resources));
+        });
+    });
+    
+    searchBar.addEventListener("keyup", (event) => {
+        if (event.keyCode === 13){
+        let value = document.getElementById("search-bar").value;
         console.log(value);
         apiHelpers.getRequest(`https://health.gov/myhealthfinder/api/v3/topicsearch.json?keyword=${value}`, resources => {
             const list = document.querySelector(".search-list");    
             list.insertAdjacentHTML("beforeend", ResourceSearch(resources));
             //app.innerHTML = ResourceSearch(resources);
         });
-    });
+    }});
 }
 
 function navLogin() {
@@ -554,19 +562,17 @@ function playSounds(){
         mySounds.pause();
         mySounds.currentTime = 0;
     })
-    
 }
 
 function saveForm() {
-
- const formClick= document.querySelector(".lastCheckin");
- formClick.addEventListener("click", ()=> {
-    const rating1 = document.querySelector('input[name="rating1"]:checked').value;
-    const rating2 = document.querySelector('input[name="rating2"]:checked').value;
-    const total = parseInt(rating1) + parseInt(rating2);
-    console.log(total);
-    renderHome();
- });     
+    const formClick= document.querySelector(".lastCheckin");
+    formClick.addEventListener("click", ()=> {
+        const rating1 = document.querySelector('input[name="rating1"]:checked').value;
+        const rating2 = document.querySelector('input[name="rating2"]:checked').value;
+        const total = parseInt(rating1) + parseInt(rating2);
+        console.log(total);
+        renderHome();
+    });     
  } 
  
 

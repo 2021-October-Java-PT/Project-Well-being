@@ -42,9 +42,10 @@
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 15em;
+  min-width: 11em;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  left: -75%;
 }
 
 .dropdown-content li {
@@ -137,6 +138,11 @@
   padding-bottom: 2%;
 }
 
+.moods__list {
+  display: flex;
+  flex-direction: column;
+}
+
 input[type="range"] {
   width: 500px;
   height: 6px;
@@ -170,6 +176,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 .survey-header {
   padding-bottom: 2rem;
+  padding-top: 3rem;
 }
 
 input[type="range"] {
@@ -213,7 +220,7 @@ table.calendar {
 h2.calendar {
   text-align: center;
   color: rgb(48, 48, 48);
-  margin-top: 4rem;
+  margin-top: 1rem;
 }
 
 th.calendar {
@@ -300,12 +307,24 @@ tr.calendar > td:hover {
   color: rgb(48, 48, 48);
 }
 
-
 .logo {
   color: rgb(48, 48, 48);
-  margin-bottom: 0.5rem;
+  margin: auto;
+  height: 55px;
+  width: auto;
+  top: 2px;
+  left: 20px;
 }
 
+.logo-words {
+  position: absolute;
+  top: 13px;
+  left: 80px;
+  color: rgb(48, 48, 48);
+  margin: auto;
+  height: 40px;
+  width: auto;
+}
 
 /*home*/
 .btn {
@@ -375,14 +394,10 @@ tr.calendar > td:hover {
 
 .user-info {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 0.5fr 0.5fr 1fr 0.5fr;
   /* height: 35rem; */
-  grid-template-areas: 
-  'reminders journals forms'
-  'moods moods moods';
+  grid-template-areas: "reminders journals forms moods";
   padding: 2%;
-  /* flex-direction: row; 
-  justify-content: space-evenly; */
 }
 
 .user-info-item p,
@@ -392,6 +407,10 @@ tr.calendar > td:hover {
 
 .user-info-item li {
   list-style: none;
+}
+
+.user-info-item > .reminders {
+  padding-bottom: 4rem;
 }
 
 #reminders {
@@ -421,7 +440,11 @@ tr.calendar > td:hover {
   -moz-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
 }
 
-h2 {
+ h2 {
+  font-size: x-large;
+} 
+
+.home-container h2, .subheading{
   font-family: "Dancing Script", cursive;
   font-size: x-large;
 }
@@ -461,7 +484,7 @@ p {
 }
 .contact-div {
   grid-column: 1/2;
-  padding: 50px 10px 10px 10px;
+  padding: 40px 10px 10px 10px;
   /* text-indent: 2%; */
   text-align: center;
 }
@@ -476,7 +499,7 @@ p {
   padding-top: 3%;
   text-align: center;
   box-sizing: border-box;
-  background-color: #f5f5f5;
+  background-color: #dadada;
   margin: 2rem auto;
   max-width: 90%;
   width: auto;
@@ -491,7 +514,7 @@ p {
   padding-top: 2%;
   text-align: center;
   box-sizing: border-box;
-  background-color: #f5f5f5;
+  background-color: #cfcfcf;
   margin: 2rem auto;
   max-width: 90%;
   width: auto;
@@ -500,6 +523,7 @@ p {
   box-shadow: 4px 17px 31px -14px rgba(0, 0, 0, 0.75);
   height: 800px, auto;
   padding-bottom: 6rem;
+  
 }
 
 .bios {
@@ -516,6 +540,7 @@ p {
 #linkedin {
   height: 25px;
   text-decoration: none;
+  margin: 2px;
 }
 
 .headshot {
@@ -549,15 +574,16 @@ p {
   color: whitesmoke;
 }
 
-.links-header, a:link {
+.links-header,
+a:link {
   padding-bottom: 2rem;
   text-decoration: none;
 }
 
-.links-header, a:hover {
+.links-header,
+a:hover {
   text-decoration: underline;
 }
-
 
 .resources_list {
   margin: 5rem;
@@ -610,7 +636,7 @@ span {
 
 .styling_container {
   box-sizing: border-box;
-  background-color: #f5f5f5;
+  background-color: #cfcfcf;
   margin: 2rem auto;
   max-width: 60rem;
   width: 90%;
@@ -814,7 +840,6 @@ span {
   .navbar .nav-list li {
     font-size: 1.6rem;
   }
-
 }
 
 @media (min-width: 1345px) {
@@ -822,15 +847,20 @@ span {
 
 /* journal content */
 .journal,
-.moods-header {
+.reminders,
+.moods-header,
+.forms-header {
   text-align: center;
-  padding-top: 2rem;
-  
+  padding-top: 3rem;
+}
+
+.reminders{
+  padding-bottom: 3rem;
 }
 
 p.journal {
   text-align: center;
-  max-width: 100%;
+  max-width: 75%;
   margin-left: auto;
   margin-right: auto;
   font-size: medium;
@@ -946,7 +976,6 @@ form.journal {
   padding-top: 7rem;
   margin-top: 2rem;
   justify-content: center;
-  
 }
 
 /*nicole*/
@@ -1058,11 +1087,11 @@ form.journal {
   cursor: pointer;
 }
 
-.all-reminders__div {
+/* .all-reminders__div {
   margin-bottom: 15px;
   text-align: center;
   align-items: center;
-}
+} */
 
 .add-reminder__submit {
   padding: 0.5em 1em;
@@ -1151,10 +1180,6 @@ form.journal {
   -webkit-box-shadow: 5px 5px 20px rgb(0 0 0 / 50%);
 }
 
-.form-content {
-  margin-top: 2rem;
-}
-
 .lastCheckin {
   margin-bottom: 1rem;
   margin-left: auto;
@@ -1184,44 +1209,57 @@ form.journal {
   background: #a55344;
 }
 
-
-.form-list {
-  list-style: none;
-}
-.formType {
-  text-align: center;
-}
-.form-container {
+.modal-body > .form-container{
   padding: 2rem;
 }
 
-.mindfulness_container{
-  list-style: none;
-  
+.modal-body > .formType {
+  padding-top: 2rem;
 }
 
-.mindfulness_list{
+/* -----------------fix--------------- */
+
+.modal-body > .forms-header > .survey-header{
+  padding-top: 0rem;
+}
+
+/* ----------------fix------------- */
+
+.form-list {
+  list-style: none;
+  padding-top: 2rem;
+}
+.formType {
+  text-align: center;
+  padding-top: 3rem;
+}
+.form-container {
+  padding: 2rem 2rem 2rem 10rem;
+}
+
+.mindfulness_container {
+  list-style: none;
+}
+
+.mindfulness_list {
   list-style: none;
   padding-left: 7rem;
   padding-right: 7rem;
-  padding-top: ;
-  padding-bottom: ;
 }
 
-.mindfulness_line{
+.mindfulness_line {
   padding-left: 7rem;
   padding-right: 7rem;
-  padding-top: 1rem ;
-  padding-bottom: 2rem ;
-
+  padding-top: 1rem;
+  padding-bottom: 2rem;
 }
 
-.mindfulness-header{
+.mindfulness-header {
   padding-bottom: 2rem;
   padding-top: 4rem;
 }
 
-.mindfulness_listItem{
+.mindfulness_listItem {
   padding-bottom: 0.3rem;
   padding-top: 0.3rem;
 }
@@ -1237,7 +1275,7 @@ form.journal {
 }
 
 .resources-image{
-     height: 400px; 
+    height: 400px; 
     max-width: 100%;
     border-radius: 5%;
     box-shadow: 5px 0px 10px 0px grey;
@@ -1246,4 +1284,29 @@ form.journal {
 .resources-image-container{
   padding-top: 1rem;
   
+}
+.reminders-calendar-columns{
+  display: flex;
+  flex-direction: row;
+}
+
+.all-reminders__div{
+  width: 50%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.calendar-div{
+  width: 50%;
+}
+
+.all-reminders__list{
+  padding-top: 2rem;
+  vertical-align: middle;
+}
+
+.ptsd-para{
+  font-size: medium;
+  font-weight: bold;
 }

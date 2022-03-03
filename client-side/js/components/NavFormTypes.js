@@ -1,7 +1,7 @@
 export default function NavFormTypes() {
     return `
         
-          <div class="styling_container"> 
+   
           <div class="forms-headers">
             <h1 class="survey-header">Well-being Surveys</h1>
             <h2>Choose the best survey that meets your needs</h2>
