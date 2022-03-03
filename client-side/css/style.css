@@ -307,7 +307,7 @@ tr.calendar > td:hover {
   color: rgb(48, 48, 48);
 }
 
-.logo{
+.logo {
   color: rgb(48, 48, 48);
   margin: auto;
   height: 55px;
@@ -316,7 +316,7 @@ tr.calendar > td:hover {
   left: 20px;
 }
 
-.logo-words{
+.logo-words {
   position: absolute;
   top: 13px;
   left: 80px;
@@ -394,10 +394,9 @@ tr.calendar > td:hover {
 
 .user-info {
   display: grid;
-  grid-template-columns: .5fr .5fr 1fr .5fr;
+  grid-template-columns: 0.5fr 0.5fr 1fr 0.5fr;
   /* height: 35rem; */
-  grid-template-areas: 
-  'reminders journals forms moods';
+  grid-template-areas: "reminders journals forms moods";
   padding: 2%;
 }
 
@@ -410,7 +409,7 @@ tr.calendar > td:hover {
   list-style: none;
 }
 
-.user-info-item>.reminders {
+.user-info-item > .reminders {
   padding-bottom: 4rem;
 }
 
@@ -500,7 +499,7 @@ p {
   padding-top: 3%;
   text-align: center;
   box-sizing: border-box;
-  background-color: #f5f5f5;
+  background-color: #dadada;
   margin: 2rem auto;
   max-width: 90%;
   width: auto;
@@ -515,7 +514,7 @@ p {
   padding-top: 2%;
   text-align: center;
   box-sizing: border-box;
-  background-color: #f5f5f5;
+  background-color: #cfcfcf;
   margin: 2rem auto;
   max-width: 90%;
   width: auto;
@@ -524,6 +523,7 @@ p {
   box-shadow: 4px 17px 31px -14px rgba(0, 0, 0, 0.75);
   height: 800px, auto;
   padding-bottom: 6rem;
+  
 }
 
 .bios {
@@ -574,15 +574,16 @@ p {
   color: whitesmoke;
 }
 
-.links-header, a:link {
+.links-header,
+a:link {
   padding-bottom: 2rem;
   text-decoration: none;
 }
 
-.links-header, a:hover {
+.links-header,
+a:hover {
   text-decoration: underline;
 }
-
 
 .resources_list {
   margin: 5rem;
@@ -634,7 +635,7 @@ span {
 
 .styling_container {
   box-sizing: border-box;
-  background-color: #f5f5f5;
+  background-color: #cfcfcf;
   margin: 2rem auto;
   max-width: 60rem;
   width: 90%;
@@ -838,7 +839,6 @@ span {
   .navbar .nav-list li {
     font-size: 1.6rem;
   }
-
 }
 
 @media (min-width: 1345px) {
@@ -975,7 +975,6 @@ form.journal {
   padding-top: 7rem;
   margin-top: 2rem;
   justify-content: center;
-  
 }
 
 /*nicole*/
@@ -1237,33 +1236,29 @@ form.journal {
   padding: 2rem 2rem 2rem 10rem;
 }
 
-.mindfulness_container{
+.mindfulness_container {
   list-style: none;
-  
 }
 
-.mindfulness_list{
+.mindfulness_list {
   list-style: none;
   padding-left: 7rem;
   padding-right: 7rem;
-  padding-top: ;
-  padding-bottom: ;
 }
 
-.mindfulness_line{
+.mindfulness_line {
   padding-left: 7rem;
   padding-right: 7rem;
-  padding-top: 1rem ;
-  padding-bottom: 2rem ;
-
+  padding-top: 1rem;
+  padding-bottom: 2rem;
 }
 
-.mindfulness-header{
+.mindfulness-header {
   padding-bottom: 2rem;
   padding-top: 4rem;
 }
 
-.mindfulness_listItem{
+.mindfulness_listItem {
   padding-bottom: 0.3rem;
   padding-top: 0.3rem;
 }
@@ -1303,4 +1298,3 @@ form.journal {
   font-size: medium;
   font-weight: bold;
 }
-
