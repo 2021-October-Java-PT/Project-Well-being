@@ -1,27 +1,17 @@
 export default function Ptsd(){
     return `
-    
       <h1 class="formType">PTSD Questionnaire</h1>
       <div class="form-container">
-      <p class="ptsd-para">Sometimes things happen to people that are unusually or especially frightening, horrible, or traumatic.
-      
-      For Example:
-      </p>
-      <ul class=form-list>
-        <li>A serious accident of fire</li>
-        <br>
-        <li>A physical or sexual assault or abuse</li>
-        <br>
-        <li>An earthquake or flood</li>
-        <br>
-        <li>A war</li>
-        <br>
-        <li>Seeing someone be killed or seriously injured</li>
-        <br>
-        <li>Having a loved one die through homicide or suicide</li>
-        <br>
-      </ul>
-      
+      <p class="ptsd-para">Sometimes things happen to people that are unusually or especially frightening, horrible, or traumatic; for example,</p>
+        <ul class="ptsd-para">
+          <li>A serious accident of fire</li>
+          <li>A physical or sexual assault or abuse</li>
+          <li>An earthquake or flood</li>
+          <li>A war</li>
+          <li>Seeing someone be killed or seriously injured</li>
+          <li>Having a loved one die through homicide or suicide</li>
+        </ul>
+      <br>      
       <h3>If you have ever experienced this type of event, please answer the following: </h3>
       <br>
       <h3>In the past month, have you: </h3>

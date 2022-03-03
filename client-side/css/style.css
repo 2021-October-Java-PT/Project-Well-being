@@ -1058,7 +1058,6 @@ form.journal {
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
-  display: block;
   width: fit-content;
   color: whitesmoke;
   background: #a55344;
@@ -1090,8 +1089,8 @@ form.journal {
   padding-top: 2rem;
 }
 
-.modal-body>.journal h1 {
-  padding-top: 2rem;
+.modal-body>h1.journal {
+  padding-top: 1rem;
 }
 
 .modal-body> .forms-headers> .survey-header{
@@ -1099,13 +1098,14 @@ form.journal {
 }
 
 .modal-body>p.journal {
-  padding-top: 0;
+  padding-top: 1rem;
 }
 
 .form-list {
   list-style: none;
-  padding-top: 2rem;
+  padding: 2rem 0em 2em 0em;
 }
+
 .formType {
   text-align: center;
   padding-top: 3rem;
@@ -1182,9 +1182,13 @@ form.journal {
   vertical-align: middle;
 }
 
-.ptsd-para{
+.ptsd-para {
   font-size: medium;
-  font-weight: bold;
+  /* font-weight: bold; */
+}
+
+.ptsd-para li {
+  margin-left: 2em;
 }
 
 /* media query */
