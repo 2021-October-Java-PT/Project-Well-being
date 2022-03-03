@@ -29,7 +29,7 @@ public class Populator implements CommandLineRunner {
     public void run(String...args) throws Exception {
         RemindersResource breakfast = new RemindersResource("Breakfast", "Meals", "High","Eat your Cheerios!");
         RemindersResource lunch = new RemindersResource("Lunch","Meals","High","Eat your sammich!");
-        RemindersResource dinner = new RemindersResource("Dinner","Meals","High","Eat your potatoes");
+        RemindersResource dinner = new RemindersResource("Dinner","Meals","High","Mmm, steak!");
 
         remindersRepo.save(breakfast);
         remindersRepo.save(lunch);
