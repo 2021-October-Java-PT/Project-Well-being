@@ -26,7 +26,7 @@ export default function Journal(journals){
             </div>
          
 
-        <div class-"all-journals__div" id="all-journals__div">
+        <div class="all-journals__div" id="all-journals__div">
             <ul class="all-journals__list">
                 ${journals.map(journal => {
                     return `

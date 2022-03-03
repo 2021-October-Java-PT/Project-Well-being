@@ -41,7 +41,7 @@ function buildPage() {
     navForms();
     navLogin();
     navAdmin();
-    navMindfulness();
+    // navMindfulness();
     playSounds();
 }
 
@@ -408,13 +408,15 @@ function navResources() {
     journalElem.addEventListener("click", () => {
         app.innerHTML = Resources();
         search();
+        navMindfulness();
     });
 }
 
 function navMindfulness() {
-    const mindfulnessElem = document.querySelector(".nav-list__mindfulness");
-    mindfulnessElem.addEventListener("click", () => {
-        app.innerHTML = Mindfulness();
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("practice-mindfulness")) {
+            app.innerHTML = Mindfulness();
+        }
     });
 }
 
