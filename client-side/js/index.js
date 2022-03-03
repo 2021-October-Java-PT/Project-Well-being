@@ -304,6 +304,20 @@ function navJournal() {
   });
 }
 
+function navMindfulness(){
+    const x = document.querySelector(".resources-image");
+    x.addEventListener("click",()=>{
+        console.log("Working");
+    })
+}
+
+// function navMindfulness(){
+//     const x = document.querySelector(".nav-list__mindfulness");
+//     x.addEventListener("click",()=>{
+//         console.log("Working");
+//     })
+// }
+
 function renderJournalEntry() {
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("journal-entry")) {
@@ -411,12 +425,10 @@ function navResources() {
     });
 }
 
-function navMindfulness() {
-    const mindfulnessElem = document.querySelector(".nav-list__mindfulness");
-    mindfulnessElem.addEventListener("click", () => {
-        app.innerHTML = Mindfulness();
-    });
-}
+// function navMindfulness() {
+    
+// }
+
 
 function navAdmin() {
     const adminElem = document.querySelector(".admin");

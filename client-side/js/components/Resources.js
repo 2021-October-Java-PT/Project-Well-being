@@ -1,8 +1,8 @@
 import picture from "../../images/DSC03254.jpg";
 
-
-
 export default function Resources(){
+
+    
     return `
         <div class="container-about">
             <div class="search-container">
@@ -23,6 +23,16 @@ export default function Resources(){
             <img class="resources-image" src="${picture}" alt="Resources Image" />
 
            </div>
+
+           
+            <button class="x">mindfulness</button>
+
+            
+            
+            <h2 class="nav-list__mindfulness">Mindfulness</h2>
+            
+            
+           
            
             <div class="resources_list">
                 <h2 class="links-header">Or select from these quick links</h2>
@@ -59,4 +69,7 @@ export default function Resources(){
         </div>
     
     `;
+
+    
 }
+
