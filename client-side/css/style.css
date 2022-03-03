@@ -617,6 +617,7 @@ a:hover {
   font-size: small;
   text-decoration: none;
   margin-left: 5em;
+  margin-bottom: 4rem;
 }
 
 .search-list h2,
@@ -1273,6 +1274,17 @@ form.journal {
   box-shadow: 5px 0px 10px 0px grey;
 }
 
+.resources-image{
+    height: 400px; 
+    max-width: 100%;
+    border-radius: 5%;
+    box-shadow: 5px 0px 10px 0px grey;
+    border-radius: 25px;
+}
+.resources-image-container{
+  padding-top: 1rem;
+  
+}
 .reminders-calendar-columns{
   display: flex;
   flex-direction: row;
