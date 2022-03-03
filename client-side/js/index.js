@@ -563,16 +563,26 @@ function userLogin() {
             // }
             navAllReminders();
             checkin();
+            signOut();
         });
         loggedIn = "true"
         const icon = document.getElementById("login");
         icon.innerHTML = `<i class="material-icons" id="account-circle">account_circle</i>`;
         if (userLoggedIn.includes("admin")) {
             document.getElementById("admin").style.display = "initial";
+            document.getElementById("signout").style.display = "initial";
         } else {
             document.getElementById("user").style.display = "initial";
+            document.getElementById("signout").style.display = "initial";
         }
     }
+    });
+}
+
+function signOut() {
+    const logoutClick = document.querySelector("#signout");
+    logoutClick.addEventListener("click", () => {
+        window.location.reload();    
     });
 }
 

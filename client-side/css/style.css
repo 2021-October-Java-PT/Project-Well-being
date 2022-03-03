@@ -361,6 +361,10 @@ tr.calendar > td:hover {
   transition: background 0.5s ease-in-out;
 }
 
+#signout {
+  display: none;
+}
+
 .home-area {
   height: 68vh;
   background: linear-gradient(
