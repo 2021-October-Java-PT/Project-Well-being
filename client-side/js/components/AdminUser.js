@@ -1,3 +1,4 @@
+import Charts from "../components/ChartDisplay";
 import Forms from "../components/FormReponses";
 import Journals from "../components/Journal";
 import Moods from "./MoodResponses";
@@ -35,9 +36,9 @@ export default function AdminUser(user) {
         <div class="user-info-item" id="journals">${Journals(journals())}</div>
         <div class="user-info-item" id="forms">${Forms(forms())}</div>
         <div class="user-info-item" id="moods">${Moods(moods())}</div>
+        <div>${Charts()}</div>
+        <btn class="returnAdminHome btn btn-primary">Return to User List</btn>
     </div>
-    <br>
-    <btn class="returnAdminHome btn btn-primary">Return to User List</btn>
     </div>
     `;
 }

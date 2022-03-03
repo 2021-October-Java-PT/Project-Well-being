@@ -4,6 +4,7 @@ import About from "./components/About";
 import AdminHome from "./components/AdminHome";
 import AdminUser from "./components/AdminUser";
 import AllReminders from "./components/AllReminders";
+import Charts from "./components/ChartDisplay";
 import Contact from "./components/Contact";
 import FormTypes from "./components/FormTypes";
 import Home from "./components/Home";
@@ -14,13 +15,13 @@ import LongAnxiety from "./components/LongAnxiety"
 import LongDepression from "./components/LongDepression"
 import Mindfulness from "./components/Mindfulness"
 import Mood from "./components/Mood";
-import NavFormTypes from "./components/NavFormTypes"
-import Ptsd from "./components/Ptsd"
+import NavFormTypes from "./components/NavFormTypes";
+import Ptsd from "./components/Ptsd";
 import Reminder from "./components/Reminder";
 import ResourceSearch from "./components/ResourceSearch";
 import Resources from "./components/Resources";
 import ShortAnxiety from "./components/ShortAnxiety";
-import ShortDepression from "./components/ShortDepression"
+import ShortDepression from "./components/ShortDepression";
 import apiHelpers from "./api-helpers.js/apiHelpers";
 
 const app = document.querySelector("#app");
@@ -455,7 +456,32 @@ function adminUser() {
         renderReminder();
         renderJournalEntry();
         returnAdminHome();
+        renderChart();
     });
+}
+
+function renderChart() {
+    const barData = {
+        labels: ["January","February","March","April","May","June"],
+        datasets: [
+            {
+                label: 'Form Entries',
+                fillColor: "rgb(48, 48, 48)",
+                strokeColor: "rgb(48, 48, 48)",
+                data: [3,4,5,0,0,0]
+            },
+            {
+                label: 'Mood Entries',
+                fillColor: "#a55344",
+                strokeColor: "#a55344",
+                data:  [4,4,3,0,0,0]
+            }
+        ]
+    }
+    // get bar chart canvas
+    const trends = document.getElementById("trends").getContext("2d");
+    // draw bar chart
+    new Chart(trends).Bar(barData);
 }
 
 function returnAdminHome() {
@@ -576,8 +602,3 @@ function saveForm() {
         renderHome();
     });     
  } 
- 
-
-
-
-
