@@ -1086,7 +1086,11 @@ form.journal {
   padding: 2rem;
 }
 
-.modal-body>.formType, h1.journal {
+.modal-body>.formType {
+  padding-top: 2rem;
+}
+
+.modal-body>.journal h1 {
   padding-top: 2rem;
 }
 
