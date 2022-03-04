@@ -1,6 +1,6 @@
 Project Well-being’s Unboxed Thoughts
 
-Unboxed Thoughts is a well-being and mental health tracker. The purpose of the app is to provide assistance in tracking mental health over time and to discover what interventions are working. Many mental health professionals have their clients track episodes of different struggles that their clients are dealing with to go over in sessions. This app provides a more consistent place to track and share that information.
+Unboxed Thoughts is a well-being and mental health tracker. The purpose of the app is to provide assistance in tracking mental health over time and to discover what interventions are working. Many mental health professionals have their clients track episodes of different struggles that they are dealing with to go over in sessions. This app provides a more consistent place to track and share that information.
 
 Unboxed Thoughts allows:
 
