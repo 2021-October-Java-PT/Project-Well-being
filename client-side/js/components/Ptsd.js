@@ -2,7 +2,7 @@ export default function Ptsd(){
     return `
       <h1 class="formType">PTSD Questionnaire</h1>
       <div class="form-container">
-      <p class="ptsd-para">Sometimes things happen to people that are unusually or especially frightening, horrible, or traumatic; for example,</p>
+      <p class="ptsd-para">Sometimes things happen to people that are unusually or especially frightening, horrible, or traumatic; for example,</p><br>
         <ul class="ptsd-para">
           <li>A serious accident of fire</li>
           <li>A physical or sexual assault or abuse</li>

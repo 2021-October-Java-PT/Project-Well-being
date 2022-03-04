@@ -816,7 +816,7 @@ form.journal {
 }
 
 .user-info-item>.reminders-calendar-columns{
-  padding-left: 43rem;
+  padding-left: 4rem;
 }
 
 .user-info-item>.reminders {
@@ -1167,7 +1167,6 @@ form.journal {
 .reminders-calendar-columns{
   display: flex;
   flex-direction: row;
-  padding: 0rem 40rem 0rem 30rem;
 }
 
 .all-reminders__div{
@@ -1188,7 +1187,7 @@ form.journal {
 
 .ptsd-para {
   font-size: medium;
-  /* font-weight: bold; */
+  font-weight: bold;
 }
 
 .ptsd-para li {

@@ -8,7 +8,7 @@ export default function Mindfulness(){
             <br>
             <br>
             <div class="mindfulness_container">
-                <p>Mindfulness is rooted in ancient teachings that include a journey toward enlightenment, and the concept of “sati,”—which encompasses attention, awareness, and being present—is considered the first step toward enlightenment. The term was roughly translated from an ancient language (Pali) into the term “mindfulness.”</p>
+                <p class="mindfulness_line">Mindfulness is rooted in ancient teachings that include a journey toward enlightenment, and the concept of “sati,”—which encompasses attention, awareness, and being present—is considered the first step toward enlightenment. The term was roughly translated from an ancient language (Pali) into the term “mindfulness.”</p>
                 <p class="mindfulness_line">As mindfulness has shifted into mainstream science and medicine, it has become a pivotal therapeutic technique; including integration into Mindfulness-Based Cognitive Therapy, Dialectical Behavior Therapy, and Acceptance and Commitment Therapy, among others.</p>
                 
             <section class="mindfulness-columns">
@@ -25,7 +25,7 @@ export default function Mindfulness(){
                 <p class="mindfulness_line">Mindfulness is one form of meditation. Meditation utilizes various practices to quiet the mind or achieve a higher level of consciousness, one of which is mindfulness. Mindfulness can be cultivated within or outside of formal meditation and woven into any activity, such as taking a walk or being engaged in conversation.</p>
             
                 <h2 class="mindfulness-header">What are the benefits of meditation?</h2>
-                <p>According to the Mayo Clinic, meditation has been studied in many clinical trials. The overall evidence supports the effectiveness of meditation for various conditions, including:
+                <p class="mindfulness_line">According to the Mayo Clinic, meditation has been studied in many clinical trials. The overall evidence supports the effectiveness of meditation for various conditions, including:
                     <br>Stress<br>Anxiety</br>Pain<br>Depression<br>Insomnia<br>High Blood Pressure (Hypertension)<br><br>
                     Meditation can help you experience thoughts and emotions with greater balance and acceptance. Meditation also has been shown to:
                     <br>Improve attention<br>Decrease job burnout<br>Improve Sleep<br>Improve diabetes control</p>
@@ -37,7 +37,6 @@ export default function Mindfulness(){
                             <li class="mindfulness_listItem"><b>Live in the moment:</b> Try to intentionally bring an open, accepting and discerning attention to everything you do. Find joy in simple pleasures.</li>
                             <li class="mindfulness_listItem"><b>Accept Yourself:</b> Treat yourself the way you would treat a good friend.</li>
                             <li class="mindfulness_listItem"><b>Focus on your breathing:</b> When you have negative thoughts, try to sit down, take a deep breath and close your eyes. Focus on your breath as it moves in and out of your body. Sitting and breathing for even just a minute can help.</li>                        
-                            
                         </ul>
                     <h2 class="mindfulness_line">You can also try more structured mindfulness exercises, such as:</h2>
                     <ul class="mindfulness_list">

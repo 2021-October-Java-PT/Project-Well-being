@@ -499,6 +499,15 @@ function navContact() {
     const contactElem = document.querySelector(".nav-list__contact");
     contactElem.addEventListener("click", () => {
         app.innerHTML = Contact();
+        contactFormSubmit();
+    });
+}
+
+function contactFormSubmit() {
+    const contactSub = document.querySelector("#contact-submit");
+    contactSub.addEventListener("click", () => {
+        app.innerHTML = Contact();
+        contactFormSubmit();
     });
 }
 
