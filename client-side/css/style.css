@@ -42,9 +42,10 @@
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 15em;
+  min-width: 11em;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  left: -75%;
 }
 
 .dropdown-content li {
@@ -137,6 +138,12 @@
   padding-bottom: 2%;
 }
 
+.moods__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 input[type="range"] {
   width: 500px;
   height: 6px;
@@ -162,21 +169,26 @@ input[type="range"]::-webkit-slider-thumb {
   color: rgb(48, 48, 48);
 }
 
-.forms-headers{
- text-align: center;
- padding-bottom: 3rem;
- padding-top: 1rem;
+.forms-headers {
+  text-align: center;
+  padding-bottom: 3rem;
+  padding-top: 1rem;
 }
 
-.survey-header{
+.survey-header {
   padding-bottom: 2rem;
+  padding-top: 3rem;
+}
+
+.mindful-header {
+  padding-bottom: 1em;
 }
 
 input[type="range"] {
   width: 500px;
-  height: 6px;
+  height: 8px;
   -webkit-appearance: none;
-  background-color: whitesmoke;
+  background-color: #a55344;
   border-radius: 6px;
   outline: none;
   margin-top: 60px;
@@ -185,7 +197,7 @@ input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 30px;
   width: 30px;
-  background-color: whitesmoke;
+  background-color: rgb(48, 48, 48);
   border-radius: 50%;
   box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.2);
 }
@@ -196,7 +208,6 @@ input[type="range"]::-webkit-slider-thumb {
 /*end mood*/
 
 /* calendar */
-
 .calendar {
   text-align: center;
 }
@@ -214,7 +225,7 @@ table.calendar {
 h2.calendar {
   text-align: center;
   color: rgb(48, 48, 48);
-  margin-top: 4rem;
+  margin-top: 1rem;
 }
 
 th.calendar {
@@ -259,7 +270,6 @@ tr.calendar > td:hover {
   padding-top: 35px;
   padding-left: 0%;
   padding-right: 0%;
-  
 }
 
 /* navbar */
@@ -304,7 +314,21 @@ tr.calendar > td:hover {
 
 .logo {
   color: rgb(48, 48, 48);
-  margin-bottom: 0.5rem;
+  margin: auto;
+  height: 55px;
+  width: auto;
+  top: 2px;
+  left: 20px;
+}
+
+.logo-words {
+  position: absolute;
+  top: 13px;
+  left: 80px;
+  color: rgb(48, 48, 48);
+  margin: auto;
+  height: 40px;
+  width: auto;
 }
 
 /*home*/
@@ -314,14 +338,16 @@ tr.calendar > td:hover {
   text-decoration: none;
   border-radius: 25px;
   cursor: pointer;
-  outline: none;
+  /* outline: none; */
   margin-top: 1em;
   text-transform: uppercase;
   font-weight: small;
   /* border: solid #BDBDBD 1px;  */
-	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5); 
-	-webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5); 
-	-moz-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);  
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  background-color: #a55344;
+  color: white;
 }
 
 .btn-primary {
@@ -329,9 +355,14 @@ tr.calendar > td:hover {
   background: #a55344;
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+#login-btn:hover {
   background: rgb(48, 48, 48);
   transition: background 0.5s ease-in-out;
+}
+
+#signout {
+  display: none;
 }
 
 .home-area {
@@ -373,29 +404,35 @@ tr.calendar > td:hover {
 .services-item {
   background-color: white;
   padding: 25px 80px;
-  font-size: 30px;
+  /* font-size: 30px; */
   text-align: center;
-  border: solid #BDBDBD 1px; 
-	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5); 
-	-webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5); 
-	-moz-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5); 
+  border: solid #bdbdbd 1px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
 }
 
-h2 {
+ h2 {
+  font-size: x-large;
+} 
+
+.home-container h2, 
+.subheading, 
+.container-contact h2, 
+.bios h2{
   font-family: "Dancing Script", cursive;
   font-size: x-large;
 }
 
 .articleImg {
-  
   display: inline;
   margin: 0 auto;
   width: 200px;
   height: 200px;
   border-radius: 50%;
-	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5); 
-	-webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5); 
-	-moz-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5); 
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
 }
 
 p {
@@ -422,7 +459,7 @@ p {
 }
 .contact-div {
   grid-column: 1/2;
-  padding: 50px 10px 10px 10px;
+  padding: 30px 10px 10px 10px;
   /* text-indent: 2%; */
   text-align: center;
 }
@@ -437,7 +474,7 @@ p {
   padding-top: 3%;
   text-align: center;
   box-sizing: border-box;
-  background-color: #f5f5f5;
+  background-color: #dadada;
   margin: 2rem auto;
   max-width: 90%;
   width: auto;
@@ -448,12 +485,11 @@ p {
   padding-bottom: 6rem;
 }
 
-
-.container-contact{
-  padding-top: 5%;
+.container-contact {
+  padding-top: 2%;
   text-align: center;
   box-sizing: border-box;
-  background-color: #f5f5f5;
+  background-color: #cfcfcf;
   margin: 2rem auto;
   max-width: 90%;
   width: auto;
@@ -462,6 +498,7 @@ p {
   box-shadow: 4px 17px 31px -14px rgba(0, 0, 0, 0.75);
   height: 800px, auto;
   padding-bottom: 6rem;
+  
 }
 
 .bios {
@@ -478,6 +515,7 @@ p {
 #linkedin {
   height: 25px;
   text-decoration: none;
+  margin: 2px;
 }
 
 .headshot {
@@ -511,19 +549,32 @@ p {
   color: whitesmoke;
 }
 
-.links-header{
+.links-header,
+a:link {
   padding-bottom: 2rem;
+  text-decoration: none;
 }
-.resources_list {
-  margin: 5rem;
-  /* padding: 5rem; */
+
+.resources_list a {
+  color: black;
+}
+
+.links-header,a:hover {
+  text-decoration: underline;
+}
+
+.resources_list,
+.mindfulness_resource {
   text-align: center;
-  box-sizing: border-box;
-
 }
 
-.links-subheader{
+.mindfulness_resource>p {
+  font-size: large;
+}
+
+.links-subheader {
   padding-top: 2rem;
+
   padding-bottom: 2rem;
 }
 
@@ -531,7 +582,7 @@ p {
   list-style: none;
 }
 
-.search-header{
+.search-header {
   padding-bottom: 2rem;
 }
 
@@ -546,6 +597,7 @@ p {
   font-size: small;
   text-decoration: none;
   margin-left: 5em;
+  margin-bottom: 4rem;
 }
 
 .search-list h2,
@@ -562,7 +614,20 @@ span {
   height: 15em;
 }
 
-.styling_container{
+.styling_container {
+  box-sizing: border-box;
+  background-color: #cfcfcf;
+  margin: 2rem auto;
+  max-width: 60rem;
+  width: 90%;
+  -webkit-box-shadow: 4px 17px 31px -14px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 4px 17px 31px -14px rgba(0, 0, 0, 0.75);
+  box-shadow: 4px 17px 31px -14px rgba(0, 0, 0, 0.75);
+  height: 800px, auto;
+  padding-bottom: 6rem;
+}
+
+.reminders_container {
   box-sizing: border-box;
   background-color: #f5f5f5;
   margin: 2rem auto;
@@ -575,7 +640,7 @@ span {
   padding-bottom: 6rem;
 }
 
-.reminders_container{
+.resources_container {
   box-sizing: border-box;
   background-color: #f5f5f5;
   margin: 2rem auto;
@@ -588,20 +653,7 @@ span {
   padding-bottom: 6rem;
 }
 
-.resources_container{
-  box-sizing: border-box;
-  background-color: #f5f5f5;
-  margin: 2rem auto;
-  max-width: 60rem;
-  width: 90%;
-  -webkit-box-shadow: 4px 17px 31px -14px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 4px 17px 31px -14px rgba(0, 0, 0, 0.75);
-  box-shadow: 4px 17px 31px -14px rgba(0, 0, 0, 0.75);
-  height: 800px, auto;
-  padding-bottom: 6rem;
-}
-
-#fixTop{
+#fixTop {
   position: fixed;
   z-index: 888;
   top: 44%;
@@ -610,6 +662,536 @@ span {
   width: 40px;
   height: 40px;
   cursor: pointer;
+}
+
+/* journal content */
+.journal,
+.reminders,
+.moods-header,
+.forms-header {
+  text-align: center;
+  padding-top: 3rem;
+}
+
+.reminders{
+  padding-bottom: 3rem;
+}
+
+p.journal {
+  text-align: center;
+  max-width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: medium;
+}
+
+.forms-headers>p {
+  text-align: center;
+  max-width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: medium;
+}
+
+.journal-entry-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: auto;
+  max-width: 10rem;
+  border-radius: 75%;
+  box-shadow: 5px 0px 10px 0px grey;
+}
+
+.journal-submit-button,
+.practice-mindfulness {
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 25px;
+  cursor: pointer;
+  outline: none;
+  margin: 1em;
+  font-weight: small;
+  color: whitesmoke;
+  background: #a55344;
+}
+
+.journal-buttons {
+  display: flex;
+  width: fit-content;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.all-journals__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+li.journal-entry {
+  justify-content: center;
+  margin: 1rem;
+}
+
+.journal-submit-button:hover,
+.journal-entry:hover,
+.return-all-journals:hover,
+.journal-delete:hover {
+  background: rgb(48, 48, 48);
+  transition: background 0.5s ease-in-out;
+}
+
+.journal-entry,
+.return-all-journals,
+.journal-delete {
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  display: block;
+  width: fit-content;
+  color: whitesmoke;
+  background: #a55344;
+  border-radius: 25px;
+  padding: 0.5em 1em;
+}
+
+.return-all-journals,
+.journal-delete {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.journal-date {
+  padding-bottom: 2rem;
+}
+
+.journal-content {
+  padding-bottom: 3rem;
+}
+
+.label-date {
+  margin-top: 10rem;
+}
+
+#date {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: transparent;
+}
+
+#journal-entry {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  max-width: 80%;
+}
+
+.individual-journal {
+  text-align: center;
+}
+
+.journal-form {
+  background-image: url("../assets/legal-pad.png");
+  max-height: 35rem;
+  max-width: 35rem;
+  background-position: top center;
+  background-size: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form.journal {
+  padding-top: 7rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-info-item>.reminders-calendar-columns{
+  padding-left: 4rem;
+}
+
+.user-info-item>.reminders {
+  padding: 0rem;
+}
+
+.user-info-item p,
+.user-info-item img {
+  display: none;
+}
+
+.user-info-item li {
+  list-style: none;
+}
+
+/* .user-info-item > .reminders {
+  padding-bottom: 4rem;
+} */
+
+#reminders {
+  grid-area: reminders;
+}
+
+#journals {
+  grid-area: journals;
+}
+
+#forms {
+  grid-area: forms;
+}
+
+#moods {
+  grid-area: moods;
+}
+
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  text-transform: uppercase;
+  outline: 0;
+  background: #a55344;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,
+.form button:active,
+.form button:focus {
+  background: #a55344;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #a55344;
+  text-decoration: none;
+}
+.form .register-form {
+  display: none;
+}
+
+#account-circle {
+  font-size: 1.5rem;
+}
+
+/* reminder content */
+
+.reminder-header {
+  text-align: center;
+  padding: 1rem;
+}
+
+.reminder {
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  display: block;
+  width: fit-content;
+  color: whitesmoke;
+  background: #a55344;
+  border-radius: 25px;
+  padding: 0.5em 1em;
+}
+
+.reminder:hover {
+  background: rgb(48, 48, 48);
+  transition: background 0.5s ease-in-out;
+}
+
+#frmReminder {
+  text-align: center;
+  margin: 4rem;
+}
+
+.entrReminder {
+  font-weight: bold;
+}
+
+.add-reminder__name,
+.add-reminder__category,
+.add-reminder__priority,
+.add-reminder__description {
+  box-shadow: 0.5px 0.5px;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+}
+
+.add-reminder__submit,
+.add-reminder__priority {
+  cursor: pointer;
+}
+
+/* .all-reminders__div {
+  margin-bottom: 15px;
+  text-align: center;
+  align-items: center;
+} */
+
+.add-reminder__submit {
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 25px;
+  cursor: pointer;
+  outline: none;
+  margin-top: 1em;
+  font-weight: small;
+  color: whitesmoke;
+  background: #a55344;
+}
+
+.add-reminder__submit:hover {
+  background: rgb(48, 48, 48);
+  transition: background 0.5s ease-in-out;
+}
+
+/* Individual Reminder section */
+
+.individual-reminder, .individual-journal {
+  margin: 5rem auto 5rem auto;
+  display: block;
+  width: fit-content;
+}
+
+.individual-reminder h1, .individual-journal h1 {
+  padding-top: 2rem;
+}
+
+.reminder-name,
+.reminder-category,
+.reminder-description,
+.reminder-priority {
+  margin: 1rem auto 1rem auto;
+  text-align: center;
+}
+
+.reminder-category,
+.reminder-description,
+.reminder-priority {
+  text-align: left;
+  margin-top: 2rem;
+}
+
+.reminder-name {
+  text-decoration: underline;
+}
+
+.return-reminders,
+.reminder-delete {
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 25px;
+  cursor: pointer;
+  outline: none;
+  margin: 1em;
+  font-weight: small;
+  color: whitesmoke;
+  background: #a55344;
+}
+
+.reminder-buttons {
+  display: block;
+  width: fit-content;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.return-reminders:hover,
+.reminder-delete:hover {
+  background: rgb(48, 48, 48);
+  transition: background 0.5s ease-in-out;
+}
+
+.typeButtons > button {
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  display: block;
+  width: fit-content;
+  color: whitesmoke;
+  background: #a55344;
+  border-radius: 25px;
+  padding: 0.5em 1em;
+  border: none;
+  box-shadow: 5px 5px 20px rgb(0 0 0 / 50%);
+  -webkit-box-shadow: 5px 5px 20px rgb(0 0 0 / 50%);
+}
+
+.lastCheckin {
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  width: fit-content;
+  color: whitesmoke;
+  background: #a55344;
+  border-radius: 25px;
+  padding: 0.5em 1em;
+  border: none;
+  box-shadow: 5px 5px 20px rgb(0 0 0 / 50%);
+  -webkit-box-shadow: 5px 5px 20px rgb(0 0 0 / 50%);
+}
+
+#play-button,
+#stop-button {
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 25px;
+  cursor: pointer;
+  outline: none;
+  margin: 1em;
+  font-weight: small;
+  color: whitesmoke;
+  background: #a55344;
+}
+
+.modal-body > .form-container{
+  padding: 2rem;
+}
+
+.modal-body>.formType {
+  padding-top: 2rem;
+}
+
+.modal-body>h1.journal {
+  padding-top: 1rem;
+}
+
+.modal-body> .forms-headers> .survey-header{
+  padding-top: 0rem;
+}
+
+.modal-body>p.journal {
+  padding-top: 1rem;
+}
+
+.form-list {
+  list-style: none;
+  padding: 2rem 0em 2em 0em;
+}
+
+.formType {
+  text-align: center;
+  padding-top: 3rem;
+}
+.form-container {
+  padding: 2rem 2rem 2rem 10rem;
+}
+
+.mindfulness_container {
+  list-style: none;
+}
+
+.mindfulness_container>p,
+.mindfulness-columns>p {
+  font-size: large;
+}
+
+.mindfulness_list {
+  list-style: none;
+  padding-left: 7rem;
+  padding-right: 7rem;
+}
+
+.mindfulness_line {
+  padding-left: 7rem;
+  padding-right: 7rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.mindfulness-header {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.mindfulness_listItem {
+  padding-bottom: 0.3rem;
+  padding-top: 0.3rem;
+}
+
+.resources-image{
+    height: 400px; 
+    max-width: 100%;
+    border-radius: 5%;
+    box-shadow: 5px 0px 10px 0px grey;
+    border-radius: 25px;
+}
+
+.mindfulness-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.reminders-calendar-columns{
+  display: flex;
+  flex-direction: row;
+}
+
+.all-reminders__div{
+  width: 50%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.calendar-div{
+  width: 50%;
+}
+
+.all-reminders__list{
+  padding-top: 2rem;
+  vertical-align: middle;
+}
+
+.ptsd-para {
+  font-size: medium;
+  font-weight: bold;
+}
+
+.ptsd-para li {
+  margin-left: 2em;
 }
 
 /* media query */
@@ -633,6 +1215,10 @@ span {
 
   .container {
     min-height: 117em;
+  }
+
+  .logo {
+    display: none;
   }
 
   .services-div {
@@ -720,13 +1306,6 @@ span {
     font-weight: 500;
   }
 
-  .logo {
-    position: absolute;
-    top: 5px;
-    right: 15px;
-    font-size: 2rem;
-  }
-
   .navbar-container input[type="checkbox"]:checked ~ .nav-list {
     transform: translateX(0);
   }
@@ -742,7 +1321,14 @@ span {
   .navbar-container input[type="checkbox"]:checked ~ .hamburger-menu .line3 {
     transform: rotate(-35deg);
   }
-}
+
+  .reminders-calendar-columns{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 0rem 40rem 0rem 30rem; */
+  }
+} 
 
 @media (max-width: 500px) {
   .container {
@@ -775,360 +1361,7 @@ span {
   .navbar .nav-list li {
     font-size: 1.6rem;
   }
-
-  .logo {
-    position: absolute;
-    top: 06px;
-    right: 15px;
-    font-size: 3rem;
-  }
 }
 
 @media (min-width: 1345px) {
-}
-
-/* journal content */
-.journal {
-  text-align: center;
-  
-}
-p.journal {
-  text-align: center;
-  max-width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: large;
-}
-
-.journal-entry-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 25%;
-  border-radius: 75%;
-  box-shadow: 5px 0px 10px 0px grey;
-}
-
-.journal-submit-button{
-  padding: 0.5em 1em;
-  text-decoration: none;
-  border-radius: 25px;
-  cursor: pointer;
-  outline: none;
-  margin: 1em;
-  font-weight: small;
-  color: whitesmoke;
-  background: #a55344;
-}
-
-.journal-buttons {
-  display: flex;
-  width: fit-content; 
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-} 
-
-li.journal-entry {
-  float: right;
-  position: relative;
-  left: -28%;
-  text-align: left;
-  margin: 1rem;
-} 
-
-.journal-submit-button:hover, 
-.journal-entry:hover, 
-.return-all-journals:hover, 
-.journal-delete:hover {
-  background: rgb(48, 48, 48);
-  transition: background 0.5s ease-in-out;
-}
-
-.journal-entry, 
-.return-all-journals, 
-.journal-delete {
-  margin-bottom: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-  cursor: pointer;
-  display: block;
-  width: fit-content;
-  color: whitesmoke;
-  background: #a55344;
-  border-radius: 25px;
-  padding: 0.5em 1em;
-}
-
-.return-all-journals, 
-.journal-delete {
-margin-left: 2rem;
-margin-right: 2rem;
-}
-
-.journal-date {
-  padding-bottom: 2rem;
-}
-
-.journal-content {
-  padding-bottom: 3rem;
-}
-
-.label-date{
-  margin-top: 10rem;
-}
-
-#date {
-  margin-top: 2rem;
-  margin-bottom: 3rem;
-  background-color: transparent;
-}
-
-#journal-entry {
-  margin-top: 2rem;
-  margin-bottom: 3rem;
-  background-color: transparent;
-  max-width: 80%;
-}
-
-.individual-journal {
-  text-align: center;
-}
-
-.journal-form {
-  background-image: url("../assets/legal-pad.png");
-  min-height: 50rem;
-  background-position:top center;
-}
-
-form.journal {
-  padding-top: 7rem;
-  margin-top: 2rem;
-}
-
-/*nicole*/
-.login-page {
-  width: 360px;
-  padding: 8% 0 0;
-  margin: auto;
-}
-.form {
-  position: relative;
-  z-index: 1;
-  background: #FFFFFF;
-  max-width: 360px;
-  margin: 0 auto 100px;
-  padding: 45px;
-  text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
-.form input {
-  outline: 0;
-  background: #f2f2f2;
-  width: 100%;
-  border: 0;
-  margin: 0 0 15px;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
-}
-.form button {
-  text-transform: uppercase;
-  outline: 0;
-  background: #a55344;
-  width: 100%;
-  border: 0;
-  padding: 15px;
-  color: #FFFFFF;
-  font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
-  cursor: pointer;
-}
-.form button:hover,
-.form button:active,
-.form button:focus {
-  background: #a55344;
-}
-.form .message {
-  margin: 15px 0 0;
-  color: #b3b3b3;
-  font-size: 12px;
-}
-.form .message a {
-  color: #a55344;
-  text-decoration: none;
-}
-.form .register-form {
-  display: none;
-}
-
-#account-circle {
-  font-size: 1.5rem;
-}
-
-/* reminder content */
-
-.reminder-header {
-  text-align: center;
-  padding: 5%;
-}
-
-.reminder {
-  margin-bottom: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-  cursor: pointer;
-  display: block;
-  width: fit-content;
-  color: whitesmoke;
-  background: #a55344;
-  border-radius: 25px;
-  padding: 0.5em 1em;
-}
-
-.reminder:hover {
-  background: rgb(48, 48, 48);
-  transition: background 0.5s ease-in-out;
-}
-
-#frmReminder {
-  text-align: center;
-  margin: 4rem;
-}
-
-.entrReminder {
-  font-weight: bold;
-}
-
-.add-reminder__name,
-.add-reminder__category,
-.add-reminder__priority,
-.add-reminder__description {
-  box-shadow: 0.5px 0.5px;
-  margin-left: 0.3rem;
-  margin-right: 0.3rem;
-}
-
-.add-reminder__submit,
-.add-reminder__priority {
-  cursor: pointer;
-}
-
-.all-reminders__div {
-  margin-bottom: 15px;
-  text-align: center;
-  align-items: center;
-}
-
-.add-reminder__submit {
-  padding: 0.5em 1em;
-  text-decoration: none;
-  border-radius: 25px;
-  cursor: pointer;
-  outline: none;
-  margin-top: 1em;
-  font-weight: small;
-  color: whitesmoke;
-  background: #a55344;
-}
-
-.add-reminder__submit:hover {
-  background: rgb(48, 48, 48);
-  transition: background 0.5s ease-in-out;
-}
-
-/* Individual Reminder section */
-
-.individual-reminder {
-  margin: 5rem auto 5rem auto;
-  display: block;
-  width: fit-content;
-}
-
-.reminder-name,
-.reminder-category,
-.reminder-description,
-.reminder-priority {
-  margin: 1rem auto 1rem auto;
-  text-align: center;
-}
-
-.reminder-category,
-.reminder-description,
-.reminder-priority {
-  text-align: left;
-  margin-top: 2rem;
-}
-
-.reminder-name {
-  text-decoration: underline;
-}
-
-.return-reminders,
-.reminder-delete {
-  padding: 0.5em 1em;
-  text-decoration: none;
-  border-radius: 25px;
-  cursor: pointer;
-  outline: none;
-  margin: 1em;
-  font-weight: small;
-  color: whitesmoke;
-  background: #a55344;
-}
-
-.reminder-buttons {
-  display: block;
-  width: fit-content;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.return-reminders:hover,
-.reminder-delete:hover {
-  background: rgb(48, 48, 48);
-  transition: background 0.5s ease-in-out;
-}
-
-#typeButton {
-  margin-bottom: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-  cursor: pointer;
-  display: block;
-  width: fit-content;
-  color: whitesmoke;
-  background: #a55344;
-  border-radius: 25px;
-  padding: 0.5em 1em;
-}
-.form-content{
-  margin-top: 2rem;
-}
-
-.lastCheckin{
-  margin-bottom: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-  cursor: pointer;
-  display: block;
-  width: fit-content;
-  color: whitesmoke;
-  background: #a55344;
-  border-radius: 25px;
-  padding: 0.5em 1em;
-}
-
-#play-button, #stop-button{
-  padding: 0.5em 1em;
-  text-decoration: none;
-  border-radius: 25px;
-  cursor: pointer;
-  outline: none;
-  margin: 1em;
-  font-weight: small;
-  color: whitesmoke;
-  background: #a55344;
 }

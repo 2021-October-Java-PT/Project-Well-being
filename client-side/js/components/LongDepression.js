@@ -1,10 +1,12 @@
 export default function LongDepression(){
     return `
+    
+    <h1 class="formType">Weekly Depression Questionnaire</h1>
     <div class="form-container">
-    <h1>Weekly Depression Questionnaire</h1>
-     <h3>Over the last Week, how often have you been bothered by the following problems?</h3>
-        <ul>
-            <li>Little interest or pleasure in doing things</li>
+     <h3>Over the last week, how often have you been bothered by the following problems?</h3>
+        <ul class=form-list>
+            <li>Little interest or pleasure in doing things:</li>
+            <br>
             <input type="radio" name="rating1" id="0" value="0">
         <label for="0">Not at all</label><br>
 
@@ -16,8 +18,9 @@ export default function LongDepression(){
 
         <input type="radio" name="rating1" id="3" value="3">
         <label for="3">All week</label><br>
-
-            <li>Feeling down, depressed or hopeless</li>
+        <br>
+            <li>Feeling down, depressed or hopeless:</li>
+            <br>
             <input type="radio" name="rating2" id="0" value="0">
         <label for="0">Not at all</label><br>
 
@@ -29,8 +32,9 @@ export default function LongDepression(){
 
         <input type="radio" name="rating2" id="3" value="3">
         <label for="3">All week</label><br>
-            
-            <li>Trouble falling asleep, staying asleep, or sleeping too much</li>
+        <br>
+            <li>Trouble falling asleep, staying asleep, or sleeping too much:</li>
+            <br>
             <input type="radio" name="rating3" id="0" value="0">
         <label for="0">Not at all</label><br>
 
@@ -42,8 +46,9 @@ export default function LongDepression(){
 
         <input type="radio" name="rating3" id="3" value="3">
         <label for="3">All week</label><br>
-
-            <li>Feeling tired or having little energy</li>
+        <br>
+            <li>Feeling tired or having little energy:</li>
+            <br>
             <input type="radio" name="rating4" id="0" value="0">
         <label for="0">Not at all</label><br>
 
@@ -55,8 +60,9 @@ export default function LongDepression(){
 
         <input type="radio" name="rating4" id="3" value="3">
         <label for="3">All week</label><br>
-
-            <li>Poor appetite or overeatingl</li>
+        <br>
+            <li>Poor appetite or overeating:</li>
+            <br>
             <input type="radio" name="rating5" id="0" value="0">
         <label for="0">Not at all</label><br>
 
@@ -68,8 +74,9 @@ export default function LongDepression(){
 
         <input type="radio" name="rating5" id="3" value="3">
         <label for="3">All week</label><br>
-
-            <li>Feeling bad about yourself - or that you’re a failure or have let yourself or your family down</li>
+        <br>
+            <li>Feeling bad about yourself or that you’re a failure or have let yourself or your family down:</li>
+            <br>
             <input type="radio" name="rating6" id="0" value="0">
         <label for="0">Not at all</label><br>
 
@@ -81,8 +88,9 @@ export default function LongDepression(){
 
         <input type="radio" name="rating6" id="3" value="3">
         <label for="3">All week</label><br>
-            
-            <li>Trouble concentrating on things, such as reading the newspaper or watching television</li>
+        <br>
+            <li>Trouble concentrating on things, such as reading the newspaper or watching television:</li>
+            <br>
             <input type="radio" name="rating7" id="0" value="0">
         <label for="0">Not at all</label><br>
 
@@ -94,8 +102,9 @@ export default function LongDepression(){
 
         <input type="radio" name="rating7" id="3" value="3">
         <label for="3">All week</label><br>
-
-            <li>Moving or speaking so slowly that other people could have noticed. Or, the opposite - being so fidgety or restless that you have been moving around a lot more than usual</li>
+        <br>
+            <li>Moving or speaking so slowly that other people could have noticed. Or, the opposite - being so fidgety or restless that you have been moving around a lot more than usual:</li>
+            <br>
             <input type="radio" name="rating8" id="0" value="0">
         <label for="0">Not at all</label><br>
 
@@ -107,8 +116,9 @@ export default function LongDepression(){
 
         <input type="radio" name="rating8" id="3" value="3">
         <label for="3">All week</label><br>
-
-            <li>Thoughts that you would be better off dead or of hurting yourself in some way</li>
+        <br>
+            <li>Thoughts that you would be better off dead or of hurting yourself in some way:</li>
+            <br>
             <input type="radio" name="rating9" id="0" value="0">
         <label for="0">Not at all</label><br>
 
@@ -120,8 +130,9 @@ export default function LongDepression(){
 
         <input type="radio" name="rating9" id="3" value="3">
         <label for="3">All week</label><br>
+        
         </ul>       
-        <button class="lastCheckin">Next</button>
+        <button class="lastCheckin" id="saveForm">Next</button>
     </div>  
     `;
   }

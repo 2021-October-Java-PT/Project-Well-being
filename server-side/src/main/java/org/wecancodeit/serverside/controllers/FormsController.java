@@ -1,10 +1,9 @@
 package org.wecancodeit.serverside.controllers;
 
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.springframework.web.bind.annotation.*;
 import org.wecancodeit.serverside.models.FormsResource;
 import org.wecancodeit.serverside.repos.FormsRepository;
 
@@ -25,7 +24,26 @@ public class FormsController {
     }
 
     @GetMapping("/api/forms/{id}")
-    public Optional<FormsResource> getFormsById(@PathVariable Long id){
+    public Optional<FormsResource> getFormsById(@PathVariable Long id) {
         return formsRepo.findById(id);
+    }
+
+    @PostMapping("/api/forms/save-form")
+    public String addReminder(@RequestBody String body) throws JSONException {
+        JSONObject newResource = new JSONObject(body);
+        String type = newResource.getString("type");
+        int score = newResource.getInt("score");
+        String date = newResource.getString("date");
+
+        Optional<FormsResource> formToSaveOpt = formsRepo.findByType(type);
+
+        if (formToSaveOpt.isEmpty()) {
+            FormsResource formToSave = new FormsResource(type, score, date);
+            formsRepo.save(formToSave);
+            return "redirect:/api/forms";
+        }
+        return "redirect:/api/forms";
+
+
     }
 }

@@ -1,11 +1,12 @@
 export default function LongAnxiety(){
 
 return `
+<h1 class="formType">Weekly Anxiety Questionnaire</h1>
 <div class="form-container">
-<h1>Weekly Anxiety Questionnaire</h1>
- <h3>Over the last Week, how often have you been bothered by the following problems?</h3>
-    <ul>
-        <li>Feeling nervous, anxious or on edge</li>
+ <h3>Over the last week, how often have you been bothered by the following problems?</h3>
+    <ul class=form-list>
+        <li>Feeling nervous, anxious or on edge:</li>
+        <br>
         <input type="radio" name="rating1" id="0" value="0">
         <label for="0">Not at all</label><br>
 
@@ -17,8 +18,9 @@ return `
 
         <input type="radio" name="rating1" id="3" value="3">
         <label for="3">All week</label><br>
-
-        <li>Not being able to stop or control worrying</li>
+        <br>
+        <li>Not being able to stop or control worrying:</li>
+        <br>
         <input type="radio" name="rating2" id="0" value="0">
         <label for="0">Not at all</label><br>
 
@@ -30,8 +32,9 @@ return `
 
         <input type="radio" name="rating2" id="3" value="3">
         <label for="3">All week</label><br>
-        
-        <li>Worrying too much about different things</li>
+        <br>
+        <li>Worrying too much about different things:</li>
+        <br>
         <input type="radio" name="rating3" id="0" value="0">
         <label for="0">Not at all</label><br>
 
@@ -43,8 +46,9 @@ return `
 
         <input type="radio" name="rating3" id="3" value="3">
         <label for="3">All week</label><br>
-
-        <li>Trouble relaxing</li>
+        <br>
+        <li>Trouble relaxing:</li>
+        <br>
         <input type="radio" name="rating4" id="0" value="0">
         <label for="0">Not at all</label><br>
 
@@ -56,8 +60,9 @@ return `
 
         <input type="radio" name="rating4" id="3" value="3">
         <label for="3">All week</label><br>
-
-        <li>Being so restless that it is hard to sit still</li>
+        <br>
+        <li>Being so restless that it is hard to sit still:</li>
+        <br>
         <input type="radio" name="rating5" id="0" value="0">
         <label for="0">Not at all</label><br>
 
@@ -69,8 +74,9 @@ return `
 
         <input type="radio" name="rating5" id="3" value="3">
         <label for="3">All week</label><br>
-
-        <li>Becoming easily annoyed or irritable</li>
+        <br>
+        <li>Becoming easily annoyed or irritable:</li>
+        <br>
         <input type="radio" name="rating6" id="0" value="0">
         <label for="0">Not at all</label><br>
 
@@ -82,8 +88,9 @@ return `
 
         <input type="radio" name="rating6" id="3" value="3">
         <label for="3">All week</label><br>
-        
-        <li>Feeling afraid as if something awful might happen</li>
+        <br>
+        <li>Feeling afraid as if something awful might happen:</li>
+        <br>
         <input type="radio" name="rating7" id="0" value="0">
         <label for="0">Not at all</label><br>
 
@@ -101,7 +108,7 @@ return `
 
 
     </ul>
-    <button class="lastCheckin">Next</button>
+    <button class="lastCheckin" id="saveForm">Next</button>
 
 </div>  
 `;
