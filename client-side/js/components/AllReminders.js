@@ -1,8 +1,6 @@
 export default function AllReminders(reminders) {
     return `
-    <h1 class="reminders">Reminders</h1>
-    
-    
+    <h1 class="reminders">Reminders</h1>   
     <section class="reminders-calendar-columns">
     <div class="all-reminders__div">
         <ul class="all-reminders__list">

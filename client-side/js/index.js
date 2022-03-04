@@ -4,6 +4,7 @@ import About from "./components/About";
 import AdminHome from "./components/AdminHome";
 import AdminUser from "./components/AdminUser";
 import AllReminders from "./components/AllReminders";
+import Charts from "./components/ChartDisplay";
 import Contact from "./components/Contact";
 import FormTypes from "./components/FormTypes";
 import Home from "./components/Home";
@@ -14,13 +15,13 @@ import LongAnxiety from "./components/LongAnxiety"
 import LongDepression from "./components/LongDepression"
 import Mindfulness from "./components/Mindfulness"
 import Mood from "./components/Mood";
-import NavFormTypes from "./components/NavFormTypes"
-import Ptsd from "./components/Ptsd"
+import NavFormTypes from "./components/NavFormTypes";
+import Ptsd from "./components/Ptsd";
 import Reminder from "./components/Reminder";
 import ResourceSearch from "./components/ResourceSearch";
 import Resources from "./components/Resources";
 import ShortAnxiety from "./components/ShortAnxiety";
-import ShortDepression from "./components/ShortDepression"
+import ShortDepression from "./components/ShortDepression";
 import apiHelpers from "./api-helpers.js/apiHelpers";
 
 const app = document.querySelector("#app");
@@ -33,7 +34,6 @@ buildPage();
 function buildPage() {
     renderHome();
     navHome();   
-    // navAllReminders();
     navJournal();
     navAbout();
     navContact();
@@ -41,7 +41,6 @@ function buildPage() {
     navForms();
     navLogin();
     navAdmin();
-    navMindfulness();
     playSounds();
 }
 
@@ -71,7 +70,6 @@ function checkin() {
                 modal.style.display = "none";
             }
                        
-        //  if (event.target.classList.contains("checkin")) {
         if (loggedIn == "false") {
             modal.style.display = "block";
             modalBody.innerHTML = `  
@@ -114,9 +112,7 @@ function formTypes() {
                 modal.style.display = "none";
             }
             
-        // if (event.target.classList.contains("nextCheckin")) {
         const moodValue = document.getElementById("slider").value;
-        // console.log(moodValue);
             
         apiHelpers.postRequest(
             `http://localhost:8080/api/mood/add-mood`, {
@@ -201,7 +197,6 @@ function navAllReminders() {
         apiHelpers.getRequest(`http://localhost:8080/api/reminders`, (reminders) => {
                 app.innerHTML = AllReminders(reminders);
               });
-        //   }
         renderReminder();
         addReminder(); 
     });     
@@ -213,6 +208,9 @@ function renderReminder() {
             const id = event.target.querySelector("#reminder-id").value;
             apiHelpers.getRequest(`http://localhost:8080/api/reminders/${id}`, reminder => {
                 app.innerHTML = Reminder(reminder);
+                if (userLoggedIn.includes("admin")) {
+                    document.getElementById("reminder-delete").style.display = "none";
+                }
             });
         returnToAllReminders();
         deleteReminder(); 
@@ -221,7 +219,6 @@ function renderReminder() {
 }
 
 function addReminder() {
-    // const addReminderElem = document.querySelector(".add-reminder__submit");
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("add-reminder__submit")) {
             const addResourceName = event.target.parentElement.querySelector(
@@ -258,7 +255,6 @@ function deleteReminder(){
         if (event.target.classList.contains("reminder-delete")){
             const deleteReminderId = event.target.parentElement.querySelector(".reminder-id").value;
             apiHelpers.deleteRequest(`http://localhost:8080/api/reminders/${deleteReminderId}/delete-reminder`, () => {
-                //console.log(reminders);
                 apiHelpers.getRequest(`http://localhost:8080/api/reminders`, (reminders) => {
                     app.innerHTML = AllReminders(reminders);
             });
@@ -310,6 +306,9 @@ function renderJournalEntry() {
             const id = event.target.querySelector("#journal-id").value;
             apiHelpers.getRequest(`http://localhost:8080/api/journal-entry/${id}`, journal => {
                 app.innerHTML = JournalEntry(journal);
+                if (userLoggedIn.includes("admin")) {
+                    document.getElementById("journal-delete").style.display = "none";
+                }
             });
         deleteJournal();
         returnToJournal();
@@ -408,13 +407,15 @@ function navResources() {
     journalElem.addEventListener("click", () => {
         app.innerHTML = Resources();
         search();
+        navMindfulness();
     });
 }
 
 function navMindfulness() {
-    const mindfulnessElem = document.querySelector(".nav-list__mindfulness");
-    mindfulnessElem.addEventListener("click", () => {
-        app.innerHTML = Mindfulness();
+    app.addEventListener("click", (event) => {
+        if (event.target.classList.contains("practice-mindfulness")) {
+            app.innerHTML = Mindfulness();
+        }
     });
 }
 
@@ -427,8 +428,6 @@ function navAdmin() {
 }
 
 function adminUser() {
-    // const adminUserElem = document.querySelector(".articleImg");
-    // adminUserElem.addEventListener("click", () => {
     app.addEventListener("click", (event) => {  
         if (event.target.classList.contains("articleImg1")) {
             let user = "User 1"
@@ -453,7 +452,32 @@ function adminUser() {
         renderReminder();
         renderJournalEntry();
         returnAdminHome();
+        renderChart();
     });
+}
+
+function renderChart() {
+    const barData = {
+        labels: ["January","February","March","April","May","June"],
+        datasets: [
+            {
+                label: 'Form Entries',
+                fillColor: "rgb(48, 48, 48)",
+                strokeColor: "rgb(48, 48, 48)",
+                data: [3,4,5,0,0,0]
+            },
+            {
+                label: 'Mood Entries',
+                fillColor: "#a55344",
+                strokeColor: "#a55344",
+                data:  [4,4,3,0,0,0]
+            }
+        ]
+    }
+    // get bar chart canvas
+    const trends = document.getElementById("trends").getContext("2d");
+    // draw bar chart
+    new Chart(trends).Bar(barData);
 }
 
 function returnAdminHome() {
@@ -475,6 +499,15 @@ function navContact() {
     const contactElem = document.querySelector(".nav-list__contact");
     contactElem.addEventListener("click", () => {
         app.innerHTML = Contact();
+        contactFormSubmit();
+    });
+}
+
+function contactFormSubmit() {
+    const contactSub = document.querySelector("#contact-submit");
+    contactSub.addEventListener("click", () => {
+        app.innerHTML = Contact();
+        contactFormSubmit();
     });
 }
 
@@ -503,7 +536,6 @@ function search() {
         apiHelpers.getRequest(`https://health.gov/myhealthfinder/api/v3/topicsearch.json?keyword=${value}`, resources => {
             const list = document.querySelector(".search-list");    
             list.insertAdjacentHTML("beforeend", ResourceSearch(resources));
-            //app.innerHTML = ResourceSearch(resources);
         });
     }});
 }
@@ -528,23 +560,28 @@ function userLogin() {
             userLoggedIn = name
             apiHelpers.getRequest(`http://localhost:8080/api/users/${name}`, (user) => {
                 app.innerHTML = Home();
-            //   if (user) {
-            //     apiHelpers.getRequest(`http://localhost:8080/api/${name}/reminders`, (reminders) => {
-            //       app.innerHTML = AllReminders(reminders);
-            //     });
-            // }
             navAllReminders();
             checkin();
+            signOut();
         });
         loggedIn = "true"
         const icon = document.getElementById("login");
         icon.innerHTML = `<i class="material-icons" id="account-circle">account_circle</i>`;
         if (userLoggedIn.includes("admin")) {
             document.getElementById("admin").style.display = "initial";
+            document.getElementById("signout").style.display = "initial";
         } else {
             document.getElementById("user").style.display = "initial";
+            document.getElementById("signout").style.display = "initial";
         }
     }
+    });
+}
+
+function signOut() {
+    const logoutClick = document.querySelector("#signout");
+    logoutClick.addEventListener("click", () => {
+        window.location.reload();    
     });
 }
 
@@ -574,8 +611,3 @@ function saveForm() {
         renderHome();
     });     
  } 
- 
-
-
-
-

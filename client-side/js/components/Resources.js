@@ -1,31 +1,31 @@
 import picture from "../../images/DSC03254.jpg";
 
-
-
 export default function Resources(){
     return `
         <div class="container-about">
             <div class="search-container">
                 <h1 class="search-header">Additional Resources<h1>
-                <h2>Search Topic</h2>
+                <h2>Search Topics</h2>
                 <br>
                     <div>
                         <input type="text" id="search-bar" placeholder="Enter keyword" onfocus="this.value=''">
                         <button type="button" id="search-submit"><i class="fa fa-search"></i></button>
                     </div>
             </div>
-           
-           
             <div class="search-list" id="search-list"></div>
-                  
             <div>
-           
-            <img class="resources-image" src="${picture}" alt="Resources Image" />
-
-           </div>
-           
+                <img class="resources-image" src="${picture}" alt="Resources Image"
+            </div>
+            <div class="mindfulness_resource">
+                <br><hr><br>
+                <h2 class="mindful-header">Mindfulness</h2>
+            <p class="mindfulness_line">Psychology Today states that in order to live mindfully, one must live in the moment and reawaken oneself to the present, rather than dwelling on the past or anticipating the future. To be mindful is to observe and label thoughts, feelings, and sensations in the body in an objective manner. 
+            Mindfulness can be a tool to avoid self-criticism and judgment while identifying and managing difficult emotions.</p>
+            <button class="practice-mindfulness">Start Practicing Mindfulness</button>
+            </div>
             <div class="resources_list">
-                <h2 class="links-header">Or select from these quick links</h2>
+                <br><hr><br>
+                <h2 class="links-main-header">Quick links</h2>
                     <h3 class="links-subheader">Resources on Anxiety</h3>
                         <ul>
                             <li><a href="https://www.mayoclinic.org/diseases-conditions/anxiety/diagnosis-treatment/drc-20350967">Anxiety Disorders by the Mayo clinic</a>

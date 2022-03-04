@@ -3,7 +3,7 @@ export default function LongDepression(){
     
     <h1 class="formType">Weekly Depression Questionnaire</h1>
     <div class="form-container">
-     <h3>Over the last Week, how often have you been bothered by the following problems?</h3>
+     <h3>Over the last week, how often have you been bothered by the following problems?</h3>
         <ul class=form-list>
             <li>Little interest or pleasure in doing things:</li>
             <br>
@@ -75,7 +75,7 @@ export default function LongDepression(){
         <input type="radio" name="rating5" id="3" value="3">
         <label for="3">All week</label><br>
         <br>
-            <li>Feeling bad about yourself - or that you’re a failure or have let yourself or your family down:</li>
+            <li>Feeling bad about yourself or that you’re a failure or have let yourself or your family down:</li>
             <br>
             <input type="radio" name="rating6" id="0" value="0">
         <label for="0">Not at all</label><br>

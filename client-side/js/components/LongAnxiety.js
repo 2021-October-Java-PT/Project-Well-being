@@ -3,7 +3,7 @@ export default function LongAnxiety(){
 return `
 <h1 class="formType">Weekly Anxiety Questionnaire</h1>
 <div class="form-container">
- <h3>Over the last Week, how often have you been bothered by the following problems?</h3>
+ <h3>Over the last week, how often have you been bothered by the following problems?</h3>
     <ul class=form-list>
         <li>Feeling nervous, anxious or on edge:</li>
         <br>

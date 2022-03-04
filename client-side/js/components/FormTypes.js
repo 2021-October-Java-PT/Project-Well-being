@@ -4,7 +4,7 @@ export default function FormTypes() {
          
         <div class="forms-headers">
           <h1 class="survey-header">Well-being Surveys</h1>
-          <h2>Choose the best survey that meets your needs</h2>
+          <p>Choose the best survey that meets your needs.</p>
           </div>
       
           <div class="typeButtons">

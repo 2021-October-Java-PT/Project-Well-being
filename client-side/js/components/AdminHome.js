@@ -5,6 +5,7 @@ export default function AdminHome(){
     return `
     <div class="container-contact">
     <h1>Administrator Homepage</h1>
+    <br>
     <div id="services">
         <div class="services-div">
             <div class="services-item" id="service-one">

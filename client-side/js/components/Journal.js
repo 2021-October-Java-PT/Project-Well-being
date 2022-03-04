@@ -4,7 +4,6 @@ import legalPad from "../../assets/legal-pad.png"
 export default function Journal(journals){
     return `
             <h1 class="journal">Journal Entry</h1>
-            <br>
             <p class="journal">Journaling about your feelings is linked to decreased mental distress. In a study, 
             researchers found that those with various medical conditions and anxiety who wrote online for 15 minutes 
             three days a week over a 12-week period had increased feelings of well-being and fewer depressive symptoms 
@@ -26,7 +25,7 @@ export default function Journal(journals){
             </div>
          
 
-        <div class-"all-journals__div" id="all-journals__div">
+        <div class="all-journals__div" id="all-journals__div">
             <ul class="all-journals__list">
                 ${journals.map(journal => {
                     return `

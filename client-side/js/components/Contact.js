@@ -29,7 +29,7 @@ export default function Contact(){
                     Your comments: <br>
                         <textarea name="comments" rows="15" cols="50"></textarea><br><br>
                         
-                    <input class="journal-submit-button" type="submit" value="Submit">
+                    <input class="journal-submit-button" id="contact-submit" type="submit" value="Submit">
             </form>
             </div>
         </div>

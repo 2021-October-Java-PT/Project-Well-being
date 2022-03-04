@@ -8,7 +8,7 @@ const emoticons = ["mood_bad",
 export default function MoodResponses(moods) {
     return `
     <div class="moods-header">
-        <h1>Mood Trends</h1>
+        <h1>Feelings</h1>
     </div>
     <div class="moods__list">
         ${moods.map(mood => {
