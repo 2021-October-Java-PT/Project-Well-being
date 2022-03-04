@@ -4,8 +4,10 @@ Unboxed Thoughts is a well-being and mental health tracker. The purpose of the a
 
 Unboxed Thoughts allows:
 
-1. A user to be notified at a user set time reminders
-2. A user to select the type of parameter they want to track ie: depression, anxiety, etc.
-3. A user to share information with a provider
-4. A provider to visualize the data in a variety of ways
-5. Provides users with the ability to search and find resources on a variety of topics and practice mindfulness
+1. A user to set reminders
+2. A user to create journal entries
+3. A user to select the type of parameter they want to track via forms on depression, anxiety, etc.
+4. A user to perform daily checkin's
+5. A user to share information with a provider
+6. A provider to visualize the data in a variety of ways
+7. Provides users with the ability to search and find resources on a variety of topics and practice mindfulness
