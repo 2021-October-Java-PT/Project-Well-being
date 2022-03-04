@@ -35,11 +35,9 @@ public class Populator implements CommandLineRunner {
         remindersRepo.save(lunch);
         remindersRepo.save(dinner);
 
-
-
-        JournalResource one = new JournalResource("2021-12-31", "Today was a rough day!  I got into it with my partner who was being unreasonable about how late I stayed out last night.  I want to talk with my therapist about this at our next visit and see if she has any good ideas about how to address him in these situations when we disagree.  My whole day felt ruined because of how I felt after that confrontation.");
-        JournalResource two = new JournalResource("2022-01-13", "Today was awesome!  My boss was so encouraging when I asked her how she liked my work project.  She asked me to take over another project because she wanted it “done right.”  I am so lucky to have such an amazing boss:)  I hope that I can always impress her with my work.");
-        JournalResource three = new JournalResource("2022-01-31", "Today was a little hard with my kids.  They argue so much!  I just want them to get along with \n" +
+        JournalResource one = new JournalResource("2021-02-20", "Today was a rough day!  I got into it with my partner who was being unreasonable about how late I stayed out last night.  I want to talk with my therapist about this at our next visit and see if she has any good ideas about how to address him in these situations when we disagree.  My whole day felt ruined because of how I felt after that confrontation.");
+        JournalResource two = new JournalResource("2022-02-21", "Today was awesome!  My boss was so encouraging when I asked her how she liked my work project.  She asked me to take over another project because she wanted it “done right.”  I am so lucky to have such an amazing boss:)  I hope that I can always impress her with my work.");
+        JournalResource three = new JournalResource("2022-02-22", "Today was a little hard with my kids.  They argue so much!  I just want them to get along with \n" +
                 "each other and understand that they are both lucky to have each other.  They are really great kids but it’s really tough to parent when all they want to do is fight.  Maybe my therapist can give me some pointers on how to handle their fights.\n");
 
         journalRepo.save(one);
