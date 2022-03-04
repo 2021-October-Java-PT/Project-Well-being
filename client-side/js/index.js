@@ -25,6 +25,7 @@ import ShortDepression from "./components/ShortDepression";
 import apiHelpers from "./api-helpers.js/apiHelpers";
 
 const app = document.querySelector("#app");
+const mySounds = document.querySelector("#nature-sounds");
 let userLoggedIn = "";
 let loggedIn = "false";
 let userProfile = "";
@@ -74,7 +75,7 @@ function checkin() {
             modal.style.display = "block";
             modalBody.innerHTML = `  
                 <div class="modal-body mood-content">
-                    <h3>Please login to continue.</h3>
+                    <h3>Please login to continue checking in.</h3>
                 </div>
               `;
             return;
@@ -274,6 +275,7 @@ function returnToAllReminders() {
                 }
             document.getElementById("frmReminder").style.display = "none";
             document.getElementById("journal-form").style.display = "none";
+            renderChart();
             } else if (userProfile === "User 2") {
                 app.innerHTML = AdminUser(userProfile);
                 const info = document.getElementsByClassName("user-info");
@@ -358,6 +360,7 @@ function returnToJournal() {
                 }
             document.getElementById("frmReminder").style.display = "none";
             document.getElementById("journal-form").style.display = "none";
+            renderChart();
             } else if (userProfile === "User 2") {
                 app.innerHTML = AdminUser(userProfile);
                 const info = document.getElementsByClassName("user-info");
@@ -415,6 +418,12 @@ function navMindfulness() {
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("practice-mindfulness")) {
             app.innerHTML = Mindfulness();
+            mySounds.volume = 0.5;
+            mySounds.play();
+            setTimeout(function(){
+                mySounds.pause();
+                mySounds.currentTime = 0;
+            }, 5000);
         }
     });
 }
@@ -457,20 +466,21 @@ function adminUser() {
 }
 
 function renderChart() {
+    const labels = ["January","February","March","April","May","June"];
     const barData = {
-        labels: ["January","February","March","April","May","June"],
+        labels: labels,
         datasets: [
             {
                 label: 'Form Entries',
                 fillColor: "rgb(48, 48, 48)",
                 strokeColor: "rgb(48, 48, 48)",
-                data: [3,4,5,0,0,0]
+                data: [3,7,1,0,0,0]
             },
             {
                 label: 'Mood Entries',
                 fillColor: "#a55344",
                 strokeColor: "#a55344",
-                data:  [4,4,3,0,0,0]
+                data:  [4,3,1,0,0,0]
             }
         ]
     }
@@ -514,9 +524,10 @@ function contactFormSubmit() {
 function search() {
     const searchBar = document.querySelector("#search-bar");
     searchBar.addEventListener("click", () => {
-        let top = document.getElementById("nested");
-        if (top.parentNode) {
-            top.parentNode.removeChild(top);
+        document.getElementById("search-bar").value = "";
+        let top = document.getElementById("search-list");
+        while (top.firstChild) {
+            top.removeChild(top.lastChild);
         }
     });    
     
@@ -532,10 +543,9 @@ function search() {
     searchBar.addEventListener("keyup", (event) => {
         if (event.keyCode === 13){
         let value = document.getElementById("search-bar").value;
-        console.log(value);
         apiHelpers.getRequest(`https://health.gov/myhealthfinder/api/v3/topicsearch.json?keyword=${value}`, resources => {
             const list = document.querySelector(".search-list");    
-            list.insertAdjacentHTML("beforeend", ResourceSearch(resources));
+            list.insertAdjacentHTML("afterbegin", ResourceSearch(resources));
         });
     }});
 }
@@ -586,7 +596,6 @@ function signOut() {
 }
 
 function playSounds(){
-    const mySounds = document.querySelector("#nature-sounds");
     const playClick = document.querySelector("#play-button");
     const stopClick = document.querySelector("#stop-button");
     

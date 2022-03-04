@@ -6,7 +6,7 @@ export default function Home() {
     return `
     <div class="home-area" id="home">
     <div class="home-container">
-      <h1 class="main-title" id="home">Unbox Your Thoughts</h1>
+      <h1 class="main-title" id="home">Unboxed Thoughts</h1>
       <h2>You Matter</h2>
       <btn class="checkin btn btn-primary" id="myBtn">Checkin</btn>
     </div>

@@ -264,9 +264,6 @@ tr.calendar > td:hover {
 }
 
 .container {
-  /* padding: 25px; */
-  /* height: 65em; */
-  /* margin-bottom: 50px; */
   padding-top: 35px;
   padding-left: 0%;
   padding-right: 0%;
@@ -382,7 +379,6 @@ tr.calendar > td:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
   height: 100%;
   font-size: 1.6rem;
 }
@@ -396,7 +392,6 @@ tr.calendar > td:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  /* grid-template-columns: auto auto auto; */
   background-color: whitesmoke;
   padding: 20px 20px 20px 20px;
 }
@@ -455,12 +450,10 @@ p {
 .contact-area {
   display: grid;
   grid-template-columns: auto auto;
-  /* background-color: whitesmoke; */
 }
 .contact-div {
   grid-column: 1/2;
   padding: 30px 10px 10px 10px;
-  /* text-indent: 2%; */
   text-align: center;
 }
 
@@ -832,10 +825,6 @@ form.journal {
   list-style: none;
 }
 
-/* .user-info-item > .reminders {
-  padding-bottom: 4rem;
-} */
-
 #reminders {
   grid-area: reminders;
 }
@@ -913,7 +902,6 @@ form.journal {
 }
 
 /* reminder content */
-
 .reminder-header {
   text-align: center;
   padding: 1rem;
@@ -960,12 +948,6 @@ form.journal {
   cursor: pointer;
 }
 
-/* .all-reminders__div {
-  margin-bottom: 15px;
-  text-align: center;
-  align-items: center;
-} */
-
 .add-reminder__submit {
   padding: 0.5em 1em;
   text-decoration: none;
@@ -984,7 +966,6 @@ form.journal {
 }
 
 /* Individual Reminder section */
-
 .individual-reminder, .individual-journal {
   margin: 5rem auto 5rem auto;
   display: block;
@@ -1225,7 +1206,6 @@ form.journal {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* grid-template-columns: auto auto auto; */
     background-color: whitesmoke;
     padding: 20px 20px 20px 20px;
   }
@@ -1326,7 +1306,6 @@ form.journal {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* padding: 0rem 40rem 0rem 30rem; */
   }
 } 
 
