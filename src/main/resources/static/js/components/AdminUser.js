@@ -1,9 +1,9 @@
-import Charts from "../components/ChartDisplay";
-import Forms from "../components/FormReponses";
-import Journals from "../components/Journal";
-import Moods from "./MoodResponses";
-import Reminders from "../components/AllReminders";
-import apiHelpers from "../api-helpers.js/apiHelpers";
+import Charts from "../components/ChartDisplay.js";
+import Forms from "../components/FormReponses.js";
+import Journals from "../components/Journal.js";
+import Moods from "./MoodResponses.js";
+import Reminders from "../components/AllReminders.js";
+import apiHelpers from "../api-helpers.js/apiHelpers.js";
 
 const [reminders, setReminders] = apiHelpers.useState();
 apiHelpers.getRequest(`http://localhost:8080/api/reminders`, reminders => {

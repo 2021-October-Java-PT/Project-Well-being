@@ -1,5 +1,5 @@
-import user1 from "../../images/user1.jpg";
-import user2 from "../../images/user2.jpg"
+const user1 = "/images/user1.jpg";
+const user2 = "/images/user2.jpg"
 
 export default function AdminHome(){
     return `

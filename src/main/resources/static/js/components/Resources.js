@@ -1,4 +1,4 @@
-import picture from "../../images/DSC03254.jpg";
+const picture = "/images/DSC03254.jpg";
 
 export default function Resources(){
     return `

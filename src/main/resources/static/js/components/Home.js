@@ -1,6 +1,6 @@
-import alarm from "../../assets/alarm2.jpg";
-import journal from "../../assets/journaling.jpg";
-import resources from "../../assets/resources.jpg";
+const alarm = "/assets/alarm2.jpg";
+const journal = "/assets/journaling.jpg";
+const resources = "/assets/resources.jpg";
 
 export default function Home() {
     return `

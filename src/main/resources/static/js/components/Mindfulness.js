@@ -1,4 +1,4 @@
-import mindfulness from "../../images/LongSun.jpg";
+const mindfulness = "/images/LongSun.jpg";
 
 export default function Mindfulness(){
     return `

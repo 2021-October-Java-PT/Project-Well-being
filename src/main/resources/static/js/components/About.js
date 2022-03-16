@@ -1,11 +1,11 @@
-import Hesan from "../../images/HesanH.png";
-import Jacob from "../../images/JacobS.jpg";
-import Matt from "../../images/WCCI12622-029.jpg";
-import Nicole from "../../images/NHofer_Headshot.jpg";
-import Razak from "../../images/Rsaka.jpg";
-import Ryan from "../../images/RyanW.jpg";
-import gitHubImg from "../../images/GitHub.png";
-import linkedInImg from "../../images/LinkedIn.png";
+const Hesan = "/images/HesanH.png";
+const Jacob = "/images/JacobS.jpg";
+const Matt = "/images/WCCI12622-029.jpg";
+const Nicole = "/images/NHofer_Headshot.jpg";
+const Razak = "/images/Rsaka.jpg";
+const Ryan = "/images/RyanW.jpg";
+const gitHubImg = "/images/GitHub.png";
+const linkedInImg = "/images/LinkedIn.png";
 
 export default function About(){
     return `

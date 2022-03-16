@@ -1,5 +1,5 @@
-import journaling from "../../assets/journaling.jpg";
-import legalPad from "../../assets/legal-pad.png"
+const journaling = "/assets/journaling.jpg";
+const legalPad = "/assets/legal-pad.png"
 
 export default function Journal(journals){
     return `
