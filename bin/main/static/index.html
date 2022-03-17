@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com/">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Staatliches&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css" />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Kavivanar&family=Lato:wght@300&display=swap");
+  </style>
+  <title>Unboxed Thoughts</title>
+</head>
+
+<body>
+  <div class="wrapper">
+  <nav class="navbar" href="#top">
+    <div class="navbar-container">
+      <input type="checkbox" name="" id=""></input>
+      <div class="hamburger-menu">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
+      </div>
+      <ul class="nav-list">
+        <li class="nav-list__home">Home</li>
+        <li class="nav-list__resources">Resources</li>
+        <li class="nav-list__about">About</li>
+        <li class="nav-list__contact">Contact</li>
+        <div class="dropdown">
+          <li id="user" class="user">User</li>  
+          <div class="dropdown-content">
+            <li class="nav-list__reminders">Reminders</li>
+            <li class="nav-list__journal">Journal Entry</li>
+            <li class="nav-list__forms">Forms</li>
+          </div>
+        </div>
+        <li id="admin" class="admin">Admin</li>
+        <li class="nav-list__login" id="login">Login</li>
+        <i class="fa fa-sign-out" id="signout"></i>
+      </ul>
+    <div class="logo-img">
+      <img class="logo" src="images\Project well-beingheadtransparent.png" alt="Unboxed Thoughts Logo">
+      <img class="logo-words" src="images\project_well-beingtransparentwordsmodified.png" alt="Unboxed Thoughts Logo">
+    </div>
+    </div>
+  </nav>
+  <div class="container" id="app"></div>
+  <footer id="footer">
+    <h2>&copy; Project Well-being</h2>
+    <a href="#top">Back to Top</a>
+    <div id="audio">
+      <button id="play-button">Play</button>
+      <button id="stop-button">Stop</button>
+      <audio id="nature-sounds" src="./assets/NatureSounds.mp3"></audio>
+    </div>
+  </footer>
+</div>
+  <script type="module" src="./js/index.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+</body>
+</html>
