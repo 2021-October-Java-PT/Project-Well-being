@@ -6,22 +6,22 @@ import Reminders from "../components/AllReminders.js";
 import apiHelpers from "../api-helpers.js/apiHelpers.js";
 
 const [reminders, setReminders] = apiHelpers.useState();
-apiHelpers.getRequest(`http://localhost:8080/api/reminders`, reminders => {
+apiHelpers.getRequest(`http://projectwellbeing-demo.herokuapp.com/api/reminders`, reminders => {
     setReminders(reminders);
 });
 
 const [journals, setJournals] = apiHelpers.useState();
-apiHelpers.getRequest("http://localhost:8080/api/journal-entries", journals => {
+apiHelpers.getRequest("http://projectwellbeing-demo.herokuapp.com/api/journal-entries", journals => {
     setJournals(journals);
 });
 
 const [forms, setForms] = apiHelpers.useState();
-apiHelpers.getRequest("http://localhost:8080/api/forms", forms => {
+apiHelpers.getRequest("http://projectwellbeing-demo.herokuapp.com/api/forms", forms => {
     setForms(forms);
 });
 
 const [moods, setMoods] = apiHelpers.useState();
-apiHelpers.getRequest("http://localhost:8080/api/mood", moods => {
+apiHelpers.getRequest("http://projectwellbeing-demo.herokuapp.com/api/mood", moods => {
     setMoods(moods);
 });
 
