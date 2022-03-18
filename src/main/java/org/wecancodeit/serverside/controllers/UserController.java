@@ -10,7 +10,7 @@ import org.wecancodeit.serverside.repos.UserRepository;
 import javax.annotation.Resource;
 import java.util.Optional;
 
-@RequestMapping("projectwellbeing-demo.herokuapp.com")
+@RequestMapping("https://projectwellbeing-demo.herokuapp.com")
 @RestController
 @CrossOrigin
 public class UserController {

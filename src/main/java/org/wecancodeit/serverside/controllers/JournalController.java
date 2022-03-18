@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 import java.util.Collection;
 import java.util.Optional;
 
-@RequestMapping("projectwellbeing-demo.herokuapp.com")
+@RequestMapping("https://projectwellbeing-demo.herokuapp.com")
 @RestController
 @CrossOrigin
 public class JournalController {
