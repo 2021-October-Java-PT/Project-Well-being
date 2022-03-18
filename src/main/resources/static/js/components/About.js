@@ -10,7 +10,7 @@ const linkedInImg = "/images/LinkedIn.png";
 export default function About(){
     return `
     <div class="container-about">    
-    <h1 class="margin" id="title">About Us</h1><br>
+    <h1 class="margin" id="title">About git</h1><br>
     <main class="bios">
         <section id="ryanWebster">
             <h2>Ryan Webster</h2>

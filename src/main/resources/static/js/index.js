@@ -116,7 +116,7 @@ function formTypes() {
         const moodValue = document.getElementById("slider").value;
             
         apiHelpers.postRequest(
-            `http://localhost:8080/api/mood/add-mood`, {
+            `http://projectwellbeing-demo.herokuapp.com/api/mood/add-mood`, {
                     value: moodValue,
             },
                 () =>
@@ -165,7 +165,7 @@ function displayJournal() {
                 modal.style.display = "none";
             }
         if (event.target.classList.contains("lastCheckin")) {
-            apiHelpers.getRequest("http://localhost:8080/api/journal-entries", (journals) => {
+            apiHelpers.getRequest("http://projectwellbeing-demo.herokuapp.com/api/journal-entries", (journals) => {
             modalBody.innerHTML = Journal(journals);
             document.getElementById("all-journals__div").style.display = "none";
         });
@@ -181,7 +181,7 @@ function modalSubmit() {
             var journalEntryDate = event.target.parentElement.querySelector("#date").value;
             const journalEntryContent = event.target.parentElement.querySelector("#journal-entry").value;
             apiHelpers.postRequest(
-                "http://localhost:8080/api/journals/add-journal-entry", {
+                "http://projectwellbeing-demo.herokuapp.com/api/journals/add-journal-entry", {
                     date: journalEntryDate,
                     content: journalEntryContent,
                 }, 
@@ -195,7 +195,7 @@ function modalSubmit() {
 function navAllReminders() {
     const remindersElem = document.querySelector(".nav-list__reminders");
     remindersElem.addEventListener("click", () => {
-        apiHelpers.getRequest(`http://localhost:8080/api/reminders`, (reminders) => {
+        apiHelpers.getRequest(`http://projectwellbeing-demo.herokuapp.com/api/reminders`, (reminders) => {
                 app.innerHTML = AllReminders(reminders);
               });
         renderReminder();
@@ -207,7 +207,7 @@ function renderReminder() {
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("reminder")) {
             const id = event.target.querySelector("#reminder-id").value;
-            apiHelpers.getRequest(`http://localhost:8080/api/reminders/${id}`, reminder => {
+            apiHelpers.getRequest(`http://projectwellbeing-demo.herokuapp.com/api/reminders/${id}`, reminder => {
                 app.innerHTML = Reminder(reminder);
                 if (userLoggedIn.includes("admin")) {
                     document.getElementById("reminder-delete").style.display = "none";
@@ -236,14 +236,14 @@ function addReminder() {
             ).value;
 
             apiHelpers.postRequest(
-                `http://localhost:8080/api/reminders/add-reminder`, {
+                `http://projectwellbeing-demo.herokuapp.com/api/reminders/add-reminder`, {
                     name: addResourceName,
                     category: addResourceCategory,
                     priority: addResourcePriority,
                     description: addResourceDescription,
             },
             () => {
-                apiHelpers.getRequest(`http://localhost:8080/api/reminders`, (reminders) => {
+                apiHelpers.getRequest(`http://projectwellbeing-demo.herokuapp.com/api/reminders`, (reminders) => {
                     app.innerHTML = AllReminders(reminders);
             });
         });
@@ -255,8 +255,8 @@ function deleteReminder(){
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("reminder-delete")){
             const deleteReminderId = event.target.parentElement.querySelector(".reminder-id").value;
-            apiHelpers.deleteRequest(`http://localhost:8080/api/reminders/${deleteReminderId}/delete-reminder`, () => {
-                apiHelpers.getRequest(`http://localhost:8080/api/reminders`, (reminders) => {
+            apiHelpers.deleteRequest(`http://projectwellbeing-demo.herokuapp.com/api/reminders/${deleteReminderId}/delete-reminder`, () => {
+                apiHelpers.getRequest(`http://projectwellbeing-demo.herokuapp.com/api/reminders`, (reminders) => {
                     app.innerHTML = AllReminders(reminders);
             });
           });
@@ -284,7 +284,7 @@ function returnToAllReminders() {
                 }      
             }
         } else if (event.target.classList.contains("return-reminders")) {
-            apiHelpers.getRequest(`http://localhost:8080/api/reminders`, (reminders) => {
+            apiHelpers.getRequest(`http://projectwellbeing-demo.herokuapp.com/api/reminders`, (reminders) => {
                 app.innerHTML = AllReminders(reminders);
               });
         }
@@ -294,7 +294,7 @@ function returnToAllReminders() {
 function navJournal() {
     const journalElem = document.querySelector(".nav-list__journal");
     journalElem.addEventListener("click", () => {
-        apiHelpers.getRequest("http://localhost:8080/api/journal-entries", journals => {
+        apiHelpers.getRequest("http://projectwellbeing-demo.herokuapp.com/api/journal-entries", journals => {
       app.innerHTML = Journal(journals);
     });
     renderJournalEntry();
@@ -306,7 +306,7 @@ function renderJournalEntry() {
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("journal-entry")) {
             const id = event.target.querySelector("#journal-id").value;
-            apiHelpers.getRequest(`http://localhost:8080/api/journal-entry/${id}`, journal => {
+            apiHelpers.getRequest(`http://projectwellbeing-demo.herokuapp.com/api/journal-entry/${id}`, journal => {
                 app.innerHTML = JournalEntry(journal);
                 if (userLoggedIn.includes("admin")) {
                     document.getElementById("journal-delete").style.display = "none";
@@ -324,12 +324,12 @@ function addJournal() {
             var journalEntryDate = event.target.parentElement.querySelector("#date").value;
             const journalEntryContent = event.target.parentElement.querySelector("#journal-entry").value;
             apiHelpers.postRequest(
-                "http://localhost:8080/api/journals/add-journal-entry", {
+                "http://projectwellbeing-demo.herokuapp.com/api/journals/add-journal-entry", {
                     date: journalEntryDate,
                     content: journalEntryContent,
                 }, 
                 () => {
-                    apiHelpers.getRequest("http://localhost:8080/api/journal-entries", journals => {
+                    apiHelpers.getRequest("http://projectwellbeing-demo.herokuapp.com/api/journal-entries", journals => {
                     app.innerHTML = Journal(journals);
                 });
             });
@@ -341,7 +341,7 @@ function deleteJournal() {
     app.addEventListener("click", (event) => {
         if (event.target.classList.contains("journal-delete")) {
             const deleteJournalId = event.target.parentElement.querySelector(".journal-id").value;
-            apiHelpers.deleteRequest(`http://localhost:8080/api/journals/${deleteJournalId}/delete-journal-entry`, journals => {
+            apiHelpers.deleteRequest(`http://projectwellbeing-demo.herokuapp.com/api/journals/${deleteJournalId}/delete-journal-entry`, journals => {
                 app.innerHTML = Journal(journals);
             });
             returnToJournal();
@@ -369,7 +369,7 @@ function returnToJournal() {
                 }      
             }
         } else if (event.target.classList.contains("return-all-journals")) {
-            apiHelpers.getRequest("http://localhost:8080/api/journal-entries", (journals) => {
+            apiHelpers.getRequest("http://projectwellbeing-demo.herokuapp.com/api/journal-entries", (journals) => {
                 app.innerHTML = Journal(journals);
             });
         }
@@ -568,7 +568,7 @@ function userLogin() {
         if (event.target.parentElement.classList.contains('login-form')) {
             const name = event.target.parentElement.querySelector('.loginName').value;
             userLoggedIn = name
-            apiHelpers.getRequest(`http://localhost:8080/api/users/${name}`, (user) => {
+            apiHelpers.getRequest(`http://projectwellbeing-demo.herokuapp.com/api/users/${name}`, (user) => {
                 app.innerHTML = Home();
             navAllReminders();
             checkin();
