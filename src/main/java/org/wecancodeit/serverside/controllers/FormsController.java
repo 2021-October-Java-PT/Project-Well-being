@@ -41,9 +41,9 @@ public class FormsController {
         if (formToSaveOpt.isEmpty()) {
             FormsResource formToSave = new FormsResource(type, score, date);
             formsRepo.save(formToSave);
-            return "redirect:/api/forms";
+            return "redirect:projectwellbeing-demo.herokuapp.com/api/forms";
         }
-        return "redirect:/api/forms";
+        return "redirect:projectwellbeing-demo.herokuapp.com/api/forms";
 
 
     }

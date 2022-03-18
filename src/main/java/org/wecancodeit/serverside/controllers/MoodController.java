@@ -47,9 +47,9 @@ public class MoodController {
         if (moodToAddOpt.isEmpty()) {
             MoodResource resourceToAdd = new MoodResource(value);
             moodRepo.save(resourceToAdd);
-            return "redirect:/api/mood";
+            return "redirect:projectwellbeing-demo.herokuapp.com/api/mood";
         }
 
-        return "redirect:/api/mood";
+        return "redirect:projectwellbeing-demo.herokuapp.com/api/mood";
     }
 }
